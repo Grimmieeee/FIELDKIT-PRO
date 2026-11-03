@@ -2690,7 +2690,33 @@ body.orbit-ui .reference-pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
 body.orbit-ui .reference-pair>div{min-width:0}
 body.orbit-ui .reference-checks span{overflow-wrap:anywhere}
 
-</style></head>
+</style><style>body.orbit-ui .reference-concept .about-title{margin-bottom:8px}body.orbit-ui .reference-concept .about-tagline{font:400 14px/1.5 var(--ui);color:var(--text);margin:0 0 28px}body.orbit-ui .orbit-visits{font:400 9px/1.5 var(--ui);letter-spacing:.15em;color:var(--muted);opacity:.75;margin:12px 0 0;font-variant-numeric:tabular-nums}</style><style>
+body.orbit-ui .about-pro-wordmark{display:flex;align-items:center;gap:12px;font:400 13px/1.5 var(--ui);letter-spacing:.08em;white-space:nowrap}
+body.orbit-ui .about-pro-wordmark b{font-weight:650}
+body.orbit-ui .about-pro-wordmark span{color:var(--muted);font-weight:400}
+body.orbit-ui .about-pro-wordmark i{font-style:normal;color:var(--muted);margin-left:2px}
+body.orbit-ui .reference-concept .about-tagline{font-size:20px;margin-top:8px;margin-bottom:30px}
+body.orbit-ui .reference-concept .about-library .about-verified{margin:0 0 14px;font-size:12px}
+body.orbit-ui .orbit-visits[hidden]{display:none!important}
+</style><style id="reference-alignment-fix">
+body.orbit-ui .reference-concept{box-sizing:border-box;width:100%;max-width:600px;margin:0 auto;padding:24px;text-align:left;min-width:0}
+body.orbit-ui .reference-concept .about-pro-wordmark{font:400 13px/1.5 var(--ui);display:flex;align-items:baseline;gap:10px;flex-wrap:nowrap;margin:12px 0 8px;letter-spacing:.08em}
+body.orbit-ui .reference-concept .about-tagline{margin:0 0 28px;font-size:20px;line-height:1.4}
+body.orbit-ui .reference-concept .about-library{margin:0 0 24px}
+body.orbit-ui .reference-concept .about-library h3{margin:0 0 10px}
+body.orbit-ui .reference-concept .reference-pair{width:100%;box-sizing:border-box;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.orbit-ui .reference-concept .scope-example{width:100%;box-sizing:border-box}
+@media(max-width:650px){body.orbit-ui.orbit-information .orbit-main{width:100%;min-width:0;box-sizing:border-box}body.orbit-ui .reference-concept{padding:20px 4px}body.orbit-ui .reference-concept .reference-checks{font-size:12px}}
+</style><style id="category-and-visits-placement">
+body.orbit-ui .orbit-categories{width:100%;max-width:100%;grid-template-columns:repeat(5,minmax(0,1fr));column-gap:0;box-sizing:border-box}
+body.orbit-ui .orbit-category{min-width:0;padding-left:4px;padding-right:4px;white-space:normal}
+body.orbit-ui .orbit-header{position:relative}
+body.orbit-ui .orbit-header .orbit-visits{position:absolute;right:24px;top:100%;margin:10px 0 0;font:400 9px/1.5 var(--ui);letter-spacing:.15em;color:var(--muted);opacity:.75}
+@media(max-width:650px){body.orbit-ui .orbit-categories{grid-template-columns:repeat(3,minmax(0,1fr))}body.orbit-ui .orbit-header .orbit-visits{right:16px;margin-top:8px}}
+</style><style id="visits-readable-placement">body.orbit-ui .orbit-header .orbit-visits{right:auto;top:100%;margin-top:20px;font-size:11px;color:#f7f5fc;opacity:1}@media(max-width:650px){body.orbit-ui .orbit-header .orbit-visits{margin-top:18px;font-size:11px}}</style><style id="visits-tour-match">body.orbit-ui .orbit-header .orbit-visits{margin-top:10px;letter-spacing:normal}@media(max-width:650px){body.orbit-ui .orbit-header .orbit-visits{margin-top:10px}}</style><style id="footer-wide-signature">
+body.orbit-ui .orbit-credit span{font:300 12px/1.6 var(--ui);letter-spacing:.12em;white-space:pre}
+body.orbit-ui .orbit-footer .orbit-theme{font-size:25px;transform:translateY(-6px);margin-bottom:8px}
+</style><style>body.orbit-ui .orbit-visits{align-items:center;gap:3px}body.orbit-ui .orbit-visits img{display:inline-block;height:18px;width:auto;vertical-align:middle}</style></head>
 <body class="orbit-ui">
 <noscript><p>This catalog needs JavaScript for search and downloads. Browse the <a href="https://github.com/Grimmieeee/FIELDKIT-PRO/tree/main/dist/published-source">published source files</a> in the repository.</p></noscript>
 <div id="navOverlay" class="overlay"></div>
@@ -28372,9 +28398,10 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
       results.innerHTML = `
         <section class="about-block about-revamp about-compact reference-concept">
 <div class="about-kicker">QUICK REFERENCE</div>
-<h2 class="about-title">F I E L D &nbsp; K I T <span class="about-slash">//</span></h2>
-<p class="about-verified">Operator verified <span class="verification-check" aria-hidden="true">✓</span></p>
-<section class="about-library"><h3>Flags</h3><div class="about-impact-key"><span class="about-flag impact-1">Read only</span><span class="about-flag impact-2">Modify</span><span class="about-flag impact-3">Destruct</span></div></section>
+<h2 class="about-title about-pro-wordmark"><b>F I E L D&nbsp; K I T</b><span>P R O</span><i>//</i></h2>
+<p class="about-tagline">Tools that work.</p>
+
+<section class="about-library"><h3>Flags</h3><p class="about-verified">Verified <span class="verification-check" aria-hidden="true">✓</span></p><div class="about-impact-key"><span class="about-flag impact-1">Read only</span><span class="about-flag impact-2">Modify</span><span class="about-flag impact-3">Destruct</span></div></section>
 <section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>One target</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPN</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M11 21v-3h2v3"/></svg>Tenant-wide</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> Tenant sign-in</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 5a3 3 0 0 1 0 6M20 21v-2a7 7 0 0 0-3-5"/></svg>Multiple targets</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPNs</span><span><i aria-hidden="true">✓</i> .txt UPN file</span><span><i aria-hidden="true">✓</i> .csv UPN file</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span><span><i aria-hidden="true">✓</i> CSV export → Desktop</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></svg>Local</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> File or folder</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><details class="operator-details"><summary>Security guide</summary><p>Review the code and requested permissions. Confirm the selected tenant and targets before approving changes.</p><p>Use an approved endpoint and authorized account. Keep passwords, tokens and collected evidence out of shared logs and public reports.</p><p>Setup readiness checks local requirements, not tenant access.</p><p><a href="https://github.com/Grimmieeee/FIELDKIT-PRO/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Full security policy ↗</a></p></details>
 </section>
       `;
@@ -29637,22 +29664,19 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   for(const [area,label] of domains){const b=make('button','orbit-category',label);b.type='button';b.dataset.orbitArea=area;b.addEventListener('click',()=>route(area));navigation.append(b);}main.append(navigation);
   const count=document.getElementById('favoriteCount')||make('span','','0');count.id='favoriteCount';if(!/^\d+$/.test(count.textContent))count.textContent='0';favorite.replaceChildren(make('span','orbit-favorite-star','☆'),make('span','orbit-favorite-label','Favorites'),count);favorite.setAttribute('aria-label','Show Favorites');favorite.title='Favorites saved in this browser';utilities.append(favorite);
   const about=make('button','orbit-about','About');about.type='button';about.addEventListener('click',()=>route('About'));
-  const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B U R N S I D //</span>';credit.addEventListener('click',()=>route('About'));
+  const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';credit.addEventListener('click',()=>route('About'));
   const footer=make('footer','orbit-footer');const footerLinks=make('nav','orbit-footer-links');footerLinks.setAttribute('aria-label','About and feedback');footerLinks.append(about);footer.append(footerLinks,theme,credit);
-  // Shared hit count, not a unique-person metric. Never count local QA.
-  if(['field-kit-mobile-preview.delbert-hifield.chatgpt.site','fieldkit.pro','www.fieldkit.pro','sexypowershell.com','www.sexypowershell.com'].includes(location.hostname)){
-    const visits=make('a','orbit-visits');
-    visits.href='https://hits.sh/sexypowershell.com/field-kit-7c84e192/';
-    visits.target='_blank';visits.rel='noopener noreferrer';
-    visits.title='Page visits since activation · powered by hits.sh';
-    const badge=document.createElement('img');badge.alt='Visits';badge.height=20;
-    badge.referrerPolicy='no-referrer';
-    badge.addEventListener('error',()=>visits.remove());
-    badge.src='https://hits.sh/sexypowershell.com/field-kit-7c84e192.svg?label=Visits&style=flat-square&color=363c3b&labelColor=242928';
-    visits.append(badge);footer.append(visits);
-  }
+  const visits=make('span','orbit-visits','Visits ');visits.title='Page visits since activation';
+  if(['fieldkit.pro','www.fieldkit.pro','field-kit-mobile-preview.delbert-hifield.chatgpt.site'].includes(location.hostname)){
+    const badge=document.createElement('img');badge.alt='Visit count';badge.height=18;badge.referrerPolicy='no-referrer';
+    const updateVisitBadge=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';badge.src='https://hits.sh/sexypowershell.com/field-kit-7c84e192.svg?label=&style=flat-square&color='+ (dark?'1e2524':'efedf5')+'&labelColor='+(dark?'1e2524':'efedf5')+'&logoColor='+(dark?'f7f5fc':'312a40');};
+    badge.addEventListener('error',()=>{badge.replaceWith(document.createTextNode('Unavailable'));});visits.append(badge);updateVisitBadge();new MutationObserver(updateVisitBadge).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  }else visits.append(document.createTextNode('_'));
+  header.append(visits);
   workspace.prepend(header);workspace.append(main,footer);
-  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=!active;setup.hidden=active;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');}
+  const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left+3)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.color=tourStyle.color;visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop=Math.max(0,h.bottom-r.bottom)+'px';};
+  new ResizeObserver(alignVisits).observe(header);alignVisits();
+  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=!active;setup.hidden=active;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');visits.hidden=current==='Start Here'||current==='About';}
   new MutationObserver(sync).observe(sourceNav,{childList:true,subtree:true});new MutationObserver(sync).observe(favorite,{attributes:true,attributeFilter:['aria-pressed']});new MutationObserver(updateTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   document.querySelector('[data-catalog-view="list"]')?.click();if(window.location.hash!=='#start-here')route('Full Library');sync();updateTheme();
 })();
