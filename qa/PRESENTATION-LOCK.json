@@ -1,7 +1,7 @@
 {
   "status": "APPROVED_LOCKED",
-  "source_commit": "30e8631e962a238f07171d7fc83ab53678bd2558",
-  "index_sha256": "33681e0377d9777c4a524143c6e43b5a3af48fd53e2d1d7d1397d7d6a561768d",
-  "version_id": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_bacf3f907a808191a4c9a8bc2756170c",
-  "operational_candidates": "withheld_pending_validation"
+  "source_commit": "a12070c4c905e0cd8c9579fc2ed1643aa3069b39",
+  "version_id": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_ebab1ae02fb081919836d3c97b073a27",
+  "operational_candidates": "withheld_pending_validation",
+  "index_sha256": "9088072e37e349e63d5c0aeb4672fc94a83f7c33cacf6743962d57d190fb5b3e"
 }

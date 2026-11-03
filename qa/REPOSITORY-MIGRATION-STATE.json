@@ -1,0 +1,54 @@
+{
+  "status": "COMPLETED",
+  "pro": {
+    "repository": "Grimmieeee/FIELDKIT-PRO",
+    "branch": "main",
+    "approvedSourceCommit": "a12070c4c905e0cd8c9579fc2ed1643aa3069b39",
+    "importCommit": "5538846fab3e8dc76ddb21667b8d3a2148b52620",
+    "sourceFiles": 301,
+    "sourceHashMismatches": 0,
+    "visibility": "private"
+  },
+  "archive": {
+    "repository": "Grimmieeee/FIELDKIT-ARCHIVE",
+    "branch": "main",
+    "commit": "27c0333fb0b408fe3e0097103574fe793f0027e1",
+    "snapshotFiles": 1152,
+    "hashMismatches": 0,
+    "visibility": "private",
+    "kind": "default-branch-file-snapshots",
+    "sources": [
+      {
+        "repository": "Grimmieeee/FieldKit",
+        "commit": "3015e5f359d75053e71b0f61120f59e60986e8fe",
+        "files": 262
+      },
+      {
+        "repository": "Grimmieeee/field-kit",
+        "commit": "e5c43c4ef4e5b32b461da5841339bc8ac571998b",
+        "files": 352
+      },
+      {
+        "repository": "Grimmieeee/Jumpbox",
+        "commit": "0133388a50f94cdbd55a869d4a2942d2b6742bf9",
+        "files": 286
+      },
+      {
+        "repository": "Grimmieeee/pwsh-operations-catalog",
+        "commit": "05b7b7ff9afe054617da08635fe35e45ceecd54a",
+        "files": 252
+      }
+    ],
+    "originalRepositories": "untouched",
+    "history": "retained in original repositories, not migrated"
+  },
+  "domain": {
+    "hostname": "fieldkit.pro",
+    "observedHttpsStatus": 200,
+    "observedTitle": "Sexy PowerShell | THE FIELD KIT",
+    "servesApprovedPreview": false,
+    "source": "pwsh-operations-catalog GitHub Pages",
+    "changesMade": false
+  },
+  "operationalCandidates": "withheld_pending_Windows_and_tenant_acceptance"
+}
