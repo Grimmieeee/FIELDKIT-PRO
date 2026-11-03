@@ -29633,7 +29633,7 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   const search=document.getElementById('search');search.placeholder='Search for a custom script or quick command';search.setAttribute('aria-label','Search scripts, quick commands and guides');
   palette.append(searchWrap,catalog);main.append(palette);
   const navigation=make('nav','orbit-categories');navigation.setAttribute('aria-label','Script categories');
-  const domains=[['Full Library','All'],['Quick Commands','Quick Commands'],['Endpoint','Endpoint'],['Identity','Identity'],['Incident Response','IR'],['Licensing','Licensing'],['Mailbox','Mailbox'],['Reports','Reports'],['Tools','Tools'],['Toys','Toys']];
+  const domains=[['Full Library','All'],['Quick Commands','Quick Commands'],['Endpoint','Endpoint'],['Identity','Identity'],['Incident Response','Incident Response'],['Licensing','Licensing'],['Mailbox','Mailbox'],['Reports','Reports'],['Tools','Tools'],['Toys','Toys']];
   for(const [area,label] of domains){const b=make('button','orbit-category',label);b.type='button';b.dataset.orbitArea=area;b.addEventListener('click',()=>route(area));navigation.append(b);}main.append(navigation);
   const count=document.getElementById('favoriteCount')||make('span','','0');count.id='favoriteCount';if(!/^\d+$/.test(count.textContent))count.textContent='0';favorite.replaceChildren(make('span','orbit-favorite-star','☆'),make('span','orbit-favorite-label','Favorites'),count);favorite.setAttribute('aria-label','Show Favorites');favorite.title='Favorites saved in this browser';utilities.append(favorite);
   const about=make('button','orbit-about','About');about.type='button';about.addEventListener('click',()=>route('About'));
