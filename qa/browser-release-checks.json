@@ -1,0 +1,20 @@
+{
+  "scope": "Chromium browser against local assembled candidate; hosted browser reached a sign-in gate",
+  "passed": [
+    "Search for account status resolves expected card",
+    "Favorite save and filter work; saved favorite survives reload",
+    "Dark theme survives reload after removing forced-light proof code",
+    "Updated app card has no download or view-source action",
+    "Long BEC card and expanded instructions fit 390, 414 and 768 CSS-pixel iframe viewports without horizontal overflow",
+    "Desktop document has no horizontal overflow at 1363 CSS pixels",
+    "All four frozen stylesheet blocks are unchanged",
+    "All 59 enabled PowerShell version headers match selected card versions"
+  ],
+  "unverified": [
+    "Physical iPhone and Safari",
+    "Signed-in HTTPS browser download acceptance",
+    "Complete authenticated hosted-source checksum sweep",
+    "Windows launch, authentication, input, results and clean close",
+    "Live Graph, Exchange Online and AD workflows"
+  ]
+}

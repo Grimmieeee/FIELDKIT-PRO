@@ -1,0 +1,14 @@
+{
+  "changes": [
+    "Compact button-style flags at upper right beside return path",
+    "Input-specific third instruction for 41 input-driven workflow cards",
+    "No Run instructions for Quick Commands or context-only workflows"
+  ],
+  "checks": [
+    "311-entry framework audit passed",
+    "All 41 visible instruction sections have exactly three steps",
+    "User UPN, mailbox, group, CSV/TXT, evidence, API keys and local paths mapped from existing input metadata",
+    "Browser spot check: Get User Account Status third step and upper-right Read only badge"
+  ],
+  "script_changes": false
+}

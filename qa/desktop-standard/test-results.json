@@ -1,0 +1,490 @@
+{
+  "scope": "PowerShell parser and isolated extracted export functions; no Graph, EXO, AD or full script entrypoints executed",
+  "results": [
+    {
+      "name": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/GET-USER-GROUPS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/GET-USER-GROUPS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/utility/PREPARE-FIELD-KIT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/utility/TEST-SENSITIVE-DATA.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "published-source/utility/UPDATE-WINDOWS-APPS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "tools/GET-TERMINAL-READINESS-CHECK.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "tools/git-handoff.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "tools/git-repo.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "tools/INVOKE-FILE-INVENTORY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "tools/INVOKE-FILE-INVENTORY.ps1",
+      "result": "PASS",
+      "detail": "Isolated export/path checks; entrypoint not executed"
+    },
+    {
+      "name": "toys/attractor.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/rain.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/SET-THEME-BASIC.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/SET-THEME-COBALT.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/SET-THEME-SEAGLASS.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/SET-THEME-SILICON-VALLEY.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    },
+    {
+      "name": "toys/static.ps1",
+      "result": "PASS",
+      "detail": "PowerShell parser"
+    }
+  ]
+}

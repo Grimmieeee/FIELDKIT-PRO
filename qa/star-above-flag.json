@@ -1,0 +1,13 @@
+{
+  "changes": [
+    "Removed visible X from cards",
+    "Favorite star centered above flag group",
+    "Opening keyboard focus moves to Catalog path instead of hidden close control"
+  ],
+  "checks": [
+    "Browser star and flag horizontal centers both 1269.625px",
+    "Browser confirmed star above flag and X hidden",
+    "Catalog path closes card and returns to results"
+  ],
+  "script_changes": false
+}

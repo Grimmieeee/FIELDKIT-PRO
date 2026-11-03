@@ -1,0 +1,103 @@
+## Card and relationship checks
+
+- [ ] Card and source objective match exactly; display title matches where appropriate.
+- [ ] Scope and input formats are traced to source behavior, including one versus many targets.
+- [ ] Required preparation, default scope and consequential local changes are visible in the rendered card.
+- [ ] Three related tools per script are unique, available and task-relevant; no unsupported handoff is implied.
+- [ ] Related navigation opens the intended source-bound card and retains its impact labels.
+- [ ] Presentation evidence, package eligibility and exact-source operator verification remain distinct.
+
+# Publishing Checklist
+
+Run this before making a script, document, or workflow publicly available.
+
+## Source review
+
+- [ ] The file is intentionally approved for public release.
+- [ ] The current version is the intended canonical version.
+- [ ] The filename is clear and stable.
+- [ ] Comments do not expose internal context.
+- [ ] Example values are generic.
+- [ ] Authenticode signature blocks from internal/private signing identities are removed from the public copy unless intentionally published.
+- [ ] Publication did not modify the user's working/original script.
+- [ ] The public copy is the exact version that was reviewed and approved.
+- [ ] Any executable change made during sanitization was treated as a new revision and reviewed again.
+
+## Secret scan
+
+Confirm the file contains no:
+
+- passwords;
+- API keys;
+- access or refresh tokens;
+- client secrets;
+- private keys;
+- certificate private material;
+- connection strings;
+- embedded credentials.
+
+## Generated secret handling
+
+When the tool creates or resets a password, recovery code, token, or equivalent temporary secret:
+
+- [ ] The secret is not automatically exported to a file or log.
+- [ ] The secret is not automatically copied to the clipboard.
+- [ ] Summary output excludes the secret.
+- [ ] The secret is shown only after the related change succeeds.
+- [ ] Terminal capture / transcription risk is disclosed when the secret is displayed.
+
+## Proprietary / environment scan
+
+Remove or replace:
+
+- client/company names;
+- tenant IDs;
+- internal domains;
+- user UPNs;
+- server and jumpbox names;
+- private filesystem paths;
+- internal ticket formats when not needed;
+- app-registration IDs;
+- certificate subjects/thumbprints;
+- protected-group names;
+- private allowlists / exclusion lists;
+- internal repository names when they add no public value.
+
+## Operational review
+
+- [ ] Risk flag matches behavior.
+- [ ] Required permissions are documented.
+- [ ] Destructive actions are obvious.
+- [ ] Confirmation behavior is appropriate.
+- [ ] Error paths are reviewable.
+- [ ] Data gaps are not presented as clean.
+- [ ] Export behavior is safe.
+- [ ] The script does not rely on an unstated repository/current-directory assumption.
+- [ ] File Explorer > Run with PowerShell works when that is the intended launch model.
+- [ ] Missing modules, permissions, or prerequisites fail with an actionable message.
+
+## Catalog review
+
+- [ ] Run `pwsh -NoProfile -File tools/check-powershell.ps1`; all tracked PowerShell files AND effective inline quick commands parse without execution.
+- [ ] Copied commands contain no decorative separators, stray braces or unquoted angle-bracket placeholders.
+- [ ] Account-deletion and hard-delete commands show DESTRUCTIVE alongside MAKES CHANGES.
+- [ ] Graph preparation specifies delegated scopes; diagnostic/disconnect commands do not demand a new connection.
+- [ ] Cards lacking both published source and inline code show SOURCE PENDING and no launch preparation.
+- [ ] Every script card has source-backed CHECKS; GUARDS includes actual approval and target-selection safeguards.
+- [ ] Quick-command example targets have replacement directions in INPUT.
+- [ ] Source-bound card and connection review hashes match the released bytes; review both after changing source.
+- [ ] Add semantic versions during formal release review; do not invent versions or VERIFIED marks for legacy files. Operator evidence remains mandatory for verification.
+- [ ] Display name matches the actual task.
+- [ ] Scope is correct.
+- [ ] Purpose/category is correct.
+- [ ] Primary module/platform is correct.
+- [ ] Risk state is correct: READ ONLY, MAKES CHANGES, or MAKES CHANGES + DESTRUCTIVE.
+- [ ] Filename is correct.
+- [ ] Card checklist reflects real behavior.
+- [ ] INPUT matches actual prompts and separates prerequisites from script-provided choices.
+- [ ] Every card claim is traced to this source version; runtime-dependent claims are operator-tested before verification.
+- [ ] Friendly product/application names and explicit unresolved lookup behavior are checked; technical SKU codes alone do not satisfy the friendly-name standard.
+- [ ] Connect command is accurate.
+- [ ] Source loads from an approved same-origin path.
+- [ ] Published source matches the reviewed approved file.
+- [ ] COPY and SAVE actions work.

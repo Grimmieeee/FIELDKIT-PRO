@@ -1,0 +1,247 @@
+{
+  "task": "Workflow overlap review: licensing, tenant, identity, mailbox only",
+  "review_mode": "Source-only behavioral comparison; no script execution or changes",
+  "published_baseline": "af51d3cf7e59975112d62480a4377d4c2a2c40f5",
+  "source_package": "FIELD-KIT-ALL-IN-ONE.zip recovered from Library; plus focused domain and closing review packages",
+  "files": [
+    {
+      "area": "identity",
+      "file": "GET-ACCOUNT-STATUS.ps1",
+      "reviewed_sha256": "a652d89d98fd02eaf2a002ce45716b2a3726121a38a32bf824b90cba81661ddd"
+    },
+    {
+      "area": "identity",
+      "file": "GET-USER-GROUPS.ps1",
+      "reviewed_sha256": "10ece6af1cb9f84ef4922e232227cca949d077f4e730baea9e2311eaf7360b04"
+    },
+    {
+      "area": "identity",
+      "file": "GET-USER-PREDELETE-CHECK.ps1",
+      "reviewed_sha256": "7aab45db8d6dc4684ade972f3a01ca6804a3c35e829fc8b76f8b1852e700862f"
+    },
+    {
+      "area": "identity",
+      "file": "GET-USER-SECURITY-SNAPSHOT.ps1",
+      "reviewed_sha256": "9a3822559b783e82719d920bec782513a96597f46d35a9561dfc28e09810bbd1"
+    },
+    {
+      "area": "identity",
+      "file": "Group-Members-Lookup.ps1",
+      "reviewed_sha256": "5ecdbcad012b4efe2d3bb2a1efc53c0b4ebc33e2b282850d1f4f3ef45d01eec7"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-ASSIGN-LICENSES.ps1",
+      "reviewed_sha256": "d6a10abf3b55a5db232aa7512c79f682e03d1e5d59fa65b006d6529d498ff326"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "reviewed_sha256": "715b3e28730d878fa6a59b8c1f871153f93bace0e619b54aea6c2a7972e9f2a8"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-DELETE-ACCOUNTS.ps1",
+      "reviewed_sha256": "a5c0147ddead0d7b9e3d8e79d7734c7465ab55670cc60d335c7c20352ef75f9a"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-DISABLE-ACCOUNTS.ps1",
+      "reviewed_sha256": "ee79f2e7f1623efb427212b5b204ba9bac44d72bfaf10d29d268f1fe6b53fc53"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "reviewed_sha256": "2770c3b60028f0efdeb4dadbb4e6f5c9bf8e95b76391df7472dba0c8fb43bd5e"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-REMOVE-LICENSES.ps1",
+      "reviewed_sha256": "37937a1a5d76992266aade25c60a06a4ee5d7aaabb301da134869d8d0ad35ffc"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-REMOVE-USER-GROUPS.ps1",
+      "reviewed_sha256": "e8df1f823fde0a6b0d89c5b0386e983000e12e09bcf3d61a138588f81e64ffed"
+    },
+    {
+      "area": "identity",
+      "file": "INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "reviewed_sha256": "3e61ac1dfa016c65ab14d8ebbf8345c1f2dc97c6c2a730cc60f758d7f35ee441"
+    },
+    {
+      "area": "identity",
+      "file": "RESOLVE-NAMES-TO-UPNS.ps1",
+      "reviewed_sha256": "28a154f96abbc3e2e407fb813c7ffd9b2515961b57e64ed9a5f295d3907ce3e1"
+    },
+    {
+      "area": "mailbox",
+      "file": "CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "reviewed_sha256": "5c070f1a92de6acf6ab4e82d39641605244981cce2a8e5e522a8044ea5078775"
+    },
+    {
+      "area": "mailbox",
+      "file": "GET-MAILBOX-FORWARDING.ps1",
+      "reviewed_sha256": "e8da14cc83055ae99d1ac0fb8ecbe8790773fec27b5d25de64e9f6aefcf52594"
+    },
+    {
+      "area": "mailbox",
+      "file": "GET-MAILBOX-PERMISSIONS.ps1",
+      "reviewed_sha256": "7d0fa756b4961b68fa193b01fc42a61c47f1dfd8a58a1c9bbaf3f1160d3dd55d"
+    },
+    {
+      "area": "mailbox",
+      "file": "GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "reviewed_sha256": "dcc5b5afd9a01b7ae4600324005fc03142d7346ba7c34d9e46013c9f1e970e51"
+    },
+    {
+      "area": "mailbox",
+      "file": "GET-ROOM-RESOURCE-ACCESS.ps1",
+      "reviewed_sha256": "e275bfd6eeed81f2a019f055c2106c631fdcd0856043de0b333832b0a959c222"
+    },
+    {
+      "area": "mailbox",
+      "file": "INVOKE-LITIGATION-HOLD.ps1",
+      "reviewed_sha256": "1541de4e9ec29974daed3a038a20cdf342a4967d4d418eaf4ef44bed08a9ddf7"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-ADMIN-ROLE-AUDIT.ps1",
+      "reviewed_sha256": "490aa5c8a03ac9cd16dadfd0a52deed71ece50419c4edef9a10f2ee6f72f90f8"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-APP-REGISTRATION-AUDIT.ps1",
+      "reviewed_sha256": "171e371849baed557f52ba94024cbd70d2bdb441f05387f3535eaf3e4b0ee4fa"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-CONDITIONAL-ACCESS-GAPS.ps1",
+      "reviewed_sha256": "72d9cdbe7cdf6b5d59c0bc894948ba4b26d8c88cd42da5265be1a24e6bbeb8ca"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-DEVICE-CODE-EXPOSURE.ps1",
+      "reviewed_sha256": "10c07903519b47ff6cd64bfc300730933d2a4b01d2530adda7d75b4b78bdaae4"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-GUEST-APP-CONSENT-AUDIT.ps1",
+      "reviewed_sha256": "14fd8149afa83e163fe7b6864cd56584d30be32b0fb6f2f8162e3de0025c6a0a"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-GUEST-USER-AUDIT.ps1",
+      "reviewed_sha256": "21aabb97bd5237ab4a363becdf1d4fc2795c9a8ff0b5141ec4746b791dfca45f"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-MFA-SECURITY-AUDIT.ps1",
+      "reviewed_sha256": "818e44dd3735c5aa8ffb7af89ec95b8d22af3112d69e8e2f65f9d2db7ddcba0c"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-OAUTH-CONSENT-AUDIT.ps1",
+      "reviewed_sha256": "456878fed4bca91a41b474266d3c34dee6de2463583151ffd722c7f7c8f52f18"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "reviewed_sha256": "91270bfa09d6cc97695fca7d7fc6dd545e0f2586406b88fae21cfa9d8b34716a"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-SECURE-SCORE-SNAPSHOT.ps1",
+      "reviewed_sha256": "d8880ef623fddfe0675ece8b1c08fe7d0e9a9cd91f619b5ffe83bb4ef6c418c5"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-SERVICE-PRINCIPAL-OWNERS.ps1",
+      "reviewed_sha256": "f5b9497c79569b14e79a7144a74481a56f42ed29671e2a98dffbf91043257d26"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "reviewed_sha256": "be307f499fbbd2c47ecbaa74179f8f5ad636f846f3cbe9975d53e8d6c3592bda"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-SIGNIN-ANOMALIES.ps1",
+      "reviewed_sha256": "799402d7463ed329404b551f8d6824b6e9de525443fb6c58107d98c659b7b337"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-STALE-SIGNIN-REVIEW.ps1",
+      "reviewed_sha256": "7ce895928673d6777e4a352dad7e60bf76bd08ec3b18dd855f7251aa38f83d2b"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-DRIFT-REVIEW.ps1",
+      "reviewed_sha256": "ebe2c154b269b42cf941d95e267f92b5892759625eb479a9cd29b0851531a2cf"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-GROUP-OWNERS.ps1",
+      "reviewed_sha256": "08d0963984621dc3cfa834377f8adc8b2aaca3ea13254af0545e896ffe4a83ac"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-INBOX-RULES-AUDIT.ps1",
+      "reviewed_sha256": "451956070fd537fd9f72f2928364e927e2cd6c9c12487d25297fee56d9de7d3a"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-LICENSING-AUDIT.ps1",
+      "reviewed_sha256": "cb4b95e22c52b66f1e69523109ca8cf22a7f705bb8202880e65e10b52656468a"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "reviewed_sha256": "f5a29e1824a7e6b078b7e8e5871d0ed3f74cd5c2977d20c6fc988ac5a63df475"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "reviewed_sha256": "25fa5cb33ab0f374c047853f6f82555a32fd823614e7757a97d0bdf903e280dc"
+    },
+    {
+      "area": "tenant",
+      "file": "GET-TRANSPORT-RULES-AUDIT.ps1",
+      "reviewed_sha256": "321403df6bad2378f5a5dd1fdf241d8d2e9f67f87a302157f830765477ce453c"
+    }
+  ],
+  "existing_decisions": {
+    "archive": [
+      "GET-DISTRIBUTION-GROUP-MEMBERS.ps1",
+      "GET-ROOM-RESOURCE-ACCESS.ps1"
+    ],
+    "keep": [
+      "GET-ACCOUNT-STATUS.ps1",
+      "GET-USER-SECURITY-SNAPSHOT.ps1",
+      "GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "GET-MAILBOX-PERMISSIONS.ps1",
+      "GET-MAILBOX-FORWARDING.ps1",
+      "INVOKE-LITIGATION-HOLD.ps1",
+      "CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1"
+    ]
+  },
+  "additional_archives_recommended": [],
+  "strongest_overlaps": [
+    "Mailbox Permissions / Mailbox Forwarding: shared forwarding and rules; focused forwarding resolves recipients and exports structured rows",
+    "Quarterly Cleanup / Stale Signin / Group Owners / Forwarding: summary wrapper versus full focused results",
+    "Tenant Security Snapshot / admin roles / CA / consent: counts versus detailed findings",
+    "Device Code Exposure / Signin Anomalies / CA: overlapping data with distinct protocol and policy focus"
+  ],
+  "coverage_notes": [
+    "Dynamic License Group inventories users already holding enabled plans; it does not assign licenses",
+    "App Consent audits delegated grants; App Registrations requested permissions do not establish actual app-only grants",
+    "Resource booking permissions lost by previously approved archive are not replaced by general mailbox ACL tools"
+  ],
+  "limits": [
+    "Current Site source-hash index differs from recovered workflow packages; current unreleased source byte parity is UNVERIFIED",
+    "No current-hash operational acceptance inferred from historical verification",
+    "No additional archive/catalog/source implementation performed",
+    "Quick Commands excluded"
+  ]
+}

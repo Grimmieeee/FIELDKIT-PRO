@@ -1,0 +1,260 @@
+[
+  {
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "function": "Get-InputUPNs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "function": "Get-InputGroups",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "function": "Get-InputGroups",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "function": "Get-InputGroups",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "function": "Get-InputUsers",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "function": "Get-InputUsers",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "function": "Get-InputUsers",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "function": "Get-InputLines",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "function": "Get-InputLines",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "function": "Get-InputValues",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "function": "Get-InputValues",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "function": "Get-InputValues",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "function": "Get-InputUPNs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "function": "Get-InputUPNs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+    "function": "Get-InputUPNs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "function": "Get-InputUsers",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "function": "Get-InputUsers",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "function": "Get-InputUsers",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+    "function": "Import-InputEntries",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+    "function": "Import-InputEntries",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "function": "Get-MailboxInputs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "function": "Get-MailboxInputs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "function": "Get-MailboxInputs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "function": "Get-MailboxInputs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "function": "Get-MailboxInputs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "function": "Get-MailboxInputs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "function": "Get-InputUPNs",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "function": "Get-InputUPNs",
+    "format": "direct",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".csv",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".txt",
+    "result": "PASS"
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "function": "Get-InputLines",
+    "format": ".csv",
+    "result": "PASS"
+  }
+]

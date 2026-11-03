@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "file": "VERIFY-FIELD-KIT.ps1",
+  "sha256": "8a014ac3a099ec3a092cdbe29edd5b426debf5d9628e1def58633046cd221697",
+  "bytes": 545067,
+  "embedded_sources": 59,
+  "locked_candidates": 38,
+  "status": "LOCAL_TESTS_PASSED_WINDOWS_LIVE_UNEXECUTED"
+}

@@ -1,0 +1,57 @@
+{
+  "scope": "Extracted actual resolveSource and approvedSourceUrl; synthetic fetch responses only, not browser download acceptance",
+  "results": [
+    {
+      "name": "Approved bytes preserve BOM and CRLF when saved as Blob",
+      "result": "PASS"
+    },
+    {
+      "name": "Checksum mismatch blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Empty file blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "HTML MIME blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "HTML body disguised as source blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Redirect response blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "HTTP failure blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Oversized declared length blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Oversized stream blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Invalid UTF8 blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Traversal path blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "External source URL blocks",
+      "result": "PASS"
+    },
+    {
+      "name": "Missing checksum blocks",
+      "result": "PASS"
+    }
+  ]
+}

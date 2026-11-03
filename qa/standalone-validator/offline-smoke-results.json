@@ -1,0 +1,15 @@
+{
+  "scope": "Linux PowerShell 7.6; test-configured Desktop directory, not Windows Desktop validation",
+  "passed": 151,
+  "expected_failures": [
+    "Windows host"
+  ],
+  "skipped": [
+    "Windows PowerShell 5.1",
+    "Live connections"
+  ],
+  "payload_sha256": "2c91c20cba094d0e256eeacae7de75f3c1b922a0bd34f9aba9fcb0de8652a6df",
+  "embedded_sources": 59,
+  "csv_roundtrip": "PASS",
+  "summary_report_readback": "PASS"
+}

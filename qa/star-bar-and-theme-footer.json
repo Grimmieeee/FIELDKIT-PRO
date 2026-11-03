@@ -1,0 +1,14 @@
+{
+  "changes": [
+    "Restored card star to top bar; its center tracks flag center on resize",
+    "Tour left and Favorites right in main header",
+    "Quiet moon control moved above footer signature"
+  ],
+  "checks": [
+    "Browser confirms star is inside drawer-head",
+    "Star and flag centers match at 1269.625px",
+    "Browser confirms Tour then Favorites, moon in footer",
+    "311-entry framework audit passed"
+  ],
+  "script_changes": false
+}

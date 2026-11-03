@@ -1,0 +1,27 @@
+Audit Tenant Apps
+Review app ownership, credential expiry and requested permissions.
+Read only. Requested permissions are not proof of granted access.
+Audit Tenant Apps
+Review app ownership, credential expiry and requested permissions.
+Read only. Requested permissions are not proof of granted access.
+Audit Tenant App Consent
+Review delegated app access, including guest consent.
+Read only. Unknown publishers are shown by default.
+Application-only grants are outside this delegated-consent review.
+Audit Tenant App Consent
+Review delegated app access, including guest consent.
+Read only. Unknown publishers are shown by default.
+Application-only grants are outside this delegated-consent review.
+Audit Tenant App Consent
+Review delegated app access, including guest consent.
+Read only. Unknown publishers are shown by default.
+Application-only grants are outside this delegated-consent review.
+
+File                           AllPublishers GuestView Result
+----                           ------------- --------- ------
+GET-APP-REGISTRATION-AUDIT.ps1         False     False PASS
+GET-APP-REGISTRATION-AUDIT.ps1          True     False PASS
+GET-OAUTH-CONSENT-AUDIT.ps1            False     False PASS
+GET-OAUTH-CONSENT-AUDIT.ps1             True     False PASS
+GET-OAUTH-CONSENT-AUDIT.ps1            False      True PASS
+

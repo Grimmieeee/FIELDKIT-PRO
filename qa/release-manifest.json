@@ -1,0 +1,580 @@
+{
+  "baseline_repository": "Grimmieeee/pwsh-operations-catalog",
+  "baseline_commit": "af51d3cf7e59975112d62480a4377d4c2a2c40f5",
+  "source_files": [
+    {
+      "path": "OPERATING-STANDARDS.md",
+      "preview_sha256": "514da2ce9c0b0677b9bc722d23c79579a74b273801a6ed69dc3a1d3b3a93e731",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "d8da345212ab7c9b4801b9e5255930b34651d33bc41dab6f6d37881baf617815"
+    },
+    {
+      "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+      "preview_sha256": "aad0ecfefbce089c0fac6eaf4120686bfd55092c7ba72186f2b9e1b30f559d1b",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "94258427439cc292f33bd76e835b10a407218bc9136537874a9cd267f2e20b75"
+    },
+    {
+      "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+      "preview_sha256": "1b4c765f02201d6ccb27fbc42d1672ab4a4de968eeb190bede1d5b3321c931f3",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "5c7baa7d0551de2eb0c21650bb8943ca198697c94cef2f556a5ab458f7916d67"
+    },
+    {
+      "path": "published-source/identity/GET-USER-GROUPS.ps1",
+      "preview_sha256": "9b2e09f42aef591f143a60c8578b415179fcf317b5700d0e057019520d81977a",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "d0b71178ddca2eb793610f21d5f52266d454360ca848d7257ebb3347d6ec9bdd"
+    },
+    {
+      "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+      "preview_sha256": "e22cc2098c9fbb4c5fa08806966296e144c1448501ae4d3f7fdce0912a7fce58",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "4ae5545f73829374e5b1500bd3ba8cc029e3f095e700e9ce76bf835d8a034107"
+    },
+    {
+      "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+      "preview_sha256": "dda2e81f675e4239fb6ec3179abf722a01f8e65237634f1a6078c9592bdfe242",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "b9d8d41d6fe83eb0c5b3c8cb6d71989719d8622bc359116fc20618814399cff6"
+    },
+    {
+      "path": "published-source/identity/INVOKE-ASSIGN-LICENSES.ps1",
+      "preview_sha256": "f656887775188908d7ceaa709e8ec6ea0df5cd5cbbcc54ca7aa0e89ace88d07e",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "preview_sha256": "8489b19c135d1f878cd284f83d60f7881ae3f5c8c644fcf1e45263b71a9432cf",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "7ed4b8f50be401d4004b6ff4672d19bcad5ab6e7f47cf7bc3d0a3e144290f83d"
+    },
+    {
+      "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+      "preview_sha256": "1d248da8887e9373616b7a38b32ff13765e79aa422444f4093f649a3b6fa0852",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "0831cf439bc477cae85d6b6a4f2e2eb1043d4e61d5d4e65964eaa7de658c0eef"
+    },
+    {
+      "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+      "preview_sha256": "c1c0acb033950bdf547cf85e363d3857cfcdfd171559d3f67bc41405b3a32c01",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "a123394ca9a041cb7f49225b334ce6fe02637038c554944d1c222d325fa72287"
+    },
+    {
+      "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "preview_sha256": "5c90f8fcac56897c1d670af0fbf74b266671949c51ed5ef7845b5abc7e076b4f",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "23a9db7bcacb8f388d2e71b3cc54b720a00b9d377af7c10bac263b32f0008b62"
+    },
+    {
+      "path": "published-source/identity/INVOKE-REMOVE-LICENSES.ps1",
+      "preview_sha256": "a0ad36cebefab97ffb453fc0482086e65663290df5954ff2f0332670e150823f",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+      "preview_sha256": "d218d0d44d8252d9363987e64e292c17473a96674bbe072213243c990f601447",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "8bc820639a1d6e1479e0b1c7a2a1f58953fb0eb5396f922628a73855b0e3fc54"
+    },
+    {
+      "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "preview_sha256": "d870da700744fda8865db9e64d2453f0a23849fc1d5dbcf7acfb0b8d5f72eb19",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "40abec4baa9461a7ce2f60159d747340023985fe505191d1d7e530873d7b674a"
+    },
+    {
+      "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+      "preview_sha256": "72a8e4f1676a16621fa1af75edf2f2842ff3b6949566a26d5a1cc1a8af1b8a28",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "8b150fd6e093ecf1a4b2b77cc5856f18de47a0f101a8f7257f0eea4742d12f8d"
+    },
+    {
+      "path": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+      "preview_sha256": "572326d0126a28b6fc2844e675195d13cd0d057a26cfefc2de05c4b99d86f1e7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "c8b857d6191a6bceecb651413552cad0bbc8a421046bfe2a95390728cb89ce10"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+      "preview_sha256": "a793699cc5aafb3db57e247c4e72814a97d7cb28258989bbbbcd2e582c20ad97",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "1fa5c320ff44327b602d61a94ba5a76b9571b51fdbf36c77be0c59e34795fad1"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+      "preview_sha256": "0f527b092ab3969403d9fb72d49298820c5ea2cc9aacc8798884fc33edf5dd33",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "a97b049fad9c2a2f7f4344bc90a68689d1e1d5c4f720f2b6533b5106ae69970a"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+      "preview_sha256": "bc3e9fedf99710ed5f6f60249a765d658d291e3223f0371a31d7e315209b554b",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "3a78895cbec147f408f82929e720c7e527c8bd3f18dad6d86c1e31ee1c868043"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+      "preview_sha256": "4ec5af1b96a76647599745fcd5702ae92134027d25f26712798ac7210debd2da",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "e0864cdd7dd81324a3b1a71fbf80841c14d3bd86d0ca7abb100416b4a243461e"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+      "preview_sha256": "af21ee31984e8b20c4f3c6b3fbc12dd34af3aa20d1c2cf619a6a42977fadaa9a",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "a80ca2ee465da49ebb7d38b6728265be427d93a4aa7eb129d3e18f202a4b5ecf"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+      "preview_sha256": "49ceadcde6c3dcfc118fb36255dc2014d126772db6aab8f109f52a1255f27ad4",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "809933ffd6759b71b20324825887e7d5b1530e1eecce8d8d0cd92c3ce5a57742"
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+      "preview_sha256": "6ce6792f65897a9b55d438bffde23bc673273c308cb57cb1de5d98a534fc94d7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "aacd5c9a0c91ecbd16ceedaa14b433aba25f882f3752efd903996bfc95dbfbde"
+    },
+    {
+      "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+      "preview_sha256": "cb6b2a0e97f98cc8120438f4133da5d83bd024a537f73c557af21c8099de9172",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "bbbe2551ba6054995d4caa517e23a32711c0afbd4b7becbf2a5575662409482f"
+    },
+    {
+      "path": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+      "preview_sha256": "62b88726f7c6e20ea2c3bd73e493203ac1091d6e177cbf6a4050ba096cf8c44c",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "1b21a21f15d6618c0964c37ab21e0c167cfba5616efe8d108dbb18ac1aa0ce4e"
+    },
+    {
+      "path": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+      "preview_sha256": "1efb508e271efc68492122c82bf12aeac32d0c72d00954087633bdff4eb94327",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "94526ec8ea67e88d9373d1cdb9beadf7ec4992b80cafcd4a97797c2a10c488f4"
+    },
+    {
+      "path": "published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "preview_sha256": "5544d8f8d10ba4a3847046c1042530b0139af81ad80fd67cbe832328dd810012",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "c50e6a31dbf37dea44f651d4cfdced99ba4f3ce053a8ec3e75edb1a8f4fb504d"
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+      "preview_sha256": "d55e4819b4b26e01d9ab4378b7c1bb541c99275fcb1b7f3f65d35d3f79b713be",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "0e184a41bd351c391985118eb128eaefad0311ec691abe4933868e6af5a88d91"
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+      "preview_sha256": "d8f5d90d590a5d5b5bc9b94a7ae261fc8551b51f114201aa1fc3092e8ac021b5",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "76535edd6d3e922cc44decedba707203716788afa4bdabbf68579549a57752e6"
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "preview_sha256": "16a778abc5a3a131c4c16da360c6a5edc71ed4cc3a5c4d99f4d9804fac5a846c",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "e9e75ef77efeb81017c8dcc6f3f05cd5deb4fb8eba90890560808406762f7fda"
+    },
+    {
+      "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+      "preview_sha256": "bb567c22de8fd7a393baeeb0881c56dc10a010193e6d9c330ce66ac96feb124d",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "1ea2ff740e1f5eb24ba4aafa92636fce025ed90ffbc4050e80ce5aedcb3568fe"
+    },
+    {
+      "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+      "preview_sha256": "5c8aa17c59c485e34cec3f8d7d4b374291673ce1e7d82edf51218f3baa09540a",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "764cf4825fa98591a0ab0bde803f96568e1a1c2d8ed4585095eda2460a04aa6c"
+    },
+    {
+      "path": "published-source/tenant/GET-APP-REGISTRATION-AUDIT.ps1",
+      "preview_sha256": "83ea897949b2a284bda5382a7ad0f3c8547cb686599d8dc4f4e1d599d5016979",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+      "preview_sha256": "2baa1a492facb5f7ac4757afe9d2492d1b82e75d74ec8a86fcb7b8c59b1dcffc",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "adebcd1ba46cb0e58a7ac4381547d2aa7f501a906b5c521d27ca0ac9121b6555"
+    },
+    {
+      "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+      "preview_sha256": "b2ff412364cdb05acbbb22a8411f383de20effccdfbd997a0116f325ea2cfdf7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "9595b261ea55f5fc61dd562df2e5297cd8d3fa8bf587d0d61cce5535df93e27b"
+    },
+    {
+      "path": "published-source/tenant/GET-GUEST-APP-CONSENT-AUDIT.ps1",
+      "preview_sha256": "f53d1ff79b14e5e804032cc52e9b465ab7ac79a83542f0a3e431936a8f4678a8",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+      "preview_sha256": "0fb28ce56524d752f4da82945cf6005b79c962ef163d979547d106be2132bf8d",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "641555328872d02331f3153eb686b48bf4cf5b21f67c7a9919c0bbef0d75da61"
+    },
+    {
+      "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+      "preview_sha256": "fa5d7cc1cf3cd24f653d253b00b19ec6f3d6182de043475e4e7e8e52638f12d7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "da69d7308448b31477b9de6ff104257a891562902ec0142a5b053b70482d73a5"
+    },
+    {
+      "path": "published-source/tenant/GET-OAUTH-CONSENT-AUDIT.ps1",
+      "preview_sha256": "15613b05bac843ad1e14736a6c4b3e7de78b692103e9f3d7c172f9ffb7d0b422",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "preview_sha256": "fba9b7e3335944851bfdcc9a54f58fb08c0186f616a8461a96d3ab126d60a093",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "df729d70508b81bf0328f0313d0de406e56f4204c3dc8460ef0ea8bb4eb91606"
+    },
+    {
+      "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+      "preview_sha256": "75bdefd227e7099501c358ba4b7a5a0a95567d260129f28b4148a776c70477c0",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "bf4d87b38d221c5e6b86fef69b10a1cb7c4d75e6fe8c5abe64ec5c99993f3e5d"
+    },
+    {
+      "path": "published-source/tenant/GET-SERVICE-PRINCIPAL-OWNERS.ps1",
+      "preview_sha256": "10889e47b203bab3dd594e5c1806cb9732c24a46aa0edd11a5d125bcf260e180",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "preview_sha256": "749ba7617908bf20eae41bb455a1ce22d6866083fa011b4761c2a03ce8b1fc5b",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "3f365d6e8677b2f59f1e3fba81f038c6645dd0e1e3a95b28c95804b161f06009"
+    },
+    {
+      "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+      "preview_sha256": "d60b5e1a4d90fbb671096130df042f2136d6ec93d54ad77f7d491a6232b16f40",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "dcde2b39589b9c740a7a9c20ff17cc59d8752cc555a9359f9d0210e18fa053b1"
+    },
+    {
+      "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+      "preview_sha256": "0dbd24f1736bda2e9be87db2f19f3217cef54b65e50d3e7deaec7c59e49601e1",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "27e94610728226f9c43f44631b4c9921fc6412ddf8d79f2e2617a7725c1a4fa6"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
+      "preview_sha256": "5362cdfb8a7de046b8805902d9f7f52084ed63f90513c1d1cf6b7efedbf148f4",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "f5f1fdd5b2d6739ecc07989244e5da3f36811d1589109d4e7892609e937abfc2"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+      "preview_sha256": "f41b755f77833589a5867b8da891685d4900a361e981535e76da69e02016a87d",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "dc04a5c13230de80a767d325a6739c3df6240618d20e6419315cb96a43f224b0"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+      "preview_sha256": "c55d09df5921c84193f3117a066009eecd5fd36397ae60f4b118ab6e6963ed83",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "c0a1a2459471df298746940de9a997ee60514cbec0bb11a821f4c7e2233c66f6"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-LICENSING-AUDIT.ps1",
+      "preview_sha256": "a710ab634324424a49b3fbf5c8777db0fcadbc03328ff5f0c30ea53c0dc81b39",
+      "status": "withheld",
+      "reason": "Updated candidate withheld pending Windows/tenant validation"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "preview_sha256": "704f5b34ba3dec7986cc74c3a932a87d5654b683e09848c1a6d11b11f3fcadac",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "90eadb894e2aa8ac36f62047a4c4aadcac67aa468c8bbbf583ec0992e6fc6e9c"
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "preview_sha256": "170ec244497f8763986d24954708a5b428c3ec7cf108e958d57d928c3d89161d",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "342829ae9c8df76225bdee4e0c76776aabb76a43a3c5756363a6add984ca0666"
+    },
+    {
+      "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+      "preview_sha256": "3e59e53d7b28fb256c8150cf582af63d265fe0bcda6a2bd932618770e39d127b",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "7c4ff63bee17b5669a05a76657f3cca0b5b3674b102ead014df742ae720c62ae"
+    },
+    {
+      "path": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
+      "preview_sha256": "e50d6fce991a15a0d7bf2070e1d34a91988c88b71ed892264a21dd0398cb97b0",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "218d4e788913c6a6d8d6578d8b1912cf7f68a8c4687ecaf6d557bbd4ea26cd60"
+    },
+    {
+      "path": "published-source/utility/PREPARE-FIELD-KIT.ps1",
+      "preview_sha256": "19b9b8bd6bcc8c739295628bd155e55364f6378298c9f65e5ba9c992ac83acbe",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "8b555611dffc223f909b9e13fa158f0daf472703ac9d42dc8d72d161cd430372"
+    },
+    {
+      "path": "published-source/utility/START-HERE.md",
+      "preview_sha256": "70bfe84c08fc627519c7989e054608b440d2025a0a219d630612a4c4f18ae0b3",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "ceaa8b9219d977a88e2f45f3af18c160671fb76812ba714a4dc437e51e9171f0"
+    },
+    {
+      "path": "published-source/utility/TEST-SENSITIVE-DATA.ps1",
+      "preview_sha256": "df1d408fa44a35c30b683e3c3919a4d0d622560fc251f94c10cbc2e25ea182da",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "594d18150acb832080f13776581f6d8d8d21d3addc7e14aa8aea017b76e9b69e"
+    },
+    {
+      "path": "published-source/utility/UPDATE-WINDOWS-APPS.ps1",
+      "preview_sha256": "7a2b6f3d08a1fd2474332c2ca1126818beda3eb3374af86136228353cf50e5a2",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "32fcfc1c298460301dc5fe7841bb5bddb768691e23f7c9f28270c5396349c3c3"
+    },
+    {
+      "path": "tools/connection-patterns.md",
+      "preview_sha256": "f186db47a6da071169e2ea0c1213a527f2f9eebbc78a4da2d1121db9fa387bc6",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "f186db47a6da071169e2ea0c1213a527f2f9eebbc78a4da2d1121db9fa387bc6"
+    },
+    {
+      "path": "tools/field-kit-build-standard.md",
+      "preview_sha256": "b6efdedf97856b7c96c51e73ccd5ee29ffecd6ea68c4b15895b70bb07eb244fa",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "b6efdedf97856b7c96c51e73ccd5ee29ffecd6ea68c4b15895b70bb07eb244fa"
+    },
+    {
+      "path": "tools/GET-TERMINAL-READINESS-CHECK.ps1",
+      "preview_sha256": "190cf7f6d4a921c48a7d842935db25f69dfccf5710d7ff457e01dfa8eb238cb1",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "0cdf541f4222218c359dddc9e441343d37ee7ad745cfe5588e06a9a45ad42316"
+    },
+    {
+      "path": "tools/git-handoff.ps1",
+      "preview_sha256": "7415aba9233490ff0e3f74d62ab9f90b965da9880fe9ec0890492bc99830ebf5",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "de09cbd42d120d932969dc229fa5437c7770fcdf6aed331f364acf6bec6c6531"
+    },
+    {
+      "path": "tools/git-repo.ps1",
+      "preview_sha256": "60ce7608c91a52b133e1c6024ae8f5f9ce52c934dbb227e928beaa0086ea5b86",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "3bcd5f6b61c9b5b24d3d8adcaa22f584e80bdfe0b612c9a53cacf9d03125b78c"
+    },
+    {
+      "path": "tools/git-tools.md",
+      "preview_sha256": "5aa1d822aa27dd41c43bab2554b87d925b1e1eb5fd41fc22f44c12d4cbfae21a",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "5aa1d822aa27dd41c43bab2554b87d925b1e1eb5fd41fc22f44c12d4cbfae21a"
+    },
+    {
+      "path": "tools/GitHub-Security-Check.ps1",
+      "preview_sha256": "ffe87d99aaf7652aac8839e977af4cd659e1a3f0e8f2cec9e14c53a33e8a3436",
+      "status": "withheld",
+      "reason": "No established source and matching operator guidance at this path"
+    },
+    {
+      "path": "tools/GitHub-Tools.ps1",
+      "preview_sha256": "4129a51ff25708697542e581fec10e3fb11ace65859cbdc8482cbb59115acfbe",
+      "status": "withheld",
+      "reason": "No established source and matching operator guidance at this path"
+    },
+    {
+      "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+      "preview_sha256": "6c004eeadb193f027536a56927100d12d78330760ee0f6ef63290a91762922a7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "435f354240c3178c5def5a4b2faaaaa013a7ef0d99f07fcf9170e69801b13279"
+    },
+    {
+      "path": "tools/lessons-learned.md",
+      "preview_sha256": "f6bc6f62b00d32ef007589d931d6ee05e63944738a5df3d57a01344193c7e00f",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "f6bc6f62b00d32ef007589d931d6ee05e63944738a5df3d57a01344193c7e00f"
+    },
+    {
+      "path": "tools/nato-phonetic-alphabet.md",
+      "preview_sha256": "c9dec1a66a3530972991663504e4c54e895e87093a43081404edfdf3da7288c7",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "c9dec1a66a3530972991663504e4c54e895e87093a43081404edfdf3da7288c7"
+    },
+    {
+      "path": "tools/powershell-standards.md",
+      "preview_sha256": "04656365e7bdfa57a1f67e9db43f34e31423f4a300835a6afae03f427d7be49b",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "1b431435c30764ca2ff5e0bdbf81deed62d0fcd0bbd5cd6b5ba3a51b8e514fd0"
+    },
+    {
+      "path": "tools/PROJECT-HANDOFF.md",
+      "preview_sha256": "dad6fb6695fcdb737cf1025a643bda3bb3cc7eada7594c046d588f8304cd4bae",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "b750357e69da53ab3c14380334b2ec38670b3ea04d20144681dfd8a0fe24708c"
+    },
+    {
+      "path": "tools/publishing-checklist.md",
+      "preview_sha256": "7823173f60c3567e9dcb2da26a8a021f4c23b23d9279223a93910153e99c24bc",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "7823173f60c3567e9dcb2da26a8a021f4c23b23d9279223a93910153e99c24bc"
+    },
+    {
+      "path": "tools/script-review-checklist.md",
+      "preview_sha256": "8ad6e773bf7edd85abc81a3f24ecd674c7a0ffc8d72e2638b3aafe6a9a98155e",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "8ad6e773bf7edd85abc81a3f24ecd674c7a0ffc8d72e2638b3aafe6a9a98155e"
+    },
+    {
+      "path": "tools/script-template-guide.md",
+      "preview_sha256": "49204f5c543f7a3a7a3ac0372d6d8e9111666b2d20824b68ff544c030f70ab30",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "49204f5c543f7a3a7a3ac0372d6d8e9111666b2d20824b68ff544c030f70ab30"
+    },
+    {
+      "path": "tools/Script-Tools.ps1",
+      "preview_sha256": "d3f9c68399ad0feadd73e5d963f9be36ddcc5065d9f441676809214bca8c521e",
+      "status": "withheld",
+      "reason": "No established source and matching operator guidance at this path"
+    },
+    {
+      "path": "tools/skills.md",
+      "preview_sha256": "69280cbd4203c3d96717d7f0f2343ed0566eb8ea2d5c9e2222eb6b7441217f92",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "69280cbd4203c3d96717d7f0f2343ed0566eb8ea2d5c9e2222eb6b7441217f92"
+    },
+    {
+      "path": "tools/Terminal-Tools.ps1",
+      "preview_sha256": "7f2371c001ced361783bdebfaa226502d1945769a75b96db2a288a2e4501e87c",
+      "status": "withheld",
+      "reason": "No established source and matching operator guidance at this path"
+    },
+    {
+      "path": "toys/attractor.ps1",
+      "preview_sha256": "bedac3bcadcccfe0655fcf174f58190dc94ae4d8be75bb3c7621cd0841b65dcc",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "1268680342075976f80599213dd97d25abc2af741a07a7f5de2ceab2c2ba4cc6"
+    },
+    {
+      "path": "toys/rain.ps1",
+      "preview_sha256": "f793a1a68a8245527597522077f40dda3eeb209bf9c6ad1164f0dde5ef9daf96",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "f793a1a68a8245527597522077f40dda3eeb209bf9c6ad1164f0dde5ef9daf96"
+    },
+    {
+      "path": "toys/SET-THEME-BASIC.ps1",
+      "preview_sha256": "fec05d645b419af560b86b17123fd22aa9fbd05874821be9d6dbffd1c2a1e959",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "9dc01f2210cf808379be2770450283f0d44be72c4d3cae3f9a0087c2f15e98f2"
+    },
+    {
+      "path": "toys/SET-THEME-COBALT.ps1",
+      "preview_sha256": "eaea4b76852dd48ed485007249b3911ef1e2ab0794e31b7b8bf47c9c74b33599",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "602ddcb368e716ca73ced3b799d847262faca237ee43b63a7070596ce37d9d2b"
+    },
+    {
+      "path": "toys/SET-THEME-SEAGLASS.ps1",
+      "preview_sha256": "d0bf50524882204c66ff9c7e2caf6c5416194651dcff0f4f10d78f6c29d81f45",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "629b919cea8aabd890151a2402241e426a4c0c331a9a4d5861bd9aaa340e888e"
+    },
+    {
+      "path": "toys/SET-THEME-SILICON-VALLEY.ps1",
+      "preview_sha256": "efc453ad8ed5d2b2ddd5d84166398aa16ed2dfb399af5dd9b41533e9d29fabaf",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "aab04649707578c0c57a9602b80cdae04465bff529fae0373d46f1aa2bc43739"
+    },
+    {
+      "path": "toys/static.ps1",
+      "preview_sha256": "4aa3ae630d9631f11d110f78925c6e112508b3ccc7ba703f833537bb3c9394e0",
+      "status": "enabled",
+      "reason": "Established published source and source-bound guidance",
+      "sha256": "4aa3ae630d9631f11d110f78925c6e112508b3ccc7ba703f833537bb3c9394e0"
+    }
+  ],
+  "enabled": 72,
+  "withheld": 11,
+  "windows_validation": "UNEXECUTED",
+  "live_tenant_validation": "UNEXECUTED"
+}

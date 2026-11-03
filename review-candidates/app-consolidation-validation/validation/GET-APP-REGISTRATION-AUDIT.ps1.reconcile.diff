@@ -1,0 +1,98 @@
+--- current
+
++++ recovered
+
+@@ -34,7 +34,7 @@
+
+ function Pause-End {
+     Write-Host ''
+-    Write-Host 'SESSION COMPLETE'
++    Write-Host 'F I E L D  //  K I T'
+     Write-Host ""
+-    Read-Host 'Press Enter to close session.' | Out-Null
++    Read-Host 'Press Enter to close.' | Out-Null
+ }
+ 
+@@ -145,9 +145,40 @@
+
+ }
+ 
++# Use the normal Graph sign-in/session; keep the resulting tenant identity internal.
++function Get-FKSessionTenant {
++    param([string]$ExpectedTenantId,[string[]]$RequiredScopes,[string[]]$TargetUPNs)
++    Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
++    $ctx=Get-MgContext -ErrorAction SilentlyContinue
++    if ($ctx -and $ExpectedTenantId -and $ctx.TenantId -ne $ExpectedTenantId) { throw 'The connected tenant differs from the expected tenant. Nothing was changed.' }
++    $pinnedTenant=$(if ($ctx) { [string]$ctx.TenantId } else { $ExpectedTenantId })
++    $missing=@($RequiredScopes | Where-Object { -not $ctx -or @($ctx.Scopes) -notcontains $_ })
++    if ($ctx -and $missing.Count -gt 0) { Disconnect-MgGraph -ErrorAction Stop | Out-Null; $ctx=$null }
++    if (-not $ctx) {
++        $command=Get-Command Connect-MgGraph -ErrorAction Stop
++        $parameters=@{Scopes=$RequiredScopes;ErrorAction='Stop'}
++        if ($pinnedTenant) { $parameters.TenantId=$pinnedTenant }
++        if ($command.Parameters.ContainsKey('ContextScope')) { $parameters.ContextScope='Process' }
++        if ($command.Parameters.ContainsKey('NoWelcome')) { $parameters.NoWelcome=$true }
++        Connect-MgGraph @parameters | Out-Null
++        $ctx=Get-MgContext -ErrorAction Stop
++    }
++    if (-not $ctx.Account -or -not $ctx.TenantId) { throw 'The signed-in tenant could not be verified.' }
++    if ($pinnedTenant -and $pinnedTenant -ne $ctx.TenantId) { throw 'The connected tenant differs from the expected tenant. Nothing was changed.' }
++    $org=Invoke-MgGraphRequest -Method GET -Uri 'https://graph.microsoft.com/v1.0/organization?$select=id,displayName,verifiedDomains' -OutputType PSObject -ErrorAction Stop
++    if (@($org.value).Count -ne 1 -or [string]$org.value[0].id -ne [string]$ctx.TenantId) { throw 'The signed-in organization could not be verified.' }
++    $script:FKTenantLabel=[string]$org.value[0].displayName
++    $domains=@($org.value[0].verifiedDomains | ForEach-Object { [string]$_.name })
++    foreach ($target in @($TargetUPNs)) {
++        if ($target -and ($domains -notcontains ([string]$target -split '@')[-1])) { throw 'A supplied user is outside the connected organization. Nothing was changed.' }
++    }
++    return [string]$ctx.TenantId
++}
++
+ function Ensure-Graph {
+     param([string[]]$Scopes, [string]$TenantId)
+-    if (-not $TenantId) { $TenantId=(Read-Host "Expected tenant ID (GUID; blank cancels)").Trim() }
++
++    $TenantId=Get-FKSessionTenant -ExpectedTenantId $TenantId -RequiredScopes $Scopes
+     $expectedGuid=[guid]::Empty
+-    if (-not [guid]::TryParse($TenantId,[ref]$expectedGuid) -or $expectedGuid -eq [guid]::Empty) { throw "A valid expected tenant ID is required. No audit was completed." }
++    if (-not [guid]::TryParse($TenantId,[ref]$expectedGuid) -or $expectedGuid -eq [guid]::Empty) { throw "Tenant identity could not be verified. No audit was completed." }
+     $TenantId=$expectedGuid.ToString()
+ 
+@@ -184,4 +215,8 @@
+
+     }
+ 
++    if ($ctx -and $ExpectedTenantId -and $ctx.TenantId -ne $ExpectedTenantId) { throw 'The connected tenant differs from the expected tenant. Nothing was changed.' }
++    $pinnedTenant=$(if ($ctx) { [string]$ctx.TenantId } else { $ExpectedTenantId })
++    $missing=@($RequiredScopes | Where-Object { -not $ctx -or @($ctx.Scopes) -notcontains $_ })
++    if ($ctx -and $missing.Count -gt 0) { Disconnect-MgGraph -ErrorAction Stop | Out-Null; $ctx=$null }
+     if (-not $ctx) {
+         $command=Get-Command Connect-MgGraph -ErrorAction Stop
+@@ -202,5 +237,5 @@
+
+ 
+     OK "Graph connected"
+-    INFO "Tenant ID: $TenantId | Account: $($ctx.Account)"
++    INFO "Tenant: $script:FKTenantLabel | Account: $($ctx.Account)"
+     return $true
+ }
+@@ -290,5 +325,5 @@
+
+ 
+     Clear-Host
+-    Write-Host 'Audit App Registrations'
++    Write-Host 'Audit Tenant App Registrations'
+     Write-Host 'Review registered apps, ownership, and credential expiry dates.'
+     Write-Host "Read-only"
+@@ -297,5 +332,5 @@
+
+     if (-not (Ensure-Graph -Scopes @("Application.Read.All","Directory.Read.All") -TenantId $ExpectedTenantId)) {
+         Pause-End
+-        exit 1
++        return
+     }
+ 
+@@ -399,3 +434,2 @@
+
+     Pause-End
+ }
+-

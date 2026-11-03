@@ -1,0 +1,77 @@
+{
+  "status": "Candidate source prepared; not an operational release",
+  "files": [
+    {
+      "file": "candidates/published-source/identity/INVOKE-ASSIGN-LICENSES.ps1",
+      "sha256": "fbf5918da68d14dd0d0bf720dfbfc7b04263994d10cf0d3a4378b1e20af0fa9c"
+    },
+    {
+      "file": "candidates/published-source/identity/INVOKE-REMOVE-LICENSES.ps1",
+      "sha256": "72151202c240996fffde1107a0c2427cf7e79c726deed489268af60bd993802e"
+    },
+    {
+      "file": "candidates/published-source/tenant/GET-APP-REGISTRATION-AUDIT.ps1",
+      "sha256": "f4d355b987b92002baa69aae04d0cfb455664cd6d76137ee76aad36467e737b5"
+    },
+    {
+      "file": "candidates/published-source/tenant/GET-OAUTH-CONSENT-AUDIT.ps1",
+      "sha256": "9877da03d810cd8ee498844542c5ab5f077f5a744a5a20997b7a6d683e518b7c"
+    },
+    {
+      "file": "candidates/published-source/tenant/GET-TENANT-LICENSING-AUDIT.ps1",
+      "sha256": "47bd0eb984f970b9232e1c5b00c6810b880b3a12bf59f0078eab0bf6bf901f9a"
+    }
+  ],
+  "completed_checks": [
+    "Read-only Graph request method scan for merged audits",
+    "Process-scoped auth and close prompt retained",
+    "Public result schema excludes ID columns",
+    "License assignment/removal executable bodies unchanged outside product-name resolver and version",
+    "Original source snapshots and diffs preserved",
+    "Restored legacy consent scope sensitivity coverage; Mail.Read, offline_access, Calendars.ReadWrite and low-privilege fixture assertions pass"
+  ],
+  "PowerShell_parse": "PASS: all five candidates, PowerShell 7.5.5 on Linux",
+  "PowerShell_fixture_workflows": "PASS: five scenarios; network socket/connect syscalls denied with seccomp; extracted logic only",
+  "live_service_tests": "UNEXECUTED: no authorized tenant session in this environment",
+  "known_limit": "Published main reconciled; unpublished Windows copies and live Graph/Windows behavior remain unverified",
+  "sources": [
+    "https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/governance/verify-first-party-apps-sign-in",
+    "https://learn.microsoft.com/en-us/graph/api/resources/verifiedpublisher",
+    "https://learn.microsoft.com/en-us/graph/api/oauth2permissiongrant-list",
+    "https://learn.microsoft.com/en-us/graph/api/resources/application"
+  ],
+  "catalog_checks": [
+    "Old enterprise-app-owner search finds Audit Tenant Apps",
+    "Merged consent card reachable through related link",
+    "Updated consent scopes visible",
+    "Resource Mailbox Access and merged legacy entries excluded",
+    "Candidate notice visible; source actions disabled in private preview"
+  ],
+  "test_correction": "Exact quoted CSV cell matching prevents Verified Example matching Unverified Example; no workflow source changed",
+  "reconciliation": {
+    "repository": "Grimmieeee/pwsh-operations-catalog",
+    "commit": "af51d3cf7e59975112d62480a4377d4c2a2c40f5",
+    "result": "Published source reviewed. Later recovered safeguards retained. Legacy consent sensitivity coverage restored; no public source replaced. Local unpublished Windows edits cannot be checked here.",
+    "files_reviewed": [
+      "current/identity/INVOKE-ASSIGN-LICENSES.ps1",
+      "current/identity/INVOKE-REMOVE-LICENSES.ps1",
+      "current/tenant/GET-APP-REGISTRATION-AUDIT.ps1",
+      "current/tenant/GET-GUEST-APP-CONSENT-AUDIT.ps1",
+      "current/tenant/GET-OAUTH-CONSENT-AUDIT.ps1",
+      "current/tenant/GET-SERVICE-PRINCIPAL-OWNERS.ps1",
+      "current/tenant/GET-TENANT-LICENSING-AUDIT.ps1"
+    ]
+  },
+  "operational_guard_tests": {
+    "status": "PASS",
+    "cases": 24,
+    "evidence": "validation/operational-guards.txt",
+    "scope": "Extracted source helpers and per-target licensing try/catch blocks; synthetic fixtures; no full workflow or real Graph mutation",
+    "containment": "Linux seccomp denies socket, connect and socketpair syscalls",
+    "limitations": [
+      "Windows authentication and closing behavior unexecuted",
+      "Live tenant access and permission sufficiency unexecuted",
+      "Full licensing workflow and operator input routing unexecuted"
+    ]
+  }
+}

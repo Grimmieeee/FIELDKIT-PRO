@@ -1,0 +1,14 @@
+{
+  "change": "Roomier confidence overlay, three real related links, clickable tool trail below header, copyable Graph and Exchange permission boxes",
+  "baseline_commit": "415c2a40ec1a047e3d769b0bb91d1dc9e5fa47b8",
+  "recovered": "Saved Site source restored after scratch cleanup; operational repository not modified",
+  "checks": {
+    "embedded_scripts": "All parse",
+    "related_tools": "300 runnable items; exactly three unique destinations and three anchors each; no self links",
+    "navigation": "Observed Admin Roles -> User Security Snapshot -> Admin Roles through clickable path",
+    "permissions": "Graph scopes observed; copy returned COPIED feedback",
+    "mobile": "390px iframe viewport; 374px overlay; no horizontal body overflow",
+    "themes": "Light desktop and dark mobile observed"
+  },
+  "source_actions": "Private UI preview only; operational download/source controls remain disabled"
+}

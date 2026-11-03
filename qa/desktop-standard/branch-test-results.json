@@ -1,0 +1,47 @@
+[
+  {
+    "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+    "result": "PASS",
+    "outputs": 1
+  },
+  {
+    "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+    "result": "PASS",
+    "outputs": 4
+  },
+  {
+    "path": "INVOKE-DELETE-ACCOUNTS.ps1",
+    "result": "PASS",
+    "outputs": 2
+  },
+  {
+    "path": "RESOLVE-NAMES-TO-UPNS.ps1",
+    "result": "PASS",
+    "outputs": 2
+  }
+]

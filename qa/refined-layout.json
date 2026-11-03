@@ -1,0 +1,25 @@
+{
+  "baseline": "e5fb225e3f753e018af174a1e5d329ed15b5583a",
+  "approved_design": "refined-preview approved 2026-10-31",
+  "scope": "Private UI presentation and navigation only; operational scripts untouched",
+  "checks": [
+    "Inline scripts parse",
+    "Embedded catalog and source data before runtime functions unchanged",
+    "Desktop password reset query identifies workflow and command",
+    "Mailbox permissions query identifies workflow",
+    "Suspicious sign in query identifies BEC assessment",
+    "Favorite retained and query preserved after close",
+    "Related link opens same overlay and history returns to prior tool",
+    "390px scope tap exposes explanation",
+    "390px long shared mailbox title has no drawer horizontal overflow",
+    "Light/dark mobile themes",
+    "COPY clipboard exactly Application.Read.All newline Directory.Read.All",
+    "No card theme control; close is rightmost"
+  ],
+  "limits": [
+    "UI preview disables Download and View code; no operational scripts or customer services executed",
+    "Responsive browser iframe is not physical iPhone Safari",
+    "Descriptions tightened for targeted cards; no bulk rewrite of reviewed workflow copy"
+  ],
+  "html_sha256": "fba8c51fc1a93baaf9424a546f8aab818a0d36f04fc0d40b4c25c75bac275b53"
+}

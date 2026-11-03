@@ -1,0 +1,54 @@
+--- current
+
++++ recovered
+
+@@ -169,7 +169,11 @@
+
+     }
+ 
++    if (Test-Path -LiteralPath $path) { if (-not (Confirm-Yes "Replace existing export")) { return } }
+     try {
+         $Rows | Export-Csv -Path $path -NoTypeInformation -Encoding UTF8
+-        OK "Exported: $path"
++        $check=@(Import-Csv -LiteralPath $path -ErrorAction Stop)
++        $expected=@($Rows | ConvertTo-Csv -NoTypeInformation | ConvertFrom-Csv)
++        if ($check.Count -ne $Rows.Count -or (Compare-Object -ReferenceObject $expected -DifferenceObject $check -Property @($expected[0].PSObject.Properties.Name))) { throw 'CSV verification failed.' }
++        OK "Exported and readback checked: $path"
+     }
+     catch {
+@@ -181,5 +185,5 @@
+
+     param([string]$Uri)
+ 
+-    try { return Invoke-MgGraphRequest -Method GET -Uri $Uri -ErrorAction Stop }
++    try { return Invoke-MgGraphRequest -Method GET -Uri $Uri -OutputType PSObject -ErrorAction Stop }
+     catch { throw "Graph read failed; review incomplete. $($_.Exception.Message)" }
+ }
+@@ -386,6 +390,9 @@
+
+         $licensed = ($licenseNames.Count -gt 0)
+         $finding = "OK"
+-
+-        if ($licensed -and $u.accountEnabled -eq $false) {
++        if ($u.PSObject.Properties.Name -notcontains 'assignedLicenses' -or $null -eq $u.assignedLicenses) { $finding='License state unavailable' }
++        elseif ($null -eq $u.accountEnabled) { $finding='Account state unavailable' }
++
++        if ($finding -ne "OK") { }
++        elseif ($licensed -and $u.accountEnabled -eq $false) {
+             $finding = "Disabled licensed user"
+         }
+@@ -425,5 +432,7 @@
+
+     Offer-ExportCsv -Rows @($rows) -DefaultName "tenant-licensing-audit-$(Get-Date -Format 'yyyyMMdd-HHmmss').csv"
+ 
+-    OK "Complete"
++    if (($disabledLicensed.Count+$enabledUnlicensed.Count) -gt 75) { WARN 'Console findings limited to 75; export includes all retrieved users.' }
++    foreach ($row in @($rows | Where-Object { $_.Finding -match 'unavailable' })) { WARN "$($row.UPN) | $($row.Finding)" }
++    INFO 'Review complete. Findings are review candidates, not instructions to reclaim licenses. Subscription consumed counts are not cost/savings calculations.' 
+     Pause-End
+ }
+@@ -434,3 +443,2 @@
+
+     Pause-End
+ }
+-

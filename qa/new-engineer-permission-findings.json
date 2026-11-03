@@ -1,0 +1,41 @@
+[
+  {
+    "file": "GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+    "localHelpersInPermissions": [
+      "Get-MailboxForwardingReview"
+    ]
+  },
+  {
+    "file": "GET-MAILBOX-PERMISSIONS.ps1",
+    "localHelpersInPermissions": [
+      "Get-MailboxInputs"
+    ]
+  },
+  {
+    "file": "GET-MAILBOX-FORWARDING.ps1",
+    "localHelpersInPermissions": [
+      "Get-MailboxInputs"
+    ]
+  },
+  {
+    "file": "BEC-RISK-ASSESSMENT.ps1",
+    "localHelpersInPermissions": [
+      "Get-RecipientAddress"
+    ]
+  },
+  {
+    "file": "BEC-CONTAIN-ERADICATE.ps1",
+    "localHelpersInPermissions": [
+      "Get-MailboxAccessItems",
+      "Get-MailboxObject",
+      "Get-MailboxState"
+    ]
+  },
+  {
+    "file": "BEC-RECOVER-VALIDATE.ps1",
+    "localHelpersInPermissions": [
+      "Get-MailboxObject",
+      "Get-MailboxState"
+    ]
+  }
+]

@@ -1,0 +1,1005 @@
+[
+  {
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputUPNs"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUPNs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputGroups"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-GROUP",
+    "inputLabel": "Group / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputGroups"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputGroups"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputGroups"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputUsers"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUsers"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUsers"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUsers"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "UPN",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "UPN",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-GROUP",
+    "inputLabel": "Tenant and group settings + tenant ID",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputLines"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputLines"
+      }
+    ],
+    "notes": [
+      "Export helper exists but is not called by the script. No export capability advertised."
+    ]
+  },
+  {
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputValues"
+    ],
+    "resultExportFormats": [
+      "CSV",
+      "TXT"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputValues"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputValues"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputValues"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputUPNs"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUPNs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputUPNs"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUPNs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+    "candidate": false,
+    "inputFunctions": [
+      "Get-InputUPNs"
+    ],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUPNs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "candidate": false,
+    "inputFunctions": [
+      "Get-InputUsers"
+    ],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUsers"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUsers"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUsers"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Import-InputEntries"
+    ],
+    "resultExportFormats": [
+      "CSV",
+      "TXT"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-USER",
+    "inputLabel": "Name / email / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Import-InputEntries"
+      },
+      {
+        "format": ".csv",
+        "function": "Import-InputEntries"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "UPN and time range",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "IP address and time range",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Sender / recipient / IP + time range",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-IP",
+    "inputLabel": "Public IP / TXT + provider API keys",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "TXT"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Evidence files",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Token",
+    "inputChecks": [],
+    "notes": [
+      "Export-path helper is dormant. No result export advertised."
+    ]
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "UPN and time range",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-MAILBOX",
+    "inputLabel": "Mailbox + source and destination folders",
+    "inputChecks": [],
+    "notes": [
+      "Export-path helper is dormant. No result export advertised."
+    ]
+  },
+  {
+    "path": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-USER",
+    "inputLabel": "Disabled user UPN",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-MailboxInputs"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-MAILBOX",
+    "inputLabel": "Mailbox UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-MailboxInputs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-MailboxInputs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-MailboxInputs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-MailboxInputs"
+    ],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-MAILBOX",
+    "inputLabel": "Mailbox UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-MailboxInputs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-MailboxInputs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-MailboxInputs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE-MAILBOX",
+    "inputLabel": "Mailbox UPN",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "candidate": true,
+    "inputFunctions": [
+      "Get-InputUPNs"
+    ],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "SINGLE or MULTI-MAILBOX",
+    "inputLabel": "Mailbox UPN / CSV / TXT",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputUPNs"
+      },
+      {
+        "format": "direct",
+        "function": "Get-InputUPNs"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputLines"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputLines"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputLines"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputLines"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant domain",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV",
+      "JSON"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Tenant ID",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant + optional saved baseline",
+    "inputChecks": [],
+    "notes": [
+      "Saved baseline is persistent comparison state, not a result export; baseline path behavior retained."
+    ]
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [
+      {
+        "format": ".txt",
+        "function": "Get-InputLines"
+      },
+      {
+        "format": ".csv",
+        "function": "Get-InputLines"
+      }
+    ],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "HTML"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "TENANT",
+    "inputLabel": "Signed-in tenant",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Folder",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/utility/PREPARE-FIELD-KIT.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current Windows account; Graph, Exchange or both",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/utility/TEST-SENSITIVE-DATA.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Files or folder",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "published-source/utility/UPDATE-WINDOWS-APPS.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current computer",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "tools/GET-TERMINAL-READINESS-CHECK.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Toolkit folder",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "tools/git-handoff.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Repository",
+    "inputChecks": [],
+    "notes": [
+      "Repository handoff snapshot also records the previous comparison boundary; repository state location retained."
+    ]
+  },
+  {
+    "path": "tools/git-repo.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Repository + Check / Pull / Push",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+    "candidate": true,
+    "inputFunctions": [],
+    "resultExportFormats": [
+      "CSV"
+    ],
+    "exportDestination": "Desktop",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Folder",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/attractor.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/rain.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/SET-THEME-BASIC.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/SET-THEME-COBALT.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/SET-THEME-SEAGLASS.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/SET-THEME-SILICON-VALLEY.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  },
+  {
+    "path": "toys/static.ps1",
+    "candidate": false,
+    "inputFunctions": [],
+    "resultExportFormats": [],
+    "exportDestination": "No result export identified",
+    "liveValidation": "UNEXECUTED",
+    "scope": "LOCAL",
+    "inputLabel": "Current terminal",
+    "inputChecks": [],
+    "notes": []
+  }
+]

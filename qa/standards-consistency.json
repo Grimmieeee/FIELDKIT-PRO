@@ -1,0 +1,29 @@
+{
+  "scope": "Catalog presentation and metadata consistency, not full workflow runtime acceptance",
+  "counts": {
+    "entries": 311,
+    "PowerShell_workflows": 68,
+    "with_scope_metadata": 68,
+    "with_run_instructions": 68,
+    "with_permissions_section": 68,
+    "with_impact_flag": 68
+  },
+  "fixes": [
+    "Collapsed run instructions restored for 52 workflows",
+    "Consent candidate version aligned to candidate.2",
+    "Local and external service access notes restored from source-bound connection guidance",
+    "Theme preview versus profile installation instructions distinguished",
+    "Mailbox permissions description includes forwarding and inbox rules"
+  ],
+  "preserved": [
+    "Approved layout, colors, icons and star location",
+    "Archived keeper decisions",
+    "Source hashes and verification limits"
+  ],
+  "limits": [
+    "Desktop browser spot check only; mobile responsive rules reviewed but no live mobile viewport execution",
+    "No live sign-in, service behavior or full Windows workflow acceptance",
+    "Behavioral overlap review remains the previously scoped source review; display uniqueness is not behavioral parity proof"
+  ],
+  "html_sha256": "6a679091b20dda9615f8d75fb2815096d2e37cab0d7afc133d2710578087e22a"
+}

@@ -1,0 +1,26 @@
+{
+  "scope": "Launch-mode metadata and recovered source spot review; synthetic source resolver tests",
+  "corrected_launch_cards": [
+    "BEC: M365 User Risk Assessment (Full)",
+    "BEC: Contain and Clean Up",
+    "BEC: Restore and Validate",
+    "GitHub Manage Repository",
+    "GitHub Project Handoff",
+    "Terminal Tools",
+    "Script Tools",
+    "GitHub Tools",
+    "GitHub Security Check"
+  ],
+  "checks": [
+    "13 source-integrity tests passed",
+    "311-entry framework audit passed",
+    "41 input-driven instruction sections remain",
+    "Quick Commands retain no Run instructions"
+  ],
+  "release_blockers": [
+    "dist contains no script payloads; all download controls are preview-locked",
+    "Operational current-source parity is confirmed only for earlier scoped app/licensing review; other recovered sources are not accepted release bytes",
+    "Full Windows and live tenant workflow tests unexecuted"
+  ],
+  "layout": "Locked layout preserved; content corrected for launch exceptions"
+}

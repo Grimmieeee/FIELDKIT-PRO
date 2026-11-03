@@ -1,0 +1,105 @@
+--- current
+
++++ recovered
+
+@@ -174,4 +174,5 @@
+
+     if (-not $path) { $path=Join-Path (Get-Location).Path $DefaultName }
+ 
++    if (Test-Path -LiteralPath $path) { if (-not (Confirm-Yes "Replace existing export")) { return } }
+     try {
+         $Rows | Export-Csv -LiteralPath $path -NoTypeInformation -Encoding UTF8 -ErrorAction Stop
+@@ -180,5 +181,7 @@
+
+             throw "CSV verification failed. Expected $($Rows.Count) row(s); read back $($check.Count)."
+         }
+-        OK "Exported and verified: $path"
++        $expected=@($Rows | ConvertTo-Csv -NoTypeInformation | ConvertFrom-Csv)
++        if (Compare-Object -ReferenceObject $expected -DifferenceObject $check -Property @($expected[0].PSObject.Properties.Name)) { throw 'CSV field verification failed.' }
++        OK "Exported and readback checked: $path"
+     }
+     catch {
+@@ -190,5 +193,5 @@
+
+     param([string]$Uri)
+ 
+-    return Invoke-MgGraphRequest -Method GET -Uri $Uri -ErrorAction Stop
++    return Invoke-MgGraphRequest -Method GET -Uri $Uri -OutputType PSObject -ErrorAction Stop
+ }
+ 
+@@ -303,8 +306,20 @@
+
+ 
+     $encoded = Encode-Value $UPN
+-    $uri = "https://graph.microsoft.com/v1.0/users/${encoded}?`$select=id,displayName,userPrincipalName,assignedLicenses,usageLocation"
++    $uri = "https://graph.microsoft.com/v1.0/users/${encoded}?`$select=id,displayName,userPrincipalName,assignedLicenses,licenseAssignmentStates,usageLocation"
+     $user = Graph-Get $uri
+ 
+     if (-not $user -or -not $user.id -or $user.userPrincipalName -ne $UPN) { throw "Exact UPN could not be validated: $UPN. No alias/first-match fallback is used." }
++    return $user
++}
++
++function Get-LicenseSnapshot {
++    param($User)
++    $ids=@(Get-AssignedLicenseIds -User $User)
++    return (@($User.assignedLicenses | Sort-Object skuId | ForEach-Object { ([string]$_.skuId)+':'+(@($_.disabledPlans | Sort-Object) -join ',') }) -join ';')
++}
++function Read-LicenseUserById {
++    param([string]$Id,[string]$UPN)
++    $user=Graph-Get "https://graph.microsoft.com/v1.0/users/$Id`?`$select=id,userPrincipalName,assignedLicenses,licenseAssignmentStates,usageLocation"
++    if ([string]$user.id -ne $Id -or [string]$user.userPrincipalName -ine $UPN) { throw 'Approved identity changed or unavailable.' }
+     return $user
+ }
+@@ -345,5 +360,5 @@
+
+         $user=Get-GraphUserByUPN -UPN $upn
+         $ids=@(Get-AssignedLicenseIds -User $user)
+-        [void]$targets.Add([pscustomobject]@{Id=$user.id;UPN=$user.userPrincipalName;UsageLocation=$user.usageLocation;AlreadyAssigned=($ids -contains [string]$selected.skuId)})
++        [void]$targets.Add([pscustomobject]@{Id=$user.id;UPN=$user.userPrincipalName;Snapshot=(Get-LicenseSnapshot -User $user);UsageLocation=$user.usageLocation;AlreadyAssigned=($ids -contains [string]$selected.skuId)})
+     }
+     Section 'PLAN'
+@@ -363,17 +378,25 @@
+
+             continue
+         }
+-        $requestReturned=$false
++        $requestReturned=$false; $locationAccepted=$false; $writeAttempted=$false
+         try {
+             Assert-GraphContext -TenantId $ExpectedTenantId -Account $approvedAccount
++            $fresh=Read-LicenseUserById -Id $target.Id -UPN $target.UPN
++            if ((Get-LicenseSnapshot -User $fresh) -cne $target.Snapshot -or [string]$fresh.usageLocation -ine [string]$target.UsageLocation) { throw 'License or UsageLocation state changed since approval; blocked.' }
++            $inventory=@(Get-GraphPages -Uri 'https://graph.microsoft.com/v1.0/subscribedSkus')
++            $currentSku=@($inventory | Where-Object { [string]$_.skuId -eq [string]$selected.skuId })
++            if ($currentSku.Count -ne 1 -or $null -eq $currentSku[0].prepaidUnits.enabled -or $null -eq $currentSku[0].consumedUnits -or $currentSku[0].prepaidUnits.enabled -le $currentSku[0].consumedUnits) { throw 'License capacity unavailable or exhausted; assignment blocked.' }
+             if (-not $target.UsageLocation) {
+                 $locationBody=@{usageLocation=$UsageLocation} | ConvertTo-Json -Compress
++                $writeAttempted=$true
+                 Invoke-MgGraphRequest -Method PATCH -Uri "https://graph.microsoft.com/v1.0/users/$($target.Id)" -Body $locationBody -ContentType 'application/json' -ErrorAction Stop | Out-Null
+             }
++            if (-not $target.UsageLocation) { $locationAccepted=$true }
+             Assert-GraphContext -TenantId $ExpectedTenantId -Account $approvedAccount
+             $body=@{addLicenses=@(@{skuId=$selected.skuId;disabledPlans=@()});removeLicenses=@()}
++            $writeAttempted=$true
+             Graph-Post "https://graph.microsoft.com/v1.0/users/$($target.Id)/assignLicense" $body | Out-Null
+             $requestReturned=$true
+             Start-Sleep -Milliseconds 300
+-            $after=Get-GraphUserByUPN -UPN $target.UPN
++            $after=Read-LicenseUserById -Id $target.Id -UPN $target.UPN
+             if ($after.id -ne $target.Id) { throw 'Target identity changed; final state is unverified.' }
+             $present=@(Get-AssignedLicenseIds -User $after) -contains [string]$selected.skuId
+@@ -383,7 +406,7 @@
+
+             [void]$results.Add([pscustomobject]@{UPN=$target.UPN;Result='Verified';Detail=$selectedName})
+         } catch {
+-            $state=if ($requestReturned) { 'FailedValidation' } else { 'Failed' }
++            $state=if ($requestReturned -or $writeAttempted) { 'FailedValidation' } else { 'Failed' }
+             WARN "$($target.UPN): request or verification failed; final state is unverified. $($_.Exception.Message)"
+-            [void]$results.Add([pscustomobject]@{UPN=$target.UPN;Result=$state;Detail=$_.Exception.Message})
++            [void]$results.Add([pscustomobject]@{UPN=$target.UPN;Result=$state;Detail=("Attempted=$writeAttempted; assignment accepted=$requestReturned; UsageLocation accepted=$locationAccepted; "+$_.Exception.Message)})
+         }
+     }
+@@ -410,3 +433,2 @@
+
+     Pause-End
+ }
+-

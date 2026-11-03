@@ -1,0 +1,28 @@
+
+Check                                               Result
+-----                                               ------
+Valid delegated process context accepted            PASS
+Changed TenantId blocked                            PASS
+Changed Account blocked                             PASS
+Changed AuthType blocked                            PASS
+Changed ContextScope blocked                        PASS
+Missing context blocked                             PASS
+Paging retains all rows                             PASS
+Empty collection accepted                           PASS
+Malformed collection blocked                        PASS
+Read failure propagates                             PASS
+Publisher display name cannot impersonate Microsoft PASS
+Public text removes GUIDs                           PASS
+Invalid credential expiry stays unknown             PASS
+INVOKE-ASSIGN-LICENSES.ps1 identity                 PASS
+INVOKE-ASSIGN-LICENSES.ps1 state                    PASS
+INVOKE-ASSIGN-LICENSES.ps1 write-error              PASS
+INVOKE-ASSIGN-LICENSES.ps1 success                  PASS
+INVOKE-REMOVE-LICENSES.ps1 identity                 PASS
+INVOKE-REMOVE-LICENSES.ps1 state                    PASS
+INVOKE-REMOVE-LICENSES.ps1 write-error              PASS
+INVOKE-REMOVE-LICENSES.ps1 success                  PASS
+Assignment blocks exhausted capacity                PASS
+Removal blocks inherited assignments                PASS
+Removal blocks missing source evidence              PASS
+

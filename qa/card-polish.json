@@ -1,0 +1,21 @@
+{
+  "scope": "Presentation only; operational PowerShell bytes and release eligibility unchanged",
+  "changes": [
+    "Assessment previews Read only with muted Modify and Destruct indicators for later response stages",
+    "Contain previews Read only, Modify and Destruct with source-supported confirmation tooltips",
+    "Contain and Clean Up renamed to Contain and Eradicate, including display download aliases",
+    "All 50 input-driven instruction sections use Input: followed by bracketed input placeholders",
+    "All three main BEC cards render exactly Input: <user@domain.com>",
+    "Permissions moved immediately above Related tools across all cards; Ryan accepted and locked the layout"
+  ],
+  "checks": [
+    "311-entry catalog framework passes",
+    "72 enabled release files retain exact checksums",
+    "All withheld source paths remain blocked",
+    "13 integrity tests pass",
+    "Setup and BEC ZIP member checksums pass",
+    "BEC package contains both Eradicate display alias and unchanged canonical companion filename",
+    "Browser verifies three flags and standardized BEC input line"
+  ],
+  "guide_review": "Mostly duplicates card/script prompts; useful standalone context covers same-folder/same-window setup, stage order/handoffs, blocked/cancelled outcomes and 48-hour monitoring. Guide retained unchanged apart from display terminology."
+}

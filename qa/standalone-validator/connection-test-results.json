@@ -1,0 +1,37 @@
+[
+  {
+    "scenario": "success",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "success-domain",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "mismatch",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "mismatch-domain",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "existing",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "partial",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "readfailure",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  }
+]

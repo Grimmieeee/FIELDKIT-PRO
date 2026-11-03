@@ -1,0 +1,17 @@
+{
+  "rule": "Run instructions only for scripts with operator-supplied input; omit session/computer context, optional-only baseline and Quick Commands",
+  "copy": [
+    "Download .ps1 file",
+    "Right click > select Run with PowerShell"
+  ],
+  "counts": {
+    "workflow_cards_with_instructions": 41,
+    "workflow_cards_without_instructions": 27,
+    "quick_commands_with_run_instructions": 0
+  },
+  "evidence": [
+    "311-entry framework audit passed",
+    "Browser confirmed exact two-step copy on Get User Account Status"
+  ],
+  "script_changes": false
+}

@@ -1,0 +1,18 @@
+{
+  "status": "Frozen private-preview and candidate-source checkpoint; not operational acceptance",
+  "html_sha256": "4221001f1e959968713b48c26ec8dee0e4e91fe3c16315bb7c90846a38d77938",
+  "candidate_manifest": "qa/app-consolidation.json",
+  "checks": [
+    "Saved candidate hashes unchanged",
+    "All catalog JavaScript parses",
+    "Legacy owner and guest-consent searches route to keepers",
+    "Resource Mailbox Access excluded",
+    "Candidate notice and disabled source actions retained"
+  ],
+  "fixed": "Restored App Registrations search alias",
+  "unexecuted": [
+    "PowerShell parse",
+    "PowerShell fixtures",
+    "Live Graph behavior"
+  ]
+}

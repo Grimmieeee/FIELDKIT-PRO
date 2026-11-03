@@ -1,0 +1,23 @@
+{
+  "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1": [
+    "Get-MailboxForwardingReview"
+  ],
+  "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1": [
+    "Get-MailboxInputs"
+  ],
+  "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1": [
+    "Get-MailboxInputs"
+  ],
+  "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1": [
+    "Get-RecipientAddress"
+  ],
+  "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1": [
+    "Get-MailboxAccessItems",
+    "Get-MailboxObject",
+    "Get-MailboxState"
+  ],
+  "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1": [
+    "Get-MailboxObject",
+    "Get-MailboxState"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "changes": [
+    "Removed third step from all shared workflow run instructions; moved general operation and finish guidance into Tour",
+    "Removed 12px extra star margin; close stays at right corner",
+    "Header order Favorites, Tour, theme",
+    "Search text and placeholder lightened in both themes"
+  ],
+  "checks": [
+    "311-entry framework audit passed",
+    "68 workflow cards retain launch instructions",
+    "Browser verified card has two launch steps",
+    "Browser verified Tour includes moved guidance",
+    "Browser verified header order and light search color"
+  ],
+  "limits": [
+    "No live mobile viewport test this pass"
+  ],
+  "source_change": false
+}

@@ -1,0 +1,106 @@
+--- current
+
++++ recovered
+
+@@ -199,4 +199,5 @@
+
+     if (-not $path) { $path=Join-Path (Get-Location).Path $DefaultName }
+ 
++    if (Test-Path -LiteralPath $path) { if (-not (Confirm-Yes "Replace existing export")) { return } }
+     try {
+         $Rows | Export-Csv -LiteralPath $path -NoTypeInformation -Encoding UTF8 -ErrorAction Stop
+@@ -205,5 +206,7 @@
+
+             throw "CSV verification failed. Expected $($Rows.Count) row(s); read back $($check.Count)."
+         }
+-        OK "Exported and verified: $path"
++        $expected=@($Rows | ConvertTo-Csv -NoTypeInformation | ConvertFrom-Csv)
++        if (Compare-Object -ReferenceObject $expected -DifferenceObject $check -Property @($expected[0].PSObject.Properties.Name)) { throw 'CSV field verification failed.' }
++        OK "Exported and readback checked: $path"
+     }
+     catch {
+@@ -215,5 +218,5 @@
+
+     param([string]$Uri)
+ 
+-    return Invoke-MgGraphRequest -Method GET -Uri $Uri -ErrorAction Stop
++    return Invoke-MgGraphRequest -Method GET -Uri $Uri -OutputType PSObject -ErrorAction Stop
+ }
+ 
+@@ -353,5 +356,5 @@
+
+ 
+     $encoded = Encode-Value $UPN
+-    $uri = "https://graph.microsoft.com/v1.0/users/${encoded}?`$select=id,displayName,userPrincipalName,assignedLicenses"
++    $uri = "https://graph.microsoft.com/v1.0/users/${encoded}?`$select=id,displayName,userPrincipalName,assignedLicenses,licenseAssignmentStates,usageLocation"
+     $user = Graph-Get $uri
+ 
+@@ -373,4 +376,16 @@
+
+ 
+     return $null
++}
++
++function Get-LicenseSnapshot {
++    param($User)
++    $ids=@(Get-AssignedLicenseIds -User $User)
++    return (@($User.assignedLicenses | Sort-Object skuId | ForEach-Object { ([string]$_.skuId)+':'+(@($_.disabledPlans | Sort-Object) -join ',') }) -join ';')
++}
++function Read-LicenseUserById {
++    param([string]$Id,[string]$UPN)
++    $user=Graph-Get "https://graph.microsoft.com/v1.0/users/$Id`?`$select=id,userPrincipalName,assignedLicenses,licenseAssignmentStates,usageLocation"
++    if ([string]$user.id -ne $Id -or [string]$user.userPrincipalName -ine $UPN) { throw 'Approved identity changed or unavailable.' }
++    return $user
+ }
+ 
+@@ -426,4 +441,6 @@
+
+             UPN=$u.userPrincipalName
+             Licenses=$licenses
++            Snapshot=(Get-LicenseSnapshot -User $u)
++            AssignmentStates=@($u.licenseAssignmentStates)
+         })
+ 
+@@ -474,4 +491,5 @@
+
+     }
+ 
++    INFO 'Inherited or uncertain license sources are blocked; this tool does not change licensing groups.'
+     Section "PLAN"
+     Assert-GraphContext -TenantId $ExpectedTenantId -Account $approvedAccount
+@@ -522,11 +540,19 @@
+
+ 
+         $removeNames=(@($removeIds|ForEach-Object {if($skuMap.ContainsKey([string]$_)){$skuMap[[string]$_]}else{Get-LicenseProductName -SkuId ([string]$_)}}) -join '; ')
+-        $requestReturned=$false
++        $requestReturned=$false; $writeAttempted=$false
+         try {
+             Assert-GraphContext -TenantId $ExpectedTenantId -Account $approvedAccount
++            $fresh=Read-LicenseUserById -Id $u.Id -UPN $u.UPN
++            if ((Get-LicenseSnapshot -User $fresh) -cne $u.Snapshot) { throw 'Assigned licenses changed since approval; removal blocked.' }
++            if ($fresh.PSObject.Properties.Name -notcontains 'licenseAssignmentStates') { throw 'Assignment-source evidence unavailable; removal blocked.' }
++            foreach ($id in $removeIds) {
++                $states=@($fresh.licenseAssignmentStates | Where-Object { [string]$_.skuId -eq $id })
++                if (-not $states.Count -or @($states | Where-Object { $_.assignedByGroup }).Count) { throw 'Selected license has inherited or uncertain assignment source; review its licensing group. No group memberships changed.' }
++            }
++            $writeAttempted=$true
+             Graph-Post "https://graph.microsoft.com/v1.0/users/$($u.Id)/assignLicense" $body | Out-Null
+             $requestReturned=$true
+             Start-Sleep -Milliseconds 300
+-            $verified=Get-GraphUserByUPN -UPN $u.UPN
++            $verified=Read-LicenseUserById -Id $u.Id -UPN $u.UPN
+             if ($verified.id -ne $u.Id) { throw 'Target identity changed; final state is unverified.' }
+             $remaining=@(Get-AssignedLicenseIds -User $verified | Where-Object { $removeIds -contains $_ })
+@@ -540,5 +566,5 @@
+
+             }
+         } catch {
+-            $state=if ($requestReturned) { 'FailedValidation' } else { 'Failed' }
++            $state=if ($requestReturned -or $writeAttempted) { 'FailedValidation' } else { 'Failed' }
+             WARN "$($u.UPN): request or verification failed; final state is unverified. $($_.Exception.Message)"
+             [void]$results.Add([pscustomobject]@{ UPN=$u.UPN; Action="RemoveLicense"; Result=$state; Detail=$_.Exception.Message })
+@@ -574,3 +600,2 @@
+
+     Pause-End
+ }
+-

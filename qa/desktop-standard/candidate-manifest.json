@@ -1,0 +1,306 @@
+[
+  {
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "baseline_sha256": "94258427439cc292f33bd76e835b10a407218bc9136537874a9cd267f2e20b75",
+    "candidate_sha256": "f3e60b6e9330ab2488b83b4fb55b85cec159fc3a1d749abd3c6293e73c673782",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "baseline_sha256": "5c7baa7d0551de2eb0c21650bb8943ca198697c94cef2f556a5ab458f7916d67",
+    "candidate_sha256": "9e843b8b86932083de052ef72cfd5aeb5cb1c95268d1e18953b55d00be92a7ef",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "baseline_sha256": "d0b71178ddca2eb793610f21d5f52266d454360ca848d7257ebb3347d6ec9bdd",
+    "candidate_sha256": "5845e8a45b2204be41144b518ed25aff7717d141a70144992b0d4276938af7c4",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+    "baseline_sha256": "4ae5545f73829374e5b1500bd3ba8cc029e3f095e700e9ce76bf835d8a034107",
+    "candidate_sha256": "f0f11dc61d4e05659811fd36b406ee19b6bb940c46345a49acf5b09cecb77635",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+    "baseline_sha256": "b9d8d41d6fe83eb0c5b3c8cb6d71989719d8622bc359116fc20618814399cff6",
+    "candidate_sha256": "ba8077b4bac332ecf24b6db0c2e4a05e1e52820c73a4b4036b6c8d41fb83e345",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "baseline_sha256": "7ed4b8f50be401d4004b6ff4672d19bcad5ab6e7f47cf7bc3d0a3e144290f83d",
+    "candidate_sha256": "5c1cd308635bf5fd1648f0cb8d2c894739a2384c08028679a2a301d346d6b46c",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "baseline_sha256": "0831cf439bc477cae85d6b6a4f2e2eb1043d4e61d5d4e65964eaa7de658c0eef",
+    "candidate_sha256": "4adb49aa8344461de20514fd8a449e032e4f26e7c02215e5b6ac04010b2b4c30",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "baseline_sha256": "a123394ca9a041cb7f49225b334ce6fe02637038c554944d1c222d325fa72287",
+    "candidate_sha256": "8b27d3264572deeaf6da62abe040ab08c78d7d000d8cc2357da3c0808a1f3c8f",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "baseline_sha256": "23a9db7bcacb8f388d2e71b3cc54b720a00b9d377af7c10bac263b32f0008b62",
+    "candidate_sha256": "a9bc098ddfa7e9f4c31d5c02ffcc5d5a3fb92f04947406d1163d0cb46923a63c",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+    "baseline_sha256": "8b150fd6e093ecf1a4b2b77cc5856f18de47a0f101a8f7257f0eea4742d12f8d",
+    "candidate_sha256": "beda548158a6ac058a5795dead720c12976fd7047a259a08bea74596266bdbcd",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+    "baseline_sha256": "1fa5c320ff44327b602d61a94ba5a76b9571b51fdbf36c77be0c59e34795fad1",
+    "candidate_sha256": "99b6d9d0998327d29830c23089c979ceb3ee3b33dac15df1a512dc021ace88df",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+    "baseline_sha256": "a97b049fad9c2a2f7f4344bc90a68689d1e1d5c4f720f2b6533b5106ae69970a",
+    "candidate_sha256": "1f4e83f1b3069ad3fbf9aa4c1fe196ae959fe505bd435b97b8b74d3b13efe708",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+    "baseline_sha256": "3a78895cbec147f408f82929e720c7e527c8bd3f18dad6d86c1e31ee1c868043",
+    "candidate_sha256": "7ddde1f35669d3fe5068946c44862833df3afa33b320c236738087e6a039e94b",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+    "baseline_sha256": "e0864cdd7dd81324a3b1a71fbf80841c14d3bd86d0ca7abb100416b4a243461e",
+    "candidate_sha256": "84ec171576cbd29a0f09b53e4b54b5cb6eaeeb124a9ad561a43d3f1420d51aab",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+    "baseline_sha256": "a80ca2ee465da49ebb7d38b6728265be427d93a4aa7eb129d3e18f202a4b5ecf",
+    "candidate_sha256": "2d22f905256759afdaf60d880478fc1d8e416ef81d19b43f62c7d599f2a3f305",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+    "baseline_sha256": "809933ffd6759b71b20324825887e7d5b1530e1eecce8d8d0cd92c3ce5a57742",
+    "candidate_sha256": "eece3f8957d86f18f51243fa9e567d14dc3b91e000a7acd41795fa136bc66a2d",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+    "baseline_sha256": "aacd5c9a0c91ecbd16ceedaa14b433aba25f882f3752efd903996bfc95dbfbde",
+    "candidate_sha256": "8365b1e20934bd3aeb47798041a50712df29a6ad88bd4839fef5a3f02324a722",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+    "baseline_sha256": "bbbe2551ba6054995d4caa517e23a32711c0afbd4b7becbf2a5575662409482f",
+    "candidate_sha256": "761b9fc57d572033a956b8abb13a41ca0da4d0e5197bb8e27ae189e0574e6b6f",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "baseline_sha256": "0e184a41bd351c391985118eb128eaefad0311ec691abe4933868e6af5a88d91",
+    "candidate_sha256": "a1a93415351d2d33382461faabd99e74f76c965fef2a0229e6e66314d31bb7e2",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "baseline_sha256": "76535edd6d3e922cc44decedba707203716788afa4bdabbf68579549a57752e6",
+    "candidate_sha256": "d95fc690fe2c4029b4a9aba527722e47ddf94b8307af2f65031780bd52ec1410",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+    "baseline_sha256": "e9e75ef77efeb81017c8dcc6f3f05cd5deb4fb8eba90890560808406762f7fda",
+    "candidate_sha256": "91de7078fecf5ff4403029b64b1ab33c5b719de4a6110c5398f749df2bd16e82",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "baseline_sha256": "1ea2ff740e1f5eb24ba4aafa92636fce025ed90ffbc4050e80ce5aedcb3568fe",
+    "candidate_sha256": "f024257b1c9acaa5476379844642bfd219370ba82367cf9ae91bc7105189f1bf",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+    "baseline_sha256": "764cf4825fa98591a0ab0bde803f96568e1a1c2d8ed4585095eda2460a04aa6c",
+    "candidate_sha256": "b285cf6514f3468e9c9fcb6e51c09124dd0743af23219253422ea3b328776ac7",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+    "baseline_sha256": "adebcd1ba46cb0e58a7ac4381547d2aa7f501a906b5c521d27ca0ac9121b6555",
+    "candidate_sha256": "9a140f24f59b057424c1d901956845f95c08f031812349fcb570152be5dc9390",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+    "baseline_sha256": "9595b261ea55f5fc61dd562df2e5297cd8d3fa8bf587d0d61cce5535df93e27b",
+    "candidate_sha256": "2217a85a57678ec21ab060d74f4028ce30a9f02b87e5e8da50cbdff00d0c0259",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+    "baseline_sha256": "641555328872d02331f3153eb686b48bf4cf5b21f67c7a9919c0bbef0d75da61",
+    "candidate_sha256": "f55033be95961a8486a6dd29314c3f36bdbe7faf96a5c10e4dafa206fc649685",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+    "baseline_sha256": "da69d7308448b31477b9de6ff104257a891562902ec0142a5b053b70482d73a5",
+    "candidate_sha256": "8f09b58b9c00c2fc5683481a121d9734512cd383ecd3c0ffbb2f7dc4839d0737",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+    "baseline_sha256": "df729d70508b81bf0328f0313d0de406e56f4204c3dc8460ef0ea8bb4eb91606",
+    "candidate_sha256": "8505bcda8983607fdf158f5b3a5cc68a795583d215cf49200a89e6681178f685",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+    "baseline_sha256": "bf4d87b38d221c5e6b86fef69b10a1cb7c4d75e6fe8c5abe64ec5c99993f3e5d",
+    "candidate_sha256": "0b172b51462092344bf365aaee2897ea91b88dba30ceaffd42649a00ec4558f4",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+    "baseline_sha256": "3f365d6e8677b2f59f1e3fba81f038c6645dd0e1e3a95b28c95804b161f06009",
+    "candidate_sha256": "aaffe0fc3c6940def0c02ae3cd352fbaf690b873ec6edaf2ea27a822f027148c",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+    "baseline_sha256": "dcde2b39589b9c740a7a9c20ff17cc59d8752cc555a9359f9d0210e18fa053b1",
+    "candidate_sha256": "e429654062598ef2a65b5d641c76868a5f6412864a9d2409f7baaed12285e5df",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+    "baseline_sha256": "27e94610728226f9c43f44631b4c9921fc6412ddf8d79f2e2617a7725c1a4fa6",
+    "candidate_sha256": "25300901eb531b53fcb4e57273bf926cdd3e91cdaa92f7796517c0f3325d4ee5",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+    "baseline_sha256": "dc04a5c13230de80a767d325a6739c3df6240618d20e6419315cb96a43f224b0",
+    "candidate_sha256": "30edf7070d1945c21df901b4f8caae23aacf15c5bddaf9120d71315668d786e1",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "baseline_sha256": "c0a1a2459471df298746940de9a997ee60514cbec0bb11a821f4c7e2233c66f6",
+    "candidate_sha256": "7c77ca528d1ad77fe4b6196ceef810d02d2aa56430af291b1240b80e337f54a2",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+    "baseline_sha256": "90eadb894e2aa8ac36f62047a4c4aadcac67aa468c8bbbf583ec0992e6fc6e9c",
+    "candidate_sha256": "063a5b370d2e70a24e72c51e99dbdec4df1a36abdb0763f3ab657134ad7342e0",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 1,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+    "baseline_sha256": "342829ae9c8df76225bdee4e0c76776aabb76a43a3c5756363a6add984ca0666",
+    "candidate_sha256": "5e031a7f633fe53aaf9f905403d971c3208ef3cb7ae8007a5ce84fa93272bf7b",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 1
+  },
+  {
+    "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+    "baseline_sha256": "7c4ff63bee17b5669a05a76657f3cca0b5b3674b102ead014df742ae720c62ae",
+    "candidate_sha256": "19c531f6eda29d194bdcf0cc760b9cca8180b90ec4be1464d3478f30a859222b",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 2,
+    "html_fallbacks_removed": 0
+  },
+  {
+    "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+    "baseline_sha256": "435f354240c3178c5def5a4b2faaaaa013a7ef0d99f07fcf9170e69801b13279",
+    "candidate_sha256": "128d02b32e818d96dfb03af3a36a54aa6a5082d01dbecc31a6a2e25bf72ff607",
+    "status": "CANDIDATE_UNVERIFIED",
+    "common_path_replacements": 0,
+    "html_fallbacks_removed": 0
+  }
+]

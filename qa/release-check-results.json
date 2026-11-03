@@ -1,0 +1,29 @@
+{
+  "scope": "Actual catalog resolver and ZIP builders with filesystem-backed synthetic fetch; no Windows or tenant execution",
+  "results": [
+    {
+      "name": "311 catalog entries pass framework audit",
+      "result": "PASS"
+    },
+    {
+      "name": "72 release files resolve and save byte-identically; metadata matches source hashes",
+      "result": "PASS"
+    },
+    {
+      "name": "11 withheld paths are absent and rejected by resolver",
+      "result": "PASS"
+    },
+    {
+      "name": "All nine visible withheld cards omit source actions",
+      "result": "PASS"
+    },
+    {
+      "name": "Setup and complete BEC packages build from the established files",
+      "result": "PASS"
+    },
+    {
+      "name": "One failed BEC source prevents the entire package",
+      "result": "PASS"
+    }
+  ]
+}

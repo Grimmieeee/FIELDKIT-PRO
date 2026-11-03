@@ -1,0 +1,14 @@
+[
+  {
+    "package": "field-kit-first-run.zip",
+    "checksum_entries": 2,
+    "zip_crc": "PASS",
+    "all_member_hashes": "PASS"
+  },
+  {
+    "package": "field-kit-bec.zip",
+    "checksum_entries": 6,
+    "zip_crc": "PASS",
+    "all_member_hashes": "PASS"
+  }
+]

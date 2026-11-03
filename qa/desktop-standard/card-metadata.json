@@ -1,0 +1,478 @@
+[
+  {
+    "file": "GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+    "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+    "input": "Tenant domain",
+    "output": "Cleanup review",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-STALE-SIGNIN-REVIEW.ps1",
+    "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+    "input": "Signed-in tenant",
+    "output": "Stale enabled users + activity-unavailable users + optional verified CSV",
+    "scope": "TENANT"
+  },
+  {
+    "file": "INVOKE-DISABLE-ACCOUNTS.ps1",
+    "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Validated disable results + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "INVOKE-DELETE-ACCOUNTS.ps1",
+    "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Per-user deletion plan + same-source validation + CSV/TXT evidence",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "INVOKE-ASSIGN-LICENSES.ps1",
+    "path": "published-source/identity/INVOKE-ASSIGN-LICENSES.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Per-user verified assignment results + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "INVOKE-REMOVE-LICENSES.ps1",
+    "path": "published-source/identity/INVOKE-REMOVE-LICENSES.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Per-user verified removal results + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "RESOLVE-NAMES-TO-UPNS.ps1",
+    "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+    "input": "Name / email / CSV / TXT",
+    "output": "Match decisions + optional verified review CSV and exact-match UPN TXT",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "GET-ACCOUNT-STATUS.ps1",
+    "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Account enabled state + recorded Entra sign-in status + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "GET-GROUP-MEMBERS.ps1",
+    "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+    "input": "Group / CSV / TXT",
+    "output": "Resolved source + direct members + optional verified CSV",
+    "scope": "SINGLE or MULTI-GROUP"
+  },
+  {
+    "file": "GET-USER-GROUPS.ps1",
+    "path": "published-source/identity/GET-USER-GROUPS.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "AD + Entra direct memberships + source coverage + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "INVOKE-REMOVE-USER-GROUPS.ps1",
+    "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "AD + Entra membership review + guarded removal results",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+    "input": "Tenant and group settings + tenant ID",
+    "output": "Verified Entra dynamic security group",
+    "scope": "SINGLE-GROUP"
+  },
+  {
+    "file": "GET-TENANT-GROUP-OWNERS.ps1",
+    "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+    "input": "Signed-in tenant",
+    "output": "Owner review grouped by Teams / M365 / security / mail-enabled / distribution group type",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-MAILBOX-PERMISSIONS.ps1",
+    "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+    "input": "Mailbox UPN / CSV / TXT",
+    "output": "Delegated access",
+    "scope": "SINGLE or MULTI-MAILBOX"
+  },
+  {
+    "file": "GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+    "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+    "input": "Mailbox UPN",
+    "output": "Mailbox posture snapshot",
+    "scope": "SINGLE-MAILBOX"
+  },
+  {
+    "file": "GET-MAILBOX-FORWARDING.ps1",
+    "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+    "input": "Mailbox UPN / CSV / TXT",
+    "output": "Mailbox/inbox-rule forwarding state + optional verified CSV",
+    "scope": "SINGLE or MULTI-MAILBOX"
+  },
+  {
+    "file": "INVOKE-LITIGATION-HOLD.ps1",
+    "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+    "input": "Mailbox UPN / CSV / TXT",
+    "output": "Preview + verified Litigation Hold state + optional CSV",
+    "scope": "SINGLE or MULTI-MAILBOX"
+  },
+  {
+    "file": "BEC-INVOKE-EMAIL-RECOVERY.ps1",
+    "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+    "input": "Mailbox + source and destination folders",
+    "output": "Recovered messages",
+    "scope": "SINGLE-MAILBOX"
+  },
+  {
+    "file": "BEC-RISK-ASSESSMENT.ps1",
+    "path": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+    "input": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "output": "Indicators, unavailable checks, risk summary and optional response handoff",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "BEC-CONTAIN-ERADICATE.ps1",
+    "path": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+    "input": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "output": "Selected-action results, post-change validation and recovery handoff",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+    "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+    "input": "UPN and time range",
+    "output": "File activity evidence",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "BEC-GET-IP-TRACE.ps1",
+    "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+    "input": "IP address and time range",
+    "output": "Affected users / operations",
+    "scope": "TENANT"
+  },
+  {
+    "file": "BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+    "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+    "input": "Sender / recipient / IP + time range",
+    "output": "Message trace matches",
+    "scope": "TENANT"
+  },
+  {
+    "file": "BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+    "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+    "input": "Public IP / TXT + provider API keys",
+    "output": "Reputation context",
+    "scope": "SINGLE or MULTI-IP"
+  },
+  {
+    "file": "BEC-GET-TIMELINE-BUILDER.ps1",
+    "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+    "input": "Evidence files",
+    "output": "Incident timeline",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "BEC-GET-TOKEN-DECODE.ps1",
+    "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+    "input": "Token",
+    "output": "Decoded claims",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+    "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+    "input": "UPN and time range",
+    "output": "Sign-in anomaly evidence",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+    "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+    "input": "Tenant ID",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-APP-REGISTRATION-AUDIT.ps1",
+    "path": "published-source/tenant/GET-APP-REGISTRATION-AUDIT.ps1",
+    "input": "Signed-in organization",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-CONDITIONAL-ACCESS-GAPS.ps1",
+    "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+    "input": "Tenant ID",
+    "output": "Conditional Access gap review + optional verified CSV/JSON",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-DEVICE-CODE-EXPOSURE.ps1",
+    "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+    "input": "Tenant ID",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-MFA-SECURITY-AUDIT.ps1",
+    "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+    "input": "Tenant ID",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-SECURE-SCORE-SNAPSHOT.ps1",
+    "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+    "input": "Tenant ID",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-SIGNIN-ANOMALIES.ps1",
+    "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+    "input": "Tenant ID",
+    "output": "Audit findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-TRANSPORT-RULES-AUDIT.ps1",
+    "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+    "input": "Signed-in tenant",
+    "output": "Transport-rule review + flagged actions + optional verified CSV",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-FOLDER-INVENTORY.ps1",
+    "path": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
+    "input": "Folder",
+    "output": "Folder tree, file map, counts, signatures, Git status",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "TEST-SENSITIVE-DATA.ps1",
+    "path": "published-source/utility/TEST-SENSITIVE-DATA.ps1",
+    "input": "Files or folder",
+    "output": "Publication-sensitive findings",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "UPDATE-WINDOWS-APPS.ps1",
+    "path": "published-source/utility/UPDATE-WINDOWS-APPS.ps1",
+    "input": "Current computer",
+    "output": "Reviewed / applied WinGet updates",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "GET-USER-PREDELETE-CHECK.ps1",
+    "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+    "input": "UPN",
+    "output": "Pre-delete findings",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Before/after per-user MFA state + authentication methods + optional verified CSV",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "GET-ADMIN-ROLE-AUDIT.ps1",
+    "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+    "input": "Tenant ID",
+    "output": "Admin role assignments and findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-OAUTH-CONSENT-AUDIT.ps1",
+    "path": "published-source/tenant/GET-OAUTH-CONSENT-AUDIT.ps1",
+    "input": "Signed-in organization",
+    "output": "Delegated OAuth grants and risk findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-GUEST-USER-AUDIT.ps1",
+    "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+    "input": "Tenant ID",
+    "output": "Guest user findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-TENANT-LICENSING-AUDIT.ps1",
+    "path": "published-source/tenant/GET-TENANT-LICENSING-AUDIT.ps1",
+    "input": "Signed-in organization",
+    "output": "SKU usage and user licensing findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+    "input": "Signed-in tenant",
+    "output": "Inbox rule findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-USER-SECURITY-SNAPSHOT.ps1",
+    "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+    "input": "UPN",
+    "output": "Identity, MFA, role, group, and recent sign-in snapshot",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "GET-TENANT-SECURITY-SNAPSHOT.ps1",
+    "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+    "input": "Signed-in tenant",
+    "output": "High-level tenant security overview",
+    "scope": "TENANT"
+  },
+  {
+    "file": "GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+    "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+    "input": "Signed-in tenant",
+    "output": "Tenant-wide mailbox forwarding and delegation findings",
+    "scope": "TENANT"
+  },
+  {
+    "file": "CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+    "path": "published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+    "input": "Disabled user UPN",
+    "output": "Discovered mailbox access + guarded verified removal results",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "GET-TENANT-DRIFT-REVIEW.ps1",
+    "path": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
+    "input": "Signed-in tenant + optional saved baseline",
+    "output": "Added / removed / changed privileged access, Conditional Access, app credentials, and OAuth grants",
+    "scope": "TENANT"
+  },
+  {
+    "file": "INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+    "input": "UPN / CSV / TXT",
+    "output": "Cloud-only validation, reset result, temporary password shown after success, verification summary",
+    "scope": "SINGLE or MULTI-USER"
+  },
+  {
+    "file": "BEC-RECOVER-VALIDATE.ps1",
+    "path": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+    "input": "User sign-in address and Microsoft 365 domain or tenant ID",
+    "output": "Verified enable state, ticket summary and assessment/monitoring follow-up",
+    "scope": "SINGLE-USER"
+  },
+  {
+    "file": "PREPARE-FIELD-KIT.ps1",
+    "path": "published-source/utility/PREPARE-FIELD-KIT.ps1",
+    "input": "Current Windows account; Graph, Exchange or both",
+    "output": "Local prerequisite readiness and optional approved installation",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "GET-TERMINAL-READINESS-CHECK.ps1",
+    "path": "tools/GET-TERMINAL-READINESS-CHECK.ps1",
+    "input": "Toolkit folder",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "INVOKE-FILE-INVENTORY.ps1",
+    "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+    "input": "Folder",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "git-repo.ps1",
+    "path": "tools/git-repo.ps1",
+    "input": "Repository + Check / Pull / Push",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "git-handoff.ps1",
+    "path": "tools/git-handoff.ps1",
+    "input": "Repository",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "attractor.ps1",
+    "path": "toys/attractor.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "rain.ps1",
+    "path": "toys/rain.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "static.ps1",
+    "path": "toys/static.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "SET-THEME-BASIC.ps1",
+    "path": "toys/SET-THEME-BASIC.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "SET-THEME-COBALT.ps1",
+    "path": "toys/SET-THEME-COBALT.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "SET-THEME-SEAGLASS.ps1",
+    "path": "toys/SET-THEME-SEAGLASS.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "SET-THEME-SILICON-VALLEY.ps1",
+    "path": "toys/SET-THEME-SILICON-VALLEY.ps1",
+    "input": "Current terminal",
+    "output": "",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "Terminal-Tools.ps1",
+    "path": "tools/Terminal-Tools.ps1",
+    "input": "Choose startup/setup or shutdown",
+    "output": "Console results; optional exports where offered",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "Script-Tools.ps1",
+    "path": "tools/Script-Tools.ps1",
+    "input": "File or folder path / certificate selection",
+    "output": "Console results; optional exports where offered",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "GitHub-Tools.ps1",
+    "path": "tools/GitHub-Tools.ps1",
+    "input": "Repository path / action selection",
+    "output": "Console results; optional exports where offered",
+    "scope": "LOCAL"
+  },
+  {
+    "file": "GitHub-Security-Check.ps1",
+    "path": "tools/GitHub-Security-Check.ps1",
+    "input": "GitHub account / security-log export path",
+    "output": "Console results; optional exports where offered",
+    "scope": "LOCAL"
+  }
+]
