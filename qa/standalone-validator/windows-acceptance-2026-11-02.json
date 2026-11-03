@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/Los_Angeles",
+  "validatorVersion": "1.0.1",
+  "validatorSourceCommit": "0070266e8b880d92032822c4b2261d2758c79de7",
+  "evidenceType": "operator-pasted complete console output plus independently parsed attached synthetic CSV",
+  "summary": {
+    "pass": 161,
+    "fail": 0,
+    "skip": 0
+  },
+  "reportedPasses": [
+    "Local embedded-source/input/export checks",
+    "Graph module 2.34.0",
+    "Exchange module 3.10.1",
+    "Graph expected tenant and test user reads",
+    "Exchange expected tenant and test mailbox reads",
+    "Exchange and Graph disconnect"
+  ],
+  "csv": {
+    "columns": [
+      "UPN",
+      "Status",
+      "Detail"
+    ],
+    "rows": 2,
+    "utf8Bom": true,
+    "commaQuoteUnicodeAndMultiline": "PASS",
+    "sha256": "d3e789a84bb1edc696bb5ca01d99da26ca2111d9e4458475ab7ebc0bde823e33"
+  },
+  "validationJsonReport": "generated on operator Desktop; not supplied or independently inspected",
+  "scope": "Shared acceptance and representative read-only connectivity. No operational entrypoints or tenant mutations executed.",
+  "workflowVerification": "No blanket exact-version operational verification granted",
+  "releaseAuthorization": "Not granted by validator result"
+}
