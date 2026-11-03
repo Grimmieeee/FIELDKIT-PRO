@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 #Requires -Version 5.1
 
@@ -31,6 +31,23 @@ param(
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ErrorActionPreference = 'Stop'
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
+}
 
 function Write-Info { param([string]$Message) Write-Host "[INFO] $Message" }
 
@@ -566,13 +583,7 @@ function Offer-VerifiedCsv {
     if (-not $Rows -or $Rows.Count -eq 0) { return }
     if ((Read-Host "Export results to CSV [Y/N]").Trim() -notmatch '^(?i)y$') { return }
 
-    $desktop=[Environment]::GetFolderPath('Desktop')
-    if (-not $desktop -or -not (Test-Path -LiteralPath $desktop -PathType Container)) {
-        $desktop=(Get-Location).Path
-    }
-    $defaultPath=Join-Path $desktop $DefaultName
-    $path=(Read-Host "CSV output path [blank for $defaultPath]").Trim().Trim('"')
-    if (-not $path) { $path=$defaultPath }
+    $path=Get-FKDesktopExportPath -DefaultName $DefaultName
 
     $Rows | Export-Csv -LiteralPath $path -NoTypeInformation -Encoding UTF8 -ErrorAction Stop
     $check=@(Import-Csv -LiteralPath $path -ErrorAction Stop)

@@ -1,0 +1,20 @@
+{
+  "siteSourceCommit": "99d2a7536f3c117530f1ae6cbedd621fd45fc82f",
+  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2f70c1f38d2081919ae7066508abee1e",
+  "publicUrl": "https://field-kit-mobile-preview.delbert-hifield.chatgpt.site",
+  "domain": "fieldkit.pro",
+  "domainStatus": "pending DNS",
+  "desktopCandidatesPromoted": 38,
+  "verifiedCustomWorkflows": 3,
+  "repositoriesPrivate": true,
+  "originalRepositoriesUntouched": true,
+  "checks": {
+    "catalog": 311,
+    "sourceFiles": 72,
+    "packageChecks": 6,
+    "integrityCases": 13,
+    "httpsBrowserDownload": "PASS Download verified",
+    "codeView": "PASS promoted content",
+    "copy": "UI Copied; clipboard readback unavailable"
+  }
+}

@@ -1,4 +1,4 @@
-# .VERSION 1.0.2
+# .VERSION 1.0.3
 <#
 GET USER MAILBOX SNAPSHOT
 
@@ -25,6 +25,23 @@ if ($PSVersionTable.PSVersion.Major -lt 7) {
 $script:FKReportLines = New-Object 'Collections.Generic.List[string]'
 $script:FKReportWarnings = @()
 $script:FKReportStartedUtc = [DateTime]::UtcNow.ToString('o')
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
+}
 
 function Write-FKReportLine {
     [CmdletBinding()]
@@ -79,21 +96,15 @@ function Save-FKDesktopReport {
 }
 
 function Offer-FKDesktopReport {
-    param([string]$Title,[string]$ScopeNote='Scope matches the console output; only displayed rows are included.',[string]$DesktopFolder=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory))
+    param([string]$Title,[string]$ScopeNote='Scope matches the console output; only displayed rows are included.')
     if(-not $script:FKReportLines.Count){return}
     try {
         if((Read-Host 'Save report to Desktop? [Y/N]').Trim() -notmatch '^(?i)y$'){return}
-        $folder=$DesktopFolder
+        $folder=Get-FKDesktopDirectory
         $reportLines=@($script:FKReportLines.ToArray())
         if(@($script:FKReportWarnings).Count){$reportLines+=@('','SERVICE WARNINGS');$reportLines+=@($script:FKReportWarnings|ForEach-Object {[string]$_})}
         $content=ConvertTo-FKDesktopReport -Title $Title -Lines $reportLines -StartedUtc $script:FKReportStartedUtc -ScopeNote $ScopeNote
-        try {$saved=Save-FKDesktopReport -Folder $folder -Title $Title -Content $content}
-        catch {
-            Write-Host '[WARN] Desktop report could not be saved. Choose another existing folder or cancel.' -ForegroundColor Yellow
-            $folder=(Read-Host 'Report folder (ENTER cancels)').Trim().Trim('"')
-            if(-not $folder){return}
-            $saved=Save-FKDesktopReport -Folder $folder -Title $Title -Content $content
-        }
+        $saved=Save-FKDesktopReport -Folder $folder -Title $Title -Content $content
         Write-Host ('[OK] Report saved and readback checked: '+$saved)
     }catch{Write-Host ('[WARN] Report export failed: '+$_.Exception.Message) -ForegroundColor Yellow}
 }

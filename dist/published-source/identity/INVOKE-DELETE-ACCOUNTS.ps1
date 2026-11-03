@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 #Requires -Version 5.1
 
@@ -36,13 +36,30 @@ param(
     [string]$DomainName,
     [string]$DomainController,
     [string]$SyncServer,
-    [string]$OutputDir
+    [ValidateScript({throw 'Custom export paths are no longer supported. Results export to Desktop.'})][string]$OutputDir
 )
 
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+}
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
 }
 
 function Write-OK {
@@ -229,7 +246,7 @@ function Get-InputValues {
 }
 
 function Test-UpnSyntax {
-    param([string]$Value)
+    param([Alias('UPN')][string]$Value)
 
     return (
         -not [string]::IsNullOrWhiteSpace($Value) -and
@@ -710,22 +727,7 @@ function Write-ResultSection {
 }
 
 function Get-DefaultOutputDirectory {
-    param([string]$RequestedPath)
-
-    if (-not [string]::IsNullOrWhiteSpace($RequestedPath)) {
-        return $RequestedPath.Trim().Trim('"').Trim("'")
-    }
-
-    $desktop = [Environment]::GetFolderPath("Desktop")
-
-    if ([string]::IsNullOrWhiteSpace($desktop)) {
-        $desktop = (Get-Location).Path
-    }
-
-    return Join-Path `
-        $desktop `
-        ("Bulk-Identity-Deletion-{0}" -f
-            (Get-Date -Format "yyyyMMdd-HHmmss"))
+    return (Join-Path (Get-FKDesktopDirectory) ('Bulk-Identity-Deletion-'+[guid]::NewGuid().ToString('N')))
 }
 
 function Export-Evidence {
@@ -1531,17 +1533,7 @@ try {
 
     if ($exportChoice.Trim() -match '^(?i)y(?:es)?$') {
         try {
-            $requestedExportPath = $OutputDir
-
-            if ([string]::IsNullOrWhiteSpace($requestedExportPath)) {
-                $requestedExportPath = Read-Host (
-                    "Export folder path " +
-                    "(blank = Desktop)"
-                )
-            }
-
-            $destination = Get-DefaultOutputDirectory `
-                -RequestedPath $requestedExportPath
+            $destination = Get-DefaultOutputDirectory
 
             $export = Export-Evidence `
                 -Results $results `

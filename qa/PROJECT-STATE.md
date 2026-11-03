@@ -145,3 +145,13 @@ Ryan supplied complete validator 1.0.1 console output: 161 PASS, 0 FAIL, 0 SKIP.
 ## CUSTOM BEC owner acceptance, 2026-11-02 (Pacific)
 
 Ryan explicitly accepted all three CUSTOM scripts as verified. Added hash/version-bound owner-acceptance records for the reviewed BEC trio only, based on historical workflow testing/source-bound review plus the 161/0/0 Windows shared acceptance. Full current action runs are not claimed. Existing historical verification records preserved. Three Verified ✓ labels render beneath descriptions; no main-page legend/title changes. Rendering, altered-hash and altered-version rejection checks pass; 72 operational payload files unchanged. See qa/custom-owner-acceptance-2026-11-02.json. Private Site audience/domain and withheld operational candidates unchanged.
+
+## Authorized release preparation, 2026-11-03
+
+Promoted the exact 38 locked Desktop-export candidates after owner authorization. Release metadata and both ZIP builders bind to current served bytes; historical action verification preserved and not transferred. The three CUSTOM verified BEC workflows remain unchanged. Catalog audit (311 entries, 72 source files, six package checks), 13 integrity cases and ZIP member CRC/hash checks pass. Local HTTP browser correctly refuses download verification without a secure context; HTTPS browser check remains pending. Added fieldkit.pro/www to Visits hostname allowlist. Domain mapping created; DNS cutover pending owner registrar changes. Original repositories remain intact.
+
+## Public Site release, 2026-11-03
+
+Authorized public deployment succeeded. Sites source 99d2a7536f3c117530f1ae6cbedd621fd45fc82f; saved version appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2f70c1f38d2081919ae7066508abee1e. Public audience confirmed by native tool. HTTPS browser Download .ps1 reported Download verified for GET-ACCOUNT-STATUS.ps1; View code displayed promoted Desktop helper and COPY reported Copied (clipboard API readback empty, so exact clipboard bytes unconfirmed). GitHub repositories stay private. fieldkit.pro mapping awaits registrar DNS records; old site remains there until cutover.
+
+Unauthenticated HTTPS readback: root HTML and all 38 promoted sources match exact local SHA-256 bytes (39/39). See qa/hosted-release-check.json. Initial explicit index.html request timed out; successful root URL readback substituted.

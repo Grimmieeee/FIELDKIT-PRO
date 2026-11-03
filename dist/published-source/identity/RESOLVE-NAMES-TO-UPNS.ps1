@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 # OBJECTIVE: Find user sign-in names from names, email addresses, or a list.
 
@@ -27,6 +27,23 @@ param(
 
 
 $ErrorActionPreference = "Stop"
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
+}
 
 function OK($m)   { Write-Host "[OK]   $m" -ForegroundColor Green }
 function INFO($m) { Write-Host "[INFO] $m" }
@@ -650,13 +667,11 @@ try {
     Write-Host ". . . . END SUMMARY . . . ."
     Write-Host ""
 
-    $outputDirectory = Get-DefaultOutputDirectory -InputPath $inputPath
 
     $export = Read-Host "Export full review results to CSV [Y/N]"
     if ($export -match '^(Y|y)$') {
-        $defaultExport = Join-Path $outputDirectory ("resolved-upns-full-{0}.csv" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
-        $exportPath = Normalize-InputValue (Read-Host "CSV export path [$defaultExport]")
-        if (-not $exportPath) { $exportPath = $defaultExport }
+        $defaultExport = Join-Path (Get-FKDesktopDirectory) ("resolved-upns-full-{0}.csv" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
+        $exportPath = Get-FKDesktopExportPath -DefaultName ([IO.Path]::GetFileName($defaultExport))
 
         Export-VerifiedCsv -Rows @($allRows) -Path $exportPath
         OK "Exported and verified full review CSV: $exportPath"
@@ -669,9 +684,8 @@ try {
             WARN "No exact-match UPNs are available to export"
         }
         else {
-            $defaultClean = Join-Path $outputDirectory ("clean-upns-exact-{0}.txt" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
-            $cleanPath = Normalize-InputValue (Read-Host "TXT export path [$defaultClean]")
-            if (-not $cleanPath) { $cleanPath = $defaultClean }
+            $defaultClean = Join-Path (Get-FKDesktopDirectory) ("clean-upns-exact-{0}.txt" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
+            $cleanPath = Get-FKDesktopExportPath -DefaultName ([IO.Path]::GetFileName($defaultClean))
 
             Export-VerifiedUpnTxt -Upns $exactUpns -Path $cleanPath
             OK "Exported and verified exact-match UPN TXT: $cleanPath"

@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 <#
 DISABLE USER ACCOUNTS
@@ -35,6 +35,23 @@ $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+}
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
 }
 
 function Write-OK   { param($m) Write-Host "[OK]   $m" -ForegroundColor Green }
@@ -588,25 +605,7 @@ function Offer-ExportCsv {
         return
     }
 
-    $DesktopPath = [Environment]::GetFolderPath("Desktop")
-
-    if (-not $DesktopPath) {
-        $DesktopPath = Join-Path $env:USERPROFILE "Desktop"
-    }
-
-    $DefaultPath = Join-Path `
-        $DesktopPath `
-        ("account-disable-{0}.csv" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
-
-    $Path = Read-Host "Enter CSV path or press Enter to save to Desktop"
-
-    if ([string]::IsNullOrWhiteSpace($Path)) {
-        $Path = $DefaultPath
-    }
-    else {
-        $Path = ([string]$Path).Trim().Trim('"').Trim("'")
-        $Path = [Environment]::ExpandEnvironmentVariables($Path)
-    }
+    $path=Get-FKDesktopExportPath -DefaultName ("account-disable-{0}.csv" -f (Get-Date -Format "yyyyMMdd-HHmmss"))
 
     $ExportRows = @(
         $Rows |

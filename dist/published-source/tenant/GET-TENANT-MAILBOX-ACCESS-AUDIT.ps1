@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 # OBJECTIVE: Review mailbox forwarding and delegated access across the tenant.
 
@@ -24,6 +24,23 @@ $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+}
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
 }
 
 function Write-OK   { param($Message) Write-Host "[OK]   $Message" -ForegroundColor Green }
@@ -239,11 +256,7 @@ try {
 
     if ($Rows.Count -gt 0 -and (Confirm-Yes "Export results to CSV")) {
         $DefaultName = "tenant-mailbox-access-$(Get-Date -Format 'yyyyMMdd-HHmmss').csv"
-        $Path = Read-Host "CSV output path [blank for .\$DefaultName]"
-
-        if ([string]::IsNullOrWhiteSpace($Path)) {
-            $Path = Join-Path (Get-Location).Path $DefaultName
-        }
+        $path=Get-FKDesktopExportPath -DefaultName $DefaultName
 
         $Rows | Export-Csv -Path $Path -NoTypeInformation -Encoding UTF8 -ErrorAction Stop
         Write-OK "Exported: $Path"

@@ -13,36 +13,36 @@
       "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
       "preview_sha256": "aad0ecfefbce089c0fac6eaf4120686bfd55092c7ba72186f2b9e1b30f559d1b",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "94258427439cc292f33bd76e835b10a407218bc9136537874a9cd267f2e20b75"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "f3e60b6e9330ab2488b83b4fb55b85cec159fc3a1d749abd3c6293e73c673782"
     },
     {
       "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
       "preview_sha256": "1b4c765f02201d6ccb27fbc42d1672ab4a4de968eeb190bede1d5b3321c931f3",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "5c7baa7d0551de2eb0c21650bb8943ca198697c94cef2f556a5ab458f7916d67"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "9e843b8b86932083de052ef72cfd5aeb5cb1c95268d1e18953b55d00be92a7ef"
     },
     {
       "path": "published-source/identity/GET-USER-GROUPS.ps1",
       "preview_sha256": "9b2e09f42aef591f143a60c8578b415179fcf317b5700d0e057019520d81977a",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "d0b71178ddca2eb793610f21d5f52266d454360ca848d7257ebb3347d6ec9bdd"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "5845e8a45b2204be41144b518ed25aff7717d141a70144992b0d4276938af7c4"
     },
     {
       "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
       "preview_sha256": "e22cc2098c9fbb4c5fa08806966296e144c1448501ae4d3f7fdce0912a7fce58",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "4ae5545f73829374e5b1500bd3ba8cc029e3f095e700e9ce76bf835d8a034107"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "f0f11dc61d4e05659811fd36b406ee19b6bb940c46345a49acf5b09cecb77635"
     },
     {
       "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
       "preview_sha256": "dda2e81f675e4239fb6ec3179abf722a01f8e65237634f1a6078c9592bdfe242",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "b9d8d41d6fe83eb0c5b3c8cb6d71989719d8622bc359116fc20618814399cff6"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "ba8077b4bac332ecf24b6db0c2e4a05e1e52820c73a4b4036b6c8d41fb83e345"
     },
     {
       "path": "published-source/identity/INVOKE-ASSIGN-LICENSES.ps1",
@@ -54,29 +54,29 @@
       "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
       "preview_sha256": "8489b19c135d1f878cd284f83d60f7881ae3f5c8c644fcf1e45263b71a9432cf",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "7ed4b8f50be401d4004b6ff4672d19bcad5ab6e7f47cf7bc3d0a3e144290f83d"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "5c1cd308635bf5fd1648f0cb8d2c894739a2384c08028679a2a301d346d6b46c"
     },
     {
       "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
       "preview_sha256": "1d248da8887e9373616b7a38b32ff13765e79aa422444f4093f649a3b6fa0852",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "0831cf439bc477cae85d6b6a4f2e2eb1043d4e61d5d4e65964eaa7de658c0eef"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "4adb49aa8344461de20514fd8a449e032e4f26e7c02215e5b6ac04010b2b4c30"
     },
     {
       "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
       "preview_sha256": "c1c0acb033950bdf547cf85e363d3857cfcdfd171559d3f67bc41405b3a32c01",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "a123394ca9a041cb7f49225b334ce6fe02637038c554944d1c222d325fa72287"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "8b27d3264572deeaf6da62abe040ab08c78d7d000d8cc2357da3c0808a1f3c8f"
     },
     {
       "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
       "preview_sha256": "5c90f8fcac56897c1d670af0fbf74b266671949c51ed5ef7845b5abc7e076b4f",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "23a9db7bcacb8f388d2e71b3cc54b720a00b9d377af7c10bac263b32f0008b62"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "a9bc098ddfa7e9f4c31d5c02ffcc5d5a3fb92f04947406d1163d0cb46923a63c"
     },
     {
       "path": "published-source/identity/INVOKE-REMOVE-LICENSES.ps1",
@@ -102,8 +102,8 @@
       "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
       "preview_sha256": "72a8e4f1676a16621fa1af75edf2f2842ff3b6949566a26d5a1cc1a8af1b8a28",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "8b150fd6e093ecf1a4b2b77cc5856f18de47a0f101a8f7257f0eea4742d12f8d"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "beda548158a6ac058a5795dead720c12976fd7047a259a08bea74596266bdbcd"
     },
     {
       "path": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
@@ -116,57 +116,57 @@
       "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
       "preview_sha256": "a793699cc5aafb3db57e247c4e72814a97d7cb28258989bbbbcd2e582c20ad97",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "1fa5c320ff44327b602d61a94ba5a76b9571b51fdbf36c77be0c59e34795fad1"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "99b6d9d0998327d29830c23089c979ceb3ee3b33dac15df1a512dc021ace88df"
     },
     {
       "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
       "preview_sha256": "0f527b092ab3969403d9fb72d49298820c5ea2cc9aacc8798884fc33edf5dd33",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "a97b049fad9c2a2f7f4344bc90a68689d1e1d5c4f720f2b6533b5106ae69970a"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "1f4e83f1b3069ad3fbf9aa4c1fe196ae959fe505bd435b97b8b74d3b13efe708"
     },
     {
       "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
       "preview_sha256": "bc3e9fedf99710ed5f6f60249a765d658d291e3223f0371a31d7e315209b554b",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "3a78895cbec147f408f82929e720c7e527c8bd3f18dad6d86c1e31ee1c868043"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "7ddde1f35669d3fe5068946c44862833df3afa33b320c236738087e6a039e94b"
     },
     {
       "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
       "preview_sha256": "4ec5af1b96a76647599745fcd5702ae92134027d25f26712798ac7210debd2da",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "e0864cdd7dd81324a3b1a71fbf80841c14d3bd86d0ca7abb100416b4a243461e"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "84ec171576cbd29a0f09b53e4b54b5cb6eaeeb124a9ad561a43d3f1420d51aab"
     },
     {
       "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
       "preview_sha256": "af21ee31984e8b20c4f3c6b3fbc12dd34af3aa20d1c2cf619a6a42977fadaa9a",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "a80ca2ee465da49ebb7d38b6728265be427d93a4aa7eb129d3e18f202a4b5ecf"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "2d22f905256759afdaf60d880478fc1d8e416ef81d19b43f62c7d599f2a3f305"
     },
     {
       "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
       "preview_sha256": "49ceadcde6c3dcfc118fb36255dc2014d126772db6aab8f109f52a1255f27ad4",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "809933ffd6759b71b20324825887e7d5b1530e1eecce8d8d0cd92c3ce5a57742"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "eece3f8957d86f18f51243fa9e567d14dc3b91e000a7acd41795fa136bc66a2d"
     },
     {
       "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
       "preview_sha256": "6ce6792f65897a9b55d438bffde23bc673273c308cb57cb1de5d98a534fc94d7",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "aacd5c9a0c91ecbd16ceedaa14b433aba25f882f3752efd903996bfc95dbfbde"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "8365b1e20934bd3aeb47798041a50712df29a6ad88bd4839fef5a3f02324a722"
     },
     {
       "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
       "preview_sha256": "cb6b2a0e97f98cc8120438f4133da5d83bd024a537f73c557af21c8099de9172",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "bbbe2551ba6054995d4caa517e23a32711c0afbd4b7becbf2a5575662409482f"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "761b9fc57d572033a956b8abb13a41ca0da4d0e5197bb8e27ae189e0574e6b6f"
     },
     {
       "path": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
@@ -193,36 +193,36 @@
       "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
       "preview_sha256": "d55e4819b4b26e01d9ab4378b7c1bb541c99275fcb1b7f3f65d35d3f79b713be",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "0e184a41bd351c391985118eb128eaefad0311ec691abe4933868e6af5a88d91"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "a1a93415351d2d33382461faabd99e74f76c965fef2a0229e6e66314d31bb7e2"
     },
     {
       "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
       "preview_sha256": "d8f5d90d590a5d5b5bc9b94a7ae261fc8551b51f114201aa1fc3092e8ac021b5",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "76535edd6d3e922cc44decedba707203716788afa4bdabbf68579549a57752e6"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "d95fc690fe2c4029b4a9aba527722e47ddf94b8307af2f65031780bd52ec1410"
     },
     {
       "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
       "preview_sha256": "16a778abc5a3a131c4c16da360c6a5edc71ed4cc3a5c4d99f4d9804fac5a846c",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "e9e75ef77efeb81017c8dcc6f3f05cd5deb4fb8eba90890560808406762f7fda"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "91de7078fecf5ff4403029b64b1ab33c5b719de4a6110c5398f749df2bd16e82"
     },
     {
       "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
       "preview_sha256": "bb567c22de8fd7a393baeeb0881c56dc10a010193e6d9c330ce66ac96feb124d",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "1ea2ff740e1f5eb24ba4aafa92636fce025ed90ffbc4050e80ce5aedcb3568fe"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "f024257b1c9acaa5476379844642bfd219370ba82367cf9ae91bc7105189f1bf"
     },
     {
       "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
       "preview_sha256": "5c8aa17c59c485e34cec3f8d7d4b374291673ce1e7d82edf51218f3baa09540a",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "764cf4825fa98591a0ab0bde803f96568e1a1c2d8ed4585095eda2460a04aa6c"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "b285cf6514f3468e9c9fcb6e51c09124dd0743af23219253422ea3b328776ac7"
     },
     {
       "path": "published-source/tenant/GET-APP-REGISTRATION-AUDIT.ps1",
@@ -234,15 +234,15 @@
       "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
       "preview_sha256": "2baa1a492facb5f7ac4757afe9d2492d1b82e75d74ec8a86fcb7b8c59b1dcffc",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "adebcd1ba46cb0e58a7ac4381547d2aa7f501a906b5c521d27ca0ac9121b6555"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "9a140f24f59b057424c1d901956845f95c08f031812349fcb570152be5dc9390"
     },
     {
       "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
       "preview_sha256": "b2ff412364cdb05acbbb22a8411f383de20effccdfbd997a0116f325ea2cfdf7",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "9595b261ea55f5fc61dd562df2e5297cd8d3fa8bf587d0d61cce5535df93e27b"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "2217a85a57678ec21ab060d74f4028ce30a9f02b87e5e8da50cbdff00d0c0259"
     },
     {
       "path": "published-source/tenant/GET-GUEST-APP-CONSENT-AUDIT.ps1",
@@ -254,15 +254,15 @@
       "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
       "preview_sha256": "0fb28ce56524d752f4da82945cf6005b79c962ef163d979547d106be2132bf8d",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "641555328872d02331f3153eb686b48bf4cf5b21f67c7a9919c0bbef0d75da61"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "f55033be95961a8486a6dd29314c3f36bdbe7faf96a5c10e4dafa206fc649685"
     },
     {
       "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
       "preview_sha256": "fa5d7cc1cf3cd24f653d253b00b19ec6f3d6182de043475e4e7e8e52638f12d7",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "da69d7308448b31477b9de6ff104257a891562902ec0142a5b053b70482d73a5"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "8f09b58b9c00c2fc5683481a121d9734512cd383ecd3c0ffbb2f7dc4839d0737"
     },
     {
       "path": "published-source/tenant/GET-OAUTH-CONSENT-AUDIT.ps1",
@@ -274,15 +274,15 @@
       "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
       "preview_sha256": "fba9b7e3335944851bfdcc9a54f58fb08c0186f616a8461a96d3ab126d60a093",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "df729d70508b81bf0328f0313d0de406e56f4204c3dc8460ef0ea8bb4eb91606"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "8505bcda8983607fdf158f5b3a5cc68a795583d215cf49200a89e6681178f685"
     },
     {
       "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
       "preview_sha256": "75bdefd227e7099501c358ba4b7a5a0a95567d260129f28b4148a776c70477c0",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "bf4d87b38d221c5e6b86fef69b10a1cb7c4d75e6fe8c5abe64ec5c99993f3e5d"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "0b172b51462092344bf365aaee2897ea91b88dba30ceaffd42649a00ec4558f4"
     },
     {
       "path": "published-source/tenant/GET-SERVICE-PRINCIPAL-OWNERS.ps1",
@@ -294,22 +294,22 @@
       "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
       "preview_sha256": "749ba7617908bf20eae41bb455a1ce22d6866083fa011b4761c2a03ce8b1fc5b",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "3f365d6e8677b2f59f1e3fba81f038c6645dd0e1e3a95b28c95804b161f06009"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "aaffe0fc3c6940def0c02ae3cd352fbaf690b873ec6edaf2ea27a822f027148c"
     },
     {
       "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
       "preview_sha256": "d60b5e1a4d90fbb671096130df042f2136d6ec93d54ad77f7d491a6232b16f40",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "dcde2b39589b9c740a7a9c20ff17cc59d8752cc555a9359f9d0210e18fa053b1"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "e429654062598ef2a65b5d641c76868a5f6412864a9d2409f7baaed12285e5df"
     },
     {
       "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
       "preview_sha256": "0dbd24f1736bda2e9be87db2f19f3217cef54b65e50d3e7deaec7c59e49601e1",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "27e94610728226f9c43f44631b4c9921fc6412ddf8d79f2e2617a7725c1a4fa6"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "25300901eb531b53fcb4e57273bf926cdd3e91cdaa92f7796517c0f3325d4ee5"
     },
     {
       "path": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
@@ -322,15 +322,15 @@
       "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
       "preview_sha256": "f41b755f77833589a5867b8da891685d4900a361e981535e76da69e02016a87d",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "dc04a5c13230de80a767d325a6739c3df6240618d20e6419315cb96a43f224b0"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "30edf7070d1945c21df901b4f8caae23aacf15c5bddaf9120d71315668d786e1"
     },
     {
       "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
       "preview_sha256": "c55d09df5921c84193f3117a066009eecd5fd36397ae60f4b118ab6e6963ed83",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "c0a1a2459471df298746940de9a997ee60514cbec0bb11a821f4c7e2233c66f6"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "7c77ca528d1ad77fe4b6196ceef810d02d2aa56430af291b1240b80e337f54a2"
     },
     {
       "path": "published-source/tenant/GET-TENANT-LICENSING-AUDIT.ps1",
@@ -342,22 +342,22 @@
       "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
       "preview_sha256": "704f5b34ba3dec7986cc74c3a932a87d5654b683e09848c1a6d11b11f3fcadac",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "90eadb894e2aa8ac36f62047a4c4aadcac67aa468c8bbbf583ec0992e6fc6e9c"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "063a5b370d2e70a24e72c51e99dbdec4df1a36abdb0763f3ab657134ad7342e0"
     },
     {
       "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
       "preview_sha256": "170ec244497f8763986d24954708a5b428c3ec7cf108e958d57d928c3d89161d",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "342829ae9c8df76225bdee4e0c76776aabb76a43a3c5756363a6add984ca0666"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "5e031a7f633fe53aaf9f905403d971c3208ef3cb7ae8007a5ce84fa93272bf7b"
     },
     {
       "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
       "preview_sha256": "3e59e53d7b28fb256c8150cf582af63d265fe0bcda6a2bd932618770e39d127b",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "7c4ff63bee17b5669a05a76657f3cca0b5b3674b102ead014df742ae720c62ae"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "19c531f6eda29d194bdcf0cc760b9cca8180b90ec4be1464d3478f30a859222b"
     },
     {
       "path": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
@@ -452,8 +452,8 @@
       "path": "tools/INVOKE-FILE-INVENTORY.ps1",
       "preview_sha256": "6c004eeadb193f027536a56927100d12d78330760ee0f6ef63290a91762922a7",
       "status": "enabled",
-      "reason": "Established published source and source-bound guidance",
-      "sha256": "435f354240c3178c5def5a4b2faaaaa013a7ef0d99f07fcf9170e69801b13279"
+      "reason": "Accepted Desktop export revision; pinned candidate bytes and shared Windows acceptance",
+      "sha256": "128d02b32e818d96dfb03af3a36a54aa6a5082d01dbecc31a6a2e25bf72ff607"
     },
     {
       "path": "tools/lessons-learned.md",
@@ -575,6 +575,6 @@
   ],
   "enabled": 72,
   "withheld": 11,
-  "windows_validation": "UNEXECUTED",
-  "live_tenant_validation": "UNEXECUTED"
+  "windows_validation": "Operator-reported validator 1.0.1: 161 PASS, 0 FAIL, 0 SKIP",
+  "live_tenant_validation": "Representative read-only Graph and Exchange tenant/target reads passed; no operational action entrypoints executed"
 }

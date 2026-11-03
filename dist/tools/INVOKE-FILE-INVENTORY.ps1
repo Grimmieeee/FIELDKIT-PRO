@@ -1,4 +1,4 @@
-# .VERSION 1.0.3
+# .VERSION 1.0.4
 #Requires -Version 5.1
 
 <#
@@ -30,6 +30,23 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
+}
 
 function OK($m)   { Write-Host "[OK]   $m" -ForegroundColor Green }
 function INFO($m) { Write-Host "[INFO] $m" }
@@ -342,24 +359,7 @@ try {
     $export = Read-Host "Export inventory CSVs [Y/N]"
 
     if ($export -match '^(?i:Y)$') {
-        $desktop = [Environment]::GetFolderPath("Desktop")
-
-        if ([string]::IsNullOrWhiteSpace($desktop)) {
-            $desktop = Join-Path $env:USERPROFILE "Desktop"
-        }
-
-        $outputFolder = Read-Host "Output folder [Enter for Desktop]"
-
-        if ([string]::IsNullOrWhiteSpace($outputFolder)) {
-            $outputFolder = $desktop
-        }
-        else {
-            $outputFolder = $outputFolder.Trim().Trim('"').Trim("'")
-        }
-
-        if (-not (Test-Path -LiteralPath $outputFolder -PathType Container)) {
-            throw "Output folder not found: $outputFolder"
-        }
+        $outputFolder=Get-FKDesktopDirectory
 
         $stamp = Get-Date -Format "yyyyMMdd-HHmmss"
 

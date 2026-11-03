@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.4
+.VERSION 1.0.5
 #>
 #Requires -Version 5.1
 
@@ -22,6 +22,23 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+
+function Get-FKDesktopDirectory {
+    $desktop=[Environment]::GetFolderPath([Environment+SpecialFolder]::DesktopDirectory)
+    if ([string]::IsNullOrWhiteSpace($desktop) -or -not [IO.Directory]::Exists($desktop)) {
+        throw 'Desktop is unavailable. Export was not saved; no alternate folder was used.'
+    }
+    return $desktop
+}
+
+function Get-FKDesktopExportPath {
+    param([Parameter(Mandatory)][string]$DefaultName)
+    $name=[IO.Path]::GetFileName($DefaultName)
+    if ([string]::IsNullOrWhiteSpace($name) -or $name -ne $DefaultName -or $name -match '[<>:"/\\|?*]') { throw 'Export filename must be a filename without a custom path.' }
+    $stem=[IO.Path]::GetFileNameWithoutExtension($name)
+    $extension=[IO.Path]::GetExtension($name)
+    return (Join-Path (Get-FKDesktopDirectory) ($stem+'-'+[guid]::NewGuid().ToString('N')+$extension))
+}
 
 function OK($m)   { Write-Host "[OK]   $m" -ForegroundColor Green }
 function INFO($m) { Write-Host "[INFO] $m" }
@@ -96,21 +113,7 @@ function Get-DesktopPath {
 
 function Get-ExportPath {
     param([string]$DefaultName)
-
-    $folder = Read-Host "Output folder [Enter for Desktop]"
-
-    if ([string]::IsNullOrWhiteSpace($folder)) {
-        $folder = Get-DesktopPath
-    }
-    else {
-        $folder = $folder.Trim().Trim('"').Trim("'")
-    }
-
-    if (-not (Test-Path -LiteralPath $folder -PathType Container)) {
-        throw "Output folder not found: $folder"
-    }
-
-    return (Join-Path $folder $DefaultName)
+    return (Get-FKDesktopExportPath -DefaultName $DefaultName)
 }
 
 function Read-SecretText {
