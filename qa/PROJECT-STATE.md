@@ -161,3 +161,7 @@ GitHub release commit 585b535081153697fa136accbfc5c51be3593774 pushed to main; a
 ## Owner-approved repository cleanup
 
 Keep FIELDKIT-PRO/main; owner explicitly approved removing the other five repositories including ARCHIVE. No new feature backlog or internal-instruction additions retained. Three live user-facing legacy repository links repointed to PRO; added current SECURITY.md and refreshed README. Catalog/package/integrity checks pass, script bytes unchanged. Site source 55fba4febfb9d70845e20ee2f081c5bde2b3bd96 published publicly; domain and SSL active. Repository deletion UNEXECUTED: connector has no deletion operation. Old repo URLs/remotes will cease working; external endpoint dependencies were not inspected. See qa/REPOSITORY-CLEANUP.json.
+
+## Live readability and card close
+
+User requested stronger light-mode readability and a small corner close control. Darkened catalog names/categories and secondary text; preserved subtle search placeholder. Restored existing closeItem button with 16px SVG/44px hit target, clamped Favorite to avoid overlap. Catalog/package checks PASS, 72 script files unchanged. Desktop close and 390px frame visual/coordinate-close checked. Removed temporary phone fixture before packaging. About older-layout regression identified separately; no About redesign in this change.

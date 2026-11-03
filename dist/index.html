@@ -2666,7 +2666,16 @@ html[data-theme="light"] body.orbit-ui #search::placeholder{color:#918899;opacit
 .card-verified-key{font:400 11px/1.5 var(--ui);color:var(--muted);margin:12px 0 0}
 .card-verified-key span{color:var(--flag-verified);margin-left:5px;font-size:13px}
 body.orbit-ui .item-head:has(.card-verified-key)+.operator-actions{margin-top:22px}
-</style></head>
+</style><style id="live-readability-close">
+html[data-theme="light"] body.orbit-ui{--muted:#6c6378}
+html[data-theme="light"] body.orbit-ui .result .result-name{color:#544b62}
+html[data-theme="light"] body.orbit-ui .orbit-category{color:#655b71}
+html[data-theme="light"] body.orbit-ui #search{color:#312a40}
+body.orbit-ui #closeDrawer{display:inline-flex!important;position:absolute;right:8px;left:auto;top:50%;transform:translateY(-50%);align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;margin:0;padding:0;background:transparent;border:0;border-radius:6px;color:var(--muted);cursor:pointer}
+body.orbit-ui #closeDrawer:hover{color:var(--text)}
+body.orbit-ui #closeDrawer:focus-visible{outline:2px solid currentColor;outline-offset:-5px}
+</style>
+</head>
 <body class="orbit-ui">
 <noscript><p>This catalog needs JavaScript for search and downloads. Browse the <a href="https://github.com/Grimmieeee/FIELDKIT-PRO/tree/main/dist/published-source">published source files</a> in the repository.</p></noscript>
 <div id="navOverlay" class="overlay"></div>
@@ -2747,7 +2756,7 @@ body.orbit-ui .item-head:has(.card-verified-key)+.operator-actions{margin-top:22
 <aside id="drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerLabel" aria-hidden="true" inert>
   <div class="drawer-head">
     <div id="drawerLabel" class="drawer-label"><span>FIELD // KIT</span></div>
-    <button id="closeDrawer" class="icon-button" type="button" aria-label="Close"><span class="drawer-close-desktop">×</span><span class="drawer-close-mobile">← Back</span></button>
+    <button id="closeDrawer" class="icon-button" type="button" aria-label="Close card" title="Close card"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
   </div>
   <div id="drawerBody" class="drawer-body"></div>
 </aside>
@@ -29022,7 +29031,7 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
     const headerStar=document.getElementById('cardFavorite');if(headerStar){
       const head=drawer.querySelector('.drawer-head'),flags=drawerBody.querySelector('.card-flags');
       head?.append(headerStar);
-      const align=()=>{if(!head||!flags||!headerStar.isConnected)return;const h=head.getBoundingClientRect(),f=(flags.querySelector('.card-flag-labels')?.lastElementChild||flags.lastElementChild||flags).getBoundingClientRect();headerStar.style.left=(f.left+f.width/2-h.left)+'px';};
+      const align=()=>{if(!head||!flags||!headerStar.isConnected)return;const h=head.getBoundingClientRect(),f=(flags.querySelector('.card-flag-labels')?.lastElementChild||flags.lastElementChild||flags).getBoundingClientRect();headerStar.style.left=Math.min(f.left+f.width/2-h.left,h.width-80)+'px';};
       cardStarObserver?.disconnect();cardStarObserver=new ResizeObserver(align);cardStarObserver.observe(drawer);cardStarObserver.observe(drawerBody);window.requestAnimationFrame(align);
     }
 

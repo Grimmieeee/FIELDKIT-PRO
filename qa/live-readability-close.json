@@ -1,0 +1,17 @@
+{
+  "changes": [
+    "Darker light-mode result names and categories; secondary text moderately darkened",
+    "Existing closeItem control restored as 16px SVG x within 44px target",
+    "Favorite position clamped to leave close target space"
+  ],
+  "checks": {
+    "catalogEntries": 311,
+    "sourceFiles": 72,
+    "packageChecks": 6,
+    "desktopClose": "PASS dialog hidden",
+    "phone390": "Visual spacing and coordinate close PASS; iframe locator geometry unreliable",
+    "lightResultColor": "rgb(84,75,98)"
+  },
+  "scriptChanges": 0,
+  "aboutRegression": "Older static scope grid and where supported wording remain; not changed in this narrow pass"
+}
