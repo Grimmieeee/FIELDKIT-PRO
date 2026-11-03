@@ -1,2 +1,2 @@
 # FIELDKIT-PRO
-F I E L D  K I T // P R O
+F I E L D  K I T //
