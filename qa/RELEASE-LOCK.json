@@ -1,24 +1,37 @@
 {
-  "siteSourceCommit": "99d2a7536f3c117530f1ae6cbedd621fd45fc82f",
-  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2f70c1f38d2081919ae7066508abee1e",
-  "publicUrl": "https://field-kit-mobile-preview.delbert-hifield.chatgpt.site",
-  "domain": "fieldkit.pro",
-  "domainStatus": "pending DNS",
-  "desktopCandidatesPromoted": 38,
-  "verifiedCustomWorkflows": 3,
-  "originalRepositoriesUntouched": true,
+  "status": "LOCKED_DEPLOYED",
+  "reviewDate": "2026-11-03",
+  "canonicalRepository": "Grimmieeee/FIELDKIT-PRO",
+  "defaultBranch": "main",
+  "siteSourceCommit": "4a03abead463b13943f98fa5d26d3ebd161c6890",
+  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_be2964e795d48191b9e4eadbc7093243",
+  "siteVersionNumber": 71,
+  "deploymentId": "appgdep_6aea02ae8f948191bb0f2395795e6c65",
+  "deploymentStatus": "succeeded",
+  "publicUrl": "https://fieldkit.pro/",
+  "hosting": "Sites; independent of GitHub Pages and legacy repositories",
+  "domainStatus": "active",
+  "sslStatus": "active",
+  "indexSha256": "ee0d61d140fdfe996497efd89bd72653e301e8665b8d69f1c880e6872b0ce9b8",
   "checks": {
-    "catalog": 311,
-    "sourceFiles": 72,
-    "packageChecks": 6,
-    "integrityCases": 13,
-    "httpsBrowserDownload": "PASS Download verified",
-    "codeView": "PASS promoted content",
-    "copy": "UI Copied; clipboard readback unavailable"
+    "catalogItems": 311,
+    "quickCommands": 230,
+    "releaseFiles": 72,
+    "powerShellFilesUnchanged": 59,
+    "packageCasesPassed": 6,
+    "integrityCasesPassed": 13,
+    "zipCrcAndMemberHashes": "PASS (Setup 2 members; BEC 6 members)",
+    "styleBlocksUnchanged": 19,
+    "liveBrowserScriptDownload": "PASS: Download verified",
+    "liveBrowser": "Tour/reload, search, no-results, Favorites persistence, categories, About/security, card close, BEC permissions, code preview, theme persistence"
   },
-  "repositoryVisibility": {
-    "FIELDKIT-PRO": "public",
-    "FIELDKIT-ARCHIVE": "private",
-    "changedByThisRelease": false
-  }
+  "counter": "Owner approved existing live behavior; unchanged",
+  "limits": [
+    "No new Windows or live-tenant execution",
+    "No fresh phone viewport/physical iPhone test; earlier responsive evidence retained, 19 CSS blocks unchanged",
+    "Site runtime independence is confirmed; external clones, bookmarks and scheduled jobs using old repos were not inspected",
+    "Deleting the old catalog removes its old Pages deployment, CI and scheduled CodeQL; those workflows are not migrated into PRO",
+    "Original nondefault refs/history are not fully preserved by archive file snapshots"
+  ],
+  "repositoriesDeleted": false
 }

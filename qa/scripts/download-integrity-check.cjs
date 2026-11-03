@@ -17,5 +17,6 @@ await check('Invalid UTF8 blocks',async()=>{setup(Buffer.from([255,254,255]));aw
 await check('Traversal path blocks',()=>assert.throws(()=>q.approvedSourceUrl('published-source/../QA.ps1'),/not approved/));
 await check('External source URL blocks',()=>assert.throws(()=>q.approvedSourceUrl('https://example.test/QA.ps1'),/not approved/));
 await check('Missing checksum blocks',()=>assert.throws(()=>q.approvedSourceUrl('published-source/missing.ps1'),/withheld|checksum/));
-fs.writeFileSync('/workspace/sites/field-kit-release/qa/download-integrity-tests.json',JSON.stringify({scope:'Extracted actual resolveSource and approvedSourceUrl; synthetic fetch responses only, not browser download acceptance',results},null,2)+'\n');console.log('DOWNLOAD QA: '+results.length+' passed');
+fs.writeFileSync(require('path').join(__dirname,'../download-integrity-tests.json'),JSON.stringify({scope:'Extracted actual resolveSource and approvedSourceUrl; synthetic fetch responses only, not browser download acceptance',results},null,2)+'\n');console.log('DOWNLOAD QA: '+results.length+' passed');
 })().catch(e=>{console.error(e);process.exitCode=1});
+

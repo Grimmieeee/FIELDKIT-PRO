@@ -636,7 +636,7 @@ Static QA must never be described as successful production execution.
 Primary repository:
 
 ```text
-pwsh-operations-catalog
+Grimmieeee/FIELDKIT-PRO (main)
 ```
 
 Working/development branch (use a focused branch for each change):
@@ -717,10 +717,10 @@ Local QA can be served from the repository root. The established local URL is:
 http://127.0.0.1:9443
 ```
 
-The public GitHub Pages URL is:
+The public Sites URL is:
 
 ```text
-https://grimmieeee.github.io/pwsh-operations-catalog/
+https://fieldkit.pro/
 ```
 
 The site must remain usable on desktop and mobile. Mobile behavior includes a slide-out navigation drawer, full-width detail view, touch-sized controls, safe-area handling, and narrow-screen wrapping for long filenames/code.

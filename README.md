@@ -12,4 +12,4 @@ Live site: https://fieldkit.pro/
 
 The site is hosted with Sites, independently of GitHub Pages. This repository is public. Windows validator 1.0.1 was operator-reported at 161 PASS, 0 FAIL, 0 SKIP; verification remains source/version-specific.
 
-Legacy repository removal is owner-approved. Current site download resolution uses hosted, same-origin files rather than the original repositories. See `qa/REPOSITORY-CLEANUP.json` for the cleanup scope and completion state.
+Legacy repository removal is owner-approved. Current site download resolution uses hosted, same-origin files rather than the original repositories. See [current release review](qa/SITE-LOCK-REVIEW-2026-11-03.md), `qa/RELEASE-LOCK.json` and `qa/REPOSITORY-CLEANUP.json` for the current baseline and deletion limits.

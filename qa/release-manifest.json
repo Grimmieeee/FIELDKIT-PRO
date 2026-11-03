@@ -7,7 +7,7 @@
       "preview_sha256": "514da2ce9c0b0677b9bc722d23c79579a74b273801a6ed69dc3a1d3b3a93e731",
       "status": "enabled",
       "reason": "Established published source and source-bound guidance",
-      "sha256": "d8da345212ab7c9b4801b9e5255930b34651d33bc41dab6f6d37881baf617815"
+      "sha256": "a1aedf64e1f65264188bec6854b79bb2b364c090e267c4d0fc4913ee5a41fa78"
     },
     {
       "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
@@ -578,3 +578,4 @@
   "windows_validation": "Operator-reported validator 1.0.1: 161 PASS, 0 FAIL, 0 SKIP",
   "live_tenant_validation": "Representative read-only Graph and Exchange tenant/target reads passed; no operational action entrypoints executed"
 }
+

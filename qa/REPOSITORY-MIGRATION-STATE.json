@@ -1,5 +1,5 @@
 {
-  "status": "COMPLETED",
+  "status": "HISTORICAL_MIGRATION_RECORD",
   "pro": {
     "repository": "Grimmieeee/FIELDKIT-PRO",
     "branch": "main",
@@ -50,5 +50,6 @@
     "source": "pwsh-operations-catalog GitHub Pages",
     "changesMade": false
   },
-  "operationalCandidates": "withheld_pending_Windows_and_tenant_acceptance"
+  "operationalCandidates": "withheld_pending_Windows_and_tenant_acceptance",
+  "currentState": "Superseded by qa/RELEASE-LOCK.json; original snapshot/history facts retained below."
 }

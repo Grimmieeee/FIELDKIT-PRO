@@ -32,7 +32,7 @@ c.fetch=async url=>{
     assert(!/id="(?:downloadSource|showSource)"/.test(q.sourceButton(item)),item.file);
   }
   pass('All nine visible withheld cards omit source actions');
-  const artifactRoot='/workspace/scratch/b9c76d92b0dc/release-test-artifacts';fs.mkdirSync(artifactRoot,{recursive:true});
+  const artifactRoot=path.join(root,'qa/release-test-artifacts');fs.mkdirSync(artifactRoot,{recursive:true});
   for(const [name,build] of [['field-kit-first-run.zip',q.buildSetupBundle],['field-kit-bec.zip',q.buildIRBundle]]){
     const blob=await build();fs.writeFileSync(path.join(artifactRoot,name),Buffer.from(await blob.arrayBuffer()));
   }
@@ -46,3 +46,4 @@ c.fetch=async url=>{
   fs.writeFileSync(path.join(root,'qa/release-check-results.json'),JSON.stringify({scope:'Actual catalog resolver and ZIP builders with filesystem-backed synthetic fetch; no Windows or tenant execution',results},null,2)+'\n');
   console.log(JSON.stringify({passed:results.length,files:manifest.enabled,catalog:q.ITEMS.length,artifactRoot}));
 })().catch(e=>{console.error(e);process.exitCode=1});
+

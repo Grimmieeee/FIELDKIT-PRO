@@ -1,7 +1,12 @@
 {
   "status": "APPROVED_LOCKED",
-  "source_commit": "a12070c4c905e0cd8c9579fc2ed1643aa3069b39",
-  "version_id": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_ebab1ae02fb081919836d3c97b073a27",
-  "operational_candidates": "withheld_pending_validation",
-  "index_sha256": "9088072e37e349e63d5c0aeb4672fc94a83f7c33cacf6743962d57d190fb5b3e"
+  "review_date": "2026-11-03",
+  "canonical_repository": "Grimmieeee/FIELDKIT-PRO",
+  "default_branch": "main",
+  "public_url": "https://fieldkit.pro/",
+  "index_sha256": "ee0d61d140fdfe996497efd89bd72653e301e8665b8d69f1c880e6872b0ce9b8",
+  "counter": "Owner accepted live counter as-is; namespace, rendering and behavior preserved",
+  "design": "All 19 style blocks unchanged from deployed version 70",
+  "source_scripts": "59 PowerShell payloads unchanged",
+  "notes": "Supersedes earlier presentation locks. Deployment identifiers are recorded in qa/RELEASE-LOCK.json after publication."
 }

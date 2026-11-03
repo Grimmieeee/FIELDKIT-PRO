@@ -1,5 +1,5 @@
 {
-  "status": "PREPARED_DELETION_NOT_EXECUTED",
+  "status": "SITE_RUNTIME_INDEPENDENT_DELETION_NOT_EXECUTED",
   "keep": "Grimmieeee/FIELDKIT-PRO",
   "defaultBranch": "main",
   "ownerApprovedDelete": [
@@ -10,9 +10,9 @@
     "Grimmieeee/FIELDKIT-ARCHIVE"
   ],
   "approval": "Correct. Ok sounds perfect. Go ahead",
-  "sourceDependencies": "Runtime download resolver only accepts same-origin hosted release files. Three user-facing legacy repo links repointed to PRO.",
-  "siteSourceCommit": "55fba4febfb9d70845e20ee2f081c5bde2b3bd96",
-  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_0f2b144cad3081919476e6bfe242268a",
+  "sourceDependencies": "All 72 enabled release paths resolve to the current site's own origin and require SHA-256. No legacy repository URLs remain in runtime index or operational scripts. Current operating-standards URL and primary repository corrected.",
+  "siteSourceCommit": "4a03abead463b13943f98fa5d26d3ebd161c6890",
+  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_be2964e795d48191b9e4eadbc7093243",
   "tests": {
     "catalogItems": 311,
     "hostedSourceFiles": 72,
@@ -27,8 +27,15 @@
   ],
   "httpsReadback": {
     "origin": "https://fieldkit.pro/",
-    "exactByteMatches": 73,
-    "filesChecked": 73,
-    "evidence": "qa/repository-cleanup-host-check.json"
-  }
+    "evidence": "qa/SITE-LOCK-REVIEW-2026-11-03.md",
+    "currentRun": "Native deployed artifact provenance; live BEC script checksum verification. No new full 73-file HTTPS readback claimed."
+  },
+  "reviewDate": "2026-11-03",
+  "siteVersionNumber": 71,
+  "deletionVerdict": "Deletion should not break current fieldkit.pro hosting, search, script downloads or generated packages. This is not clearance for old URLs/remotes, external endpoint jobs, history or old repository CI.",
+  "remainingChecks": [
+    "Endpoint clones/remotes and scheduled jobs were not inspected",
+    "Retire or migrate old catalog CI/CodeQL before deletion if those checks are still wanted",
+    "Deletion discards original history/nondefault refs and the archive snapshots"
+  ]
 }
