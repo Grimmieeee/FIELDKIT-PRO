@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "Approved About restoration and narrow alignment cleanup",
+  "aboutOrder": [
+    "Operator verified \u2713",
+    "Flags",
+    "One target",
+    "Tenant-wide",
+    "Multiple targets",
+    "Local",
+    "Security guide"
+  ],
+  "checks": [
+    "Desktop reference width 600px; no horizontal overflow",
+    "390px phone reference visually aligned; columns wrap within panel",
+    "Security guide opens; current PRO policy link retained",
+    "Light and dark theme transitions",
+    "Tour three-step layout; no desktop horizontal overflow",
+    "Card visible after opening, hidden after Close card; hidden edge removed",
+    "Catalog/package check: 311 items,72 source files,6 checks"
+  ],
+  "operationalScriptChanges": 0
+}

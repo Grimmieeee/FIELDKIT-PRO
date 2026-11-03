@@ -165,3 +165,7 @@ Keep FIELDKIT-PRO/main; owner explicitly approved removing the other five reposi
 ## Live readability and card close
 
 User requested stronger light-mode readability and a small corner close control. Darkened catalog names/categories and secondary text; preserved subtle search placeholder. Restored existing closeItem button with 16px SVG/44px hit target, clamped Favorite to avoid overlap. Catalog/package checks PASS, 72 script files unchanged. Desktop close and 390px frame visual/coordinate-close checked. Removed temporary phone fixture before packaging. About older-layout regression identified separately; no About redesign in this change.
+
+## Approved About restored and alignment checked
+
+Restored quick-reference markup/styles from qa/about-capability-locked.patch, retaining current PRO security-policy link. Operator verified now leads with trailing checkmark; scope/input/result rows use approved One target/Tenant-wide/Multiple targets/Local order; old File input/where supported block removed. Scoped two-column sizing prevents narrow-screen spill. Hidden drawer edge removed with aria-hidden visibility rule. Browser checked desktop,390px phone reference, Security dropdown, theme switching,tour layout and settled card open/close states. Catalog/package check PASS (311 entries,72 sources,6 checks). No operational payload changes.
