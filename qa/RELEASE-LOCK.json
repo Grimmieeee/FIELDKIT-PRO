@@ -6,7 +6,6 @@
   "domainStatus": "pending DNS",
   "desktopCandidatesPromoted": 38,
   "verifiedCustomWorkflows": 3,
-  "repositoriesPrivate": true,
   "originalRepositoriesUntouched": true,
   "checks": {
     "catalog": 311,
@@ -16,5 +15,10 @@
     "httpsBrowserDownload": "PASS Download verified",
     "codeView": "PASS promoted content",
     "copy": "UI Copied; clipboard readback unavailable"
+  },
+  "repositoryVisibility": {
+    "FIELDKIT-PRO": "public",
+    "FIELDKIT-ARCHIVE": "private",
+    "changedByThisRelease": false
   }
 }

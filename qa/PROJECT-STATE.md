@@ -152,6 +152,8 @@ Promoted the exact 38 locked Desktop-export candidates after owner authorization
 
 ## Public Site release, 2026-11-03
 
-Authorized public deployment succeeded. Sites source 99d2a7536f3c117530f1ae6cbedd621fd45fc82f; saved version appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2f70c1f38d2081919ae7066508abee1e. Public audience confirmed by native tool. HTTPS browser Download .ps1 reported Download verified for GET-ACCOUNT-STATUS.ps1; View code displayed promoted Desktop helper and COPY reported Copied (clipboard API readback empty, so exact clipboard bytes unconfirmed). GitHub repositories stay private. fieldkit.pro mapping awaits registrar DNS records; old site remains there until cutover.
+Authorized public deployment succeeded. Sites source 99d2a7536f3c117530f1ae6cbedd621fd45fc82f; saved version appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2f70c1f38d2081919ae7066508abee1e. Public audience confirmed by native tool. HTTPS browser Download .ps1 reported Download verified for GET-ACCOUNT-STATUS.ps1; View code displayed promoted Desktop helper and COPY reported Copied (clipboard API readback empty, so exact clipboard bytes unconfirmed). Repository visibility is recorded below after direct API verification. fieldkit.pro mapping awaits registrar DNS records; old site remains there until cutover.
 
 Unauthenticated HTTPS readback: root HTML and all 38 promoted sources match exact local SHA-256 bytes (39/39). See qa/hosted-release-check.json. Initial explicit index.html request timed out; successful root URL readback substituted.
+
+GitHub release commit 585b535081153697fa136accbfc5c51be3593774 pushed to main; all 46 changed files verified against remote Git blob hashes. Direct repository API reports FIELDKIT-PRO public and FIELDKIT-ARCHIVE private. No repository visibility was changed in this release. Earlier private-PRO assumption corrected.
