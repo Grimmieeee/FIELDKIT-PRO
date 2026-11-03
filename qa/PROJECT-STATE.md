@@ -133,3 +133,7 @@ Ryan approved the current presentation: "Yep this is the one. Lock it down!" Pin
 ## Verification presentation LOCKED, 2026-11-03
 
 User accepted Verified ✓ beneath card description with 22px spacing before actions. Implemented conditionally using existing exact-source isVerifiedRelease; no verification records changed. Main page unchanged: no title checks or legend. Earlier previews rejected. Accepted static preview field-kit-verified-below-description.jpg. Current qualifying count remains zero pending validation. Release audit passes; operational payloads unchanged.
+
+## Validator tenant identity correction, 2026-11-02 (Pacific)
+
+Ryan reported Windows acceptance: 159 PASS, 1 FAIL, 0 SKIP. Graph tenant/user reads and cleanup passed. Exchange connected and accepted expected domain, but cross-service comparison failed. Target mailbox read was not reached. Follow-up diagnostics confirmed populated connection TenantID and blank organization ExternalDirectoryOrganizationId. Validator 1.0.1 now validates exactly one connected Exchange record with non-empty GUID TenantID, retaining requested-domain/GUID and Graph/Exchange match checks. Old-source blank-ID false mismatch reproduced; 13 source-extracted mocked connector scenarios PASS, including missing/invalid/empty IDs, multiple connections, mismatches and cleanup. Embedded workflow payload unchanged. Corrected Windows/live rerun PENDING; no operational release or verification badges granted. Updated the existing one-file validator deliverable.

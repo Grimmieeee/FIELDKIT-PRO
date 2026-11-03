@@ -1,0 +1,9 @@
+{
+  "baselineDefectReproduced": true,
+  "baselineOracle": "Blank organization ID falsely reports Graph and Exchange tenants differ after accepted-domain check",
+  "baselineExitCode": 1,
+  "patchedConnectorScenarios": 13,
+  "patchedResult": "PASS",
+  "scope": "Mocked source-extracted functions; no real authentication",
+  "liveRetest": "PENDING"
+}

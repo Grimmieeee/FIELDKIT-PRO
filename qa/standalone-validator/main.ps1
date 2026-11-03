@@ -1,6 +1,6 @@
 <#
 VERIFY-FIELD-KIT.ps1
-.VERSION 1.0.0
+.VERSION 1.0.1
 One-file acceptance check for the locked FIELD // KIT candidate batch.
 No operational script entrypoint is executed. Tenant checks are GET/read only.
 Writes a synthetic CSV and a validation JSON report to Desktop. Temporary test files are removed.
@@ -104,8 +104,11 @@ function Test-LiveConnections {
  if($choice-in@('2','3')){
   try {
    $script:ExoAttempted=$true;Connect-ExchangeOnline -ShowBanner:$false -ErrorAction Stop|Out-Null;$script:ExoOwned=$true
-   $info=@(Get-ConnectionInformation -ErrorAction Stop);if(-not@($info|Where-Object State -eq 'Connected').Count){throw 'Exchange connection was not established.'}
-   $org=Get-OrganizationConfig -ErrorAction Stop;$exoTenant=[string]$org.ExternalDirectoryOrganizationId
+   $info=@(Get-ConnectionInformation -ErrorAction Stop|Where-Object State -eq 'Connected')
+   if($info.Count-ne1){throw 'Expected exactly one connected Exchange session.'}
+   $connectionTenant=[guid]::Empty
+   if(-not[guid]::TryParse([string]$info[0].TenantID,[ref]$connectionTenant) -or $connectionTenant-eq[guid]::Empty){throw 'Exchange connection did not return a valid tenant ID.'}
+   $exoTenant=$connectionTenant.ToString()
    if($isGuid){if($exoTenant-ne$tenantGuid.ToString()){throw 'Exchange tenant mismatch.'}}else{$domains=@(Get-AcceptedDomain -ErrorAction Stop|ForEach-Object {[string]$_.DomainName});if($tenant-notin$domains){throw 'Expected domain is not accepted in the Exchange tenant.'}}
    if($graphTenant -and $exoTenant-ne$graphTenant){throw 'Graph and Exchange tenants differ.'}
    Record 'Exchange sign-in and tenant read' 'PASS' 'Expected tenant confirmed.'

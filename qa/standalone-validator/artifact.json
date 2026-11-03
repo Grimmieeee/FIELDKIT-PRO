@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "file": "VERIFY-FIELD-KIT.ps1",
-  "sha256": "8a014ac3a099ec3a092cdbe29edd5b426debf5d9628e1def58633046cd221697",
-  "bytes": 545067,
+  "sha256": "80a8db5fa25670115329dd1e565b9dbf76e3f6ab1df66f002b048e0ab990c554",
+  "bytes": 545230,
   "embedded_sources": 59,
   "locked_candidates": 38,
-  "status": "LOCAL_TESTS_PASSED_WINDOWS_LIVE_UNEXECUTED"
+  "status": "CONNECTOR_REGRESSION_PASSED_CORRECTED_LIVE_RETEST_PENDING"
 }

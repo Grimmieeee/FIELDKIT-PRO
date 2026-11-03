@@ -10,6 +10,16 @@
     "scope": "Mocked connector commands; no real modules/authentication"
   },
   {
+    "scenario": "missing-org",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "missing-org-domain",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
     "scenario": "mismatch",
     "result": "PASS",
     "scope": "Mocked connector commands; no real modules/authentication"
@@ -31,6 +41,26 @@
   },
   {
     "scenario": "readfailure",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "missing-tenant",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "invalid-tenant",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "empty-tenant",
+    "result": "PASS",
+    "scope": "Mocked connector commands; no real modules/authentication"
+  },
+  {
+    "scenario": "multiple-connections",
     "result": "PASS",
     "scope": "Mocked connector commands; no real modules/authentication"
   }
