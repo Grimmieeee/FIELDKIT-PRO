@@ -1,0 +1,8 @@
+{
+  "baseline": "349511d6d24928d75a9613dc65fcfbf07f3d03b2",
+  "change": "Transparent counter badge; align visible label to tour text; 12px below header",
+  "counter_endpoint_unchanged": true,
+  "verification": "75 served asset bodies byte-identical to source; parsing, error handling, 404, single upstream increment and inline JS syntax passed. Live browser check pending.",
+  "revision": "Native counter text and same-origin adapter; existing hits.sh identity retained",
+  "theme_behavior": "No counter fetch or image reload on theme change"
+}

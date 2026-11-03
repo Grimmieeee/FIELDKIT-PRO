@@ -2724,9 +2724,8 @@ body.orbit-ui .orbit-idea-link:focus-visible{outline:2px solid var(--mint);outli
 body.orbit-ui .orbit-idea-link[hidden]{display:none}
 </style>
 <style id="visits-clean-alignment">
-body.orbit-ui .orbit-header .orbit-visits{display:inline-flex;align-items:center;white-space:nowrap;line-height:18px;letter-spacing:normal;background:var(--bg)}
-body.orbit-ui .orbit-visits img{display:block;height:18px;width:auto;mix-blend-mode:multiply}
-html[data-theme="dark"] body.orbit-ui .orbit-visits img{mix-blend-mode:screen}
+body.orbit-ui .orbit-header .orbit-visits{display:inline-flex;align-items:center;white-space:nowrap;line-height:18px;letter-spacing:normal;color:var(--text);background:transparent}
+
 </style>
 </head>
 <body class="orbit-ui">
@@ -29679,14 +29678,16 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';credit.addEventListener('click',()=>route('About'));
   const footer=make('footer','orbit-footer');const footerLinks=make('nav','orbit-footer-links');footerLinks.setAttribute('aria-label','About and feedback');footerLinks.append(about);footer.append(footerLinks,theme,credit);
   const visits=make('span','orbit-visits');visits.title='Page visits since activation';
+  visits.textContent='Visits …';
   if(['fieldkit.pro','www.fieldkit.pro','field-kit-mobile-preview.delbert-hifield.chatgpt.site'].includes(location.hostname)){
-    const badge=document.createElement('img');badge.alt='Visits';badge.height=18;badge.referrerPolicy='no-referrer';
-    const updateVisitBadge=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';badge.src='https://hits.sh/sexypowershell.com/field-kit-7c84e192.svg?label=Visits&style=flat-square&color='+ (dark?'000000':'ffffff')+'&labelColor='+(dark?'000000':'ffffff')+'&logoColor='+(dark?'f7f5fc':'312a40');};
-    badge.addEventListener('error',()=>{badge.replaceWith(document.createTextNode('Visits unavailable'));});visits.append(badge);updateVisitBadge();new MutationObserver(updateVisitBadge).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  }else visits.append(document.createTextNode('Visits _'));
+    fetch('/api/visits',{cache:'no-store',credentials:'omit'})
+      .then(response=>{if(!response.ok)throw new Error('Counter unavailable');return response.json();})
+      .then(data=>{if(!/^[0-9][0-9,]*$/.test(String(data.count)))throw new Error('Invalid count');visits.textContent='Visits '+data.count;})
+      .catch(()=>{visits.textContent='Visits unavailable';});
+  }else visits.textContent='Visits _';
   header.append(visits);
   workspace.prepend(header);workspace.append(main,footer);
-  const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left-5)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.color=tourStyle.color;visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop='12px';};
+  const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.removeProperty('color');visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop='12px';};
   new ResizeObserver(alignVisits).observe(header);alignVisits();
   function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=current==='Start Here'||current==='About';setup.hidden=false;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');visits.hidden=current==='Start Here'||current==='About';}
   new MutationObserver(sync).observe(sourceNav,{childList:true,subtree:true});new MutationObserver(sync).observe(favorite,{attributes:true,attributeFilter:['aria-pressed']});new MutationObserver(updateTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
