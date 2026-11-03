@@ -4,5 +4,11 @@
   "counter_endpoint_unchanged": true,
   "verification": "75 served asset bodies byte-identical to source; parsing, error handling, 404, single upstream increment and inline JS syntax passed. Live browser check pending.",
   "revision": "Native counter text and same-origin adapter; existing hits.sh identity retained",
-  "theme_behavior": "No counter fetch or image reload on theme change"
+  "theme_behavior": "No counter fetch or image reload on theme change",
+  "live_version": 76,
+  "live_source_commit": "40ed517c7dff303a4056d4d324c1eb51bc509204",
+  "canonical_commit": "63410f0db2481d99369e2e61b5e5eb5c2caa4983",
+  "live_verification": "Exact font match: 13px/18.2px system-ui; tour and Visits x coordinates both 1211.21875. Counter remained Visits 78 through light/dark/light. No counter image remains.",
+  "build": "node scripts/build-counter-worker.mjs before Sites packaging",
+  "rollback": "Sites version 75 restores prior static badge release"
 }
