@@ -4,8 +4,8 @@
   "canonical_repository": "Grimmieeee/FIELDKIT-PRO",
   "default_branch": "main",
   "public_url": "https://fieldkit.pro/",
-  "index_sha256": "4fe7fc2b7375b7ac5cbd791cf5ea9e19806c7a4c126a6082f7e81233a1e2cbaa",
-  "counter": "Owner accepted live counter as-is; namespace, rendering and behavior preserved",
+  "index_sha256": "09840a4271223df537dd664847fa145c1cdf15612475934e89425ae935209627",
+  "counter": "Owner requested Visits instead of hits; same counter namespace and count retained",
   "design": "Owner-requested Submit an idea link below category navigation; previous styles and script payloads preserved",
   "source_scripts": "59 PowerShell payloads unchanged",
   "notes": "Feedback-link placement update supersedes version 71 presentation hash."

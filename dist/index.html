@@ -29673,12 +29673,12 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   const about=make('button','orbit-about','About');about.type='button';about.addEventListener('click',()=>route('About'));
   const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';credit.addEventListener('click',()=>route('About'));
   const footer=make('footer','orbit-footer');const footerLinks=make('nav','orbit-footer-links');footerLinks.setAttribute('aria-label','About and feedback');footerLinks.append(about);footer.append(footerLinks,theme,credit);
-  const visits=make('span','orbit-visits','Visits ');visits.title='Page visits since activation';
+  const visits=make('span','orbit-visits');visits.title='Page visits since activation';
   if(['fieldkit.pro','www.fieldkit.pro','field-kit-mobile-preview.delbert-hifield.chatgpt.site'].includes(location.hostname)){
-    const badge=document.createElement('img');badge.alt='Visit count';badge.height=18;badge.referrerPolicy='no-referrer';
-    const updateVisitBadge=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';badge.src='https://hits.sh/sexypowershell.com/field-kit-7c84e192.svg?label=&style=flat-square&color='+ (dark?'1e2524':'efedf5')+'&labelColor='+(dark?'1e2524':'efedf5')+'&logoColor='+(dark?'f7f5fc':'312a40');};
-    badge.addEventListener('error',()=>{badge.replaceWith(document.createTextNode('Unavailable'));});visits.append(badge);updateVisitBadge();new MutationObserver(updateVisitBadge).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  }else visits.append(document.createTextNode('_'));
+    const badge=document.createElement('img');badge.alt='Visits';badge.height=18;badge.referrerPolicy='no-referrer';
+    const updateVisitBadge=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';badge.src='https://hits.sh/sexypowershell.com/field-kit-7c84e192.svg?label=Visits&style=flat-square&color='+ (dark?'1e2524':'efedf5')+'&labelColor='+(dark?'1e2524':'efedf5')+'&logoColor='+(dark?'f7f5fc':'312a40');};
+    badge.addEventListener('error',()=>{badge.replaceWith(document.createTextNode('Visits unavailable'));});visits.append(badge);updateVisitBadge();new MutationObserver(updateVisitBadge).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+  }else visits.append(document.createTextNode('Visits _'));
   header.append(visits);
   workspace.prepend(header);workspace.append(main,footer);
   const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left+3)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.color=tourStyle.color;visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop=Math.max(0,h.bottom-r.bottom)+'px';};
