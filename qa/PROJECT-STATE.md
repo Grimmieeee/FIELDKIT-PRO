@@ -141,3 +141,7 @@ Ryan reported Windows acceptance: 159 PASS, 1 FAIL, 0 SKIP. Graph tenant/user re
 ## Shared Windows acceptance PASS, 2026-11-02 (Pacific)
 
 Ryan supplied complete validator 1.0.1 console output: 161 PASS, 0 FAIL, 0 SKIP. Graph and Exchange expected-tenant reads, test user/mailbox reads, and both disconnects reported PASS. Attached synthetic CSV independently parsed: exact 3 columns and 2 records; commas, quote, Unicode and multiline content preserved; UTF-8 BOM present. Evidence and CSV digest: qa/standalone-validator/windows-acceptance-2026-11-02.json. Generated validation JSON was not supplied, so console results remain operator-reported. This closes the observed validator tenant-ID failure and shared acceptance run; no blanket operational action verification, candidate promotion, domain/publication change or release authorization inferred.
+
+## CUSTOM BEC owner acceptance, 2026-11-02 (Pacific)
+
+Ryan explicitly accepted all three CUSTOM scripts as verified. Added hash/version-bound owner-acceptance records for the reviewed BEC trio only, based on historical workflow testing/source-bound review plus the 161/0/0 Windows shared acceptance. Full current action runs are not claimed. Existing historical verification records preserved. Three Verified ✓ labels render beneath descriptions; no main-page legend/title changes. Rendering, altered-hash and altered-version rejection checks pass; 72 operational payload files unchanged. See qa/custom-owner-acceptance-2026-11-02.json. Private Site audience/domain and withheld operational candidates unchanged.

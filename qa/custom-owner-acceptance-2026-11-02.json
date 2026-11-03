@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/Los_Angeles",
+  "ownerInstruction": "perfect. let's go ahead and call all the custom scripts verified",
+  "basis": [
+    "Prior operator-tested BEC baselines and source-bound naming review",
+    "Operator-reported Windows shared acceptance: 161 PASS, 0 FAIL, 0 SKIP",
+    "Independently validated dummy Desktop CSV"
+  ],
+  "scope": "Explicit owner acceptance of the three current CUSTOM BEC releases. Not a claim of fresh execution of every action.",
+  "entries": {
+    "BEC-RISK-ASSESSMENT.ps1": {
+      "version": "1.0.3",
+      "sha256": "94526ec8ea67e88d9373d1cdb9beadf7ec4992b80cafcd4a97797c2a10c488f4",
+      "ownerAccepted": true,
+      "acceptanceKind": "prior-workflow-testing-and-shared-windows-acceptance",
+      "fullCurrentActionRun": false,
+      "evidence": "qa/custom-owner-acceptance-2026-11-02.json"
+    },
+    "BEC-CONTAIN-ERADICATE.ps1": {
+      "version": "1.0.3",
+      "sha256": "c8b857d6191a6bceecb651413552cad0bbc8a421046bfe2a95390728cb89ce10",
+      "ownerAccepted": true,
+      "acceptanceKind": "prior-workflow-testing-and-shared-windows-acceptance",
+      "fullCurrentActionRun": false,
+      "evidence": "qa/custom-owner-acceptance-2026-11-02.json"
+    },
+    "BEC-RECOVER-VALIDATE.ps1": {
+      "version": "1.0.3",
+      "sha256": "1b21a21f15d6618c0964c37ab21e0c167cfba5616efe8d108dbb18ac1aa0ce4e",
+      "ownerAccepted": true,
+      "acceptanceKind": "prior-workflow-testing-and-shared-windows-acceptance",
+      "fullCurrentActionRun": false,
+      "evidence": "qa/custom-owner-acceptance-2026-11-02.json"
+    }
+  }
+}
