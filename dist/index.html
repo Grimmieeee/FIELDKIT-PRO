@@ -2716,7 +2716,14 @@ body.orbit-ui .orbit-header .orbit-visits{position:absolute;right:24px;top:100%;
 </style><style id="visits-readable-placement">body.orbit-ui .orbit-header .orbit-visits{right:auto;top:100%;margin-top:20px;font-size:11px;color:#f7f5fc;opacity:1}@media(max-width:650px){body.orbit-ui .orbit-header .orbit-visits{margin-top:18px;font-size:11px}}</style><style id="visits-tour-match">body.orbit-ui .orbit-header .orbit-visits{margin-top:10px;letter-spacing:normal}@media(max-width:650px){body.orbit-ui .orbit-header .orbit-visits{margin-top:10px}}</style><style id="footer-wide-signature">
 body.orbit-ui .orbit-credit span{font:300 12px/1.6 var(--ui);letter-spacing:.12em;white-space:pre}
 body.orbit-ui .orbit-footer .orbit-theme{font-size:25px;transform:translateY(-6px);margin-bottom:8px}
-</style><style>body.orbit-ui .orbit-visits{align-items:center;gap:3px}body.orbit-ui .orbit-visits img{display:inline-block;height:18px;width:auto;vertical-align:middle}</style></head>
+</style><style>body.orbit-ui .orbit-visits{align-items:center;gap:3px}body.orbit-ui .orbit-visits img{display:inline-block;height:18px;width:auto;vertical-align:middle}</style><style>
+/* Quiet feedback link beneath the catalog categories. */
+body.orbit-ui .orbit-idea-link{display:flex;align-items:center;justify-content:center;width:max-content;max-width:100%;min-height:44px;box-sizing:border-box;margin:12px auto 0;padding:0 12px;color:var(--body);font:400 12px/1.5 var(--ui);text-decoration:none;opacity:.78}
+body.orbit-ui .orbit-idea-link:hover{color:var(--text);opacity:1;text-decoration:underline;text-underline-offset:4px}
+body.orbit-ui .orbit-idea-link:focus-visible{outline:2px solid var(--mint);outline-offset:2px;border-radius:3px;opacity:1}
+body.orbit-ui .orbit-idea-link[hidden]{display:none}
+</style>
+</head>
 <body class="orbit-ui">
 <noscript><p>This catalog needs JavaScript for search and downloads. Browse the <a href="https://github.com/Grimmieeee/FIELDKIT-PRO/tree/main/dist/published-source">published source files</a> in the repository.</p></noscript>
 <div id="navOverlay" class="overlay"></div>
@@ -29648,11 +29655,11 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   const utilities=make('nav','orbit-utilities');utilities.setAttribute('aria-label','Utilities');
   const setup=document.getElementById('openSetupGuide');setup.innerHTML='<svg class="setup-pwsh" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><path d="m3 4 9 7-9 7m12 0h9"/></svg><span class="setup-label">Take a tour</span>';setup.setAttribute('aria-label','Take a tour of FIELD KIT');
   setup.addEventListener('click',()=>{document.getElementById('beginWorkstationSetup')?.click();});
-  const idea=document.querySelector('.request-link');idea.textContent='Submit an idea ↗';
+  const idea=document.querySelector('.request-link');idea.className='orbit-idea-link';idea.textContent='Submit an idea ↗';
   const theme=make('button','orbit-theme','☾');theme.type='button';theme.id='orbitThemeToggle';
   const updateTheme=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';theme.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');theme.setAttribute('aria-pressed',String(dark));theme.title=dark?'Switch to light mode':'Switch to dark mode';};
   theme.addEventListener('click',()=>{const c=document.getElementById('themeSelect');c.value=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';if(window.FIELD_KIT_APPEARANCE)window.FIELD_KIT_APPEARANCE.setTheme(c.value);else c.dispatchEvent(new Event('change',{bubbles:true}));updateTheme();});
-  utilities.append(setup,idea,theme);header.append(home,utilities);
+  utilities.append(setup,theme);header.append(home,utilities);
   const main=make('div','orbit-main');main.append(make('h1','orbit-title','What’s the task?'));
   const palette=make('section','orbit-palette');palette.setAttribute('aria-label','Find a tool');
   const prompt=document.createElementNS('http://www.w3.org/2000/svg','svg');prompt.classList.add('orbit-prompt');prompt.setAttribute('viewBox','0 0 28 22');prompt.setAttribute('aria-hidden','true');
@@ -29661,7 +29668,7 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   palette.append(searchWrap,catalog);main.append(palette);
   const navigation=make('nav','orbit-categories');navigation.setAttribute('aria-label','Script categories');
   const domains=[['Full Library','All'],['Quick Commands','Quick Commands'],['Endpoint','Endpoint'],['Identity','Identity'],['Incident Response','Incident Response'],['Licensing','Licensing'],['Mailbox','Mailbox'],['Reports','Reports'],['Tools','Tools'],['Toys','Toys']];
-  for(const [area,label] of domains){const b=make('button','orbit-category',label);b.type='button';b.dataset.orbitArea=area;b.addEventListener('click',()=>route(area));navigation.append(b);}main.append(navigation);
+  for(const [area,label] of domains){const b=make('button','orbit-category',label);b.type='button';b.dataset.orbitArea=area;b.addEventListener('click',()=>route(area));navigation.append(b);}main.append(navigation,idea);
   const count=document.getElementById('favoriteCount')||make('span','','0');count.id='favoriteCount';if(!/^\d+$/.test(count.textContent))count.textContent='0';favorite.replaceChildren(make('span','orbit-favorite-star','☆'),make('span','orbit-favorite-label','Favorites'),count);favorite.setAttribute('aria-label','Show Favorites');favorite.title='Favorites saved in this browser';utilities.append(favorite);
   const about=make('button','orbit-about','About');about.type='button';about.addEventListener('click',()=>route('About'));
   const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';credit.addEventListener('click',()=>route('About'));
@@ -29676,7 +29683,7 @@ window.FIELD_KIT_DESKTOP_RELEASE=Object.freeze({"GET-ACCOUNT-STATUS.ps1":{"path"
   workspace.prepend(header);workspace.append(main,footer);
   const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left+3)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.color=tourStyle.color;visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop=Math.max(0,h.bottom-r.bottom)+'px';};
   new ResizeObserver(alignVisits).observe(header);alignVisits();
-  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=!active;setup.hidden=active;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');visits.hidden=current==='Start Here'||current==='About';}
+  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=current==='Start Here'||current==='About';setup.hidden=false;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');visits.hidden=current==='Start Here'||current==='About';}
   new MutationObserver(sync).observe(sourceNav,{childList:true,subtree:true});new MutationObserver(sync).observe(favorite,{attributes:true,attributeFilter:['aria-pressed']});new MutationObserver(updateTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   document.querySelector('[data-catalog-view="list"]')?.click();if(window.location.hash!=='#start-here')route('Full Library');sync();updateTheme();
 })();

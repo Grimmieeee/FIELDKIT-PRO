@@ -1,0 +1,15 @@
+{
+  "status": "DEPLOYED",
+  "version": 72,
+  "sourceCommit": "94bcd91b8ac9a2f7e1b0f0d4bcc6e96f75dc9a45",
+  "indexSha256": "4fe7fc2b7375b7ac5cbd791cf5ea9e19806c7a4c126a6082f7e81233a1e2cbaa",
+  "placement": "Centered below main-page categories; 12px quiet text and arrow; 44px touch area",
+  "href": "https://github.com/Grimmieeee/FIELDKIT-PRO/issues/new",
+  "checks": [
+    "Desktop visual PASS",
+    "Phone iframe: width equals scrollWidth; link fits; 44px hit area",
+    "311 catalog entries, 72 files and six release/package checks PASS",
+    "Runtime link destination preserved; main-page visibility confirmed"
+  ],
+  "counter": "Unchanged"
+}

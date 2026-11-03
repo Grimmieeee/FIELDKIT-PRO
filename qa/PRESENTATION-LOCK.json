@@ -4,9 +4,9 @@
   "canonical_repository": "Grimmieeee/FIELDKIT-PRO",
   "default_branch": "main",
   "public_url": "https://fieldkit.pro/",
-  "index_sha256": "ee0d61d140fdfe996497efd89bd72653e301e8665b8d69f1c880e6872b0ce9b8",
+  "index_sha256": "4fe7fc2b7375b7ac5cbd791cf5ea9e19806c7a4c126a6082f7e81233a1e2cbaa",
   "counter": "Owner accepted live counter as-is; namespace, rendering and behavior preserved",
-  "design": "All 19 style blocks unchanged from deployed version 70",
+  "design": "Owner-requested Submit an idea link below category navigation; previous styles and script payloads preserved",
   "source_scripts": "59 PowerShell payloads unchanged",
-  "notes": "Supersedes earlier presentation locks. Deployment identifiers are recorded in qa/RELEASE-LOCK.json after publication."
+  "notes": "Feedback-link placement update supersedes version 71 presentation hash."
 }

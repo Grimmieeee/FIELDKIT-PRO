@@ -3,16 +3,16 @@
   "reviewDate": "2026-11-03",
   "canonicalRepository": "Grimmieeee/FIELDKIT-PRO",
   "defaultBranch": "main",
-  "siteSourceCommit": "4a03abead463b13943f98fa5d26d3ebd161c6890",
-  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_be2964e795d48191b9e4eadbc7093243",
-  "siteVersionNumber": 71,
-  "deploymentId": "appgdep_6aea02ae8f948191bb0f2395795e6c65",
+  "siteSourceCommit": "94bcd91b8ac9a2f7e1b0f0d4bcc6e96f75dc9a45",
+  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_2fa961e25fdc8191a648c7d8486e76af",
+  "siteVersionNumber": 72,
+  "deploymentId": "appgdep_6aea60cc89b881919e2a4a6b6dc2f073",
   "deploymentStatus": "succeeded",
   "publicUrl": "https://fieldkit.pro/",
   "hosting": "Sites; independent of GitHub Pages and legacy repositories",
   "domainStatus": "active",
   "sslStatus": "active",
-  "indexSha256": "ee0d61d140fdfe996497efd89bd72653e301e8665b8d69f1c880e6872b0ce9b8",
+  "indexSha256": "4fe7fc2b7375b7ac5cbd791cf5ea9e19806c7a4c126a6082f7e81233a1e2cbaa",
   "checks": {
     "catalogItems": 311,
     "quickCommands": 230,
@@ -33,5 +33,6 @@
     "Deleting the old catalog removes its old Pages deployment, CI and scheduled CodeQL; those workflows are not migrated into PRO",
     "Original nondefault refs/history are not fully preserved by archive file snapshots"
   ],
-  "repositoriesDeleted": false
+  "repositoriesDeleted": false,
+  "presentationUpdate": "Submit an idea moved below categories; tour remains in header, including Favorites. One additional scoped style block; operational files unchanged."
 }
