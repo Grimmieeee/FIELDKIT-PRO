@@ -1,0 +1,372 @@
+{
+  "origin": "https://fieldkit.pro/",
+  "checked": 73,
+  "passed": 73,
+  "results": [
+    {
+      "path": "index.html",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "OPERATING-STANDARDS.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/script-template-guide.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/field-kit-build-standard.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/PROJECT-HANDOFF.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/lessons-learned.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/connection-patterns.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/git-tools.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/git-repo.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/script-review-checklist.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/skills.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/GET-TERMINAL-READINESS-CHECK.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/publishing-checklist.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/powershell-standards.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/INVOKE-FILE-INVENTORY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/git-handoff.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "tools/nato-phonetic-alphabet.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/SET-THEME-BASIC.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/SET-THEME-COBALT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/attractor.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/rain.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/SET-THEME-SILICON-VALLEY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/SET-THEME-SEAGLASS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "toys/static.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/mailbox/INVOKE-LITIGATION-HOLD.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-FORWARDING.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-PERMISSIONS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/mailbox/GET-MAILBOX-SECURITY-SNAPSHOT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/utility/TEST-SENSITIVE-DATA.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/utility/PREPARE-FIELD-KIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/utility/GET-FOLDER-INVENTORY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/utility/UPDATE-WINDOWS-APPS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/utility/START-HERE.md",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-INVOKE-EMAIL-RECOVERY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TIMELINE-BUILDER.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-IP-TRACE.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-GET-TOKEN-DECODE.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/GET-USER-GROUPS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-REMOVE-USER-GROUPS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/GET-GROUP-MEMBERS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-DELETE-ACCOUNTS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/RESOLVE-NAMES-TO-UPNS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/GET-ACCOUNT-STATUS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/GET-USER-PREDELETE-CHECK.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/INVOKE-DISABLE-ACCOUNTS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/identity/GET-USER-SECURITY-SNAPSHOT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-MFA-SECURITY-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-DEVICE-CODE-EXPOSURE.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-SIGNIN-ANOMALIES.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TRANSPORT-RULES-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-CONDITIONAL-ACCESS-GAPS.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-ADMIN-ROLE-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-DRIFT-REVIEW.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-GUEST-USER-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-STALE-SIGNIN-REVIEW.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-TENANT-INBOX-RULES-AUDIT.ps1",
+      "pass": true,
+      "exitCode": 0
+    },
+    {
+      "path": "published-source/tenant/GET-SECURE-SCORE-SNAPSHOT.ps1",
+      "pass": true,
+      "exitCode": 0
+    }
+  ]
+}

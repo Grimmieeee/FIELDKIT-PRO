@@ -1,11 +1,15 @@
 # FIELDKIT-PRO
 
-Approved FIELD // KIT site source and QA records.
+FIELD // KIT PRO PowerShell catalog, source and release evidence.
 
-- Site entry point: `dist/index.html`.
-- Approved source snapshot: `a12070c4c905e0cd8c9579fc2ed1643aa3069b39` from the private Sites preview.
-- `qa/desktop-standard/candidate` contains withheld operational candidates, not active downloads.
-- Windows/tenant acceptance is pending. Existing verification evidence remains version-specific.
-- This private repository does not change Site visibility, domain routing, or enable GitHub Pages.
+Live site: https://fieldkit.pro/
 
-Legacy material is retained separately in FIELDKIT-ARCHIVE. Original repositories remain intact.
+- Website source: `dist/index.html`.
+- Hosted downloads: `dist/published-source`, `dist/tools` and `dist/toys`.
+- Security guidance: [SECURITY.md](SECURITY.md).
+- Release and verification evidence: `qa/`.
+- Proposed or historical sources under `review-candidates`, `release-baseline` and candidate directories are not automatically active downloads.
+
+The site is hosted with Sites, independently of GitHub Pages. This repository is public. Windows validator 1.0.1 was operator-reported at 161 PASS, 0 FAIL, 0 SKIP; verification remains source/version-specific.
+
+Legacy repository removal is owner-approved. Current site download resolution uses hosted, same-origin files rather than the original repositories. See `qa/REPOSITORY-CLEANUP.json` for the cleanup scope and completion state.

@@ -1,0 +1,34 @@
+{
+  "status": "PREPARED_DELETION_NOT_EXECUTED",
+  "keep": "Grimmieeee/FIELDKIT-PRO",
+  "defaultBranch": "main",
+  "ownerApprovedDelete": [
+    "Grimmieeee/FieldKit",
+    "Grimmieeee/field-kit",
+    "Grimmieeee/Jumpbox",
+    "Grimmieeee/pwsh-operations-catalog",
+    "Grimmieeee/FIELDKIT-ARCHIVE"
+  ],
+  "approval": "Correct. Ok sounds perfect. Go ahead",
+  "sourceDependencies": "Runtime download resolver only accepts same-origin hosted release files. Three user-facing legacy repo links repointed to PRO.",
+  "siteSourceCommit": "55fba4febfb9d70845e20ee2f081c5bde2b3bd96",
+  "siteVersion": "appgprj_6ae3f267936c8191b969e7f49cc0f2ef~appgver_0f2b144cad3081919476e6bfe242268a",
+  "tests": {
+    "catalogItems": 311,
+    "hostedSourceFiles": 72,
+    "packageChecks": 6,
+    "downloadIntegrityCases": 13
+  },
+  "deletionBlocker": "Available GitHub connector does not expose repository deletion. No credentials requested. Owner must perform final deletions in GitHub.",
+  "limits": [
+    "Old repo links, Pages URLs and git remotes will stop working after deletion",
+    "External clones/scheduled jobs on owner endpoints were not inspected",
+    "Owner chose not to retain archive features; original history/other refs are not represented by working-tree snapshots"
+  ],
+  "httpsReadback": {
+    "origin": "https://fieldkit.pro/",
+    "exactByteMatches": 73,
+    "filesChecked": 73,
+    "evidence": "qa/repository-cleanup-host-check.json"
+  }
+}

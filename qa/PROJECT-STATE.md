@@ -157,3 +157,7 @@ Authorized public deployment succeeded. Sites source 99d2a7536f3c117530f1ae6cbed
 Unauthenticated HTTPS readback: root HTML and all 38 promoted sources match exact local SHA-256 bytes (39/39). See qa/hosted-release-check.json. Initial explicit index.html request timed out; successful root URL readback substituted.
 
 GitHub release commit 585b535081153697fa136accbfc5c51be3593774 pushed to main; all 46 changed files verified against remote Git blob hashes. Direct repository API reports FIELDKIT-PRO public and FIELDKIT-ARCHIVE private. No repository visibility was changed in this release. Earlier private-PRO assumption corrected.
+
+## Owner-approved repository cleanup
+
+Keep FIELDKIT-PRO/main; owner explicitly approved removing the other five repositories including ARCHIVE. No new feature backlog or internal-instruction additions retained. Three live user-facing legacy repository links repointed to PRO; added current SECURITY.md and refreshed README. Catalog/package/integrity checks pass, script bytes unchanged. Site source 55fba4febfb9d70845e20ee2f081c5bde2b3bd96 published publicly; domain and SSL active. Repository deletion UNEXECUTED: connector has no deletion operation. Old repo URLs/remotes will cease working; external endpoint dependencies were not inspected. See qa/REPOSITORY-CLEANUP.json.
