@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="referrer" content="no-referrer">
-<meta name="theme-color" content="#eceaf4">
+<meta name="theme-color" content="#212425">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://hits.sh; connect-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'">
 <title>FIELD KIT PRO — PowerShell Tools</title>
 <meta name="description" content="FIELD KIT PRO — curated PowerShell scripts, commands and workflows. Find the task, check its impact, and run the right tool.">
@@ -14,7 +14,7 @@
 (() => {
   const key = 'field-kit-appearance';
   const valid = value => ['system','light','dark'].includes(value);
-  let choice = 'light';
+  let choice = 'dark';
   try { const saved = window.localStorage.getItem(key); if (valid(saved)) choice = saved; } catch {}
   let media;
   try { media = window.matchMedia('(prefers-color-scheme: light)'); } catch {}
@@ -35,13 +35,13 @@
     if (!control) return;
     control.value = choice;
     control.addEventListener('change', () => {
-      choice = valid(control.value) ? control.value : 'light';
+      choice = valid(control.value) ? control.value : 'dark';
       try { window.localStorage.setItem(key, choice); } catch {}
       apply();
     });
     window.addEventListener('storage', event => {
       if (event.key !== key) return;
-      choice = valid(event.newValue) ? event.newValue : 'light';
+      choice = valid(event.newValue) ? event.newValue : 'dark';
       control.value = choice;
       apply();
     });
