@@ -24,7 +24,7 @@ Supported baseline: Windows PowerShell 5.1, or supported PowerShell 7.4 or later
 
 ## 3. Choose one job
 
-Choose the card that matches the goal. Confirm its brief purpose, scope, and READ ONLY / MAKES CHANGES label. Details explains the connection and sign-in requirements. Download the current `.ps1` from the card, transfer it to the approved support computer if needed, and right-click → Run with PowerShell.
+Choose the card that matches the goal. Confirm its brief purpose, scope, and READ / Modify / Destruct flags. Run instructions and Permissions explain the launch, connection and access requirements. Download the current `.ps1` from the card, transfer it to the approved support computer if needed, and right-click → Run with PowerShell.
 
 Confirm the customer environment and target sign-in address inside the workflow. Sign in with the approved customer account when requested. Installing modules does not grant access. Browser or Windows single sign-on may select an account automatically; check the account and environment rather than assuming a fresh credential prompt means the right customer.
 
