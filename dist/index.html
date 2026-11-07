@@ -2790,7 +2790,7 @@ body.entry-view .shell,body.entry-view .overlay,body.entry-view .drawer{display:
       </h1>
     </section>
 
-    <a id="openSetupGuide" class="setup-link" href="#start-here"><svg class="setup-powershell" viewBox="0 0 24 24" aria-hidden="true"><path class="setup-powershell-plate" d="M5 4h18l-4 16H1z"/><path d="m8 8 5 4-7 5m7 0h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Start Here <span class="setup-link-description">Set up your workstation and run your first tool</span></span></a>
+    <a id="openSetupGuide" class="setup-link" href="#about"><svg class="setup-powershell" viewBox="0 0 24 24" aria-hidden="true"><path class="setup-powershell-plate" d="M5 4h18l-4 16H1z"/><path d="m8 8 5 4-7 5m7 0h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Start Here <span class="setup-link-description">Set up your workstation and run your first tool</span></span></a>
 
     <section class="search-wrap">
       <label class="search-box">
@@ -27452,7 +27452,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   }
   function toggleFavoritesFilter(){
     state.favoritesOnly=!state.favoritesOnly;
-    if(state.area==='About'||state.area==='Start Here'){
+    if(state.area==='About'){
       state.area='Full Library';state.query='';search.value='';renderNav();
     }
     renderResults();
@@ -27461,7 +27461,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   const state = {
     view:catalogPreferences.view==='list' ? 'list' : 'grid',
     favoritesOnly:false,
-    area:window.location.hash==='#start-here' || catalogPreferences.seenWelcome!==true ? 'Start Here' : 'Full Library',
+    area:['#about','#start-here'].includes(window.location.hash) ? 'About' : 'Full Library',
     incidentSource:"",
     incidentOpen:false,
     standaloneGroup:"",
@@ -27634,7 +27634,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   }
 
   function renderNav(){
-    areaNav.innerHTML = '<div class="nav-primary">' + navButton('Start Here') + navButton('About') + navButton('Full Library') + '</div>' +
+    areaNav.innerHTML = '<div class="nav-primary">' + navButton('About') + navButton('Full Library') + '</div>' +
       navSection('Manage',['Identity','Mailbox','Licensing','Endpoint']) +
       navSection('Protect & Respond',['Security','Incident Response']) +
       '<div class="nav-standalone"><div class="nav-section-label">Reporting</div>' + navButton('Reports','All reports') + reportScopeNav() + '</div>' +
@@ -28312,7 +28312,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     if (button) setCatalogView(button.getAttribute('data-catalog-view'));
   });
   document.getElementById('favoritesFilter')?.addEventListener('click',toggleFavoritesFilter);
-  document.getElementById('openSetupGuide')?.addEventListener('click',event=>{event.preventDefault();state.area='Start Here';state.query='';search.value='';window.history?.replaceState(null,'','#start-here');renderNav();renderResults();});
+  document.getElementById('openSetupGuide')?.addEventListener('click',event=>{event.preventDefault();state.area='About';state.favoritesOnly=false;state.query='';search.value='';window.history?.replaceState(null,'','#about');renderNav();renderResults();});
 
   catalogHead?.addEventListener('click', event => {
     const button = event.target.closest('[data-sort]');
@@ -28343,35 +28343,30 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     `;
   }
 
-  function renderFirstRun(){
-    saveCatalogPreferences();
-    results.innerHTML = `<section class="about-block first-run-guide">
-      <header id="welcome" class="landing-intro">
-        <div class="landing-brand-copy">
-          <h1 class="landing-wordmark" aria-label="FIELD KIT"><span>FIELD</span><span class="landing-slashes"> / / </span><span class="landing-kit">KIT</span></h1>
-          <nav class="landing-actions" aria-label="Get started"><a id="beginWorkstationSetup" href="#workstation-setup">First time using FIELD // KIT?</a><a id="browseAfterSetup" data-enter-catalog href="#catalog">Go right in <span aria-hidden="true">→</span></a></nav>
-        </div>
-      </header>
-      <section id="setupSteps" class="home-start-here hidden" aria-labelledby="startHereHeading"><h3 id="startHereHeading">Take a tour</h3>
-      <section id="workstation-setup" class="note-block"><h4>1. Find a task</h4><p>Search by name, category or impact. Try Modify password.</p></section>
-      <section class="note-block"><h4>2. Check the card</h4><p>Review its purpose, scope and permissions.</p></section>
-      <section class="note-block"><h4>3. Run the tool</h4><p>Download and review it. Confirm the customer and account. Use the launch instructions on the card.</p><p>Sign in with an authorized account and review requested permissions. Follow the prompts, select targets and review results. Approve changes only after checking the plan.</p><p>Finish using the tool’s own close controls. Most scripts ask you to press Enter. Keep a BEC workflow in the same window until all steps are complete.</p><p>Animations stop with Ctrl+C. Theme previews affect the current terminal; installed themes update your startup profile. Restart PowerShell to check an installed theme.</p></section>
-      <details class="optional-prep"><summary>Prep the terminal</summary><p>Already set up? Skip this. Tools still need their listed modules and permissions.</p>
+  function renderAbout(){
+    results.innerHTML = `
+        <section class="about-block about-revamp about-compact reference-concept">
+<div class="about-kicker">ABOUT · START HERE</div>
+<h2 class="about-title about-pro-wordmark"><b>F I E L D&nbsp; K I T</b><span>P R O</span><i>//</i></h2>
+<p class="about-tagline">Tools that work.</p>
+      <section class="note-block" aria-labelledby="prepHeading"><h3 id="prepHeading">Prep the terminal</h3><p>Set up PowerShell on the computer you’ll use to run FIELD // KIT.</p>
       <div class="actions"><button id="downloadSetupPackage" class="action primary" type="button">Download Setup Package</button><button class="action" type="button" data-first-run-file="PREPARE-FIELD-KIT.ps1">View Setup Tool</button></div>
       <p id="setupPackageStatus" class="source-note" role="status"></p>
       <p>Extract the package. Run Prepare-FIELD-KIT.ps1 in your chosen PowerShell edition. Choose 3 — Both. Review installations. Continue only at READY.</p>
       <p>READY checks local setup, not customer access.</p>
       <div class="actions"><button class="action" type="button" data-first-run-file="GET-TERMINAL-READINESS-CHECK.ps1">Check Toolkit Setup</button><button class="action" type="button" data-first-run-file="START-HERE.md">Full Setup Guide</button></div>
-      <p>Check customer access with a read-only tool.</p><div class="actions"><button class="action" type="button" data-first-run-file="GET-ACCOUNT-STATUS.ps1">Get User Account Status</button><button class="action" type="button" data-first-run-file="GET-MAILBOX-FORWARDING.ps1">Get Mailbox Forwarding</button></div></details>
-      <div class="landing-setup-actions"><button class="action primary" type="button" data-enter-catalog>Browse catalog →</button></div>
-      </section>
-    </section>`;
-    if(window.location.hash==='#start-here')document.getElementById('setupSteps')?.classList.remove('hidden');
-    document.getElementById('beginWorkstationSetup')?.addEventListener('click',event=>{
-      event.preventDefault();
-      document.getElementById('setupSteps')?.classList.remove('hidden');
-      document.getElementById('workstation-setup')?.scrollIntoView?.({block:'start'});
-    });
+      <p>Check customer access with a read-only tool.</p><div class="actions"><button class="action" type="button" data-first-run-file="GET-ACCOUNT-STATUS.ps1">Get User Account Status</button><button class="action" type="button" data-first-run-file="GET-MAILBOX-FORWARDING.ps1">Get Mailbox Forwarding</button></div></section>
+      <details class="note-block"><summary>How to use the catalog</summary>
+      <section class="note-block"><h4>1. Find a task</h4><p>Search by name, category or impact. Try Modify password.</p></section>
+      <section class="note-block"><h4>2. Check the card</h4><p>Review its purpose, scope and permissions.</p></section>
+      <section class="note-block"><h4>3. Run the tool</h4><p>Download and review it. Confirm the customer and account. Use the launch instructions on the card.</p><p>Sign in with an authorized account and review requested permissions. Follow the prompts, select targets and review results. Approve changes only after checking the plan.</p><p>Finish using the tool’s own close controls. Most scripts ask you to press Enter. Keep a BEC workflow in the same window until all steps are complete.</p><p>Animations stop with Ctrl+C. Theme previews affect the current terminal; installed themes update your startup profile. Restart PowerShell to check an installed theme.</p></section>
+      </details>
+      <div class="actions"><a class="action" data-enter-catalog href="#catalog">Full Catalog →</a></div>
+
+<section class="about-library"><h3>Flags</h3><p class="about-verified">Verified <span class="verification-check" aria-hidden="true">✓</span></p><div class="about-impact-key"><span class="about-flag impact-1">READ</span><span class="about-flag impact-2">Modify</span><span class="about-flag impact-3">Destruct</span></div></section>
+<section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>One target</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPN</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M11 21v-3h2v3"/></svg>Tenant-wide</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> Tenant sign-in</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 5a3 3 0 0 1 0 6M20 21v-2a7 7 0 0 0-3-5"/></svg>Multiple targets</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPNs</span><span><i aria-hidden="true">✓</i> .txt UPN file</span><span><i aria-hidden="true">✓</i> .csv UPN file</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span><span><i aria-hidden="true">✓</i> CSV export → Desktop</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></svg>Local</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> File or folder</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><details class="operator-details"><summary>Security guide</summary><p>Review the code and requested permissions. Confirm the selected tenant and targets before approving changes.</p><p>Use an approved endpoint and authorized account. Keep passwords, tokens and collected evidence out of shared logs and public reports.</p><p>Setup readiness checks local requirements, not tenant access.</p><p><a href="https://github.com/Grimmieeee/FIELDKIT-PRO/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Full security policy ↗</a></p></details>
+</section>
+      `;
     results.querySelectorAll('[data-first-run-file]').forEach(button=>button.addEventListener('click',()=>{
       const item=ITEMS.find(candidate=>candidate.file===button.dataset.firstRunFile);
       if(item)openItem(item);
@@ -28390,22 +28385,17 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   }
 
   function renderResults(){
-    document.body.classList.toggle('landing-mode',state.area==='Start Here');
-    if(state.area==='Start Here') closeNav();
     results.classList.toggle('view-grid',state.view==='grid');
     results.classList.toggle('view-list',state.view==='list');
     const favoritesCount=ITEMS.filter(item=>favoriteKeys.has(favoriteKey(item))).length;
     const favoriteFilter=document.getElementById('favoritesFilter');
     favoriteFilter?.setAttribute('aria-pressed',String(state.favoritesOnly));
     document.getElementById('favoriteCount').textContent=String(favoritesCount);
-    document.getElementById('catalogViewControls')?.classList.toggle('hidden',['About','Start Here'].includes(state.area));
-    document.getElementById('openSetupGuide')?.classList.toggle('hidden',['About','Start Here'].includes(state.area));
+    document.getElementById('catalogViewControls')?.classList.toggle('hidden',state.area==='About');
     catalogHead?.querySelector('[data-sort="verified"]')?.classList.toggle('hidden',!state.query.trim() && ['Tools','Toys'].includes(state.area));
     document.getElementById('catalogViewControls').querySelectorAll('[data-catalog-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.getAttribute('data-catalog-view')===state.view)));
     const queryActive = Boolean(state.query.trim());
-    const informational = state.area === 'About' || state.area === 'Start Here';
-    document.querySelector('.site-masthead')?.classList.toggle('hidden',state.area==='Start Here');
-    results.classList.toggle('landing-active',state.area==='Start Here');
+    const informational = state.area === 'About';
     catalogHead?.classList.toggle('hidden', informational);
     document.getElementById('verificationSortNote')?.classList.add('hidden');
     catalogHeading?.classList.toggle('hidden', informational);
@@ -28417,14 +28407,8 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       button.classList.toggle('sort-active', active);
       button.querySelector('span').textContent = active ? (state.sortDirection === 1 ? '↑' : '↓') : '↕';
     });
-    searchWrap?.classList.toggle("hidden", state.area === "About" || state.area === "Start Here");
+    searchWrap?.classList.toggle("hidden", state.area === "About");
     verificationKey.classList.add("hidden");
-
-    if(state.area==='Start Here'){
-      crumb.textContent='START HERE';entryCount.textContent='';entryCount.classList.add('hidden');
-      clearSearch.classList.add('hidden');contextBar.classList.add('hidden');jumpBar.innerHTML='';jumpBar.classList.add('hidden');empty.classList.add('hidden');
-      renderFirstRun();return;
-    }
 
     if (state.area === "About"){
       crumb.textContent = "ABOUT";
@@ -28436,16 +28420,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       jumpBar.innerHTML = "";
       jumpBar.classList.add("hidden");
       empty.classList.add("hidden");
-      results.innerHTML = `
-        <section class="about-block about-revamp about-compact reference-concept">
-<div class="about-kicker">QUICK REFERENCE</div>
-<h2 class="about-title about-pro-wordmark"><b>F I E L D&nbsp; K I T</b><span>P R O</span><i>//</i></h2>
-<p class="about-tagline">Tools that work.</p>
-
-<section class="about-library"><h3>Flags</h3><p class="about-verified">Verified <span class="verification-check" aria-hidden="true">✓</span></p><div class="about-impact-key"><span class="about-flag impact-1">READ</span><span class="about-flag impact-2">Modify</span><span class="about-flag impact-3">Destruct</span></div></section>
-<section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>One target</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPN</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M11 21v-3h2v3"/></svg>Tenant-wide</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> Tenant sign-in</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 21v-2a7 7 0 0 1 14 0v2M16 5a3 3 0 0 1 0 6M20 21v-2a7 7 0 0 0-3-5"/></svg>Multiple targets</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> UPNs</span><span><i aria-hidden="true">✓</i> .txt UPN file</span><span><i aria-hidden="true">✓</i> .csv UPN file</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span><span><i aria-hidden="true">✓</i> CSV export → Desktop</span></div></div></div></section><section class="scope-example"><h3><svg class="target-scope-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></svg>Local</h3><div class="reference-pair"><div><h4>Have ready</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> File or folder</span></div></div><div><h4>Get back</h4><div class="reference-checks"><span><i aria-hidden="true">✓</i> On-screen results</span></div></div></div></section><details class="operator-details"><summary>Security guide</summary><p>Review the code and requested permissions. Confirm the selected tenant and targets before approving changes.</p><p>Use an approved endpoint and authorized account. Keep passwords, tokens and collected evidence out of shared logs and public reports.</p><p>Setup readiness checks local requirements, not tenant access.</p><p><a href="https://github.com/Grimmieeee/FIELDKIT-PRO/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Full security policy ↗</a></p></details>
-</section>
-      `;
+      renderAbout();
       return;
     }
 
@@ -29105,7 +29080,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   }
 
   function bindDrawerActions(item){
-    drawerBody.querySelector('[data-tool-catalog]')?.addEventListener('click',()=>{closeItem();window.history?.replaceState(null,'','#catalog');if(state.area==='Start Here'){state.area='Full Library';renderNav();renderResults();}});
+    drawerBody.querySelector('[data-tool-catalog]')?.addEventListener('click',()=>{closeItem();window.history?.replaceState(null,'','#catalog');if(state.area==='About'){state.area='Full Library';renderNav();renderResults();}});
     drawerBody.querySelectorAll('[data-trail-index]').forEach(button=>button.addEventListener('click',()=>{
       const index=Number(button.dataset.trailIndex),target=toolTrail[index];toolTrail=toolTrail.slice(0,index);if(target){openItem(target);drawerBody.scrollTop=0;}
     }));
@@ -29686,11 +29661,10 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   document.body.addEventListener('keydown',event=>{if(!['Shift','Control','Alt','Meta'].includes(event.key))document.body.setAttribute('data-input-modality','keyboard');},true);
   const make=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text)n.textContent=text;return n;};
   const favorite=document.getElementById('favoritesFilter');
-  const route=area=>{window.history?.replaceState(null,'',area==='Start Here'?'#start-here':area==='About'?'#about':'#catalog');if(favorite.getAttribute('aria-pressed')==='true')favorite.click();sourceNav.querySelector(`[data-area="${area}"]`)?.click();const input=document.getElementById('search');if(input.value){input.value='';input.dispatchEvent(new Event('input',{bubbles:true}));}sync();};
-  const header=make('header','orbit-header'),home=make('button','orbit-wordmark');home.type='button';home.setAttribute('aria-label','FIELD KIT PRO home');home.innerHTML='<b>F I E L D&nbsp; K I T</b><span>P R O</span><i>//</i><small>POWERSHELL TOOLS</small>';home.addEventListener('click',()=>route('Full Library'));
+  const route=area=>{window.history?.replaceState(null,'',area==='About'?'#about':'#catalog');if(favorite.getAttribute('aria-pressed')==='true')favorite.click();sourceNav.querySelector(`[data-area="${area}"]`)?.click();const input=document.getElementById('search');if(input.value){input.value='';input.dispatchEvent(new Event('input',{bubbles:true}));}sync();};
+  const header=make('header','orbit-header'),home=make('button','orbit-wordmark');home.type='button';home.setAttribute('aria-label','FIELD KIT PRO home');home.innerHTML='<b>F I E L D&nbsp; K I T</b><span>P R O</span><i>//</i><small>POWERSHELL TOOLS</small>';home.addEventListener('click',()=>{location.hash='welcome';});
   const utilities=make('nav','orbit-utilities');utilities.setAttribute('aria-label','Utilities');
-  const setup=document.getElementById('openSetupGuide');setup.innerHTML='<svg class="setup-pwsh" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><path d="m3 4 9 7-9 7m12 0h9"/></svg><span class="setup-label">Take a tour</span>';setup.setAttribute('aria-label','Take a tour of FIELD KIT');
-  setup.addEventListener('click',()=>{document.getElementById('beginWorkstationSetup')?.click();});
+  const setup=document.getElementById('openSetupGuide');setup.innerHTML='<span class="setup-label">About</span>';setup.setAttribute('aria-label','About and setup');
   const idea=document.querySelector('.request-link');idea.className='orbit-idea-link';idea.textContent='Submit an idea ↗';
   const theme=make('button','orbit-theme','☾');theme.type='button';theme.id='orbitThemeToggle';
   const updateTheme=()=>{const dark=document.documentElement.getAttribute('data-theme')==='dark';theme.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');theme.setAttribute('aria-pressed',String(dark));theme.title=dark?'Switch to light mode':'Switch to dark mode';};
@@ -29706,9 +29680,8 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   const domains=[['Full Library','All'],['Quick Commands','Quick Commands'],['Endpoint','Endpoint'],['Identity','Identity'],['Incident Response','Incident Response'],['Licensing','Licensing'],['Mailbox','Mailbox'],['Reports','Reports'],['Tools','Tools'],['Toys','Toys']];
   for(const [area,label] of domains){const b=make('button','orbit-category',label);b.type='button';b.dataset.orbitArea=area;b.addEventListener('click',()=>route(area));navigation.append(b);}main.append(navigation,idea);
   const count=document.getElementById('favoriteCount')||make('span','','0');count.id='favoriteCount';if(!/^\d+$/.test(count.textContent))count.textContent='0';favorite.replaceChildren(make('span','orbit-favorite-star','☆'),make('span','orbit-favorite-label','Favorites'),count);favorite.setAttribute('aria-label','Show Favorites');favorite.title='Favorites saved in this browser';utilities.append(favorite);
-  const about=make('button','orbit-about','About');about.type='button';about.addEventListener('click',()=>route('About'));
-  const credit=make('button','orbit-credit');credit.type='button';credit.setAttribute('aria-label','About FIELD KIT PRO, BURNSID');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';credit.addEventListener('click',()=>route('About'));
-  const footer=make('footer','orbit-footer');const footerLinks=make('nav','orbit-footer-links');footerLinks.setAttribute('aria-label','About and feedback');footerLinks.append(about);footer.append(footerLinks,theme,credit);
+  const credit=make('span','orbit-credit');credit.innerHTML='<span>B  U  R  N  S  I  D  / /</span>';
+  const footer=make('footer','orbit-footer');footer.append(theme,credit);
   const visits=make('span','orbit-visits');visits.title='Page visits since activation';
   visits.textContent='Visits …';
   if(['fieldkit.pro','www.fieldkit.pro','field-kit-mobile-preview.delbert-hifield.chatgpt.site'].includes(location.hostname)){
@@ -29721,9 +29694,9 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   workspace.prepend(header);workspace.append(main,footer);
   const alignVisits=()=>{const label=setup.querySelector('.setup-label');const r=label.getBoundingClientRect(),h=header.getBoundingClientRect();visits.style.left=(r.left-h.left)+'px';const style=getComputedStyle(label);const tourStyle=getComputedStyle(setup);visits.style.font=style.fontSize==='0px'?'400 13px/1.4 var(--ui)':style.font;visits.style.removeProperty('color');visits.style.letterSpacing=style.letterSpacing;visits.style.marginTop='12px';};
   new ResizeObserver(alignVisits).observe(header);alignVisits();
-  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';about.hidden=true;idea.hidden=current==='Start Here'||current==='About';setup.hidden=false;document.body.classList.toggle('orbit-information',current==='Start Here'||current==='About');visits.hidden=current==='Start Here'||current==='About';}
+  function sync(){const current=sourceNav.querySelector('[data-area].active')?.getAttribute('data-area')||'Full Library',active=favorite.getAttribute('aria-pressed')==='true';for(const b of navigation.querySelectorAll('[data-orbit-area]'))b.setAttribute('aria-pressed',String(!active&&b.dataset.orbitArea===current));favorite.setAttribute('aria-label',(active?'Show all results':'Show Favorites')+', '+count.textContent+' saved');favorite.querySelector('.orbit-favorite-star').textContent=active?'★':'☆';setup.setAttribute('aria-current',current==='About'?'page':'false');document.body.classList.toggle('orbit-information',current==='About');visits.hidden=current==='About';}
   new MutationObserver(sync).observe(sourceNav,{childList:true,subtree:true});new MutationObserver(sync).observe(favorite,{attributes:true,attributeFilter:['aria-pressed']});new MutationObserver(updateTheme).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-  document.querySelector('[data-catalog-view="list"]')?.click();if(window.location.hash!=='#start-here')route('Full Library');sync();updateTheme();
+  document.querySelector('[data-catalog-view="list"]')?.click();if(['#start-here','#about'].includes(window.location.hash))route('About');else if(!window.FIELD_KIT_ENTRY_REQUESTED)route('Full Library');sync();updateTheme();
 })();
 </script>
 <script>
@@ -29731,7 +29704,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
 // Download eligibility is enforced by the pinned release manifest and source resolver.
 </script><section id="fieldKitEntry" aria-label="FIELD KIT PRO" hidden>
 <header><a class="entry-brand" href="#catalog" aria-label="FIELD KIT PRO, open full catalog"><span>FIELD KIT</span><span class="entry-muted">//</span><span class="entry-muted">PRO</span></a></header>
-<main><h1>First time?</h1><a class="entry-setup" href="#start-here" aria-label="Start here, prepare your terminal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg></a></main>
+<main><h1>First time?</h1><a class="entry-setup" href="#about" aria-label="Start here, prepare your terminal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg></a></main>
 <footer><a class="entry-catalog" href="#catalog" aria-label="Open full catalog"><span class="entry-full">FULL</span><span>CATALOG</span><span aria-hidden="true">→</span></a></footer>
 </section>
 
@@ -29746,8 +29719,6 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     hideEntry();
     if(link.classList.contains('entry-setup')){
       document.getElementById('openSetupGuide').click();
-      const prep=document.querySelector('.optional-prep');
-      if(prep){prep.open=true;prep.scrollIntoView({block:'start'});}
     }else{
       document.querySelector('#areaNav [data-area="Full Library"]').click();
       history.replaceState(null,'','#catalog');
