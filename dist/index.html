@@ -2727,6 +2727,25 @@ body.orbit-ui .orbit-idea-link[hidden]{display:none}
 body.orbit-ui .orbit-header .orbit-visits{display:inline-flex;align-items:center;white-space:nowrap;line-height:18px;letter-spacing:normal;color:var(--text);background:transparent}
 
 </style>
+<script>window.FIELD_KIT_ENTRY_REQUESTED=!location.hash || location.hash==="#welcome";</script>
+<style id="field-kit-entry-styles">
+body.entry-view{background:#111114!important}
+body.entry-view .shell,body.entry-view .overlay,body.entry-view .drawer{display:none!important}
+#fieldKitEntry[hidden]{display:none}
+#fieldKitEntry{background:#111114;color:#f7f5fc;min-height:100svh;box-sizing:border-box;padding:17px clamp(18px,5vw,40px);display:grid;grid-template-rows:auto 1fr auto;font:14px/1.4 var(--ui,system-ui,sans-serif)}
+#fieldKitEntry .entry-brand,#fieldKitEntry .entry-catalog{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;letter-spacing:.26em;text-decoration:none;color:#fff;font-size:11px;font-weight:500;min-height:44px}
+#fieldKitEntry .entry-muted{color:#aaa6b1}
+#fieldKitEntry main{position:relative;top:10px;align-self:center;justify-self:center;text-align:center}
+#fieldKitEntry h1{margin:0;font:300 clamp(32px,6.5vw,53px)/1.1 var(--ui,system-ui,sans-serif);letter-spacing:.01em;color:inherit}
+#fieldKitEntry .entry-setup{display:inline-flex;align-items:center;justify-content:center;width:72px;height:64px;color:#aaa6b1;margin-top:-1px}
+#fieldKitEntry .entry-setup svg{width:21px;height:21px;stroke-width:1.2}
+#fieldKitEntry .entry-setup:hover{color:#fff}
+#fieldKitEntry footer{display:flex;justify-content:flex-end;margin-bottom:-7px}
+#fieldKitEntry .entry-catalog{font-size:10px;font-weight:300;gap:.75em}
+#fieldKitEntry .entry-full{font-size:1.1em;color:#aaa6b1}
+#fieldKitEntry a:focus-visible{outline:1px solid #aaa6b1;outline-offset:4px}
+@media(max-height:420px){#fieldKitEntry{min-height:360px}}
+</style>
 </head>
 <body class="orbit-ui">
 <noscript><p>This catalog needs JavaScript for search and downloads. Browse the <a href="https://github.com/Grimmieeee/FIELDKIT-PRO/tree/main/dist/published-source">published source files</a> in the repository.</p></noscript>
@@ -28337,7 +28356,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       <section id="workstation-setup" class="note-block"><h4>1. Find a task</h4><p>Search by name, category or impact. Try Modify password.</p></section>
       <section class="note-block"><h4>2. Check the card</h4><p>Review its purpose, scope and permissions.</p></section>
       <section class="note-block"><h4>3. Run the tool</h4><p>Download and review it. Confirm the customer and account. Use the launch instructions on the card.</p><p>Sign in with an authorized account and review requested permissions. Follow the prompts, select targets and review results. Approve changes only after checking the plan.</p><p>Finish using the tool’s own close controls. Most scripts ask you to press Enter. Keep a BEC workflow in the same window until all steps are complete.</p><p>Animations stop with Ctrl+C. Theme previews affect the current terminal; installed themes update your startup profile. Restart PowerShell to check an installed theme.</p></section>
-      <details class="optional-prep"><summary>Workstation prep · optional</summary><p>Already set up? Skip this. Tools still need their listed modules and permissions.</p>
+      <details class="optional-prep"><summary>Prep the terminal</summary><p>Already set up? Skip this. Tools still need their listed modules and permissions.</p>
       <div class="actions"><button id="downloadSetupPackage" class="action primary" type="button">Download Setup Package</button><button class="action" type="button" data-first-run-file="PREPARE-FIELD-KIT.ps1">View Setup Tool</button></div>
       <p id="setupPackageStatus" class="source-note" role="status"></p>
       <p>Extract the package. Run Prepare-FIELD-KIT.ps1 in your chosen PowerShell edition. Choose 3 — Both. Review installations. Continue only at READY.</p>
@@ -29710,5 +29729,37 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
 <script>
 // The appearance bootstrap preserves the saved theme; first use defaults to light.
 // Download eligibility is enforced by the pinned release manifest and source resolver.
-</script></body>
+</script><section id="fieldKitEntry" aria-label="FIELD KIT PRO" hidden>
+<header><a class="entry-brand" href="#catalog" aria-label="FIELD KIT PRO, open full catalog"><span>FIELD KIT</span><span class="entry-muted">//</span><span class="entry-muted">PRO</span></a></header>
+<main><h1>First time?</h1><a class="entry-setup" href="#start-here" aria-label="Start here, prepare your terminal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg></a></main>
+<footer><a class="entry-catalog" href="#catalog" aria-label="Open full catalog"><span class="entry-full">FULL</span><span>CATALOG</span><span aria-hidden="true">→</span></a></footer>
+</section>
+
+<script>
+(() => {
+  const entry=document.getElementById('fieldKitEntry');
+  const showEntry=()=>{entry.hidden=false;document.body.classList.add('entry-view');};
+  const hideEntry=()=>{entry.hidden=true;document.body.classList.remove('entry-view');};
+  if(window.FIELD_KIT_ENTRY_REQUESTED) showEntry();
+  entry.querySelectorAll('a').forEach(link=>link.addEventListener('click',event=>{
+    event.preventDefault();
+    hideEntry();
+    if(link.classList.contains('entry-setup')){
+      document.getElementById('openSetupGuide').click();
+      const prep=document.querySelector('.optional-prep');
+      if(prep){prep.open=true;prep.scrollIntoView({block:'start'});}
+    }else{
+      document.querySelector('#areaNav [data-area="Full Library"]').click();
+      history.replaceState(null,'','#catalog');
+      document.getElementById('search').focus();
+    }
+    window.scrollTo(0,0);
+  }));
+  window.addEventListener('hashchange',()=>{
+    if(!location.hash || location.hash==='#welcome') showEntry();
+    else hideEntry();
+  });
+})();
+</script>
+</body>
 </html>
