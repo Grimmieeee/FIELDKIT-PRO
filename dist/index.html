@@ -30005,6 +30005,28 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     return lines ? ['& {',...lines.map(line=>'    '+line),'}'].join('\n') : item.code;
   }
 
+  function interactiveCommandText(item){
+    const quote = value => "'" + String(value).replace(/'/g, "''") + "'";
+    const impact = {1:'READ ONLY',2:'MAKES CHANGES',3:'DESTRUCTIVE'}[actionRank(item)];
+    const objective = String(item.objective || item.useFor || '').trim();
+    if (!impact || !objective) throw new Error('CLI impact and objective are required: ' + item.name);
+    const body = quickCommandText(item);
+    return [
+      '& {',
+      '    Write-Host ' + quote(item.name + ' // ' + impact),
+      "    Write-Host ''",
+      '    Write-Host ' + quote('Objective: ' + objective),
+      "    Write-Host ''",
+      '    try {',
+      body,
+      '    } finally {',
+      "        Write-Host ''",
+      "        [void](Read-Host 'Press ENTER to close.')",
+      '    }',
+      '}'
+    ].join('\n');
+  }
+
   function standaloneCommandMarkup(item){
     if (item.type !== "Quick Command" || !item.code) return "";
     const platform = !item.connect.length || /^\s*(?:Connect-|Import-Module)/i.test(item.code) ? moduleLabel(item) : "";
@@ -30012,7 +30034,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       <section class="command-block">
         ${platform ? `<div><span class="platform-label">${esc(platform)}</span></div>` : ""}
         
-        <div class="inline-code-box"><div class="source-heading"><button class="copy-mini" type="button" data-copy-source>COPY</button></div><pre class="command">${esc(quickCommandText(item))}</pre></div>
+        <div class="inline-code-box"><div class="source-heading"><button class="copy-mini" type="button" data-copy-source>COPY</button><button class="copy-mini" type="button" data-copy-interactive>Copy with terminal header</button></div><pre class="command">${esc(quickCommandText(item))}</pre></div>
       </section>
     `;
   }
@@ -30514,6 +30536,13 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     if (copySource){
       copySource.addEventListener("click", async () => {
         await copyWithFeedback(copySource, quickCommandText(item) || "");
+      });
+    }
+
+    const copyInteractive = drawerBody.querySelector("[data-copy-interactive]");
+    if (copyInteractive){
+      copyInteractive.addEventListener("click", async () => {
+        await copyWithFeedback(copyInteractive, interactiveCommandText(item));
       });
     }
 

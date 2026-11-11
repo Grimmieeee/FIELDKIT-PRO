@@ -38,6 +38,17 @@ async function verify() {
   }
   for (const item of q.ITEMS) assert.ok(q.catalogDomain(item), item.displayName);
 
+  const commands = q.ITEMS.filter(item => item.type === 'Quick Command');
+  assert.ok(commands.length > 0);
+  for (const item of commands) {
+    const copy = q.interactiveCommandText(item);
+    const literalBody = q.quickCommandText(item);
+    assert.ok(copy.includes('    try {\n' + literalBody + '\n    } finally {'), item.name);
+    assert.ok(copy.includes("Write-Host 'Objective: "), item.name);
+    assert.ok(copy.includes("Read-Host 'Press ENTER to close.'"), item.name);
+  }
+  console.log(commands.length + ' CLI terminal formats checked.');
+
   for (const [file, hash] of Object.entries(sources)) {
     assert.equal(c.FIELD_KIT_SOURCE_INTEGRITY[file], hash, file);
     const source = await q.resolveSource({ publishedPath: file });

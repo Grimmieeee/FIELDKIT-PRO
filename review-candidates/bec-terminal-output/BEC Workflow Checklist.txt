@@ -1,0 +1,6 @@
+BEC WORKFLOW CHECKLIST
+
+1. Extract all three scripts together. Run BEC-RISK-ASSESSMENT.ps1 from an open PowerShell window.
+2. Verify the tenant and UPN. Review findings and unavailable checks before choosing containment.
+3. Continue to BEC-CONTAIN-ERADICATE.ps1. Review and confirm only approved actions. Handle the password change with the user during recovery.
+4. Continue to BEC-RECOVER-VALIDATE.ps1 once recovery is approved. Verify sign-in with MFA, run the final assessment, and monitor for 48 hours.
