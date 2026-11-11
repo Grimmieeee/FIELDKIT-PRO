@@ -821,6 +821,8 @@ try {
 
     $targetDomain = ($UPN -split "@", 2)[1].ToLowerInvariant()
 
+    Connect-ExchangeAuto -TargetDomain $targetDomain
+
     $tenant = Connect-GraphAuto `
         -Scopes @(
             "User.Read.All",
@@ -864,7 +866,6 @@ try {
         throw "Target is not disabled at the authoritative identity source. No mailbox permission cleanup was performed."
     }
 
-    Connect-ExchangeAuto -TargetDomain $targetDomain
 
     $targetPrincipalSet = New-TargetPrincipalSet `
         -GraphUser $user `

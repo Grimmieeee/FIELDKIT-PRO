@@ -516,8 +516,13 @@ function Get-AllCurrentGroups {
 }
 
 try {
-    Connect-GraphReadOnly
     Connect-ExchangeReadOnly
+    Connect-GraphReadOnly
+    $exchangeTenantId = [string](Get-ExchangeConnection).TenantID
+    $graphTenantId = [string](Get-MgContext -ErrorAction Stop).TenantId
+    if (-not $exchangeTenantId -or -not $graphTenantId -or $exchangeTenantId -ne $graphTenantId) {
+        throw 'Exchange Online and Graph tenant contexts could not be matched.'
+    }
 
     $groups = @(Get-AllCurrentGroups)
     $results = New-Object System.Collections.Generic.List[object]

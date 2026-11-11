@@ -1492,6 +1492,19 @@ try {
     $tenant = $null
 
     try {
+        Connect-ExchangeAuto `
+            -TargetDomain $TenantDomain
+
+        $exchangeAvailable = $true
+    }
+    catch {
+        Write-Warn "Exchange review unavailable"
+        $dataGaps.Add(
+            "Exchange: $(Get-ShortError $_)"
+        )
+    }
+
+    try {
         $tenant = Connect-GraphAuto `
             -Scopes @(
                 "User.Read.All",
@@ -1507,19 +1520,6 @@ try {
         Write-Warn "Graph review unavailable"
         $dataGaps.Add(
             "Graph: $(Get-ShortError $_)"
-        )
-    }
-
-    try {
-        Connect-ExchangeAuto `
-            -TargetDomain $TenantDomain
-
-        $exchangeAvailable = $true
-    }
-    catch {
-        Write-Warn "Exchange review unavailable"
-        $dataGaps.Add(
-            "Exchange: $(Get-ShortError $_)"
         )
     }
 

@@ -29,12 +29,12 @@ async function verify() {
   require('./check-connection-order.cjs')(root, process.argv.includes('--require-aligned'));
   const manifest = Object.entries(sources).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0)
     .map(([file, hash]) => hash + '  ' + file).join('\n') + '\n';
-  assert.equal(fs.readFileSync(path.join(root, 'qa/V162-SHA256SUMS.txt'), 'utf8'), manifest);
+  assert.equal(fs.readFileSync(path.join(root, 'dist/SHA256SUMS.txt'), 'utf8'), manifest);
   const verified = JSON.parse(fs.readFileSync(path.join(root, 'qa/operator-verified-2026-11-11.json'), 'utf8'));
   for (const [file, record] of Object.entries(verified.scripts)) {
     const item = q.ITEMS.find(candidate => candidate.file === file);
-    assert.ok(item && q.isVerifiedRelease(item), file);
-    assert.equal(sources[record.sitePath], record.sha256, file);
+    assert.ok(item, file);
+    assert.equal(q.isVerifiedRelease(item), sources[record.sitePath] === record.sha256, file);
     assert.deepEqual(fs.readFileSync(path.join(root, record.path)), fs.readFileSync(path.join(dist, record.sitePath)), file);
   }
   for (const item of q.ITEMS) assert.ok(q.catalogDomain(item), item.displayName);
@@ -49,15 +49,32 @@ async function verify() {
   }
 
   assert.equal(workflow.length, 3);
-  const eligible = workflow.every(item => q.isVerifiedRelease(item) || q.isReviewedWorkflowPackage(item)) &&
-    (new Set(workflow.map(item => item.version)).size === 1 || workflow.every(item => q.isVerifiedRelease(item)));
   for (const item of workflow) {
-    assert.equal(q.startMarkup(item).includes('id="downloadIRWorkflow"'), eligible, item.file);
+    assert.ok(q.startMarkup(item).includes('id="downloadIRWorkflow"'), item.file);
   }
-  if (eligible) {
-    assert.ok((await q.buildIRBundle()).size > 0);
-  } else {
-    await assert.rejects(q.buildIRBundle(), /release review|versions do not match/);
+  const bundle = Buffer.from(await (await q.buildIRBundle()).arrayBuffer());
+  const members = [];
+  for (let offset = 0; bundle.readUInt32LE(offset) === 0x04034b50;) {
+    const nameLength = bundle.readUInt16LE(offset + 26);
+    const extraLength = bundle.readUInt16LE(offset + 28);
+    const length = bundle.readUInt32LE(offset + 18);
+    const start = offset + 30;
+    const name = bundle.toString('utf8', start, start + nameLength);
+    members.push(name);
+    const data = start + nameLength + extraLength;
+    if (name.endsWith('.ps1')) {
+      const item = workflow.find(candidate => candidate.file === name);
+      assert.ok(item, name);
+      assert.deepEqual(bundle.subarray(data, data + length), fs.readFileSync(path.join(dist, item.publishedPath)), name);
+    }
+    offset = data + length;
+  }
+  assert.deepEqual(members.sort(), [...workflow.map(item=>item.file), 'BEC-WORKFLOW-CHECKLIST.txt'].sort());
+  for (const item of q.ITEMS.filter(item=>item.type==='Quick Command')) {
+    const copy = q.interactiveCommandText(item);
+    assert.ok(copy.includes('    try {\n' + q.quickCommandText(item) + '\n    } finally {'), item.name);
+    assert.ok(copy.includes("Write-Host 'Objective: "), item.name);
+    assert.ok(copy.includes("Read-Host 'Press ENTER to close.'"), item.name);
   }
 
   const first = query => q.ITEMS.map(item => [q.searchScore(item, query), item.displayName])

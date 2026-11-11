@@ -170,7 +170,7 @@ function Get-IRWorkflowInput {
     }
     if (-not $saved -and -not $NoPause -and -not $activeGraph) {
         Write-IRLine ''
-        [void](Read-Host 'Press ENTER to sign in for assessment, response, and recovery. Changes require operator confirmation')
+        [void](Read-Host 'Press ENTER to sign in for assessment')
         Write-IRLine ''
     }
     return @{UPN=$TargetUpn;Tenant=$ExpectedTenant}
@@ -203,7 +203,7 @@ function Close-IRWorkflow {
     param([string]$Message, [switch]$Wait)
     Write-IRLine ''
     Write-IRLine $Message
-    if ($Wait -and -not $NoPause) { [void](Read-Host 'Press ENTER to finish') }
+    if ($Wait -and -not $NoPause) { [void](Read-Host 'Press ENTER to close.') }
 }
 
 function Invoke-IRNextStep {
@@ -291,7 +291,11 @@ function Add-Unique($List, [string]$Value) {
 
 function Format-DateTime($Value, [string]$Format = 'yyyy-MM-dd HH:mm:ss') {
     if ($null -eq $Value -or [string]::IsNullOrWhiteSpace([string]$Value)) { return 'Unknown' }
-    try { return ([datetime]::Parse([string]$Value)).ToString($Format) }
+    try {
+        if ($Value -is [datetimeoffset]) { return $Value.ToLocalTime().ToString($Format) }
+        if ($Value -is [datetime]) { return $Value.ToLocalTime().ToString($Format) }
+        return ([datetimeoffset]::Parse([string]$Value)).ToLocalTime().ToString($Format)
+    }
     catch { return [string]$Value }
 }
 
@@ -780,10 +784,11 @@ try {
         $OriginalTitle = $Host.UI.RawUI.WindowTitle
         $Host.UI.RawUI.WindowTitle = 'BEC: User Risk Assessment'
     } catch { }
-    Write-IRLine 'BEC: User Risk Assessment'
-    Write-IRLine 'Review one user''s account and mailbox before choosing a response.'
-    Write-IRLine (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
-    Write-IRLine ''
+    Write-Host 'BEC-RISK-ASSESSMENT.ps1 // READ ONLY'
+    Write-Host ''
+    Write-Host 'Objective: Review one user''s account and mailbox before choosing a response.'
+    Write-Host ''
+    Write-IRLine (Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')
     $inputs = Get-IRWorkflowInput $UserPrincipalName $Tenant
     $TargetUpn = $inputs.UPN; $Tenant = $inputs.Tenant
     if ($global:FieldKitIRSession) { $global:FieldKitIRSession.Assessment = $null }
@@ -1128,7 +1133,7 @@ try {
         Write-IRLine 'Last Interactive Sign-In: Not available'
     }
     else {
-        Write-IRLine "Last Interactive Sign-In: $(Format-DateTime $LastInteractiveSignIn 'MM/dd/yyyy HH:mm')"
+        Write-IRLine "Last Interactive Sign-In: $(Format-DateTime $LastInteractiveSignIn 'MM/dd/yyyy HH:mm zzz')"
     }
 
     Write-IRLine ""
@@ -1171,7 +1176,7 @@ try {
     if ($SignIns48.Count -gt 0) {
         Write-IRLine "Status: $($SignIns48.Count) sampled sign-in(s) in the last 48 hours"
         foreach ($Row in $RecentIpRows) {
-            $Line = "IP: $($Row.Ip) | Last Seen: $(Format-DateTime $Row.LastSeen 'MM/dd/yyyy HH:mm')"
+            $Line = "IP: $($Row.Ip) | Last Seen: $(Format-DateTime $Row.LastSeen 'MM/dd/yyyy HH:mm zzz')"
             if (-not [string]::IsNullOrWhiteSpace($Row.Country)) {
                 $Line = "$Line | Country: $($Row.Country)"
             }
@@ -1390,13 +1395,13 @@ try {
         foreach ($gap in $DataGaps) { Write-IRLine "Unavailable: $gap" }
         if ($HighRiskReasons.Count -or $ReviewReasons.Count -or $DataGaps.Count) {
             Write-IRLine 'Follow up on the findings above. Do not treat this result as incident closure.'
-            Write-IRLine ("COMPLETED: {0}" -f (Get-Date).ToString('MM/dd/yyyy HH:mm'))
+            Write-IRLine ("COMPLETED: {0}" -f (Get-Date).ToString('MM/dd/yyyy HH:mm zzz'))
             Close-IRWorkflow 'Final assessment finished - follow-up required.' -Wait
         }
         else {
             Write-IRLine 'No high-risk findings in the checks completed.'
             Write-IRLine 'Confirm user sign-in with MFA and monitor for new suspicious activity for 48 hours.'
-            Write-IRLine ("COMPLETED: {0}" -f (Get-Date).ToString('MM/dd/yyyy HH:mm'))
+            Write-IRLine ("COMPLETED: {0}" -f (Get-Date).ToString('MM/dd/yyyy HH:mm zzz'))
             Close-IRWorkflow 'Script workflow complete. Incident monitoring continues.' -Wait
         }
         $script:FinalReviewFinished=$true
@@ -1404,7 +1409,7 @@ try {
     else {
     Write-IRLine ''
     if ($HighRiskReasons.Count -gt 0) {
-        Write-IRLine 'STATUS: CONTAINMENT REVIEW INDICATED' -ForegroundColor Red
+        Write-IRLine 'STATUS: CONTAINMENT REVIEW INDICATED' -ForegroundColor Yellow
         Section 'NEXT STEPS'
         Write-IRLine 'Document evidence. Review the high-risk findings and approve response if warranted.'
     }
@@ -1418,7 +1423,7 @@ try {
         Section 'NEXT STEPS'
         Write-IRLine 'Document evidence. Continue only if other incident evidence warrants response.'
     }
-    Write-IRLine "`nCOMPLETED: $((Get-Date).ToString('MM/dd/yyyy HH:mm'))"
+    Write-IRLine "`nCOMPLETED: $((Get-Date).ToString('MM/dd/yyyy HH:mm zzz'))"
     $script:NextIRFile='BEC-CONTAIN-ERADICATE'
     }
 
