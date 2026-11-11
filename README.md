@@ -6,12 +6,12 @@ Start with the [Build Standard](docs/tools/field-kit-build-standard.md), then re
 
 Live site: https://fieldkit.pro/
 
-- Website source: `dist/index.html`.
-- Hosted downloads: `dist/published-source`, `dist/tools` and `dist/toys`.
+- Current verified test copies: `scripts/`. See the [v162 QA baseline](qa/QA-BASELINE-v162.md).
+- Historical GitHub catalog snapshot: `dist/`. Its checks establish internal integrity for that snapshot. Current deployment parity is tracked separately.
 - Security guidance: [SECURITY.md](SECURITY.md).
 - Release and verification evidence: `qa/`.
 - Proposed or historical sources under `review-candidates`, `release-baseline` and candidate directories are not automatically active downloads.
 
 The site is hosted with Sites, independently of GitHub Pages. This repository is public. Windows validator 1.0.1 was operator-reported at 161 PASS, 0 FAIL, 0 SKIP; verification remains source/version-specific.
 
-Legacy repository removal is owner-approved. Current site download resolution uses hosted, same-origin files rather than the original repositories. See [current release review](qa/SITE-LOCK-REVIEW-2026-11-03.md), `qa/RELEASE-LOCK.json` and `qa/REPOSITORY-CLEANUP.json` for the current baseline and deletion limits.
+Legacy repository removal is owner-approved. Current site download resolution uses hosted, same-origin files rather than the original repositories. See [current release review](qa/SITE-LOCK-REVIEW-2026-11-03.md), `qa/RELEASE-LOCK.json` and `qa/REPOSITORY-CLEANUP.json` for the historical baseline and deletion limits.
