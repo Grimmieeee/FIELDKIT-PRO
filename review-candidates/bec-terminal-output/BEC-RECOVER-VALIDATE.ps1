@@ -89,7 +89,6 @@ function Connect-IRWorkflowGraph {
 }
 
 function Connect-IRWorkflowExchange {
-    param([string]$TenantId, [string]$UserId, [string]$TargetUpn)
     $connections = @(Get-ConnectionInformation -ErrorAction Stop | Where-Object {
         $_.ModulePrefix -eq 'IRWorkflow' -and $_.State -eq 'Connected'
     })
@@ -100,7 +99,13 @@ function Connect-IRWorkflowExchange {
             $_.ModulePrefix -eq 'IRWorkflow' -and $_.State -eq 'Connected'
         })
     }
-    if ($connections.Count -ne 1 -or [string]$connections[0].TenantID -ne $TenantId) {
+    if ($connections.Count -ne 1) { throw 'Expected one connected workflow Exchange session.' }
+    return $connections[0]
+}
+
+function Get-IRWorkflowVerifiedMailbox {
+    param($Connection, [string]$TenantId, [string]$UserId, [string]$TargetUpn)
+    if ([string]$Connection.TenantID -ne $TenantId) {
         throw 'Exchange tenant does not match Graph. No mailbox changes are allowed.'
     }
     $mailbox = Get-IRWorkflowMailbox -Identity $TargetUpn -ErrorAction Stop
@@ -415,12 +420,18 @@ function Connect-GraphForTarget {
     return $target
 }
 
-function Connect-ExchangeForTarget {
-    param([string]$Identity)
-    if ($SkipExchange) { Add-DataGap 'Exchange checks and actions skipped.'; return $false }
-    if (-not (Ensure-Module 'ExchangeOnlineManagement')) { return $false }
+function Open-ExchangeForWorkflow {
+    if ($SkipExchange) { Add-DataGap 'Exchange checks and actions skipped.'; return }
+    if (-not (Ensure-Module 'ExchangeOnlineManagement')) { return }
+    try { return Connect-IRWorkflowExchange }
+    catch { Add-DataGap "Exchange unavailable: $(Get-ShortError $_)" }
+}
+
+function Test-ExchangeForTarget {
+    param($Connection, [string]$Identity)
+    if (-not $Connection) { return $false }
     try {
-        $null = Connect-IRWorkflowExchange $script:ExpectedTenantId $script:ExpectedUserId $Identity
+        $null = Get-IRWorkflowVerifiedMailbox $Connection $script:ExpectedTenantId $script:ExpectedUserId $Identity
         return $true
     }
     catch { Add-DataGap "Exchange unavailable: $(Get-ShortError $_)"; return $false }
@@ -809,9 +820,10 @@ try {
     Write-IRLine (Get-Date -Format 'yyyy-MM-dd HH:mm:ss zzz')
     $inputs=Get-IRWorkflowInput $UPN $Tenant
     $UPN=$inputs.UPN; $Tenant=$inputs.Tenant
+    $exchangeConnection = Open-ExchangeForWorkflow
     $user=Connect-GraphForTarget $UPN (Get-IRWorkflowScopes)
     $global:FieldKitIRSession.Recovery=$null
-    $exoOk=Connect-ExchangeForTarget $UPN
+    $exoOk=Test-ExchangeForTarget -Connection $exchangeConnection -Identity $UPN
     Section 'TARGET'
     Write-IRLine "UPN: $($user.userPrincipalName)"
     Write-IRLine "Account Status: $(if ($user.accountEnabled -eq $false) {'Disabled'} elseif ($user.accountEnabled -eq $true) {'Enabled'} else {'Unknown'})"
