@@ -1,3 +1,10 @@
+## Connection order and verification
+
+- Any workflow that needs both Exchange Online and Microsoft Graph establishes or validates Exchange first, then establishes or validates Graph. Apply this to standalone entry, same-session continuation, retries and fallbacks. Single-service workflows connect only to the service they need.
+- Establishing a session is separate from using it. Before mailbox reads or writes, verify tenant agreement and match the mailbox to the expected directory identity. Preserve required permissions, approvals and authority checks.
+- On every change, run `node qa/scripts/release-check.cjs`. The connection-order check detects unreviewed dual-service sources, changed reviewed bytes, and stale review entries. Review the reachable call paths for new or changed sources and update the evidence only after checking those paths.
+- Before releasing connection-order changes, run `node qa/scripts/release-check.cjs --require-aligned`. The strict check blocks any unresolved path. Exercise standalone and same-session starts as applicable in the supported Windows hosts. Record connection order, tenant and target matching, and the exact revision tested. Earlier operator verification remains the baseline for the tested bytes.
+
 ## Interactive terminal output
 
 - Start with the canonical filename or CLI entry title, followed by ` // ` and the actual impact flag. Use a blank line, one short `Objective:` sentence, and a blank line before the first prompt or result.

@@ -1,0 +1,62 @@
+{
+  "dist/published-source/identity/GET-GROUP-MEMBERS.ps1": {
+    "sha256": "0763e5036636d732ababb5511529a41e9768db4cb2524f527c1a99b642682dde",
+    "status": "exchange-first",
+    "evidence": "Exchange lookup first, Graph only for unresolved groups."
+  },
+  "dist/published-source/identity/GET-USER-PREDELETE-CHECK.ps1": {
+    "sha256": "dc288b00ceae2e2b43c8c6ee0b31fa687f101e2a7a8c9ce912d81b9eda999508",
+    "status": "exchange-first",
+    "evidence": "Exchange mailbox section precedes Graph/Entra section."
+  },
+  "dist/published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1": {
+    "sha256": "98559a4f523f857a4f6be44834e1ec6e6dbb7c8be055b9a42ba0657d28ad0d93",
+    "status": "open",
+    "evidence": "Standalone entry calls Connect-GraphForTarget before Connect-ExchangeForTarget."
+  },
+  "dist/published-source/incident-response/BEC-RECOVER-VALIDATE.ps1": {
+    "sha256": "09993babe1ec500227f5c3753846cb34240b74de41304bd31cd7c0df628ee105",
+    "status": "open",
+    "evidence": "Standalone entry calls Connect-GraphForTarget before Connect-ExchangeForTarget."
+  },
+  "dist/published-source/incident-response/BEC-RISK-ASSESSMENT.ps1": {
+    "sha256": "c032f57b680fcf697c00c46a0647a508e5c72e019d659d43e84245cb25c32a43",
+    "status": "exchange-first",
+    "evidence": "Exchange session attempt precedes Graph, unless explicitly skipped. Mailbox use follows tenant and object-ID checks."
+  },
+  "dist/published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1": {
+    "sha256": "a02fcebf8ef0b181f5fbb51abc3f4745b4c0eb464ccebe932f31fe72b8f4c913",
+    "status": "open",
+    "evidence": "Connect-GraphAuto and authoritative disable validation precede Connect-ExchangeAuto."
+  },
+  "dist/published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1": {
+    "sha256": "97532a90553481aa15491439f05e6a04b42c2fdbdc7006a87c8eaf727199c618",
+    "status": "open",
+    "evidence": "Main path calls Connect-GraphAuto before Connect-ExchangeAuto."
+  },
+  "dist/published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1": {
+    "sha256": "8bbea0977b56aef28c6076d67264da2650d1e69eef00fdc3d9ea9a3026f9b5fd",
+    "status": "exchange-first",
+    "evidence": "Ensure-EXO precedes Ensure-Graph."
+  },
+  "dist/published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1": {
+    "sha256": "9f53248243cb09b3e0bd252628018761734b537e6d4d76a5ecd183d61989bceb",
+    "status": "open",
+    "evidence": "Main path calls Connect-GraphReadOnly before Connect-ExchangeReadOnly."
+  },
+  "scripts/BEC-CONTAIN-ERADICATE.ps1": {
+    "sha256": "98559a4f523f857a4f6be44834e1ec6e6dbb7c8be055b9a42ba0657d28ad0d93",
+    "status": "open",
+    "evidence": "Standalone entry calls Connect-GraphForTarget before Connect-ExchangeForTarget."
+  },
+  "scripts/BEC-RECOVER-VALIDATE.ps1": {
+    "sha256": "09993babe1ec500227f5c3753846cb34240b74de41304bd31cd7c0df628ee105",
+    "status": "open",
+    "evidence": "Standalone entry calls Connect-GraphForTarget before Connect-ExchangeForTarget."
+  },
+  "scripts/BEC-RISK-ASSESSMENT.ps1": {
+    "sha256": "c032f57b680fcf697c00c46a0647a508e5c72e019d659d43e84245cb25c32a43",
+    "status": "exchange-first",
+    "evidence": "Exchange session attempt precedes Graph, unless explicitly skipped. Mailbox use follows tenant and object-ID checks."
+  }
+}

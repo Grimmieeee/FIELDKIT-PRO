@@ -26,6 +26,7 @@ async function verify() {
   assert.ok(q.runFrameworkAudit().ok);
 
   const root = path.resolve(dist, '..');
+  require('./check-connection-order.cjs')(root, process.argv.includes('--require-aligned'));
   const manifest = Object.entries(sources).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0)
     .map(([file, hash]) => hash + '  ' + file).join('\n') + '\n';
   assert.equal(fs.readFileSync(path.join(root, 'qa/V162-SHA256SUMS.txt'), 'utf8'), manifest);
