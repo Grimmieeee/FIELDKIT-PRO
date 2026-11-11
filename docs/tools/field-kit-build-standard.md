@@ -1,3 +1,12 @@
+## Interactive terminal output
+
+- Start with the canonical filename or CLI entry title, followed by ` // ` and the actual impact flag. Use a blank line, one short `Objective:` sentence, and a blank line before the first prompt or result.
+- Use plain labels such as `UPN:`, blank lines between sections, and concise prompts for the current stage. Retain input validation, target checks and required approvals. Keep unattended and composable entry points noninteractive.
+- Reserve red for operational failures. Use warnings for incomplete data and review findings. Use the same local timezone for displayed run and event timestamps, including the offset when time matters.
+- End interactive tools with `Press ENTER to close.` or the applicable BEC handoff. Add a blank line before it when needed. Keep native CLI results, error behavior and required safeguards intact.
+- BEC password reset and user password change are separate operator steps. Do not add a forced first-sign-in password change to this workflow. Keep the operator checklist brief and preserve the canonical three companion filenames.
+- Keep client-specific data, obsolete paths, and unrelated workflow prompts out of examples and CLI output. Rebind exact-source verification only after the changed behavior has evidence.
+
 ## Hybrid Windows execution baseline
 
 - Start with [Project Summary](../PROJECT-SUMMARY.md) and test the exact checked-in FIELDKIT-PRO revision. Use FIELDKIT-ARCHIVE for historical comparison only.
