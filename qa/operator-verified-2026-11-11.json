@@ -1,0 +1,33 @@
+{
+  "scope": "Operator-designated exact files following hybrid Windows validation. PowerShell 7 coverage not established.",
+  "scripts": {
+    "BEC-RISK-ASSESSMENT.ps1": {
+      "version": "1.0.4",
+      "sha256": "c032f57b680fcf697c00c46a0647a508e5c72e019d659d43e84245cb25c32a43",
+      "operatorTested": true,
+      "sitePath": "published-source/incident-response/BEC-RISK-ASSESSMENT.ps1",
+      "path": "scripts/BEC-RISK-ASSESSMENT.ps1"
+    },
+    "BEC-CONTAIN-ERADICATE.ps1": {
+      "version": "1.0.3",
+      "sha256": "98559a4f523f857a4f6be44834e1ec6e6dbb7c8be055b9a42ba0657d28ad0d93",
+      "operatorTested": true,
+      "sitePath": "published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+      "path": "scripts/BEC-CONTAIN-ERADICATE.ps1"
+    },
+    "BEC-RECOVER-VALIDATE.ps1": {
+      "version": "1.0.3",
+      "sha256": "09993babe1ec500227f5c3753846cb34240b74de41304bd31cd7c0df628ee105",
+      "operatorTested": true,
+      "sitePath": "published-source/incident-response/BEC-RECOVER-VALIDATE.ps1",
+      "path": "scripts/BEC-RECOVER-VALIDATE.ps1"
+    },
+    "Client-Connectivity-Check.ps1": {
+      "version": "2026.11.11",
+      "sha256": "75de340f0a216d59485aafaf01120ffbfc6db277263d75f06600c5a1e2b8d175",
+      "operatorTested": true,
+      "sitePath": "published-source/utility/Client-Connectivity-Check.ps1",
+      "path": "scripts/Client-Connectivity-Check.ps1"
+    }
+  }
+}

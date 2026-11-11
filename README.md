@@ -2,6 +2,8 @@
 
 FIELD // KIT PRO PowerShell catalog, source and release evidence.
 
+Start with the [Build Standard](docs/tools/field-kit-build-standard.md), then read the [Project Summary](docs/PROJECT-SUMMARY.md). Use the checked-in FIELDKIT-PRO copies for new tests. [Repository instructions](AGENTS.md)
+
 Live site: https://fieldkit.pro/
 
 - Website source: `dist/index.html`.
