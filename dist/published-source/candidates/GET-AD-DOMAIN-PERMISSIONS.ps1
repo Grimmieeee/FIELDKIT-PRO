@@ -16,6 +16,7 @@ Requires ActiveDirectory and permission to read this security descriptor.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
+Write-Host "AD Domain Permissions"
 $ErrorActionPreference='Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

@@ -13,6 +13,7 @@ new file only. Requires local CIM read access.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "System Driver Services"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

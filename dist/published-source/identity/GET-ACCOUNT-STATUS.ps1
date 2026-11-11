@@ -29,6 +29,7 @@ param(
     [string]$InputPath,
     [string]$TenantDomain
 )
+Write-Host "Get User Account Status"
 
 $ErrorActionPreference='Stop'
 
@@ -93,7 +94,7 @@ function Get-InputUPNs {
     if ($Path) { $rawValues += $Path }
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
         if ($entered) { $rawValues=@($entered) }
     }
 
@@ -335,13 +336,13 @@ try {
         [void]$results.Add($row)
 
         $age=$(if ($null -ne $row.DaysSince) { "$($row.DaysSince) days" } else { $row.SignInStatus })
-        Write-Host ("  {0,-42} {1,-11} {2}" -f $row.UPN,$row.AccountStatus,$age)
+        Write-Host ("{0,-42} {1,-11} {2}" -f $row.UPN,$row.AccountStatus,$age)
     }
 
     Write-Progress -Activity "Account Status" -Completed
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host ("UPNs checked        : {0}" -f $upns.Count)
     Write-Host ("Enabled             : {0}" -f @($results | Where-Object { $_.AccountStatus -eq 'Enabled' }).Count)
     Write-Host ("Disabled            : {0}" -f @($results | Where-Object { $_.AccountStatus -eq 'Disabled' }).Count)

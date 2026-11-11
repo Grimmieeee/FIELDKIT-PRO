@@ -15,6 +15,7 @@ arguments. This is an inventory, not a restorable task-definition backup.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
+Write-Host "Scheduled Task Inventory"
 $ErrorActionPreference = 'Stop'
 
 function Convert-FkTaskDetails {
@@ -183,12 +184,12 @@ try {
     }
     if ($rows.Count -eq 0) { Write-Host 'No visible tasks returned. Permissions may limit results.' }
     else {
-        $rows | Select-Object @{Name='TASK';Expression={$_.TaskPath + $_.TaskName}},@{Name='STATE';Expression={$_.State}},@{Name='RUN AS';Expression={$_.RunAs}},@{Name='LAST RESULT';Expression={$_.LastTaskResult}},@{Name='DATA';Expression={$_.RuntimeStatus}} | Format-FkTable | Out-Host
+        $rows | Select-Object @{Name='TASK';Expression={$_.TaskPath + $_.TaskName}},@{Name='STATE';Expression={$_.State}},@{Name='RUN AS';Expression={$_.RunAs}},@{Name='LAST RESULTS';Expression={$_.LastTaskResult}},@{Name='DATA';Expression={$_.RuntimeStatus}} | Format-FkTable | Out-Host
         if ($Details) {
         foreach ($row in $rows) {
             Write-Host ($row.TaskPath + $row.TaskName)
-            Write-Host ('  Actions: ' + $row.ActionsJson)
-            Write-Host ('  Triggers: ' + $row.TriggersJson)
+            Write-Host ('Actions: ' + $row.ActionsJson)
+            Write-Host ('Triggers: ' + $row.TriggersJson)
             if ($row.RuntimeStatus -eq 'UNAVAILABLE') { Write-Warning ('  Runtime unavailable: ' + $row.RuntimeError) }
         }
     }

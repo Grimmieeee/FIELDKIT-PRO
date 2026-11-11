@@ -20,6 +20,7 @@ param(
     [string]$InputFile,
     [switch]$ExportCsv
 )
+Write-Host "BEC: Check IP Reputation"
 
 $ErrorActionPreference = "Stop"
 
@@ -50,7 +51,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -536,8 +537,8 @@ try {
     Write-Host "Lookup errors   : $($errors.Count)"
     Write-Host ""
     Write-Host "Note:"
-    Write-Host "- Reputation is supporting evidence, not proof of compromise."
-    Write-Host "- Correlate with sign-ins, UAL, message trace, endpoint telemetry, and client context."
+    Write-Host "Reputation is supporting evidence, not proof of compromise."
+    Write-Host "Correlate with sign-ins, UAL, message trace, endpoint telemetry, and client context."
 
     if ($ExportCsv -or (Confirm-Yes "Export results to CSV")) {
         $path = Get-ExportPath -DefaultName "threat-intel-$(Get-Date -Format 'yyyyMMdd-HHmmss').csv"

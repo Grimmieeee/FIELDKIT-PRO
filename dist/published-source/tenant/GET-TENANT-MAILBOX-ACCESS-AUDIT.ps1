@@ -19,6 +19,7 @@ Read-only. No changes are made.
 #>
 
 param()
+Write-Host "Audit Tenant Mailbox Access"
 
 $ErrorActionPreference = "Stop"
 
@@ -141,6 +142,7 @@ try {
     try { $Host.UI.RawUI.WindowTitle = "Tenant Mailbox Access Audit" } catch {}
 
     Clear-Host
+    Write-Host "Audit Tenant Mailbox Access"
     Write-Host 'Audit Tenant Mailbox Access'
     Write-Host 'Review mailbox forwarding and delegated access across the tenant.'
     Write-Host "READ-ONLY. NO CHANGES MADE."
@@ -249,7 +251,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY" -ForegroundColor Cyan
+    Write-Host "RESULTS" -ForegroundColor Cyan
     Write-Host "Mailboxes checked : $($Mailboxes.Count)"
     Write-Host "With findings     : $FindingCount"
     Write-Host "Partial/failed    : $FailureCount"

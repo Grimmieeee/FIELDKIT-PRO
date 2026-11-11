@@ -1,7 +1,7 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
-# OBJECTIVE: Compare tenant settings with a saved baseline and review changes.
+# OBJECTIVE: Compare tenant settings with a saved baseline. Saving a local baseline requires approval.
 
 <#
 GET-TENANT-DRIFT-REVIEW.ps1
@@ -24,6 +24,7 @@ param(
     [string]$BaselinePath,
     [switch]$CaptureBaseline
 )
+Write-Host "Tenant Change Review"
 
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -607,7 +608,7 @@ function Write-ChangeSection {
             $label = [string]$item.Key
         }
 
-        Write-Host ("- Removed: {0}" -f $label)
+        Write-Host ("Removed: {0}" -f $label)
     }
 
     foreach ($item in $Result.Changed) {
@@ -622,8 +623,8 @@ function Write-ChangeSection {
 }
 
 try {
-    Write-Host 'Review Tenant Changes'
-    Write-Host 'Compare tenant settings with a saved baseline and review changes.'
+    Write-Host 'Tenant Change Review'
+    Write-Host 'Compare tenant settings with a saved baseline. Saving a local baseline requires approval.'
     Write-Host "Shows high-value tenant changes since the last approved baseline."
     Write-Host ""
 
@@ -707,7 +708,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host ("Changes detected: {0}" -f $changeCount)
     Write-Host ("Baseline captured: {0}" -f $baseline.Metadata.CapturedAt)
     Write-Host ("Current captured : {0}" -f $current.Metadata.CapturedAt)

@@ -32,6 +32,7 @@ param(
     [Alias('Group')]
     [string[]]$InputObject
 )
+Write-Host "Get Group Members"
 
 $ErrorActionPreference = 'Stop'
 
@@ -596,12 +597,12 @@ try {
             Write-Host ""
 
             if ($members.Count -eq 0) {
-                Write-Host "  none"
+                Write-Host "none"
             }
             else {
                 foreach ($row in @($detailRows | Where-Object { $_.GroupInput -eq $inputGroup })) {
-                    if ($row.MemberAddress) { Write-Host ("  - {0} <{1}>" -f $row.MemberName,$row.MemberAddress) }
-                    else { Write-Host ("  - {0}" -f $row.MemberName) }
+                    if ($row.MemberAddress) { Write-Host ("{0} <{1}>" -f $row.MemberName,$row.MemberAddress) }
+                    else { Write-Host ("{0}" -f $row.MemberName) }
                 }
             }
 

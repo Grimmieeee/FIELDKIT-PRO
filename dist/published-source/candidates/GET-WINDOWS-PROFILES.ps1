@@ -13,6 +13,7 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "Windows Profiles"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

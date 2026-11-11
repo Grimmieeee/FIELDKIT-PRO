@@ -1,5 +1,5 @@
 #Requires -Version 5.1
-# .VERSION 0.1.1
+# .VERSION 0.1.3
 # OBJECTIVE: List visible resource groups in one Azure subscription.
 <#
 .SYNOPSIS
@@ -8,14 +8,15 @@ List visible resource groups in one Azure subscription.
 Shows name, location and provisioning state, with tags retained in CSV/PassThru.
 Does not inventory resources within each group, assess compliance or enumerate
 other subscriptions. Results reflect the current identity's visible scope.
-Requires explicit tenant/subscription GUIDs. Azure public cloud only. Reuses a
+Uses the active Azure context or prompts for a tenant domain and subscription name. Azure public cloud only. Reuses a
 matching Az context or signs in to the requested scope. Context changes and
 context-autosave preference are process-scoped; the process may retain the login.
 Does not install modules or modify Azure resources. Requires Az.Accounts and
 Az.Resources with appropriate read permissions. CSV refuses existing files.
 #>
 [CmdletBinding()]
-param([string]$TenantId,[string]$SubscriptionId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+param([string]$TenantId,[string]$SubscriptionId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru,[string]$TenantDomain,[string]$SubscriptionName)
+Write-Host "Azure Resource Groups"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {
@@ -129,35 +130,66 @@ function Format-FkTable {
     }
 }
 
+function Resolve-FkTenantDomain {
+    param([string]$Domain)
+    $Domain = $Domain.Trim().ToLowerInvariant()
+    if ($Domain -notmatch '^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$') {
+        throw 'Enter a valid tenant domain.'
+    }
+    try {
+        $metadata = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$Domain/v2.0/.well-known/openid-configuration" -TimeoutSec 20 -ErrorAction Stop
+        if ($metadata.issuer -notmatch '^https://login\.microsoftonline\.com/([0-9a-f-]{36})/v2\.0/?$') { throw 'Unexpected issuer.' }
+        $tenant = [guid]::Parse($Matches[1])
+        if ($tenant -eq [guid]::Empty) { throw 'Invalid tenant.' }
+        return $tenant.ToString()
+    }
+    catch { throw "Could not resolve the Microsoft tenant for $Domain." }
+}
+
 try {
     Write-Host 'AZURE RESOURCE GROUPS // READ ONLY'
     Write-Host ''
     Import-Module Az.Accounts -ErrorAction Stop
     Import-Module Az.Resources -ErrorAction Stop
-    if ([string]::IsNullOrWhiteSpace($TenantId)) {
-        if ($NoPause) { throw 'Specify -TenantId.' }
-        $TenantId = Read-Host 'Tenant ID'
-    }
-    if ([string]::IsNullOrWhiteSpace($SubscriptionId)) {
-        if ($NoPause) { throw 'Specify -SubscriptionId.' }
-        $SubscriptionId = Read-Host 'Subscription ID'
-    }
-    $tenantGuid = [guid]::Empty
-    $subscriptionGuid = [guid]::Empty
-    if (-not [guid]::TryParse($TenantId,[ref]$tenantGuid) -or $tenantGuid -eq [guid]::Empty) { throw 'Enter a valid tenant ID.' }
-    if (-not [guid]::TryParse($SubscriptionId,[ref]$subscriptionGuid) -or $subscriptionGuid -eq [guid]::Empty) { throw 'Enter a valid subscription ID.' }
-    $TenantId = $tenantGuid.ToString()
-    $SubscriptionId = $subscriptionGuid.ToString()
-    # Context changes stay in this PowerShell process; no saved context changes.
     Disable-AzContextAutosave -Scope Process -ErrorAction Stop | Out-Null
-    $context = Get-AzContext -ErrorAction Stop
-    if (-not $context -or $context.Tenant.Id -ne $TenantId -or $context.Subscription.Id -ne $SubscriptionId -or $context.Environment.Name -ne 'AzureCloud') {
-        $login = Connect-AzAccount -Tenant $TenantId -Subscription $SubscriptionId -Environment AzureCloud -Scope Process -ErrorAction Stop
+    $context = Get-AzContext -ErrorAction SilentlyContinue
+    if (-not $TenantId -and -not $TenantDomain -and $context.Environment.Name -eq 'AzureCloud' -and $context.Account.Id) {
+        $TenantId = $context.Tenant.Id
+    }
+    if (-not $TenantId) {
+        if (-not $TenantDomain) {
+            if ($NoPause) { throw 'Specify -TenantDomain.' }
+            $TenantDomain = Read-Host 'Azure tenant domain (for example, contoso.onmicrosoft.com)'
+        }
+        $TenantId = Resolve-FkTenantDomain -Domain $TenantDomain
+    }
+    if (-not $SubscriptionId -and -not $SubscriptionName -and $context.Tenant.Id -eq $TenantId -and $context.Environment.Name -eq 'AzureCloud' -and $context.Account.Id) {
+        $SubscriptionId = $context.Subscription.Id
+    }
+    if (-not $SubscriptionId -and -not $SubscriptionName) {
+        if ($NoPause) { throw 'Specify -SubscriptionName.' }
+        $SubscriptionName = (Read-Host 'Azure subscription name').Trim()
+        if (-not $SubscriptionName) { throw 'Subscription selection cancelled.' }
+    }
+
+    $tenantGuid = [guid]::Empty
+    if (-not [guid]::TryParse($TenantId,[ref]$tenantGuid) -or $tenantGuid -eq [guid]::Empty) { throw 'Tenant validation failed.' }
+    $TenantId = $tenantGuid.ToString()
+    if (-not $context -or $context.Tenant.Id -ne $TenantId -or $context.Environment.Name -ne 'AzureCloud') {
+        $login = Connect-AzAccount -Tenant $TenantId -SkipContextPopulation -Environment AzureCloud -Scope Process -ErrorAction Stop
         $context = $login.Context
     }
+    if (-not $context -or $context.Tenant.Id -ne $TenantId -or $context.Environment.Name -ne 'AzureCloud') { throw 'Azure sign-in did not match the requested tenant.' }
+    $subscriptions = @(Get-AzSubscription -TenantId $TenantId -DefaultProfile $context -ErrorAction Stop | Where-Object {
+        if ($SubscriptionId) { $_.Id -eq $SubscriptionId }
+        else { $_.Name -eq $SubscriptionName }
+    })
+    if ($subscriptions.Count -ne 1) { throw 'The subscription selection was missing or ambiguous in this tenant. No resources were queried.' }
+    $SubscriptionId = [string]$subscriptions[0].Id
+    $context = Set-AzContext -Tenant $TenantId -Subscription $SubscriptionId -Scope Process -DefaultProfile $context -ErrorAction Stop
     if (-not $context -or $context.Tenant.Id -ne $TenantId -or $context.Subscription.Id -ne $SubscriptionId -or $context.Environment.Name -ne 'AzureCloud') { throw 'Azure context does not match the requested tenant and subscription.' }
-    Write-Host "Tenant: $TenantId"
-    Write-Host ('Subscription: {0} [{1}]' -f $context.Subscription.Name,$SubscriptionId)
+    if ($TenantDomain) { Write-Host "Tenant: $TenantDomain" }
+    Write-Host ("Subscription: {0}" -f $context.Subscription.Name)
     $groups = @(Get-AzResourceGroup -DefaultProfile $context -ErrorAction Stop)
     $rows = @(
         foreach ($group in $groups) {

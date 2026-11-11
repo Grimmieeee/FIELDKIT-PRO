@@ -28,6 +28,7 @@ param(
     [Alias('UPN')]
     [string[]]$InputObject
 )
+Write-Host "Get User Groups"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ErrorActionPreference = 'Stop'
@@ -524,7 +525,7 @@ function Write-GroupSection {
         return
     }
     foreach ($row in $Rows) {
-        Write-Host ("- {0}{1}" -f $row.Name,(Get-GroupMarkers -Row $row))
+        Write-Host ("{0}{1}" -f $row.Name,(Get-GroupMarkers -Row $row))
     }
 }
 
@@ -535,7 +536,7 @@ function Get-InputUsers {
     $rawValues=@($Values | Where-Object { -not [string]::IsNullOrWhiteSpace([string]$_) })
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"')
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"')
         if ($entered) { $rawValues=@($entered) }
     }
 

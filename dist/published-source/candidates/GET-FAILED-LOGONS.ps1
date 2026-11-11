@@ -20,6 +20,7 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
+Write-Host "Failed Logons"
 $ErrorActionPreference = 'Stop'
 
 function Convert-FkLogonEvent {

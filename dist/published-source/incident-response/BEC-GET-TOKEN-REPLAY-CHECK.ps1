@@ -25,6 +25,7 @@ param(
     [int]$LookbackHours = 48,
     [string]$ExpectedCountry = "US"
 )
+Write-Host "BEC: Review Token Replay"
 
 $ErrorActionPreference = "Stop"
 
@@ -126,7 +127,7 @@ function Section {
     param([string]$Title)
 
     Write-FKReportLine ""
-    Write-FKReportLine (" {0} " -f $Title) `
+    Write-FKReportLine ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -636,7 +637,7 @@ try {
         INFO "No sign-in sample available."
     }
 
-    Section "SUMMARY"
+    Section "RESULTS"
 
     $limitations = New-Object System.Collections.Generic.List[string]
 
@@ -715,7 +716,7 @@ try {
         Write-FKReportLine "Limitations:"
 
         foreach ($limitation in $limitations) {
-            Write-FKReportLine "- $limitation"
+            Write-FKReportLine "$limitation"
         }
     }
 }

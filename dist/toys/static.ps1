@@ -3,6 +3,7 @@
 #>
 # OBJECTIVE: Run animated terminal static with a floating label and clock.
 
+Write-Host "Screensaver: Static"
 $script:DisplayText = '<YOUR TEXT HERE>' # Edit this label.
 # static.ps1
 # Standalone custom text terminal screensaver. Press Ctrl+C to stop.

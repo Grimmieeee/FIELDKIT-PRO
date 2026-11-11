@@ -20,6 +20,7 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
+Write-Host "Inactive AD Computers"
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 # Display-only formatter: keeps all selected columns and wraps complete values.

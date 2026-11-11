@@ -38,6 +38,7 @@ param(
     [string]$SyncServer,
     [ValidateScript({throw 'Custom export paths are no longer supported. Results export to Desktop.'})][string]$OutputDir
 )
+Write-Host "Delete User Accounts"
 
 $ErrorActionPreference = "Stop"
 
@@ -163,7 +164,7 @@ function Get-InputValues {
     if ($Path) { $rawValues += $Path }
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
         if ($entered) { $rawValues=@($entered) }
     }
 
@@ -721,7 +722,7 @@ function Write-ResultSection {
         Write-Host ([string]$authorityGroup.Name).ToUpperInvariant()
 
         foreach ($item in @($authorityGroup.Group)) {
-            Write-Host ("- {0}" -f $item.UPN)
+            Write-Host ("{0}" -f $item.UPN)
         }
     }
 }
@@ -1156,7 +1157,7 @@ try {
             }
 
             foreach ($item in @($planGroup.Group)) {
-                Write-Host ("- {0}" -f $item.UPN)
+                Write-Host ("{0}" -f $item.UPN)
             }
         }
     }

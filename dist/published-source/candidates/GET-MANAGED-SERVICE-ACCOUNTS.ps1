@@ -16,6 +16,7 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "Managed Service Accounts"
 $ErrorActionPreference = 'Stop'
 
 # Display-only formatter: keeps all selected columns and wraps complete values.

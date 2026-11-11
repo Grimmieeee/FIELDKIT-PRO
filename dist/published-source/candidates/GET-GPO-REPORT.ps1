@@ -13,9 +13,10 @@ on a user/computer. Requires GroupPolicy and GPO-read access.
 #>
 [CmdletBinding()]
 param([string]$Name,[string]$Domain,[string]$Server,[string]$OutPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "GPO Report"
 $ErrorActionPreference='Stop'
 try {
-    Write-Host 'GPO REPORT // READ ONLY'
+    Write-Host 'READ ONLY'
     Write-Host ''
     if ($env:OS -ne 'Windows_NT') { throw 'Windows with the GroupPolicy module is required.' }
     Import-Module GroupPolicy -ErrorAction Stop

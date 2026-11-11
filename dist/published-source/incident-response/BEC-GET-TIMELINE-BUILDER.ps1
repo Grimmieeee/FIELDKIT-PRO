@@ -22,6 +22,7 @@ param(
     [string]$SearchText,
     [switch]$ExportTxt
 )
+Write-Host "BEC: Build Incident Timeline"
 
 $ErrorActionPreference = "Stop"
 
@@ -52,7 +53,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -436,7 +437,7 @@ try {
     $fileModifiedCount = @($events | Where-Object { $_.TimeBasis -eq "FILE MODIFIED" }).Count
     $manualCount = @($events | Where-Object { $_.TimeBasis -eq "MANUAL" }).Count
 
-    Section "SUMMARY"
+    Section "RESULTS"
 
     Write-Host "IR TIMELINE SUMMARY"
     Write-Host "--------------------------------------"
@@ -459,7 +460,7 @@ try {
         Write-Host "Data gaps:"
 
         foreach ($gap in $script:DataGaps) {
-            Write-Host "- $gap"
+            Write-Host "$gap"
         }
     }
 

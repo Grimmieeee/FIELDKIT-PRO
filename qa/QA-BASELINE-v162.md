@@ -2,6 +2,10 @@
 
 November 11, 2026 Pacific time
 
+## Reconciled distribution
+
+GitHub `dist/` mirrors the tracked v162 distribution, including the catalog, all 97 PowerShell sources, setup assets and release metadata. The [active checksum manifest](V162-SHA256SUMS.txt) is verified against the catalog allowlist. The deployed `dist/SHA256SUMS.txt` is preserved for byte parity and has seven retired paths and two outdated hashes. Use the active manifest for v162 QA. The earlier GitHub distribution remains in commit `c9fa022e492c5f0bd50be903927bb9bcb27b6939`. The comparison below records the pre-reconciliation findings.
+
 ## Locked scope
 
 - GitHub test source: `3129e41c8fbb962349c9b4bfb2ecd7b672010d14`, under `scripts/`.
@@ -25,6 +29,6 @@ The historical GitHub snapshot contains two utilities with defaults tied to `C:\
 
 Six other v162 scripts use both Graph and Exchange. Group Members and User Predelete Check use service-specific branches. Quarterly Cleanup Review, Disabled User Mailbox Access Cleanup, Shared Mailbox Sign-in Audit and Tenant Group Owners require path-specific review of tenant resolution and session reuse. Preserve their connection order until a change can be verified against the same tenant and target. No script was changed during this audit.
 
-## Full-catalog lock
+## Runtime acceptance
 
-Open. Reconcile the v162 files with the canonical GitHub test source before taking release evidence on any additional script. From a clean Windows working directory, run the pinned read-only connectivity and risk checks with the legacy checkout absent, then exercise only authorized workflow stages. Record Windows PowerShell 5.1 and PowerShell 7 separately.
+Static distribution parity is locked. Clean-host Windows execution remains open. From a clean Windows working directory, run the pinned read-only connectivity and risk checks with the legacy checkout absent, then exercise only authorized workflow stages. Record Windows PowerShell 5.1 and PowerShell 7 separately.

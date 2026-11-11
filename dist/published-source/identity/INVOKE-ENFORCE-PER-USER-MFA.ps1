@@ -29,6 +29,7 @@ param(
     [string]$InputPath,
     [string]$TenantDomain
 )
+Write-Host "Set Per-user MFA"
 
 $ErrorActionPreference='Stop'
 
@@ -68,7 +69,7 @@ function Get-InputUPNs {
     if ($Path) { $rawValues += $Path }
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
         if ($entered) { $rawValues=@($entered) }
     }
 
@@ -269,7 +270,7 @@ try {
                 Before=[string]$state.perUserMfaState
             })
 
-            Write-Host ("- {0} | {1} | MFA: {2}" -f $user.userPrincipalName,$(if ($user.accountEnabled) {'Enabled'} else {'Disabled'}),$state.perUserMfaState)
+            Write-Host ("{0} | {1} | MFA: {2}" -f $user.userPrincipalName,$(if ($user.accountEnabled) {'Enabled'} else {'Disabled'}),$state.perUserMfaState)
         }
         catch {
             Write-Warn ("Unable to preview {0}: {1}" -f $upn,$_.Exception.Message)
@@ -350,7 +351,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host ("Users processed    : {0}" -f $rows.Count)
     Write-Host ("Verified enforced  : {0}" -f @($rows | Where-Object { $_.After -eq 'enforced' }).Count)
     Write-Host ("Failures           : {0}" -f @($rows | Where-Object { $_.Result -match 'Failed' }).Count)

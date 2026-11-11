@@ -11,10 +11,11 @@ different identity and store. No credentials are added, deleted, or exported.
 #>
 [CmdletBinding()]
 param([switch]$NoPause,[switch]$PassThru)
+Write-Host "Stored Credential Targets"
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 try {
-    Write-Host 'STORED CREDENTIAL TARGETS // READ ONLY'
+    Write-Host 'READ ONLY'
     Write-Host ''
     if ($env:OS -ne 'Windows_NT') { throw 'Windows is required.' }
     $identity = [System.Security.Principal.WindowsIdentity]::GetCurrent()

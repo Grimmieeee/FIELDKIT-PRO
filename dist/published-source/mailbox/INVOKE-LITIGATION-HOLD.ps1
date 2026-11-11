@@ -27,6 +27,7 @@ param(
     [string]$TicketNumber,
     [string]$HoldOwner
 )
+Write-Host "Set Litigation Hold"
 
 $ErrorActionPreference = "Stop"
 
@@ -60,7 +61,7 @@ function Write-Section {
     param([string]$Title)
 
     try {
-        Write-Host (" {0} " -f $Title) `
+        Write-Host ("{0} " -f $Title) `
             -ForegroundColor White `
             -BackgroundColor DarkGray
     }

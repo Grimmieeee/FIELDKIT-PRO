@@ -30,6 +30,7 @@ param(
     [string]$InputPath,
     [switch]$RevokeSessions
 )
+Write-Host "Disable User Accounts"
 
 $ErrorActionPreference = "Stop"
 
@@ -324,7 +325,7 @@ function Get-InputUPNs {
     if ($Path) { $rawValues += $Path }
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
         if ($entered) { $rawValues=@($entered) }
     }
 
@@ -727,9 +728,9 @@ try {
 
                 if ($Hybrid) {
                     if ($ADUser) {
-                        Write-Host ("  AD User : {0}" -f $ADUser.DisplayName)
-                        Write-Host ("  AD UPN  : {0}" -f $ADUser.UPN)
-                        Write-Host ("  AD Logon: {0}" -f $ADUser.SamAccountName)
+                        Write-Host ("AD User : {0}" -f $ADUser.DisplayName)
+                        Write-Host ("AD UPN  : {0}" -f $ADUser.UPN)
+                        Write-Host ("AD Logon: {0}" -f $ADUser.SamAccountName)
                     }
                     else {
                         Write-Warn "  AD user could not be resolved. This user will not be changed."
@@ -893,7 +894,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host "--------------------------------------"
     Write-Host ("Complete              : {0}" -f @($Rows | Where-Object { $_.Result -eq "Complete" }).Count)
     Write-Host ("Complete - sync pending: {0}" -f @($Rows | Where-Object { $_.Result -eq "Complete - Sync Pending" }).Count)
@@ -915,18 +916,18 @@ try {
     )
 
     if ($changedRows.Count -eq 0) {
-        Write-Host "- No completed changes verified for this note. Review failed, pending and unavailable results; actions may already have been applied."
+        Write-Host "No completed changes verified for this note. Review failed, pending and unavailable results; actions may already have been applied."
     }
     else {
         foreach ($Row in $changedRows) {
-            Write-Host ("- Disabled account: {0} ({1})" -f $Row.UPN, $Row.AccountSource)
+            Write-Host ("Disabled account: {0} ({1})" -f $Row.UPN, $Row.AccountSource)
             if ([string]$Row.Detail -like '*sessions revoked*') {
-                Write-Host ("- Revoked active sessions: {0}" -f $Row.UPN)
+                Write-Host ("Revoked active sessions: {0}" -f $Row.UPN)
             }
         }
 
         if ($SyncResult.Result -eq 'Complete') {
-            Write-Host "- Entra delta sync triggered"
+            Write-Host "Entra delta sync triggered"
         }
     }
 }

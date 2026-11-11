@@ -13,6 +13,7 @@ CSV export contains rule rows; -PassThru also returns owner, DACL state and SDDL
 #>
 [CmdletBinding()]
 param([string]$Path,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "Folder Permissions"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

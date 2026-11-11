@@ -23,6 +23,7 @@ param(
     [int]$Days = 7,
     [switch]$ExportCsv
 )
+Write-Host "BEC: Trace IP Activity"
 
 $ErrorActionPreference = "Stop"
 
@@ -53,7 +54,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -554,11 +555,11 @@ try {
         Write-Host "Affected users:"
 
         foreach ($user in ($affectedUsers | Select-Object -First 20)) {
-            Write-Host "- $user"
+            Write-Host "$user"
         }
 
         if ($affectedUsers.Count -gt 20) {
-            Write-Host "- plus $($affectedUsers.Count - 20) more"
+            Write-Host "plus $($affectedUsers.Count - 20) more"
         }
     }
 
@@ -567,7 +568,7 @@ try {
         Write-Host "Top operations:"
 
         foreach ($group in $topOperations) {
-            Write-Host "- $($group.Name): $($group.Count)"
+            Write-Host "$($group.Name): $($group.Count)"
         }
     }
 
@@ -576,7 +577,7 @@ try {
         Write-Host "Top workloads:"
 
         foreach ($group in $topWorkloads) {
-            Write-Host "- $($group.Name): $($group.Count)"
+            Write-Host "$($group.Name): $($group.Count)"
         }
     }
 
@@ -585,7 +586,7 @@ try {
         Write-Host "Data gaps:"
 
         foreach ($gap in $dataGaps) {
-            Write-Host "- $gap"
+            Write-Host "$gap"
         }
     }
 

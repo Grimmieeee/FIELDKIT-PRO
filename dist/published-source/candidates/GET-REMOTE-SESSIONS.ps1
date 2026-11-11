@@ -18,10 +18,11 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
+Write-Host "User Sessions"
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 try {
-    Write-Host 'USER SESSIONS // READ ONLY'
+    Write-Host 'READ ONLY'
     Write-Host ''
     if ($env:OS -ne 'Windows_NT') { throw 'Windows is required.' }
     if (-not $PSBoundParameters.ContainsKey('ComputerName') -and -not $NoPause) {

@@ -17,11 +17,13 @@
 # =============================================================================
 
 
+Write-Host "Theme: Silicon Valley"
 Write-Host 'Install Silicon Valley Theme'
 Write-Host 'Install a green PowerShell theme in your startup profile.'
 $Host.UI.RawUI.BackgroundColor = 'Black'
 $Host.UI.RawUI.ForegroundColor = 'White'
 Clear-Host
+Write-Host "Theme: Silicon Valley"
 
 Write-Host ''
 Write-Host '. . . . . . . . . . . . . . . . . . . . .'  -ForegroundColor Cyan

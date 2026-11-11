@@ -34,6 +34,7 @@ Requires as applicable:
 - Microsoft.Graph.Authentication module
 #>
 
+Write-Host "Check User Before Deletion"
 $ErrorActionPreference = 'Stop'
 
 $script:Findings = New-Object System.Collections.Generic.List[string]
@@ -162,12 +163,12 @@ function Write-List {
     $clean = @($Items | Where-Object { $null -ne $_ -and -not [string]::IsNullOrWhiteSpace([string]$_) })
 
     if ($clean.Count -eq 0) {
-        Write-FKReportLine "- $NoneText"
+        Write-FKReportLine "$NoneText"
         return
     }
 
     foreach ($item in $clean) {
-        Write-FKReportLine "- $item"
+        Write-FKReportLine "$item"
     }
 }
 
@@ -402,17 +403,17 @@ try {
                 }
             }
             else {
-                Write-FKReportLine "- User not found in Active Directory"
+                Write-FKReportLine "User not found in Active Directory"
                 Add-Gap "User was not found in Active Directory."
             }
         }
         catch {
-            Write-FKReportLine "- AD lookup failed: $($_.Exception.Message)"
+            Write-FKReportLine "AD lookup failed: $($_.Exception.Message)"
             Add-Gap "Active Directory lookup failed: $($_.Exception.Message)"
         }
     }
     else {
-        Write-FKReportLine "- ActiveDirectory module not installed"
+        Write-FKReportLine "ActiveDirectory module not installed"
         Add-Gap "ActiveDirectory module is unavailable."
     }
 
@@ -489,7 +490,7 @@ try {
                 Write-FKReportLine "Type:    $($mailbox.RecipientTypeDetails)"
             }
             catch {
-                Write-FKReportLine "- No Exchange Online mailbox found"
+                Write-FKReportLine "No Exchange Online mailbox found"
             }
 
             if ($mailbox) {
@@ -518,11 +519,11 @@ try {
 
                 if ($mailboxForwarding.Count -gt 0) {
                     Write-List -Items $mailboxForwarding
-                    Write-FKReportLine "- DeliverToMailboxAndForward: $($mailbox.DeliverToMailboxAndForward)"
+                    Write-FKReportLine "DeliverToMailboxAndForward: $($mailbox.DeliverToMailboxAndForward)"
                     Add-Finding "Mailbox-level forwarding is configured."
                 }
                 else {
-                    Write-FKReportLine "- No mailbox-level forwarding"
+                    Write-FKReportLine "No mailbox-level forwarding"
                 }
 
                 # Inbox forwarding/redirect rules
@@ -540,7 +541,7 @@ try {
                     )
 
                     if ($forwardRules.Count -eq 0) {
-                        Write-FKReportLine "- None"
+                        Write-FKReportLine "None"
                     }
                     else {
                         foreach ($rule in $forwardRules) {
@@ -556,9 +557,9 @@ try {
                                 if ($target) { $targets += "RedirectTo=$target" }
                             }
 
-                            Write-FKReportLine "- $($rule.Name) | Enabled=$($rule.Enabled)"
+                            Write-FKReportLine "$($rule.Name) | Enabled=$($rule.Enabled)"
                             foreach ($target in $targets) {
-                                Write-FKReportLine "  $target"
+                                Write-FKReportLine "$target"
                             }
                         }
 
@@ -566,7 +567,7 @@ try {
                     }
                 }
                 catch {
-                    Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                    Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                     Add-Gap "Inbox rule lookup failed: $($_.Exception.Message)"
                 }
 
@@ -619,7 +620,7 @@ try {
                     }
                 }
                 catch {
-                    Write-FKReportLine "- Delegate lookup failed: $($_.Exception.Message)"
+                    Write-FKReportLine "Delegate lookup failed: $($_.Exception.Message)"
                     Add-Gap "Delegate lookup on target mailbox failed: $($_.Exception.Message)"
                 }
 
@@ -644,7 +645,7 @@ try {
                     }
                 }
                 catch {
-                    Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                    Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                     Add-Gap "Exchange group ownership lookup failed: $($_.Exception.Message)"
                 }
 
@@ -760,7 +761,7 @@ try {
                     }
                 }
                 catch {
-                    Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                    Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                     Add-Gap "Transport rule scan failed: $($_.Exception.Message)"
                 }
 
@@ -771,30 +772,30 @@ try {
                 try {
                     $stats = Get-MailboxStatistics -Identity $UPN -ErrorAction Stop -WarningVariable +script:FKReportWarnings
 
-                    Write-FKReportLine "- Item count: $($stats.ItemCount)"
-                    Write-FKReportLine "- Total size: $($stats.TotalItemSize)"
-                    Write-FKReportLine "- Last logon: $($stats.LastLogonTime)"
+                    Write-FKReportLine "Item count: $($stats.ItemCount)"
+                    Write-FKReportLine "Total size: $($stats.TotalItemSize)"
+                    Write-FKReportLine "Last logon: $($stats.LastLogonTime)"
                 }
                 catch {
-                    Write-FKReportLine "- Mailbox statistics unavailable: $($_.Exception.Message)"
+                    Write-FKReportLine "Mailbox statistics unavailable: $($_.Exception.Message)"
                     Add-Gap "Mailbox statistics lookup failed: $($_.Exception.Message)"
                 }
 
-                Write-FKReportLine "- Archive status: $($mailbox.ArchiveStatus)"
-                Write-FKReportLine "- Litigation hold: $($mailbox.LitigationHoldEnabled)"
-                Write-FKReportLine "- Retention hold: $($mailbox.RetentionHoldEnabled)"
-                Write-FKReportLine "- Retention policy: $($mailbox.RetentionPolicy)"
+                Write-FKReportLine "Archive status: $($mailbox.ArchiveStatus)"
+                Write-FKReportLine "Litigation hold: $($mailbox.LitigationHoldEnabled)"
+                Write-FKReportLine "Retention hold: $($mailbox.RetentionHoldEnabled)"
+                Write-FKReportLine "Retention policy: $($mailbox.RetentionPolicy)"
 
                 $inPlaceHolds = @($mailbox.InPlaceHolds | Where-Object { $_ })
 
                 if ($inPlaceHolds.Count -gt 0) {
-                    Write-FKReportLine "- In-place holds:"
+                    Write-FKReportLine "In-place holds:"
                     foreach ($hold in $inPlaceHolds) {
-                        Write-FKReportLine "  $hold"
+                        Write-FKReportLine "$hold"
                     }
                 }
                 else {
-                    Write-FKReportLine "- In-place holds: None"
+                    Write-FKReportLine "In-place holds: None"
                 }
 
                 if ($mailbox.LitigationHoldEnabled -or
@@ -806,12 +807,12 @@ try {
             }
         }
         catch {
-            Write-FKReportLine "- Exchange Online check failed: $($_.Exception.Message)"
+            Write-FKReportLine "Exchange Online check failed: $($_.Exception.Message)"
             Add-Gap "Exchange Online check failed: $($_.Exception.Message)"
         }
     }
     else {
-        Write-FKReportLine "- ExchangeOnlineManagement module not installed"
+        Write-FKReportLine "ExchangeOnlineManagement module not installed"
         Add-Gap "ExchangeOnlineManagement module is unavailable."
     }
 
@@ -861,7 +862,7 @@ try {
             Write-FKReportLine "Synced:  $($graphUser.onPremisesSyncEnabled)"
 
             if ($graphUser.onPremisesSyncEnabled -eq $true) {
-                Write-FKReportLine "- This is an on-premises-synchronized Entra object."
+                Write-FKReportLine "This is an on-premises-synchronized Entra object."
             }
 
             $graphId = [string]$graphUser.id
@@ -895,7 +896,7 @@ try {
                 Write-List -Items $cloudMembershipText -NoneText "No direct cloud group memberships"
             }
             catch {
-                Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                 Add-Gap "Cloud group membership lookup failed: $($_.Exception.Message)"
             }
 
@@ -942,7 +943,7 @@ try {
                 }
             }
             catch {
-                Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                 Add-Gap "Graph group ownership lookup failed: $($_.Exception.Message)"
             }
 
@@ -980,7 +981,7 @@ try {
                 }
             }
             catch {
-                Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                 Add-Gap "Application ownership lookup failed: $($_.Exception.Message)"
             }
 
@@ -1008,7 +1009,7 @@ try {
                 }
             }
             catch {
-                Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                 Add-Gap "Enterprise app assignment lookup failed: $($_.Exception.Message)"
             }
 
@@ -1036,17 +1037,17 @@ try {
                 Write-List -Items $licenseText -NoneText "No licenses assigned"
             }
             catch {
-                Write-FKReportLine "- Lookup failed: $($_.Exception.Message)"
+                Write-FKReportLine "Lookup failed: $($_.Exception.Message)"
                 Add-Gap "License lookup failed: $($_.Exception.Message)"
             }
         }
         catch {
-            Write-FKReportLine "- Microsoft Graph check failed: $($_.Exception.Message)"
+            Write-FKReportLine "Microsoft Graph check failed: $($_.Exception.Message)"
             Add-Gap "Microsoft Graph check failed: $($_.Exception.Message)"
         }
     }
     else {
-        Write-FKReportLine "- Microsoft.Graph.Authentication module not installed"
+        Write-FKReportLine "Microsoft.Graph.Authentication module not installed"
         Add-Gap "Microsoft.Graph.Authentication module is unavailable."
     }
 
@@ -1055,10 +1056,10 @@ try {
     # -------------------------------------------------------------------------
 
     Write-Section "NOT CHECKED"
-    Write-FKReportLine "- OneDrive / SharePoint site ownership or file sharing"
-    Write-FKReportLine "- Local Windows services or scheduled tasks using this account"
-    Write-FKReportLine "- Third-party applications, SaaS integrations, scripts, or stored credentials"
-    Write-FKReportLine "- Indirect mailbox access inherited through security groups"
+    Write-FKReportLine "OneDrive / SharePoint site ownership or file sharing"
+    Write-FKReportLine "Local Windows services or scheduled tasks using this account"
+    Write-FKReportLine "Third-party applications, SaaS integrations, scripts, or stored credentials"
+    Write-FKReportLine "Indirect mailbox access inherited through security groups"
 
     Write-Section "RESULT"
 
@@ -1073,7 +1074,7 @@ try {
             Write-FKReportLine ""
             Write-FKReportLine "Dependencies found:"
             foreach ($finding in $script:Findings) {
-                Write-FKReportLine "- $finding"
+                Write-FKReportLine "$finding"
             }
         }
 
@@ -1081,7 +1082,7 @@ try {
             Write-FKReportLine ""
             Write-FKReportLine "Checks incomplete:"
             foreach ($gap in $script:Gaps) {
-                Write-FKReportLine "- $gap"
+                Write-FKReportLine "$gap"
             }
         }
     }

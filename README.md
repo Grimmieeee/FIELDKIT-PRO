@@ -7,7 +7,7 @@ Start with the [Build Standard](docs/tools/field-kit-build-standard.md), then re
 Live site: https://fieldkit.pro/
 
 - Current verified test copies: `scripts/`. See the [v162 QA baseline](qa/QA-BASELINE-v162.md).
-- Historical GitHub catalog snapshot: `dist/`. Its checks establish internal integrity for that snapshot. Current deployment parity is tracked separately.
+- Current v162 catalog and hosted sources: `dist/`. The [v162 QA baseline](qa/QA-BASELINE-v162.md) records the source revision and parity checks.
 - Security guidance: [SECURITY.md](SECURITY.md).
 - Release and verification evidence: `qa/`.
 - Proposed or historical sources under `review-candidates`, `release-baseline` and candidate directories are not automatically active downloads.

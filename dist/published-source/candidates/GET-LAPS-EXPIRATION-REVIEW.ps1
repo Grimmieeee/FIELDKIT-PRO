@@ -17,6 +17,7 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "LAPS Expiration Review"
 $ErrorActionPreference = 'Stop'
 function Get-FkExpiration {
     param($Value,[bool]$SchemaAvailable,[datetime]$NowUtc)

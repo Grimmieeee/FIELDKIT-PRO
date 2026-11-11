@@ -28,6 +28,7 @@ param(
     [ValidateRange(1,8760)]
     [int]$LookbackHours = 24
 )
+Write-Host "BEC: Restore Email"
 
 $ErrorActionPreference = "Stop"
 
@@ -58,7 +59,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -704,7 +705,7 @@ try {
     INFO "Moved messages confirmed in target by InternetMessageId: $validatedInTarget"
     INFO "Moved messages without InternetMessageId for target validation: $validationUnknown"
 
-    Section "SUMMARY"
+    Section "RESULTS"
 
     $verdict = "RESTORE COMPLETED"
 
@@ -732,7 +733,7 @@ try {
         Write-Host "Failed moves:"
 
         foreach ($item in $failed) {
-            Write-Host "- $($item.Subject) | $($item.Error)"
+            Write-Host "$($item.Subject) | $($item.Error)"
         }
     }
 }

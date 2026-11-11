@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.3
+.VERSION 1.0.5
 #>
 # OBJECTIVE: Find user sign-in names from names, email addresses, or a list.
 
@@ -22,8 +22,10 @@ param(
     [Alias("Input")]
     [string[]]$InputObject,
     [string]$InputPath,
-    [string]$TenantDomain
+    [string]$TenantDomain,
+    [switch]$Partial
 )
+Write-Host "Find User UPNs"
 
 
 $ErrorActionPreference = "Stop"
@@ -115,9 +117,24 @@ function Test-GraphReadContext($Context) {
     return $false
 }
 
+function Resolve-FkTenantDomain {
+    param([string]$Domain)
+    $Domain = $Domain.Trim().ToLowerInvariant()
+    if ($Domain -notmatch '^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$') {
+        throw 'Enter a valid tenant domain.'
+    }
+    try {
+        $metadata = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$Domain/v2.0/.well-known/openid-configuration" -TimeoutSec 20 -ErrorAction Stop
+        if ($metadata.issuer -notmatch '^https://login\.microsoftonline\.com/([0-9a-f-]{36})/v2\.0/?$') { throw 'Unexpected issuer.' }
+        $tenant = [guid]::Parse($Matches[1])
+        if ($tenant -eq [guid]::Empty) { throw 'Invalid tenant.' }
+        return $tenant.ToString()
+    }
+    catch { throw "Could not resolve the Microsoft tenant for $Domain." }
+}
+
 function Ensure-GraphConnection {
     param(
-        [Parameter(Mandatory = $true)]
         [string]$TenantDomain
     )
 
@@ -129,15 +146,24 @@ function Ensure-GraphConnection {
     }
 
     $ctx = Get-MgContext -ErrorAction SilentlyContinue
-    if ($ctx) {
-        WARN "Disconnecting the current Graph context before tenant-targeted lookup"
-        if ($ctx.Account)  { INFO "Current account: $($ctx.Account)" }
-        if ($ctx.TenantId) { INFO "Current tenant : $($ctx.TenantId)" }
-        Disconnect-MgGraph -ErrorAction SilentlyContinue | Out-Null
+    $eligible = $ctx -and $ctx.AuthType -eq 'Delegated' -and $ctx.Environment -eq 'Global' -and $ctx.TenantId -and $ctx.Account
+    if ($TenantDomain) {
+        $targetTenant = Resolve-FkTenantDomain -Domain $TenantDomain
+        if ($eligible -and $ctx.TenantId -ne $targetTenant) { throw 'The active Graph session belongs to a different tenant.' }
+    } elseif ($eligible) {
+        $targetTenant = $ctx.TenantId
+    } else {
+        $TenantDomain = Normalize-InputValue (Read-Host 'Tenant domain (example: contoso.com)')
+        if (-not $TenantDomain) { throw 'Tenant selection cancelled.' }
+        $targetTenant = Resolve-FkTenantDomain -Domain $TenantDomain
+    }
+    if ($eligible -and $ctx.ContextScope -eq 'Process' -and (Test-GraphReadContext -Context $ctx)) {
+        OK "Graph session reused: $($ctx.Account)"
+        return
     }
 
     $connectParams = @{
-        TenantId     = $TenantDomain
+        TenantId     = $targetTenant
         Scopes       = @("User.Read.All")
         ContextScope = "Process"
         ErrorAction  = "Stop"
@@ -154,12 +180,11 @@ function Ensure-GraphConnection {
         throw "Graph connected, but the access token does not contain a supported directory read scope."
     }
 
-    if (-not $ctx.TenantId) {
-        throw "Graph connected, but the tenant ID could not be verified from the current context."
+    if ($ctx.TenantId -ne $targetTenant -or $ctx.AuthType -ne 'Delegated' -or $ctx.Environment -ne 'Global' -or $ctx.ContextScope -ne 'Process') {
+        throw "Graph tenant or sign-in context could not be verified."
     }
 
     OK "Graph connected: $($ctx.Account)"
-    INFO "Tenant ID       : $($ctx.TenantId)"
     INFO "Requested tenant: $TenantDomain"
 }
 
@@ -273,21 +298,24 @@ function Invoke-GraphRequestSafe {
     param(
         [string]$Stage,
         [string]$Uri,
-        [hashtable]$Headers
+        [hashtable]$Headers,
+        [switch]$AllPages
     )
 
     try {
-        if ($Headers) {
-            $response = Invoke-MgGraphRequest -Method GET -Uri $Uri -Headers $Headers -ErrorAction Stop
-        }
-        else {
-            $response = Invoke-MgGraphRequest -Method GET -Uri $Uri -ErrorAction Stop
-        }
+        $values = New-Object 'System.Collections.Generic.List[object]'
+        do {
+            $request = @{ Method = 'GET'; Uri = $Uri; ErrorAction = 'Stop' }
+            if ($Headers) { $request.Headers = $Headers }
+            $response = Invoke-MgGraphRequest @request
+            foreach ($item in $response.value) { $values.Add($item) }
+            $Uri = $response.'@odata.nextLink'
+        } while ($AllPages -and $Uri)
 
         return [PSCustomObject]@{
             Success = $true
             Stage   = $Stage
-            Value   = @($response.value)
+            Value   = $values.ToArray()
             Error   = ""
         }
     }
@@ -314,6 +342,13 @@ function Invoke-GraphUserSearch($SearchText) {
     $select = "id,displayName,givenName,surname,userPrincipalName,mail,accountEnabled,createdDateTime,onPremisesSyncEnabled"
     $results = New-Object System.Collections.ArrayList
     $errors = New-Object System.Collections.ArrayList
+
+    if ($Partial) {
+        $filter = "startswith(displayName,'$safe') or startswith(userPrincipalName,'$safe')"
+        $uri = "https://graph.microsoft.com/v1.0/users?`$select=$select&`$filter=$([System.Uri]::EscapeDataString($filter))"
+        $attempt = Invoke-GraphRequestSafe -Stage 'Partial name or UPN' -Uri $uri -AllPages
+        return [PSCustomObject]@{ Results = $attempt.Value; Error = $attempt.Error }
+    }
 
     if ($SearchText -match '@') {
         $filter = "userPrincipalName eq '$safe' or mail eq '$safe'"
@@ -494,26 +529,18 @@ function Export-VerifiedUpnTxt {
 
 try {
     Clear-Host
+    Write-Host "Find User UPNs"
     Write-Host 'Find User UPNs'
     Write-Host 'Find user sign-in names from names, email addresses, or a list.'
     Write-Host "Read-only"
     Write-Host ""
     Write-Host "Purpose: Convert display names, UPNs, or emails into a clean review list."
-    Write-Host "Input  : Tenant domain plus one name/email/UPN or TXT/CSV"
+    Write-Host "Input  : One name/email/UPN or TXT/CSV. Tenant domain only if needed."
     Write-Host "Output : Screen summary, optional review CSV, optional exact-match UPN TXT"
     Write-Host "Changes: None"
     Write-Host ""
 
-    if (-not $TenantDomain) {
-        $TenantDomain = Normalize-InputValue (Read-Host "Tenant domain (example: contoso.com)")
-    }
-    else {
-        $TenantDomain = Normalize-InputValue $TenantDomain
-    }
-
-    if (-not $TenantDomain) {
-        throw "Tenant domain is required."
-    }
+    if ($TenantDomain) { $TenantDomain = Normalize-InputValue $TenantDomain }
 
     $inputPath = ""
     if ($InputPath) {
@@ -522,7 +549,7 @@ try {
 
     Write-Section "INPUT"
     $entries = @(Get-InputEntries -Values $InputObject -Path $inputPath)
-    INFO "Tenant target : $TenantDomain"
+    if ($TenantDomain) { INFO "Tenant target: $TenantDomain" }
     INFO "Entries loaded: $($entries.Count)"
 
     if ($entries.Count -eq 0) {
@@ -542,6 +569,8 @@ try {
         $search = Invoke-GraphUserSearch -SearchText $entry
         $matches = @($search.Results)
         $status = Get-MatchStatus -InputValue $entry -Matches $matches
+        if ($Partial -and $matches.Count) { $status = 'PARTIAL MATCH' }
+        if ($search.Error -and -not $matches.Count) { $status = 'QUERY FAILED' }
 
         if ($matches.Count -eq 0) {
             $allRows += [PSCustomObject]@{
@@ -594,7 +623,7 @@ try {
 
     $exactUpns = @(
         $allRows |
-            Where-Object { $_.MatchStatus -eq "EXACT MATCH" -and $_.UserPrincipalName } |
+            Where-Object { $_.MatchStatus -eq "EXACT MATCH" -and $_.UserPrincipalName -and -not $_.Error } |
             Select-Object -ExpandProperty UserPrincipalName -Unique |
             Sort-Object
     )
@@ -602,7 +631,7 @@ try {
     $verdict = "REVIEW REQUIRED"
     $recommendation = "Review likely, multiple, no-match, or search-error entries before using output"
 
-    if ($singleCount -eq 0 -and $multiInputs -eq 0 -and $noMatchCount -eq 0 -and $searchErrorCount -eq 0) {
+    if (-not $Partial -and $singleCount -eq 0 -and $multiInputs -eq 0 -and $noMatchCount -eq 0 -and $searchErrorCount -eq 0) {
         $verdict = "EXACT MATCH LIST READY"
         $recommendation = "Use the verified exact-match UPN TXT for the next account workflow"
     }
@@ -625,9 +654,12 @@ try {
     Write-Host ""
     Write-Host "RESULTS"
     Write-Host "--------------------------------------"
-    $allRows |
-        Select-Object Input, MatchStatus, DisplayName, UserPrincipalName, AccountEnabled, Hybrid |
-        Format-Table -AutoSize
+    if ($Partial) {
+        $allRows | Select-Object Input, MatchStatus, DisplayName, UserPrincipalName, Mail | Format-Table -AutoSize
+    }
+    else {
+        $allRows | Select-Object Input, MatchStatus, DisplayName, UserPrincipalName, AccountEnabled, Hybrid | Format-Table -AutoSize
+    }
 
     $errorRows = @($inputStatus | Where-Object { $_.Error })
     if ($errorRows.Count -gt 0) {
@@ -645,7 +677,7 @@ try {
     Write-Host "UPN RESOLUTION SUMMARY"
     Write-Host "--------------------------------------"
     Write-Host ("Timestamp      : {0}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"))
-    Write-Host ("Tenant target  : {0}" -f $TenantDomain)
+    if ($TenantDomain) { Write-Host ("Tenant target: {0}" -f $TenantDomain) }
     Write-Host ("Input file     : {0}" -f $inputPath)
     Write-Host ("Inputs         : {0}" -f $entries.Count)
     Write-Host ("Exact matches  : {0}" -f $exactCount)
@@ -658,11 +690,11 @@ try {
     Write-Host ("Recommendation : {0}" -f $recommendation)
     Write-Host ""
     Write-Host "Notes:"
-    Write-Host "- This tool is read-only"
-    Write-Host "- Graph reconnects to the requested tenant before searching"
-    Write-Host "- Full CSV is for human review only"
-    Write-Host "- Clean UPN TXT contains exact matches only"
-    Write-Host "- Likely, multiple, no-match, and search-error entries require manual review"
+    Write-Host "This tool is read-only"
+    Write-Host "Graph reconnects to the requested tenant before searching"
+    Write-Host "Full CSV is for human review only"
+    Write-Host "Clean UPN TXT contains exact matches only"
+    Write-Host "Likely, multiple, no-match, and search-error entries require manual review"
     Write-Host ""
     Write-Host ". . . . END SUMMARY . . . ."
     Write-Host ""
@@ -677,6 +709,8 @@ try {
         OK "Exported and verified full review CSV: $exportPath"
         WARN "Do not use the full review CSV directly in license or deletion scripts"
     }
+
+    if ($Partial) { return }
 
     $exportClean = Read-Host "Export verified exact-match UPN TXT [Y/N]"
     if ($exportClean -match '^(Y|y)$') {

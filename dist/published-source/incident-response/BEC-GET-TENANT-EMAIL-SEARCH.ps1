@@ -27,6 +27,7 @@ param(
     [int]$ResultSize = 5000,
     [switch]$ExportCsv
 )
+Write-Host "BEC: Trace Email Delivery"
 
 $ErrorActionPreference = "Stop"
 
@@ -57,7 +58,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -445,7 +446,7 @@ try {
         Write-Host "Data gaps:"
 
         foreach ($gap in $dataGaps) {
-            Write-Host "- $gap"
+            Write-Host "$gap"
         }
     }
 

@@ -1,6 +1,6 @@
 #Requires -Version 5.1
-# .VERSION 0.1.1
-# OBJECTIVE: List visible partner delegated-administration relationships and their recorded end dates.
+# .VERSION 0.1.4
+# OBJECTIVE: Review Granular Delegated Admin Privileges (GDAP) relationships and recorded end dates from the partner tenant.
 <#
 .SYNOPSIS
 List visible partner delegated-administration relationships and their recorded end dates.
@@ -11,14 +11,14 @@ expand partner security groups/access assignments or verify effective access.
 End dates may change with renewal; recorded auto-extension metadata is retained.
 Requires an eligible partner identity and the required delegated consent/role.
 Requires Microsoft.Graph.Authentication and Microsoft.Graph.Identity.Partner.
-Requested delegated scope: DelegatedAdminRelationship.Read.All. Public cloud only. Requires an explicit
-tenant GUID; validates tenant, cloud, auth type and scope after connection.
+Requested delegated scope: DelegatedAdminRelationship.Read.All. Public cloud only. Uses the active delegated Graph session or prompts for a partner tenant domain; validates tenant, cloud, auth type and scope after connection.
 A matching delegated session is reused; new login is process-scoped. The host
 may retain that session after completion. No service changes or module installs.
 CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
-param([string]$TenantId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+param([string]$TenantId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru,[string]$TenantDomain)
+Write-Host "GDAP Relationships"
 $ErrorActionPreference='Stop'
 
 # Display-only formatter: keeps all selected columns and wraps complete values.
@@ -133,21 +133,43 @@ function Format-FkTable {
     }
 }
 
+function Resolve-FkTenantDomain {
+    param([string]$Domain)
+    $Domain = $Domain.Trim().ToLowerInvariant()
+    if ($Domain -notmatch '^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$') {
+        throw 'Enter a valid tenant domain.'
+    }
+    try {
+        $metadata = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$Domain/v2.0/.well-known/openid-configuration" -TimeoutSec 20 -ErrorAction Stop
+        if ($metadata.issuer -notmatch '^https://login\.microsoftonline\.com/([0-9a-f-]{36})/v2\.0/?$') { throw 'Unexpected issuer.' }
+        $tenant = [guid]::Parse($Matches[1])
+        if ($tenant -eq [guid]::Empty) { throw 'Invalid tenant.' }
+        return $tenant.ToString()
+    }
+    catch { throw "Could not resolve the Microsoft tenant for $Domain." }
+}
+
 try {
-    Write-Host 'GDAP RELATIONSHIPS // READ ONLY'
+    Write-Host 'GDAP Relationships'
+    Write-Host 'Review Granular Delegated Admin Privileges (GDAP) relationships and recorded end dates from the partner tenant.'
+    Write-Host 'Read-only'
     Write-Host ''
     Import-Module Microsoft.Graph.Authentication -ErrorAction Stop
     Import-Module Microsoft.Graph.Identity.Partner -ErrorAction Stop
+    $context = Get-MgContext -ErrorAction SilentlyContinue
+    if (-not $TenantId -and -not $TenantDomain -and ($context -and $context.AuthType -eq 'Delegated' -and $context.Account -and $context.Environment -eq 'Global' -and $context.TenantId)) { $TenantId = $context.TenantId }
     if ([string]::IsNullOrWhiteSpace($TenantId)) {
-        if ($NoPause) { throw 'Specify -TenantId.' }
-        $TenantId=Read-Host 'Tenant ID'
+        if (-not $TenantDomain) {
+            if ($NoPause) { throw 'Specify -TenantDomain.' }
+            $TenantDomain=Read-Host 'Partner tenant domain (for example, contoso.onmicrosoft.com)'
+        }
+        $TenantId=Resolve-FkTenantDomain -Domain $TenantDomain
     }
     $tenantGuid=[guid]::Empty
     if (-not [guid]::TryParse($TenantId,[ref]$tenantGuid) -or $tenantGuid -eq [guid]::Empty) { throw 'Enter a valid tenant ID.' }
     $TenantId=$tenantGuid.ToString()
     $requiredScope='DelegatedAdminRelationship.Read.All'
     $acceptedScopes=@('DelegatedAdminRelationship.Read.All','DelegatedAdminRelationship.ReadWrite.All')
-    $context=Get-MgContext -ErrorAction Stop
     $hasScope=$false
     if ($context) { $hasScope=@($context.Scopes | Where-Object { $_ -in $acceptedScopes }).Count -gt 0 }
     if (-not $context -or $context.TenantId -ne $TenantId -or $context.AuthType -ne 'Delegated' -or $context.Environment -ne 'Global' -or -not $hasScope) {
@@ -156,11 +178,12 @@ try {
     }
     if (-not $context -or $context.TenantId -ne $TenantId -or $context.AuthType -ne 'Delegated' -or $context.Environment -ne 'Global') { throw 'Graph session does not match the requested tenant and delegated public-cloud context.' }
     if (@($context.Scopes | Where-Object { $_ -in $acceptedScopes }).Count -eq 0) { throw "Graph permission missing: $requiredScope" }
-    Write-Host "Tenant: $TenantId"
+    if ($TenantDomain) { Write-Host "Partner tenant: $TenantDomain" }
+    Write-Host "Account: $($context.Account)"
     $relationships=@(Get-MgTenantRelationshipDelegatedAdminRelationship -All -ErrorAction Stop)
     $rows=@(
         foreach ($relationship in $relationships) {
-            $customer=if ($relationship.Customer.DisplayName) { [string]$relationship.Customer.DisplayName } elseif ($relationship.Customer.TenantId) { [string]$relationship.Customer.TenantId } else { 'Not returned' }
+            $customer=if ($relationship.Customer.DisplayName) { [string]$relationship.Customer.DisplayName } else { 'Name unavailable' }
             [pscustomobject][ordered]@{
                 Customer=$customer; Relationship=$relationship.DisplayName
                 Status=[string]$relationship.Status; EndDateTime=$relationship.EndDateTime

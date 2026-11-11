@@ -1,12 +1,12 @@
 ﻿<#PSScriptInfo
-.VERSION 1.0.3
+.VERSION 1.0.4
 .GUID 7cf20e90-263b-4c97-98ec-f7d7d105d9aa
 .AUTHOR FIELD // KIT
 .DESCRIPTION Review one user's account and mailbox before choosing a response.
 #>
 <#
 .SYNOPSIS
-BEC: Assess User Risk
+BEC: User Risk Assessment
 .DESCRIPTION
 Reviews one M365 identity and mailbox before response decisions. Makes no tenant changes.
 Uses delegated Microsoft Graph and Exchange Online sign-in in the global Microsoft cloud.
@@ -34,7 +34,8 @@ param(
     [switch]$SkipExchange,
     [switch]$NoPause,
     [ValidateRange(0,2000)][int]$OutputDelayMs = 200,
-    [switch]$FinalReview
+    [switch]$FinalReview,
+    [switch]$AssessmentOnly
 )
 
 $ErrorActionPreference = 'Stop'
@@ -97,7 +98,6 @@ function Connect-IRWorkflowGraph {
 }
 
 function Connect-IRWorkflowExchange {
-    param([string]$TenantId, [string]$UserId, [string]$TargetUpn)
     $connections = @(Get-ConnectionInformation -ErrorAction Stop | Where-Object {
         $_.ModulePrefix -eq 'IRWorkflow' -and $_.State -eq 'Connected'
     })
@@ -108,7 +108,13 @@ function Connect-IRWorkflowExchange {
             $_.ModulePrefix -eq 'IRWorkflow' -and $_.State -eq 'Connected'
         })
     }
-    if ($connections.Count -ne 1 -or [string]$connections[0].TenantID -ne $TenantId) {
+    if ($connections.Count -ne 1) { throw 'Expected one connected workflow Exchange session.' }
+    return $connections[0]
+}
+
+function Get-IRWorkflowVerifiedMailbox {
+    param($Connection, [string]$TenantId, [string]$UserId, [string]$TargetUpn)
+    if ([string]$Connection.TenantID -ne $TenantId) {
         throw 'Exchange tenant does not match Graph. No mailbox changes are allowed.'
     }
     $mailbox = Get-IRWorkflowMailbox -Identity $TargetUpn -ErrorAction Stop
@@ -144,14 +150,25 @@ function Get-IRWorkflowInput {
     if ([string]::IsNullOrWhiteSpace($ExpectedTenant)) {
         # An established workflow is authoritative only for its previously verified target.
         if ($saved -and $TargetUpn -ieq $saved.UPN) { $ExpectedTenant = [string]$saved.TenantId }
-        else { $ExpectedTenant = Read-Host 'Tenant Domain' }
+        else {
+            if (Get-Command Get-MgContext -ErrorAction SilentlyContinue) {
+                $activeGraph = Get-MgContext -ErrorAction SilentlyContinue
+                if ($activeGraph -and $activeGraph.AuthType -eq 'Delegated' -and $activeGraph.Environment -eq 'Global' -and $activeGraph.ContextScope -eq 'Process' -and $activeGraph.Account) {
+                    $tenantGuid = [guid]::Empty
+                    if ([guid]::TryParse([string]$activeGraph.TenantId,[ref]$tenantGuid) -and $tenantGuid -ne [guid]::Empty) {
+                        $ExpectedTenant = $tenantGuid.ToString()
+                    }
+                }
+            }
+            if (-not $ExpectedTenant) { $ExpectedTenant = Read-Host 'Tenant Domain' }
+        }
     }
     $TargetUpn=$TargetUpn.Trim(); $ExpectedTenant=$ExpectedTenant.Trim()
     if ($TargetUpn -notmatch '^[^\s@]+@[^\s@]+$') { throw 'Enter one valid user UPN.' }
     if ($ExpectedTenant -notmatch '^[a-zA-Z0-9][a-zA-Z0-9.-]+$' -or $ExpectedTenant -in @('common','organizations','consumers')) {
         throw 'Enter a specific tenant domain or tenant ID.'
     }
-    if (-not $saved -and -not $NoPause) {
+    if (-not $saved -and -not $NoPause -and -not $activeGraph) {
         Write-IRLine ''
         [void](Read-Host 'Press ENTER to sign in for assessment, response, and recovery. Changes require operator confirmation')
         Write-IRLine ''
@@ -261,9 +278,9 @@ function Connect-AssessmentGraph([string]$ExpectedTenant) {
     return Connect-IRWorkflowGraph $ExpectedTenant
 }
 
-function Connect-AssessmentExchange([string]$ExpectedTenantId, [string]$TargetId, [string]$TargetUpn) {
+function Connect-AssessmentExchange {
     Import-AssessmentModule 'ExchangeOnlineManagement' ([version]'3.2.0')
-    return Connect-IRWorkflowExchange $ExpectedTenantId $TargetId $TargetUpn
+    return Connect-IRWorkflowExchange
 }
 
 function Add-Unique($List, [string]$Value) {
@@ -761,9 +778,9 @@ $HiddenRuleFindings = @()
 try {
     try {
         $OriginalTitle = $Host.UI.RawUI.WindowTitle
-        $Host.UI.RawUI.WindowTitle = 'BEC: Assess User Risk'
+        $Host.UI.RawUI.WindowTitle = 'BEC: User Risk Assessment'
     } catch { }
-    Write-IRLine 'BEC: Assess User Risk'
+    Write-IRLine 'BEC: User Risk Assessment'
     Write-IRLine 'Review one user''s account and mailbox before choosing a response.'
     Write-IRLine (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
     Write-IRLine ''
@@ -771,6 +788,17 @@ try {
     $TargetUpn = $inputs.UPN; $Tenant = $inputs.Tenant
     if ($global:FieldKitIRSession) { $global:FieldKitIRSession.Assessment = $null }
     $Headers = @{} # Retained collector signatures; Graph SDK owns token handling.
+    $ExchangeConnection = $null
+    if (-not $SkipExchange) {
+        Write-IRLine 'Connecting to Exchange Online...'
+        try {
+            $ExchangeConnection = Connect-AssessmentExchange
+        } catch {
+            $ExoErrorText = $_.Exception.Message
+            Write-IRLine "[!!] Exchange connection failed: $ExoErrorText" -ForegroundColor Yellow
+        }
+    }
+    Write-IRLine 'Connecting to Microsoft Graph...'
     $GraphContext = Connect-AssessmentGraph $Tenant
     $GraphConnected = $true
 
@@ -886,7 +914,8 @@ try {
     # Dedicated prefixed EXO commands cannot accidentally query a different open session.
     if (-not $SkipExchange) {
         try {
-            $Mailbox = Connect-AssessmentExchange ([string]$GraphContext.TenantId) ([string]$TargetUser.id) $TargetUpn
+            if (-not $ExchangeConnection) { throw "Exchange connection unavailable: $ExoErrorText" }
+            $Mailbox = Get-IRWorkflowVerifiedMailbox $ExchangeConnection ([string]$GraphContext.TenantId) ([string]$TargetUser.id) $TargetUpn
             $MailboxObjectAvailable = $true
             $ExoConnected = $true
         }
@@ -1376,17 +1405,17 @@ try {
     Write-IRLine ''
     if ($HighRiskReasons.Count -gt 0) {
         Write-IRLine 'STATUS: CONTAINMENT REVIEW INDICATED' -ForegroundColor Red
-        Section 'NEXT STEP'
+        Section 'NEXT STEPS'
         Write-IRLine 'Document evidence. Review the high-risk findings and approve response if warranted.'
     }
     elseif ($CriticalDataGaps.Count -gt 0 -or $ReviewReasons.Count -gt 0) {
         Write-IRLine 'STATUS: REVIEW REQUIRED' -ForegroundColor Yellow
-        Section 'NEXT STEP'
+        Section 'NEXT STEPS'
         Write-IRLine 'Resolve unavailable checks and review the incident evidence before closure.'
     }
     else {
         Write-IRLine 'STATUS: NO CONTAINMENT INDICATED'
-        Section 'NEXT STEP'
+        Section 'NEXT STEPS'
         Write-IRLine 'Document evidence. Continue only if other incident evidence warrants response.'
     }
     Write-IRLine "`nCOMPLETED: $((Get-Date).ToString('MM/dd/yyyy HH:mm'))"
@@ -1396,9 +1425,10 @@ try {
 }
 catch {
     Write-IRLine "[FAIL] Assessment incomplete: $($_.Exception.Message)" -ForegroundColor Red
-    Section 'NEXT STEP'
+    Section 'NEXT STEPS'
     Write-IRLine 'BEC-RISK-ASSESSMENT'
     Write-IRLine 'Resolve the reported checks and rerun. Confirmed compromise can still require approved containment.'
+    if ($AssessmentOnly) { exit 1 }
 }
 finally {
     if ($null -ne $OriginalTitle) {
@@ -1406,6 +1436,6 @@ finally {
     }
 }
 
-if (-not $script:FinalReviewFinished) {
+if (-not $AssessmentOnly -and -not $script:FinalReviewFinished) {
     Invoke-IRNextStep -FileName $script:NextIRFile -Objective 'Next: contain the account and review approved persistence removal.'
 }

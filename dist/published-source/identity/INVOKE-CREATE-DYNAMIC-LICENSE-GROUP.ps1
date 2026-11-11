@@ -1,6 +1,6 @@
 <#
 INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1
-.VERSION 1.0.4
+.VERSION 1.0.7
 
 Create dynamic Entra group for licensed users.
 
@@ -12,7 +12,7 @@ Purpose:
 Change-making.
 Requires Graph write permissions.
 #>
-# OBJECTIVE: Create a group that automatically includes users with assigned licenses.
+# OBJECTIVE: Create a dynamic security group for enabled users with at least one enabled license service plan.
 
 
 param(
@@ -20,6 +20,7 @@ param(
     [string]$MailNickname = "DG_AnyLicense",
     [string]$ExpectedTenantId
 )
+Write-Host "Create Dynamic Group"
 
 $ErrorActionPreference = "Stop"
 
@@ -290,6 +291,22 @@ function Ensure-Graph {
     return $true
 }
 
+function Resolve-FkTenantDomain {
+    param([string]$Domain)
+    $Domain = $Domain.Trim().ToLowerInvariant()
+    if ($Domain -notmatch '^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$') {
+        throw 'Enter a valid tenant domain.'
+    }
+    try {
+        $metadata = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$Domain/v2.0/.well-known/openid-configuration" -TimeoutSec 20 -ErrorAction Stop
+        if ($metadata.issuer -notmatch '^https://login\.microsoftonline\.com/([0-9a-f-]{36})/v2\.0/?$') { throw 'Unexpected issuer.' }
+        $tenant = [guid]::Parse($Matches[1])
+        if ($tenant -eq [guid]::Empty) { throw 'Invalid tenant.' }
+        return $tenant.ToString()
+    }
+    catch { throw "Could not resolve the Microsoft tenant for $Domain." }
+}
+
 function Assert-GraphContext {
     param([string]$TenantId, [string]$Account)
     $ctx=Get-MgContext -ErrorAction Stop
@@ -361,8 +378,9 @@ try {
     try { $host.UI.RawUI.WindowTitle = "Create Dynamic Licensed Users Group" } catch {}
 
     Clear-Host
-    Write-Host 'Create Dynamic License Group'
-    Write-Host 'Create a group that automatically includes users with assigned licenses.'
+    Write-Host "Create Dynamic Group"
+    Write-Host 'Create Dynamic Group'
+    Write-Host 'Create a dynamic security group for enabled users with at least one enabled license service plan.'
     Write-Host "Change-making"
     Write-Host ""
 
@@ -372,7 +390,15 @@ try {
     $inputNick = Read-Host "Mail nickname [default: $MailNickname]"
     if ($inputNick) { $MailNickname = $inputNick.Trim() }
 
-    if (-not $ExpectedTenantId) { $ExpectedTenantId=(Read-Host 'Expected tenant ID (GUID; blank cancels)').Trim() }
+    if (-not $ExpectedTenantId -and (Get-Command Get-MgContext -ErrorAction SilentlyContinue)) {
+        $activeContext = Get-MgContext -ErrorAction SilentlyContinue
+        if ($activeContext -and $activeContext.AuthType -eq 'Delegated' -and $activeContext.Account -and $activeContext.Environment -eq 'Global' -and $activeContext.TenantId) { $ExpectedTenantId = $activeContext.TenantId }
+    }
+    if (-not $ExpectedTenantId) {
+        $domain = (Read-Host 'Tenant domain (for example, contoso.onmicrosoft.com; blank cancels)').Trim()
+        if (-not $domain) { throw 'Tenant selection cancelled. No changes made.' }
+        $ExpectedTenantId = Resolve-FkTenantDomain -Domain $domain
+    }
     $tenantGuid=[guid]::Empty
     if (-not [guid]::TryParse($ExpectedTenantId,[ref]$tenantGuid) -or $tenantGuid -eq [guid]::Empty) { throw 'A valid expected tenant ID is required. No changes made.' }
     $ExpectedTenantId=$tenantGuid.ToString()
@@ -385,7 +411,7 @@ try {
     $rule = '(user.accountEnabled -eq true) -and (user.assignedPlans -any (assignedPlan.servicePlanId -ne null -and assignedPlan.capabilityStatus -eq "Enabled"))'
 
     Section "PREVIEW"
-    Write-Host "Tenant ID    : $ExpectedTenantId"
+    if ($domain) { Write-Host "Tenant domain: $domain" }
     Write-Host "Account      : $approvedAccount"
     Write-Host "Display name : $DisplayName"
     Write-Host "Mail nickname: $MailNickname"
@@ -441,7 +467,7 @@ try {
         throw "Group creation is unverified. Review current tenant groups before retrying; the request outcome may be unknown."
     }
 
-    Section "SUMMARY"
+    Section "RESULTS"
     Write-Host "Display name : $DisplayName"
     Write-Host "Mail nickname: $MailNickname"
     Write-Host "Rule         : $rule"

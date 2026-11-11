@@ -25,6 +25,7 @@ param(
     [int]$DownloadBurstThreshold = 25,
     [switch]$ExportCsv
 )
+Write-Host "BEC: Review File Activity"
 
 $ErrorActionPreference = "Stop"
 
@@ -55,7 +56,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }
@@ -626,7 +627,7 @@ try {
         Write-Host "Data gaps:"
 
         foreach ($gap in $dataGaps) {
-            Write-Host "- $gap"
+            Write-Host "$gap"
         }
     }
 

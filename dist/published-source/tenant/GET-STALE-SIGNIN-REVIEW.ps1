@@ -27,6 +27,7 @@ param(
     [ValidateRange(1,3650)]
     [int]$Days = 90
 )
+Write-Host "Account and Sign-in Review"
 
 $ErrorActionPreference = "Stop"
 
@@ -325,7 +326,7 @@ try {
     Write-Host "STALE ENABLED USERS ($($stale.Count))"
 
     if ($stale.Count -eq 0) {
-        Write-Host "  none"
+        Write-Host "none"
     }
     else {
         foreach ($row in ($stale | Sort-Object Days -Descending)) {
@@ -343,7 +344,7 @@ try {
     Write-Host "ACTIVITY NOT AVAILABLE ($($activityUnavailable.Count))"
 
     if ($activityUnavailable.Count -eq 0) {
-        Write-Host "  none"
+        Write-Host "none"
     }
     else {
         foreach ($row in ($activityUnavailable | Sort-Object Name,UPN)) {
@@ -357,7 +358,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host ("Enabled member accounts reviewed : {0}" -f $users.Count)
     Write-Host ("Stale {0}+ days               : {1}" -f $Days, $stale.Count)
     Write-Host ("Activity not available          : {0}" -f $activityUnavailable.Count)

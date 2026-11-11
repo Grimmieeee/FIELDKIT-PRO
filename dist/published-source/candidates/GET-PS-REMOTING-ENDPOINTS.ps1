@@ -14,6 +14,7 @@ commands. CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "PowerShell Remoting Endpoints"
 $ErrorActionPreference = 'Stop'
 function Get-FkEndpointField {
     param($Configuration,[string]$Field)

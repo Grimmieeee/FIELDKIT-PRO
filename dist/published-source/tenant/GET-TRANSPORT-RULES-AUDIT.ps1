@@ -15,6 +15,7 @@ Purpose:
 #>
 
 param()
+Write-Host "Audit Mail Flow Rules"
 
 $ErrorActionPreference = "Stop"
 
@@ -233,7 +234,7 @@ try {
         })
     }
 
-    Section "SUMMARY"
+    Section "RESULTS"
     Write-Host "Rules checked : $($rows.Count)"
     Write-Host "Flagged       : $(@($rows | Where-Object { $_.Risk -ne 'Review' }).Count)"
     Write-Host ""

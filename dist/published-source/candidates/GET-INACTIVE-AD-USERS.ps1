@@ -16,6 +16,7 @@ creates a new file only.
 #>
 [CmdletBinding()]
 param([ValidateRange(1,36500)][int]$Days=90,[string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "Inactive AD Users"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

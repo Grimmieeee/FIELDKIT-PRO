@@ -1,7 +1,4 @@
-#Requires -Version 5.1
-[CmdletBinding()]
-param([switch]$ModuleStage)
-
+﻿#Requires -Version 5.1
 $ErrorActionPreference = 'Stop'
 $results = [Collections.Generic.List[object]]::new()
 
@@ -15,68 +12,6 @@ function Test-LocalAdministrator {
     $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
     $principal = [Security.Principal.WindowsPrincipal]::new($identity)
     return $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-}
-
-function Get-CurrentPowerShell {
-    [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
-    $release = Invoke-RestMethod -Uri 'https://api.github.com/repos/PowerShell/PowerShell/releases/latest' -TimeoutSec 30
-    $tag = [regex]::Match([string]$release.tag_name, '^v(7\.\d+\.\d+)$')
-    if ($release.draft -or $release.prerelease -or -not $tag.Success) {
-        throw 'The stable PowerShell 7 release could not be identified.'
-    }
-    $latest = [version]$tag.Groups[1].Value
-    $candidate = Join-Path $env:ProgramFiles 'PowerShell\7\pwsh.exe'
-    $running = $PSVersionTable.PSVersion
-    if ($running.Major -eq 7 -and -not $running.PreReleaseLabel -and $running -ge $latest) {
-        $candidate = Join-Path $PSHOME 'pwsh.exe'
-    }
-    $installed = if (Test-Path -LiteralPath $candidate -PathType Leaf) {
-        $versionText = & $candidate -NoProfile -NonInteractive -Command '[Console]::Write($PSVersionTable.PSVersion.ToString())'
-        if ($LASTEXITCODE -ne 0) { throw 'Installed PowerShell 7 could not start.' }
-        $versionText -as [version]
-    }
-
-    if ($installed -and $installed -ge $latest) {
-        Write-Result 'PowerShell' 'PASS' "Installed $installed, stable release $latest."
-        return $candidate
-    }
-
-    if (-not (Test-LocalAdministrator)) {
-        throw 'Open Windows PowerShell as a local administrator and rerun Terminal Prep to install PowerShell 7.'
-    }
-    $architecture = [Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString().ToLowerInvariant()
-    if ($architecture -notin @('x64','arm64','x86')) { throw "Unsupported Windows architecture: $architecture." }
-    $filename = "PowerShell-$latest-$architecture.msi"
-    $assetUrl = "https://github.com/PowerShell/PowerShell/releases/download/v$latest/$filename"
-    if (@($release.assets | Where-Object { $_.name -eq $filename -and $_.browser_download_url -ceq $assetUrl }).Count -ne 1) {
-        throw 'The matching Microsoft MSI could not be found. Use your approved software deployment process.'
-    }
-
-    $tempDirectory = Join-Path ([IO.Path]::GetTempPath()) ([guid]::NewGuid().ToString())
-    New-Item -ItemType Directory -Path $tempDirectory | Out-Null
-    $msi = Join-Path $tempDirectory $filename
-    try {
-        Write-Host "Downloading Microsoft PowerShell $latest for $architecture..."
-        Invoke-WebRequest -Uri $assetUrl -UseBasicParsing -OutFile $msi -TimeoutSec 180
-        $signature = Get-AuthenticodeSignature -LiteralPath $msi
-        if ($signature.Status -ne 'Valid' -or $signature.SignerCertificate.GetNameInfo('SimpleName',$false) -ne 'Microsoft Corporation') {
-            throw 'Microsoft signature validation failed. The installer was not run.'
-        }
-        Write-Host 'Installing PowerShell 7. Windows may take a few minutes.'
-        $process = Start-Process -FilePath (Join-Path $env:SystemRoot 'System32\msiexec.exe') -ArgumentList "/i `"$msi`" /passive /norestart" -Wait -PassThru
-        if ($process.ExitCode -eq 3010) { throw 'PowerShell installed and requires a restart. Restart through your approved process, then rerun.' }
-        if ($process.ExitCode -ne 0) { throw "PowerShell installer exit code $($process.ExitCode). Check Windows Installer logs and retry." }
-    } finally {
-        Remove-Item -LiteralPath $tempDirectory -Recurse -Force -ErrorAction SilentlyContinue
-    }
-
-    if (-not (Test-Path -LiteralPath $candidate -PathType Leaf)) { throw 'The installed PowerShell executable could not be found.' }
-    $verified = & $candidate -NoProfile -NonInteractive -Command '[Console]::Write($PSVersionTable.PSVersion.ToString())'
-    if ($LASTEXITCODE -ne 0 -or ($verified -as [version]) -lt $latest) {
-        throw 'The installed PowerShell version could not be verified. Close other PowerShell windows and rerun.'
-    }
-    Write-Result 'PowerShell' 'PASS' "Installed and launched $verified."
-    return $candidate
 }
 
 function Install-CurrentModule {
@@ -190,28 +125,18 @@ function Test-TenantAccess {
     }
 }
 
-if (-not $ModuleStage) {
-    try {
-        if ($env:OS -ne 'Windows_NT') { throw 'Run Terminal Prep on Windows.' }
-        if (-not [Environment]::Is64BitProcess -and [Environment]::Is64BitOperatingSystem) {
-            throw 'Start Terminal Prep from a native 64-bit PowerShell window.'
-        }
-        Write-Host 'TERMINAL PREP | PowerShell and client tools'
-        Write-Host "Computer $env:COMPUTERNAME | Windows user $env:USERNAME"
-        if ((Read-Host 'Review and install PowerShell updates if needed? [y/N]') -ine 'y') { return }
-        $pwsh = Get-CurrentPowerShell
-        & $pwsh -NoProfile -File $PSCommandPath -ModuleStage
-        exit $LASTEXITCODE
-    } catch {
-        Write-Result 'PowerShell' 'FAIL' $_.Exception.Message
-        [void](Read-Host 'Press Enter to close')
-        exit 1
-    }
-}
-
 try {
-    if ($env:OS -ne 'Windows_NT' -or $PSVersionTable.PSVersion.Major -ne 7) { throw 'Start TERMINAL-PREP.ps1 without arguments from Windows.' }
-    Write-Result 'PowerShell' 'PASS' "Running $($PSVersionTable.PSVersion) in a fresh session."
+    if ($env:OS -ne 'Windows_NT') { throw 'Run Terminal Prep on Windows.' }
+    if (-not [Environment]::Is64BitProcess -and [Environment]::Is64BitOperatingSystem) {
+        throw 'Start Terminal Prep from a native 64-bit PowerShell window.'
+    }
+    if ($PSVersionTable.PSVersion.Major -lt 6) {
+        [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+    }
+
+    Write-Host 'TERMINAL PREP | PowerShell and client tools'
+    Write-Host "Computer $env:COMPUTERNAME | Windows user $env:USERNAME"
+    Write-Result 'PowerShell' 'PASS' "Running $($PSVersionTable.PSVersion) in the current session."
     Write-Host '1. Microsoft Graph'
     Write-Host '2. Exchange Online'
     Write-Host '3. Both Microsoft 365 modules and Active Directory tools'

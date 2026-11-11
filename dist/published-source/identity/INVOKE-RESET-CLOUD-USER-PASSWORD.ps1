@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.3
+.VERSION 1.0.4
 #>
 #Requires -Version 5.1
 
@@ -40,6 +40,7 @@ param(
 
     [switch]$NoForceChangeNextSignIn
 )
+Write-Host "Reset Cloud User Password"
 
 $ErrorActionPreference = 'Stop'
 
@@ -193,7 +194,6 @@ function Connect-FieldKitGraph {
 
     Write-OK "Microsoft Graph connected"
     if ($context.Account) { Write-Host ("Account : {0}" -f $context.Account) }
-    if ($context.TenantId) { Write-Host ("Tenant  : {0}" -f $context.TenantId) }
 }
 
 function Test-ResetTimestamp {
@@ -425,7 +425,7 @@ try {
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     $results | Format-Table UPN,Result,Verification -AutoSize
     Write-Host ""
     $unresolved=@($results | Where-Object { $_.Verification -ne 'Verified' -and $_.Verification -ne 'Not changed' }).Count

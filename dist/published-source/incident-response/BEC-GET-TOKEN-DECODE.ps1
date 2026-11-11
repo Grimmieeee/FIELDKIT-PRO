@@ -21,6 +21,7 @@ A decoded token is not proof that the token is authentic or usable.
 param(
     [string]$Token
 )
+Write-Host "BEC: Decode Token"
 
 $ErrorActionPreference = "Stop"
 
@@ -51,7 +52,7 @@ function Section {
     param([string]$Title)
 
     Write-Host ""
-    Write-Host (" {0} " -f $Title) `
+    Write-Host ("{0} " -f $Title) `
         -ForegroundColor White `
         -BackgroundColor DarkGray
 }

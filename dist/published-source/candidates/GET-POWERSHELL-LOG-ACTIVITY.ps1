@@ -19,6 +19,7 @@ param(
     [ValidateRange(1,100000)][int]$MaxEvents=1000,
     [string]$ExportPath,[switch]$NoPause,[switch]$PassThru
 )
+Write-Host "PowerShell Log Activity"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

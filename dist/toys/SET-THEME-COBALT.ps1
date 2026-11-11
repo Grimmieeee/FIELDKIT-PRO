@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 # OBJECTIVE: Preview a blue PowerShell theme and output helpers.
 
@@ -11,9 +11,9 @@
 # Run this file to preview all colors and tags in terminal.
 
 
+Write-Host "Theme: Cobalt"
 Write-Host 'Preview Cobalt Theme'
 Write-Host 'Preview a blue PowerShell theme and output helpers.'
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 $Host.UI.RawUI.BackgroundColor = 'Black'
 $Host.UI.RawUI.ForegroundColor = 'White'

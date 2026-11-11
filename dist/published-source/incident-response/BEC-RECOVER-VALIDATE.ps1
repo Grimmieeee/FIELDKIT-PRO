@@ -1,4 +1,4 @@
-﻿<#PSScriptInfo
+<#PSScriptInfo
 .VERSION 1.0.3
 .GUID d77fb13d-5860-46ad-bc7e-2ef0df3a458d
 .AUTHOR FIELD // KIT
@@ -191,7 +191,7 @@ function Invoke-IRNextStep {
     $label=switch ($FileName) {
         'BEC-CONTAIN-ERADICATE' { 'BEC-CONTAIN-ERADICATE' }
         'BEC-RECOVER-VALIDATE' { 'BEC-RECOVER-VALIDATE' }
-        default { 'BEC-RISK-ASSESSMENT (FINAL CHECK)' }
+        default { 'BEC: User Risk Assessment (Final Check)' }
     }
     if (-not (Read-IRNavigation $label)) {
         $message=switch ($FileName) {

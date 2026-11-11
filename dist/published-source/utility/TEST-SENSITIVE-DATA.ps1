@@ -21,6 +21,7 @@ param(
     [string[]]$Terms,
     [switch]$NoPause
 )
+Write-Host "Check Sensitive Data"
 
 $ErrorActionPreference = 'Stop'
 
@@ -28,7 +29,7 @@ function Write-Ok   { param([string]$Message) Write-Host "[OK]   $Message" -Fore
 function Write-Info { param([string]$Message) Write-Host "[INFO] $Message" }
 function Write-Warn { param([string]$Message) Write-Host "[WARN] $Message" -ForegroundColor Yellow }
 function Write-Fail { param([string]$Message) Write-Host "[FAIL] $Message" -ForegroundColor Red }
-function Show-Section { param([string]$Title) Write-Host ''; Write-Host (" {0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray }
+function Show-Section { param([string]$Title) Write-Host ''; Write-Host ("{0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray }
 function Pause-End { if (-not $NoPause) { Write-Host ''
                                           Write-Host 'SESSION COMPLETE'
                                           Write-Host ''; Read-Host 'Press Enter to close session.' | Out-Null } }
@@ -168,11 +169,11 @@ try {
             $color = if ($finding.Severity -eq 'HIGH') { 'Red' } elseif ($finding.Severity -eq 'WARN') { 'Yellow' } else { 'Gray' }
             $where = if ($finding.Line -gt 0) { "$($finding.File):$($finding.Line)" } else { $finding.File }
             Write-Host ("[{0}] {1} | {2}" -f $finding.Severity,$finding.Category,$where) -ForegroundColor $color
-            Write-Host ("       {0}" -f $finding.Excerpt) -ForegroundColor Gray
+            Write-Host ("{0}" -f $finding.Excerpt) -ForegroundColor Gray
         }
     }
 
-    Show-Section 'SUMMARY'
+    Show-Section 'RESULTS'
     $high = @($findings | Where-Object Severity -eq 'HIGH').Count
     $warn = @($findings | Where-Object Severity -eq 'WARN').Count
     $info = @($findings | Where-Object Severity -eq 'INFO').Count

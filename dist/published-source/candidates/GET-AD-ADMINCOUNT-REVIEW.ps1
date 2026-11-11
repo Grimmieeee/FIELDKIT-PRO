@@ -1,6 +1,6 @@
 #Requires -Version 5.1
-# .VERSION 0.1.1
-# OBJECTIVE: List AD objects marked with adminCount equal to one.
+# .VERSION 0.1.2
+# OBJECTIVE: List AD objects flagged with adminCount=1. The flag can be stale.
 <#
 .SYNOPSIS
 Read-only adminCount review in one AD scope.
@@ -15,6 +15,7 @@ identity. CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "AD AdminCount Flags"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {
@@ -129,7 +130,9 @@ function Format-FkTable {
 }
 
 try {
-    Write-Host 'AD ADMINCOUNT REVIEW // READ ONLY'
+    Write-Host 'AD AdminCount Flags'
+    Write-Host 'List AD objects flagged with adminCount=1. The flag can be stale.'
+    Write-Host 'Read-only'
     Write-Host ''
     if ($env:OS -ne 'Windows_NT') { throw 'Windows with the ActiveDirectory module is required.' }
     Import-Module ActiveDirectory -ErrorAction Stop

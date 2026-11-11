@@ -19,6 +19,7 @@ param(
     [string]$InputPath,
     [string]$SyncServer
 )
+Write-Host "Remove User Groups"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ErrorActionPreference = 'Stop'
@@ -85,7 +86,7 @@ function Get-InputUPNs {
     if ($Path) { $rawValues += $Path }
 
     if ($rawValues.Count -eq 0) {
-        $entered=(Read-Host "User UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
+        $entered=(Read-Host "UPN or TXT/CSV path").Trim().Trim('"').Trim("'")
         if ($entered) { $rawValues=@($entered) }
     }
 
@@ -614,7 +615,7 @@ function Write-GroupSection {
     }
 
     foreach ($row in $Rows) {
-        Write-Host ("- {0}{1}" -f $row.Name,(Get-GroupMarkers -Row $row))
+        Write-Host ("{0}{1}" -f $row.Name,(Get-GroupMarkers -Row $row))
     }
 }
 
@@ -1158,7 +1159,7 @@ $firstUser = Connect-GraphForUser `
     }
 
     Write-Host ""
-    Write-Host "SUMMARY"
+    Write-Host "RESULTS"
     Write-Host ("Users processed: {0}" -f $userPlans.Count)
     Write-Host ("Active Directory groups removed: {0}" -f $removedAD.Count)
     Write-Host ("Entra ID groups removed: {0}" -f $removedEntra.Count)
@@ -1181,17 +1182,17 @@ $firstUser = Connect-GraphForUser `
     Write-Host "TICKET NOTE"
 
     if (($removedAD.Count + $removedEntra.Count) -eq 0) {
-        Write-Host "- No removals verified for this note. Review needs-attention results before concluding that nothing changed."
+        Write-Host "No removals verified for this note. Review needs-attention results before concluding that nothing changed."
     }
     else {
         foreach ($item in $removedAD) {
-            Write-Host ("- Removed AD group: {0} | {1}" -f $item.UPN, $item.Name)
+            Write-Host ("Removed AD group: {0} | {1}" -f $item.UPN, $item.Name)
         }
         foreach ($item in $removedEntra) {
-            Write-Host ("- Removed Entra group: {0} | {1}" -f $item.UPN, $item.Name)
+            Write-Host ("Removed Entra group: {0} | {1}" -f $item.UPN, $item.Name)
         }
         if ($syncResult.Status -eq 'Triggered') {
-            Write-Host "- Entra delta sync triggered"
+            Write-Host "Entra delta sync triggered"
         }
     }
 

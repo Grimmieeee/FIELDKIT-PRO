@@ -15,6 +15,7 @@ and in Sources. Export creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
+Write-Host "WMI Subscriptions"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

@@ -15,6 +15,7 @@ param(
     [Parameter(Position=0)][string]$Path = (Get-Location).Path,
     [switch]$Open
 )
+Write-Host "GitHub: Save Project Handoff"
 Write-Host 'Save Project Handoff'
 Write-Host 'Save a screened snapshot of the current Git project for handoff.'
 

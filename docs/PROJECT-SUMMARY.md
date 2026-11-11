@@ -10,8 +10,8 @@ Read the [Build Standard](tools/field-kit-build-standard.md) before planning wor
 
 ## Evidence and open work
 
-- [v162 QA baseline](../qa/QA-BASELINE-v162.md) pins the four matching test copies. The GitHub `dist/` snapshot differs from v162 and is outside that lock.
+- [v162 QA baseline](../qa/QA-BASELINE-v162.md) pins the four matching test copies. The GitHub `dist/` tree now mirrors the complete v162 distribution. Use `dist/` for new catalog tests and the pinned `scripts/` copies for the four operator-verified workflows.
 
 - The operator verified the BEC containment and recovery workflow, including off-domain sign-in. Client Connectivity Check and the BEC trio carry exact-source operator verification. PowerShell 7 runtime coverage remains open.
 - The 97 published scripts received a static screening. Six additional scripts using both Graph and Exchange still require call-path review before applying changes. Record live, synthetic and static evidence separately.
-- Begin new tests with the FIELDKIT-PRO copies. Where release parity has not been established, reconcile the applicable copy and its checksum before testing for release acceptance.
+- Begin new tests with the FIELDKIT-PRO copies and [active v162 checksums](../qa/V162-SHA256SUMS.txt). Where release parity has not been established, reconcile the applicable copy and its checksum before testing for release acceptance.

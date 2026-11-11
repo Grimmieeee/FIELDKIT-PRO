@@ -15,6 +15,7 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "AD Trusts"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

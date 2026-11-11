@@ -1,5 +1,5 @@
 <#
-.VERSION 1.0.2
+.VERSION 1.0.3
 #>
 # OBJECTIVE: Install a sea-green PowerShell theme in your startup profile.
 
@@ -12,9 +12,9 @@
 # Removes any previously installed kit theme before writing.
 
 
+Write-Host "Theme: Sea Glass"
 Write-Host 'Install Sea Glass Theme'
 Write-Host 'Install a sea-green PowerShell theme in your startup profile.'
-Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process -Force
 
 $Host.UI.RawUI.BackgroundColor = 'Black'
 $Host.UI.RawUI.ForegroundColor = 'White'
@@ -149,40 +149,48 @@ try {
 "@
 
 $profilePath = $PROFILE.CurrentUserAllHosts
-$profileDir  = Split-Path $profilePath
-
-if (-not (Test-Path $profileDir)) {
-    New-Item -ItemType Directory -Path $profileDir -Force | Out-Null
-}
-
-if (Test-Path $profilePath) {
-    $existing = Get-Content $profilePath -Raw -ErrorAction SilentlyContinue
-    if ($existing -match 'SEA GLASS THEME') {
-        Write-Host "${cT1}[OK]  ${cWh}Profile already contains Sea Glass theme -- no changes made${cR}"
-        Write-Host ""
-        Write-Host "${cT3}. . . . . . . . . . . . . . . . . . . . .${cR}"
-        Write-Host "${cT3}  Loads on every new session.${cR}"
-        Write-Host "${cT3}. . . . . . . . . . . . . . . . . . . . .${cR}"
-        Write-Host ""
-        Read-Host 'Press Enter to close session.'
-        exit
-    }
-    foreach ($theme in @('SILICON VALLEY THEME', 'COBALT THEME', 'MINT CORAL THEME')) {
-        if ($existing -match $theme) {
-            $tag = ($theme -replace ' THEME','').Trim()
-            Write-Host "${cWn}[!!]  ${cWh}$tag theme found in profile -- replacing with Sea Glass${cR}"
-            $existing = $existing -replace "(?s)# - - - MSSP FIELD KIT - $theme - - -.*?# - - - END $theme - - -\s*", ''
-            Set-Content -Path $profilePath -Value $existing -Encoding UTF8 -ErrorAction SilentlyContinue
-        }
-    }
-}
-
+$profileDir = Split-Path -Parent $profilePath
+$tempPath = $null
 try {
-    Add-Content -Path $profilePath -Value $profileBlock -Encoding UTF8 -ErrorAction Stop
-    Write-Host "${cT1}[OK]  ${cWh}Written to profile: ${cT2}$profilePath${cR}"
+    $exists = [IO.File]::Exists($profilePath)
+    $original = if ($exists) { [IO.File]::ReadAllText($profilePath) } else { '' }
+    $updated = $original
+    foreach ($theme in @('SEA GLASS THEME','SILICON VALLEY THEME','COBALT THEME','MINT CORAL THEME')) {
+        $label = [regex]::Escape($theme)
+        $pattern = "(?ms)^# - - - MSSP FIELD KIT - $label - - -[^\S\r\n]*\r?\n.*?^# - - - END $label - - -[^\S\r\n]*(?:\r?\n|$)"
+        $updated = [regex]::Replace($updated,$pattern,'')
+    }
+    if ($updated -match '(?im)^# - - - (?:MSSP FIELD KIT - |END )(?:SEA GLASS|SILICON VALLEY|COBALT|MINT CORAL) THEME - - -') {
+        throw 'An incomplete managed theme block was found. Review the profile before installing.'
+    }
+    $eol = if ($original -match "\r\n") { "`r`n" } elseif ($original -match "\n") { "`n" } else { [Environment]::NewLine }
+    $block = [regex]::Replace($profileBlock.TrimEnd("`r","`n"),'\r?\n',$eol)
+    if ($updated.Length -gt 0 -and -not $updated.EndsWith("`n")) { $updated += $eol }
+    $updated += $block + $eol
+
+    Write-Host "Target profile: $profilePath"
+    Write-Host 'Replace managed FIELD KIT theme blocks and install Sea Glass. Other profile content is preserved.'
+    if ($updated -ceq $original) {
+        Write-Host 'Status: Sea Glass is already installed.'
+    } elseif ((Read-Host 'Type INSTALL to update the profile') -cne 'INSTALL') {
+        Write-Host 'Status: Cancelled.'
+    } else {
+        [void][IO.Directory]::CreateDirectory($profileDir)
+        $tempPath = Join-Path $profileDir ([IO.Path]::GetRandomFileName())
+        [IO.File]::WriteAllText($tempPath,$updated,[Text.UTF8Encoding]::new($true))
+        if ($exists) {
+            if ([IO.File]::ReadAllText($profilePath) -cne $original) { throw 'Profile changed after preview. Run again.' }
+            [IO.File]::Replace($tempPath,$profilePath,[System.Management.Automation.Language.NullString]::Value)
+        } else {
+            [IO.File]::Move($tempPath,$profilePath)
+        }
+        if ([IO.File]::ReadAllText($profilePath) -cne $updated) { throw 'Profile write could not be verified.' }
+        Write-Host 'Status: Profile update verified.'
+    }
 } catch {
-    Write-Host "${cFl}[XX]  ${cWh}Could not write profile: $($_.Exception.Message)${cR}"
-    Write-Host "${cT3}      Add the block manually to: $profilePath${cR}"
+    Write-Host "Status: Profile update failed. $($_.Exception.Message)" -ForegroundColor Red
+} finally {
+    if ($tempPath -and [IO.File]::Exists($tempPath)) { [IO.File]::Delete($tempPath) }
 }
 
 Write-Host ""

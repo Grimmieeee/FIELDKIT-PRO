@@ -25,6 +25,7 @@ param(
     [switch]$NoFileMap,
     [switch]$NoPause
 )
+Write-Host "Review Folder Contents"
 
 $ErrorActionPreference = 'Stop'
 
@@ -36,7 +37,7 @@ function Write-Fail { param([string]$Message) Write-Host "[FAIL] $Message" -Fore
 function Show-Section {
     param([string]$Title)
     Write-Host ''
-    Write-Host (" {0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray
+    Write-Host ("{0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray
 }
 
 function Show-Field {
@@ -170,7 +171,7 @@ try {
     $scripts = @($files | Where-Object { $_.Extension -ieq '.ps1' })
     $docs = @($files | Where-Object { $_.Extension -in @('.md','.txt','.docx','.pdf') })
 
-    Show-Section 'SUMMARY'
+    Show-Section 'RESULTS'
     Show-Field 'Root' $root
     Show-Field 'Folders' $folders.Count
     Show-Field 'Files' $files.Count
@@ -189,7 +190,7 @@ try {
 
     Show-Section 'TOP-LEVEL FOLDERS'
     if ($topFolders.Count -eq 0) { Write-Info 'No subfolders found.' }
-    foreach ($folder in $topFolders) { Write-Host "  $($folder.Name)" }
+    foreach ($folder in $topFolders) { Write-Host "$($folder.Name)" }
 
     Show-Section 'TREE'
     Write-Host "[$((Get-Item -LiteralPath $root).Name)]" -ForegroundColor White
@@ -241,7 +242,7 @@ try {
         }
         Show-Field 'Valid' $valid 'Green'
         Show-Field 'Unsigned / invalid' $notValid.Count $(if ($notValid.Count -gt 0) { 'Yellow' } else { 'Green' })
-        foreach ($item in $notValid) { Write-Host ("  {0} | {1}" -f $item.Status,$item.File) -ForegroundColor Yellow }
+        foreach ($item in $notValid) { Write-Host ("{0} | {1}" -f $item.Status,$item.File) -ForegroundColor Yellow }
     }
 
     Write-Host ''

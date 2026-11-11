@@ -15,6 +15,7 @@ Changes may be made. Disabled-state validation and confirmation are required.
 #>
 
 param([string]$UPN)
+Write-Host "Remove Disabled User Mailbox Access"
 
 $ErrorActionPreference = "Stop"
 
@@ -31,7 +32,7 @@ function Write-Section {
     param([string]$Title)
 
     try {
-        Write-Host (" {0} " -f $Title) `
+        Write-Host ("{0} " -f $Title) `
             -ForegroundColor White `
             -BackgroundColor DarkGray
     }
@@ -951,7 +952,7 @@ try {
     Write-Section "MAILBOX ACCESS DEBT"
 
     if ($findings.Count -eq 0) {
-        Write-Host "  none found"
+        Write-Host "none found"
     }
     else {
         for ($i = 0; $i -lt $findings.Count; $i++) {
@@ -969,7 +970,7 @@ try {
     Write-Section "DATA GAPS"
 
     if ($dataGaps.Count -eq 0) {
-        Write-Host "  none identified"
+        Write-Host "none identified"
     }
     else {
         $uniqueGaps = @($dataGaps | Select-Object -Unique)
@@ -978,10 +979,10 @@ try {
 
         $uniqueGaps |
             Select-Object -First 10 |
-            ForEach-Object { Write-Host "  - $_" }
+            ForEach-Object { Write-Host "$_" }
 
         if ($uniqueGaps.Count -gt 10) {
-            Write-Host ("  - ... {0} additional query gap(s)" -f ($uniqueGaps.Count - 10))
+            Write-Host ("... {0} additional query gap(s)" -f ($uniqueGaps.Count - 10))
         }
     }
 
@@ -1100,7 +1101,7 @@ try {
 
     Write-Host ""
     Write-Section "NEXT"
-    Write-Host "- Continue offboarding/deletion review as needed."
+    Write-Host "Continue offboarding/deletion review as needed."
 
     Write-Host ""
     Write-Host "STANDARD NOTE"

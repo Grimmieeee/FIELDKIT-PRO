@@ -19,6 +19,7 @@ Read-only. No changes are made.
 param(
     [int]$StaleDays = 90
 )
+Write-Host "Tenant Security Review"
 
 $ErrorActionPreference = "Stop"
 
@@ -239,6 +240,7 @@ try {
     try { $Host.UI.RawUI.WindowTitle = "Tenant Security Snapshot" } catch {}
 
     Clear-Host
+    Write-Host "Tenant Security Review"
     Write-FKReportLine 'Get Tenant Security'
     Write-FKReportLine 'Get a broad overview of the tenant''s security settings and review areas.'
     Write-FKReportLine "READ-ONLY. NO CHANGES MADE."
@@ -317,7 +319,7 @@ try {
                 Sort-Object { [datetime]$_.signInActivity.lastSignInDateTime } |
                 Select-Object -First 15 |
                 ForEach-Object {
-                    Write-FKReportLine ("- {0} | {1}" -f $_.userPrincipalName, $_.signInActivity.lastSignInDateTime)
+                    Write-FKReportLine ("{0} | {1}" -f $_.userPrincipalName, $_.signInActivity.lastSignInDateTime)
                 }
         }
     }
@@ -346,7 +348,7 @@ try {
             try {
                 $Members = @(Get-GraphPages -Uri "https://graph.microsoft.com/v1.0/directoryRoles/$($Role.id)/members?`$select=id")
                 $AssignmentCount += $Members.Count
-                Write-FKReportLine ("- {0}: {1}" -f $Role.displayName, $Members.Count)
+                Write-FKReportLine ("{0}: {1}" -f $Role.displayName, $Members.Count)
             }
             catch {
                 Write-Warn ("{0}: member count unavailable" -f $Role.displayName)

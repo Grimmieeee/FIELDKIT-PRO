@@ -13,6 +13,7 @@ new file only. Requires Windows SmbShare and permission to read share settings.
 #>
 [CmdletBinding()]
 param([string]$Name,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host "SMB Share Permissions"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

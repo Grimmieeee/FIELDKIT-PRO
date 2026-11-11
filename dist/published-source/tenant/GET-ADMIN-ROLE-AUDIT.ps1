@@ -1,7 +1,7 @@
 <#
-.VERSION 1.0.3
+.VERSION 1.0.6
 #>
-# OBJECTIVE: List tenant admin-role assignments for review.
+# OBJECTIVE: Review active Entra directory role assignments and user status where available.
 
 <#
 GET-ADMIN-ROLE-AUDIT.ps1
@@ -18,6 +18,7 @@ param(
     [int]$StaleDays = 30,
     [string]$ExpectedTenantId
 )
+Write-Host "Audit Tenant Admin Accounts"
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
@@ -199,13 +200,24 @@ function Graph-Get {
     catch { throw "Graph read failed; review incomplete. $($_.Exception.Message)" }
 }
 
+function Resolve-FkTenantDomain {
+    param([string]$Domain)
+    $Domain = $Domain.Trim().ToLowerInvariant()
+    if ($Domain -notmatch '^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\.)+[a-z](?:[a-z0-9-]{0,61}[a-z0-9])?$') {
+        throw 'Enter a valid tenant domain.'
+    }
+    try {
+        $metadata = Invoke-RestMethod -Uri "https://login.microsoftonline.com/$Domain/v2.0/.well-known/openid-configuration" -TimeoutSec 20 -ErrorAction Stop
+        if ($metadata.issuer -notmatch '^https://login\.microsoftonline\.com/([0-9a-f-]{36})/v2\.0/?$') { throw 'Unexpected issuer.' }
+        $tenant = [guid]::Parse($Matches[1])
+        if ($tenant -eq [guid]::Empty) { throw 'Invalid tenant.' }
+        return $tenant.ToString()
+    }
+    catch { throw "Could not resolve the Microsoft tenant for $Domain." }
+}
+
 function Ensure-Graph {
     param([string[]]$Scopes, [string]$TenantId)
-    if (-not $TenantId) { $TenantId=(Read-Host "Expected tenant ID (GUID; blank cancels)").Trim() }
-    $expectedGuid=[guid]::Empty
-    if (-not [guid]::TryParse($TenantId,[ref]$expectedGuid) -or $expectedGuid -eq [guid]::Empty) { throw "A valid expected tenant ID is required. No audit was completed." }
-    $TenantId=$expectedGuid.ToString()
-
     $module=Get-Module -ListAvailable -Name Microsoft.Graph.Authentication -ErrorAction SilentlyContinue |
         Sort-Object Version -Descending |
         Select-Object -First 1
@@ -219,6 +231,15 @@ function Ensure-Graph {
     Import-Module $module.Path -Force -ErrorAction Stop | Out-Null
 
     $ctx=Get-MgContext -ErrorAction SilentlyContinue
+    if (-not $TenantId -and ($ctx -and $ctx.AuthType -eq 'Delegated' -and $ctx.Account -and $ctx.Environment -eq 'Global' -and $ctx.TenantId)) { $TenantId = $ctx.TenantId }
+    if (-not $TenantId) {
+        $domain = (Read-Host 'Tenant domain (for example, contoso.onmicrosoft.com; blank cancels)').Trim()
+        if (-not $domain) { throw 'Tenant selection cancelled.' }
+        $TenantId = Resolve-FkTenantDomain -Domain $domain
+    }
+    $expectedGuid=[guid]::Empty
+    if (-not [guid]::TryParse($TenantId,[ref]$expectedGuid) -or $expectedGuid -eq [guid]::Empty) { throw "A valid expected tenant ID is required. No audit was completed." }
+    $TenantId=$expectedGuid.ToString()
     if ($ctx -and $ctx.TenantId -ne $TenantId) {
         throw 'Existing Graph session is for another tenant. No changes made. Open a new PowerShell window and sign in to the expected tenant.'
     }
@@ -256,7 +277,7 @@ function Ensure-Graph {
     }
 
     OK "Graph connected"
-    INFO "Tenant ID: $TenantId | Account: $($ctx.Account)"
+    INFO "Account: $($ctx.Account)"
     return $true
 }
 
@@ -361,8 +382,9 @@ try {
     try { $host.UI.RawUI.WindowTitle = "Tenant Admin Roles Audit" } catch {}
 
     Clear-Host
-    Write-Host 'Audit Admin Roles'
-    Write-Host 'List tenant admin-role assignments for review.'
+    Write-Host "Audit Tenant Admin Accounts"
+    Write-Host 'Audit Tenant Admin Accounts'
+    Write-Host 'Review active Entra directory role assignments and user status where available.'
     Write-Host "Read-only"
     Write-Host ""
 
@@ -409,7 +431,7 @@ try {
         }
     }
 
-    Section "SUMMARY"
+    Section "RESULTS"
     Write-Host "Roles checked : $($roles.Count)"
     Write-Host "Assignments   : $($rows.Count)"
     Write-Host "Disabled admin: $(@($rows | Where-Object { $_.Finding -eq 'Disabled admin' }).Count)"

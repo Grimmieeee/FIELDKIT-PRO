@@ -13,6 +13,7 @@ Enabled afterwards. No automatic elevation, prerequisite install, or export.
 #>
 [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='Medium')]
 param([string]$Name,[switch]$NoPause)
+Write-Host "Disable Local Account"
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 $attempted = $false
