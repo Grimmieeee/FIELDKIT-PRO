@@ -22,13 +22,6 @@ jobs:
           node --check worker/router.mjs
           node qa/scripts/release-check.cjs
           node qa/scripts/download-integrity-check.cjs
-      - name: Parse released PowerShell without execution
+      - name: Parse PowerShell scripts and CLI wrappers without execution
         shell: pwsh
-        run: |
-          $parseErrors = foreach ($source in Get-ChildItem -LiteralPath dist -Recurse -File -Filter '*.ps1') {
-            $tokens = $null
-            $errors = $null
-            [void][System.Management.Automation.Language.Parser]::ParseFile($source.FullName, [ref]$tokens, [ref]$errors)
-            $errors | ForEach-Object { "$($source.FullName):$($_.Extent.StartLineNumber): $($_.Message)" }
-          }
-          if ($parseErrors) { throw ($parseErrors -join [Environment]::NewLine) }
+        run: ./qa/scripts/check-powershell-syntax.ps1

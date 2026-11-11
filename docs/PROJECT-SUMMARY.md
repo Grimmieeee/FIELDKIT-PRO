@@ -21,3 +21,9 @@ Read the [Build Standard](tools/field-kit-build-standard.md) before planning wor
 - Review commit `b695074590088eb78accafb0923ac109f25edb22` passed catalog, bundle, 181 CLI wrapper construction checks and 13 download-integrity cases.
 - All five Exchange-first candidates passed source call-order review and the strict hash gate when substituted into an isolated distribution. The review branch keeps the files under `review-candidates/`, so its downloadable catalog still serves the prior scripts. No site was redeployed.
 - Release acceptance still requires an integrated distribution with the updated hashes, Windows authentication and tenant/target checks on the changed revisions, and a targeted BEC reset check. The wider downloadable-script terminal-format rollout is also open. v162 remains the live rollback baseline.
+
+### Integrated candidate QA
+
+- The release candidate integrates the Exchange-first fixes into the downloadable sources and pins the BEC ZIP to those exact members. The strict connection-order gate and all 13 download-integrity cases pass.
+- A PowerShell 7 parser check found 29 CLI wrappers broken by smart apostrophes. The candidate normalizes apostrophes before escaping literals. The CI parser now checks the 97 downloadable scripts, four repository copies and all 181 generated wrappers.
+- Parser and static results do not establish Windows authentication, tenant alignment at runtime, or the changed BEC password-reset behavior. Those checks and the remaining downloadable-script terminal formatting are open. v162 remains the deployed baseline.
