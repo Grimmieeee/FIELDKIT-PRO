@@ -28,7 +28,10 @@ param(
     [ValidateRange(1,8760)]
     [int]$LookbackHours = 24
 )
-Write-Host "BEC: Restore Email"
+Write-Host 'BEC-INVOKE-EMAIL-RECOVERY.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Restore previously moved email to the selected mailbox.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -68,7 +71,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

@@ -6,7 +6,10 @@ param(
     [ValidateRange(1, 50)]
     [int]$Top = 10
 )
-Write-Host "Find What’s Using Disk Space"
+Write-Host 'GET-DISK-SPACE-USAGE.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show free space on local drives and rank the largest readable locations on one selected drive.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 $volumes = @([IO.DriveInfo]::GetDrives() | Where-Object {

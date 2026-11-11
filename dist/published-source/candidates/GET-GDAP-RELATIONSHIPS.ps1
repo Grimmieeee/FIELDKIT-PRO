@@ -18,7 +18,10 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$TenantId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru,[string]$TenantDomain)
-Write-Host "GDAP Relationships"
+Write-Host 'GET-GDAP-RELATIONSHIPS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review Granular Delegated Admin Privileges (GDAP) relationships and recorded end dates from the partner tenant.'
+Write-Host ''
 $ErrorActionPreference='Stop'
 
 # Display-only formatter: keeps all selected columns and wraps complete values.

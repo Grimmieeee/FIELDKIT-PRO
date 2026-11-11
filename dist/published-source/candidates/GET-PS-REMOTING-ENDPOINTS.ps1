@@ -14,7 +14,10 @@ commands. CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "PowerShell Remoting Endpoints"
+Write-Host 'GET-PS-REMOTING-ENDPOINTS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List registered local WSMan PowerShell session configurations.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 function Get-FkEndpointField {
     param($Configuration,[string]$Field)

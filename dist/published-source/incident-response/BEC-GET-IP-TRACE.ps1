@@ -23,7 +23,10 @@ param(
     [int]$Days = 7,
     [switch]$ExportCsv
 )
-Write-Host "BEC: Trace IP Activity"
+Write-Host 'BEC-GET-IP-TRACE.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Find tenant audit activity associated with a selected IP address.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -63,7 +66,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

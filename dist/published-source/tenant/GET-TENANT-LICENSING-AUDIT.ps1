@@ -16,7 +16,10 @@ Purpose:
 
 param(
     [string]$ExpectedTenantId)
-Write-Host "Audit Tenant License Totals"
+Write-Host 'GET-TENANT-LICENSING-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review license totals, usage, and available seats.'
+Write-Host ''
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
@@ -67,7 +70,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

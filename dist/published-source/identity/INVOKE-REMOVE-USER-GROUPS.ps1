@@ -19,7 +19,10 @@ param(
     [string]$InputPath,
     [string]$SyncServer
 )
-Write-Host "Remove User Groups"
+Write-Host 'INVOKE-REMOVE-USER-GROUPS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Remove selected users from eligible AD and Entra groups.'
+Write-Host ''
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ErrorActionPreference = 'Stop'
@@ -69,7 +72,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

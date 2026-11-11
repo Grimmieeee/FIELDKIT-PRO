@@ -25,7 +25,10 @@ param(
     [int]$DownloadBurstThreshold = 25,
     [switch]$ExportCsv
 )
-Write-Host "BEC: Review File Activity"
+Write-Host 'BEC-GET-DATA-EXFIL-ACTIVITY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review a user''s file activity for possible data exposure.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -65,7 +68,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

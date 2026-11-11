@@ -13,7 +13,10 @@ new file only. Requires local CIM read access.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "System Driver Services"
+Write-Host 'GET-SYSTEM-DRIVER-SERVICES.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List registered Windows system driver services and their reported state.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

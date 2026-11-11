@@ -18,7 +18,10 @@ param(
     [int]$StaleDays = 30,
     [string]$ExpectedTenantId
 )
-Write-Host "Audit Tenant Admin Accounts"
+Write-Host 'GET-ADMIN-ROLE-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review active Entra directory role assignments and user status where available.'
+Write-Host ''
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
@@ -52,7 +55,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

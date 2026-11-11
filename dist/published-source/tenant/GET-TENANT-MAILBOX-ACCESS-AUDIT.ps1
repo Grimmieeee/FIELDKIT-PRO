@@ -19,7 +19,10 @@ Read-only. No changes are made.
 #>
 
 param()
-Write-Host "Audit Tenant Mailbox Access"
+Write-Host 'GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review mailbox forwarding and delegated access across the tenant.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -53,7 +56,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Get-ShortError {

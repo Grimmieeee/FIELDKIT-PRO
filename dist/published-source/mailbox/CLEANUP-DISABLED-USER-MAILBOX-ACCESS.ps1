@@ -15,7 +15,10 @@ Changes may be made. Disabled-state validation and confirmation are required.
 #>
 
 param([string]$UPN)
-Write-Host "Remove Disabled User Mailbox Access"
+Write-Host 'CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Remove approved mailbox access held by one disabled user.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -59,7 +62,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

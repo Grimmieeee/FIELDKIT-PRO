@@ -18,7 +18,10 @@ Az.Resources with appropriate read permissions. CSV refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$TenantId,[string]$SubscriptionId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru,[string]$TenantDomain,[string]$SubscriptionName)
-Write-Host "Azure Owner Assignments"
+Write-Host 'GET-AZURE-OWNER-ASSIGNMENTS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List visible built-in Owner assignments within one Azure subscription.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

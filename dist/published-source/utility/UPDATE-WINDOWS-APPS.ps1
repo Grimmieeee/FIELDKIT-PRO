@@ -20,7 +20,10 @@ param(
     [switch]$ReviewOnly,
     [switch]$NoPause
 )
-Write-Host "WinGet"
+Write-Host 'UPDATE-WINDOWS-APPS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Review and update installed applications using WinGet.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 
@@ -31,7 +34,7 @@ function Write-Fail { param([string]$Message) Write-Host "[FAIL] $Message" -Fore
 function Show-Section { param([string]$Title) Write-Host ''; Write-Host ("{0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray }
 function Pause-End { if (-not $NoPause) { Write-Host ''
                                           Write-Host 'SESSION COMPLETE'
-                                          Write-Host ''; Read-Host 'Press Enter to close session.' | Out-Null } }
+                                          Write-Host ''; Read-Host 'Press ENTER to close.' | Out-Null } }
 
 function Confirm-Type {
     param([string]$Required)

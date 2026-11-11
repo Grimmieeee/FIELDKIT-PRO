@@ -13,7 +13,10 @@ Enabled afterwards. No automatic elevation, prerequisite install, or export.
 #>
 [CmdletBinding(SupportsShouldProcess=$true,ConfirmImpact='Medium')]
 param([string]$Name,[switch]$NoPause)
-Write-Host "Disable Local Account"
+Write-Host 'DISABLE-LOCAL-ACCOUNT.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Disable one explicitly confirmed non-administrator local account on this computer.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 $attempted = $false

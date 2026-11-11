@@ -21,7 +21,10 @@ param(
     [string]$InputPath,
     [string]$ExpectedTenantId
 )
-Write-Host "Remove User Licenses"
+Write-Host 'INVOKE-REMOVE-LICENSES.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Remove selected Microsoft 365 licenses from approved users.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -72,7 +75,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

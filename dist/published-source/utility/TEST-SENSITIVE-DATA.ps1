@@ -21,7 +21,10 @@ param(
     [string[]]$Terms,
     [switch]$NoPause
 )
-Write-Host "Check Sensitive Data"
+Write-Host 'TEST-SENSITIVE-DATA.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Scan selected files for potentially sensitive information before sharing.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 
@@ -32,7 +35,7 @@ function Write-Fail { param([string]$Message) Write-Host "[FAIL] $Message" -Fore
 function Show-Section { param([string]$Title) Write-Host ''; Write-Host ("{0} " -f $Title) -ForegroundColor White -BackgroundColor DarkGray }
 function Pause-End { if (-not $NoPause) { Write-Host ''
                                           Write-Host 'SESSION COMPLETE'
-                                          Write-Host ''; Read-Host 'Press Enter to close session.' | Out-Null } }
+                                          Write-Host ''; Read-Host 'Press ENTER to close.' | Out-Null } }
 
 function Get-RelativePath {
     param([string]$FullName,[string]$Root)

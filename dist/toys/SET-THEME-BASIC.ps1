@@ -17,6 +17,10 @@
 # ============================================================
 
 
+Write-Host 'SET-THEME-BASIC.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Preview plain PowerShell output.'
+Write-Host ''
 Write-Host 'Preview Plain Output'
 Write-Host 'Show a plain PowerShell output style without color.'
 function Write-Dots  { Write-Host "........................................" }
@@ -53,4 +57,4 @@ Write-Dots
 Write-Host ""
 Write-Host "MISSION ACCOMPLISHED. Goodbye."
 Write-Host ""
-Read-Host 'Press Enter to close session.'
+Read-Host 'Press ENTER to close.'

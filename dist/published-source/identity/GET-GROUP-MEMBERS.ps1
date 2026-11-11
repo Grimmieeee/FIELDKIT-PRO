@@ -32,7 +32,10 @@ param(
     [Alias('Group')]
     [string[]]$InputObject
 )
-Write-Host "Get Group Members"
+Write-Host 'GET-GROUP-MEMBERS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List direct members of selected groups.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 
@@ -89,7 +92,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

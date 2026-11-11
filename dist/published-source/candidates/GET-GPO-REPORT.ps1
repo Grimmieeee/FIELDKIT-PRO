@@ -13,7 +13,10 @@ on a user/computer. Requires GroupPolicy and GPO-read access.
 #>
 [CmdletBinding()]
 param([string]$Name,[string]$Domain,[string]$Server,[string]$OutPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "GPO Report"
+Write-Host 'GET-GPO-REPORT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Save an HTML settings report for one Group Policy Object.'
+Write-Host ''
 $ErrorActionPreference='Stop'
 try {
     Write-Host 'READ ONLY'

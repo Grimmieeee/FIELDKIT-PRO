@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 [CmdletBinding()]
 param([string]$Mailbox)
-Write-Host "Remove Mailbox Delegate"
+Write-Host 'REMOVE-MAILBOX-DELEGATE.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Remove one direct Full Access, Send As, or Send on Behalf grant after approval.'
+Write-Host ''
 
 $moduleNames = @('ExchangeOnlineManagement')
 foreach ($moduleName in $moduleNames) {

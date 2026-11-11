@@ -4,7 +4,10 @@ param(
     [ValidateNotNullOrEmpty()]
     [string]$ResourceGroupName
 )
-Write-Host "Check Azure VPN Connections"
+Write-Host 'GET-AZURE-VPN-CONNECTIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show Azure-reported VPN gateway connection status for one resource group.'
+Write-Host ''
 
 $moduleNames = @('Az.Accounts', 'Az.Network')
 foreach ($moduleName in $moduleNames) {

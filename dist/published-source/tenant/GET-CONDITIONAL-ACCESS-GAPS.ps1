@@ -16,6 +16,10 @@ Purpose:
 
 param(
     [string]$ExpectedTenantId)
+Write-Host 'GET-CONDITIONAL-ACCESS-GAPS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review Conditional Access policies for coverage gaps.'
+Write-Host ''
 Write-Host "Conditional Access gaps"
 
 $ErrorActionPreference = "Stop"
@@ -58,7 +62,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

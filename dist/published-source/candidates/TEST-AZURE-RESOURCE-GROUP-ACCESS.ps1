@@ -1,6 +1,9 @@
 #Requires -Version 5.1
 param([Parameter(Mandatory)][ValidatePattern('^[\w.()-]{1,90}$')][string]$ResourceGroupName)
-Write-Host "Test Azure Resource Group Access"
+Write-Host 'TEST-AZURE-RESOURCE-GROUP-ACCESS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Verify read access and list visible resources in one Azure resource group.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 $context = Get-AzContext
 if (-not $context.Subscription) { throw 'Connect to Azure and select the intended subscription.' }

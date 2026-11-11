@@ -15,7 +15,10 @@ arguments. This is an inventory, not a restorable task-definition backup.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
-Write-Host "Scheduled Task Inventory"
+Write-Host 'GET-SCHEDULED-TASK-INVENTORY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Inventory visible scheduled tasks and their last-run information on this computer.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 
 function Convert-FkTaskDetails {

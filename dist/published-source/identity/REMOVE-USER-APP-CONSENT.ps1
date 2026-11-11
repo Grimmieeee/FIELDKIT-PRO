@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 [CmdletBinding()]
 param([string]$UserPrincipalName)
-Write-Host "Remove User App Consent"
+Write-Host 'REMOVE-USER-APP-CONSENT.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Remove one selected user-specific delegated app grant after approval.'
+Write-Host ''
 
 $moduleNames = @('Microsoft.Graph.Authentication')
 foreach ($moduleName in $moduleNames) {

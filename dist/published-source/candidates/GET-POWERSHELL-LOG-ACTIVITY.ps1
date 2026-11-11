@@ -19,7 +19,10 @@ param(
     [ValidateRange(1,100000)][int]$MaxEvents=1000,
     [string]$ExportPath,[switch]$NoPause,[switch]$PassThru
 )
-Write-Host "PowerShell Log Activity"
+Write-Host 'GET-POWERSHELL-LOG-ACTIVITY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review local PowerShell script-block event metadata within a selected time window.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

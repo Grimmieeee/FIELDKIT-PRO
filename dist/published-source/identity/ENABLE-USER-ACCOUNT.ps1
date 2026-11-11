@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 [CmdletBinding()]
 param([string]$UserPrincipalName)
-Write-Host "Re-Enable User Account"
+Write-Host 'ENABLE-USER-ACCOUNT.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Re-enable one member account in AD or Entra after approval.'
+Write-Host ''
 
 $moduleNames = @('Microsoft.Graph.Authentication')
 foreach ($moduleName in $moduleNames) {

@@ -20,7 +20,10 @@ param(
     [string]$InputFile,
     [switch]$ExportCsv
 )
-Write-Host "BEC: Check IP Reputation"
+Write-Host 'BEC-GET-THREAT-INTEL-ACTIVITY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Check selected public IP addresses against external reputation services.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -60,7 +63,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

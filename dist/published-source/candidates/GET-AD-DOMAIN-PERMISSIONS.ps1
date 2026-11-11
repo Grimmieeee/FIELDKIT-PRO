@@ -16,7 +16,10 @@ Requires ActiveDirectory and permission to read this security descriptor.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
-Write-Host "AD Domain Permissions"
+Write-Host 'GET-AD-DOMAIN-PERMISSIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show the owner and access rules on one AD domain root.'
+Write-Host ''
 $ErrorActionPreference='Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

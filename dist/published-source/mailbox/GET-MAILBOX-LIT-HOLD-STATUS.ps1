@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 [CmdletBinding()]
 param([string]$Mailbox)
-Write-Host "Get Mailbox Lit Hold Status"
+Write-Host 'GET-MAILBOX-LIT-HOLD-STATUS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show litigation hold status and other mailbox retention settings.'
+Write-Host ''
 
 $moduleNames = @('ExchangeOnlineManagement')
 foreach ($moduleName in $moduleNames) {

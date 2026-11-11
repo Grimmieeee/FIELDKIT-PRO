@@ -14,7 +14,10 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "Audit AD Account Exceptions"
+Write-Host 'GET-AD-PASSWORD-EXCEPTIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Check password exception flags or run a separate Kerberos preauthentication check in the selected AD scope.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

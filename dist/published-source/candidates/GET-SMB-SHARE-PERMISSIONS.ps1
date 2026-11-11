@@ -13,7 +13,10 @@ new file only. Requires Windows SmbShare and permission to read share settings.
 #>
 [CmdletBinding()]
 param([string]$Name,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "SMB Share Permissions"
+Write-Host 'GET-SMB-SHARE-PERMISSIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review visible local SMB shares and their share-level access rules.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

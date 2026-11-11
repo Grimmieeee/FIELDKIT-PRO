@@ -5,7 +5,10 @@ param(
     [ValidateSet('POP','IMAP','SMTP AUTH')]
     [string[]]$Protocol
 )
-Write-Host "Disable Mailbox Protocols"
+Write-Host 'DISABLE-MAILBOX-PROTOCOLS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Disable selected mailbox-level POP, IMAP, or SMTP AUTH settings after approval.'
+Write-Host ''
 
 $moduleNames = @('ExchangeOnlineManagement')
 foreach ($moduleName in $moduleNames) {

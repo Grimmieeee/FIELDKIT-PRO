@@ -12,7 +12,10 @@ param(
     [string]$UsageLocation,
     [string]$ExpectedTenantId
 )
-Write-Host "Assign User Licenses"
+Write-Host 'INVOKE-ASSIGN-LICENSES.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Assign a selected Microsoft 365 license to approved users.'
+Write-Host ''
 $ErrorActionPreference='Stop'
 
 function Get-LicenseProductName {
@@ -62,7 +65,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

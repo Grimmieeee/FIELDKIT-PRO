@@ -20,7 +20,10 @@ param(
     [string]$MailNickname = "DG_AnyLicense",
     [string]$ExpectedTenantId
 )
-Write-Host "Create Dynamic Group"
+Write-Host 'INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Create a dynamic security group for enabled users with at least one enabled license service plan.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -55,7 +58,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

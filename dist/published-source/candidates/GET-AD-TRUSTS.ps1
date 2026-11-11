@@ -15,7 +15,10 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "AD Trusts"
+Write-Host 'GET-AD-TRUSTS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show trust relationships recorded in one AD domain.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

@@ -15,6 +15,10 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
+Write-Host 'GET-AD-PREAUTH-EXCEPTIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List AD accounts with Kerberos preauthentication disabled.'
+Write-Host ''
 Write-Host "Audit AD Account Exceptions"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.

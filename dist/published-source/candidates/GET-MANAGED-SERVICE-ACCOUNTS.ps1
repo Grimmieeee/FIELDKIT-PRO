@@ -16,7 +16,10 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "Managed Service Accounts"
+Write-Host 'GET-MANAGED-SERVICE-ACCOUNTS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List managed service accounts and their visible password-retrieval principals.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 
 # Display-only formatter: keeps all selected columns and wraps complete values.

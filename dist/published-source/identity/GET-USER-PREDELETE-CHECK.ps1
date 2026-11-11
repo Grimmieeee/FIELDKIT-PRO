@@ -34,7 +34,10 @@ Requires as applicable:
 - Microsoft.Graph.Authentication module
 #>
 
-Write-Host "Check User Before Deletion"
+Write-Host 'GET-USER-PREDELETE-CHECK.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review a user''s mailbox, memberships, and access before deletion.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 
 $script:Findings = New-Object System.Collections.Generic.List[string]
@@ -267,7 +270,7 @@ function Pause-End {
     Write-FKReportLine ""
 
     try {
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
         return
     }
     catch {}

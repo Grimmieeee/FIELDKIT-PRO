@@ -13,7 +13,10 @@ param(
     [switch]$RulesOnly,
     [switch]$SuspiciousOnly
 )
-Write-Host "Get Mailbox Rules"
+Write-Host 'GET-MAILBOX-RULES.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Check forwarding, delegated access, and inbox rules, including hidden rules, for one mailbox, a list, or the full tenant.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -158,7 +161,7 @@ function Pause-End {
     }
     catch {
         Write-FKReportLine ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

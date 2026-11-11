@@ -40,7 +40,10 @@ param(
 
     [switch]$NoForceChangeNextSignIn
 )
-Write-Host "Reset Cloud User Password"
+Write-Host 'INVOKE-RESET-CLOUD-USER-PASSWORD.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Reset passwords for selected cloud-only users after approval.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 
@@ -59,7 +62,7 @@ function Pause-End {
     Write-Host 'SESSION COMPLETE'
 
     Write-FieldKitFooter
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Ensure-GraphAuthentication {

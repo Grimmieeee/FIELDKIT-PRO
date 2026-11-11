@@ -1,7 +1,10 @@
 #Requires -Version 5.1
 [CmdletBinding()]
 param([string]$Mailbox)
-Write-Host "Get Mailbox Usage Statistics"
+Write-Host 'GET-MAILBOX-USAGE-STATISTICS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show mailbox size, item count, last mailbox logon, and archive status.'
+Write-Host ''
 
 $moduleNames = @('ExchangeOnlineManagement')
 foreach ($moduleName in $moduleNames) {

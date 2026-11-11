@@ -19,7 +19,10 @@ Read-only. No changes are made.
 param(
     [int]$StaleDays = 90
 )
-Write-Host "Tenant Security Review"
+Write-Host 'GET-TENANT-SECURITY-SNAPSHOT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Start with a tenant overview or choose MFA, Conditional Access, device code, or Secure Score.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -124,7 +127,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-FKReportLine ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Get-ShortError {

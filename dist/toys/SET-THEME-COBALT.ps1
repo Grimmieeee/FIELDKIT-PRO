@@ -11,7 +11,10 @@
 # Run this file to preview all colors and tags in terminal.
 
 
-Write-Host "Theme: Cobalt"
+Write-Host 'SET-THEME-COBALT.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Apply the Cobalt palette in the current terminal session.'
+Write-Host ''
 Write-Host 'Preview Cobalt Theme'
 Write-Host 'Preview a blue PowerShell theme and output helpers.'
 
@@ -106,4 +109,4 @@ Write-Host ""
 Write-Host "${cT3}. . . . . . . . . . . . . . . . . . . . .${cR}"
 Write-Host "${cT1}MISSION ACCOMPLISHED. Goodbye.${cR}"
 Write-Host ""
-Read-Host 'Press Enter to close session.'
+Read-Host 'Press ENTER to close.'

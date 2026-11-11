@@ -21,7 +21,10 @@ A decoded token is not proof that the token is authentic or usable.
 param(
     [string]$Token
 )
-Write-Host "BEC: Decode Token"
+Write-Host 'BEC-GET-TOKEN-DECODE.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Read a token''s contents locally without sending it online.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -61,7 +64,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

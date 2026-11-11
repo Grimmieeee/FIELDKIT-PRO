@@ -1,13 +1,13 @@
 {
   "dist/published-source/identity/GET-GROUP-MEMBERS.ps1": {
-    "sha256": "0763e5036636d732ababb5511529a41e9768db4cb2524f527c1a99b642682dde",
+    "sha256": "f9db34cd7320f655685187c15d2cbd1c6f91baecd750675d880ad564e650eedc",
     "status": "exchange-first",
-    "evidence": "Exchange lookup first, Graph only for unresolved groups."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "dist/published-source/identity/GET-USER-PREDELETE-CHECK.ps1": {
-    "sha256": "dc288b00ceae2e2b43c8c6ee0b31fa687f101e2a7a8c9ce912d81b9eda999508",
+    "sha256": "69265505c310bb6e03a78327a82d8347f14c7055bc10dc45fd74fe0b04643ddc",
     "status": "exchange-first",
-    "evidence": "Exchange mailbox section precedes Graph/Entra section."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "dist/published-source/incident-response/BEC-CONTAIN-ERADICATE.ps1": {
     "sha256": "01c686180ffc7c3abce41cd35e04b294b442509d57fe58dd34974bf825b748de",
@@ -25,24 +25,24 @@
     "evidence": "Source call-path review of integrated candidate. Windows runtime unexecuted."
   },
   "dist/published-source/mailbox/CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1": {
-    "sha256": "f1e51d83e6e2b663d42009ee35e9b1a510271bb62f0664303ba46dd049e694f4",
+    "sha256": "9dfcbf069a169caafb3357fab81f5a62e36ac90329884d9261be39be9ca8d98b",
     "status": "exchange-first",
-    "evidence": "Source call-path review of integrated candidate. Windows runtime unexecuted."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "dist/published-source/tenant/GET-QUARTERLY-CLEANUP-REVIEW.ps1": {
-    "sha256": "204dfd0761c3188f8a59ab2d8f917138961b619232714f86990d6f7a4d61d432",
+    "sha256": "4767a3fbacdc63e878ab22349bf28566a5516558794b6fde3ed780ea66c4543f",
     "status": "exchange-first",
-    "evidence": "Source call-path review of integrated candidate. Windows runtime unexecuted."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "dist/published-source/tenant/GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1": {
-    "sha256": "8bbea0977b56aef28c6076d67264da2650d1e69eef00fdc3d9ea9a3026f9b5fd",
+    "sha256": "4e0de9049fa921a6bdecfa95592c6b655be577c15493a441f830d2d1374e79fa",
     "status": "exchange-first",
-    "evidence": "Ensure-EXO precedes Ensure-Graph."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "dist/published-source/tenant/GET-TENANT-GROUP-OWNERS.ps1": {
-    "sha256": "f9f2f50df97c7eed2957b66122a436e2673cc8993abede6d1eed85dbcc1ae720",
+    "sha256": "cb1c61dea1e23908b513312e2f7566d856bf551fb3dd55ba24382c45ab72480b",
     "status": "exchange-first",
-    "evidence": "Source call-path review of integrated candidate. Windows runtime unexecuted."
+    "evidence": "Exchange-first call path preserved in terminal presentation diff."
   },
   "scripts/BEC-CONTAIN-ERADICATE.ps1": {
     "sha256": "01c686180ffc7c3abce41cd35e04b294b442509d57fe58dd34974bf825b748de",

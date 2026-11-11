@@ -8,7 +8,10 @@ Internal IDs are used only for matching and API calls; output and CSV use names.
 #>
 [CmdletBinding()]
 param([int]$ExpiringDays=30, [string]$ExpectedTenantId, [switch]$IncludeMicrosoftApps, [switch]$NoPause)
-Write-Host "App Registration Details"
+Write-Host 'GET-APP-REGISTRATION-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review app owners, credential expiry, and requested permissions.'
+Write-Host ''
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {

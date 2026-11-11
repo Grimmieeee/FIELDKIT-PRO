@@ -13,7 +13,10 @@ CSV export contains rule rows; -PassThru also returns owner, DACL state and SDDL
 #>
 [CmdletBinding()]
 param([string]$Path,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "Folder Permissions"
+Write-Host 'GET-FOLDER-PERMISSIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show the owner and access rules on one Windows folder.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

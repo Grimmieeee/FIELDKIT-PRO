@@ -22,7 +22,10 @@ param(
     [string]$SearchText,
     [switch]$ExportTxt
 )
-Write-Host "BEC: Build Incident Timeline"
+Write-Host 'BEC-GET-TIMELINE-BUILDER.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Combine supplied incident evidence into a timeline.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -62,7 +65,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

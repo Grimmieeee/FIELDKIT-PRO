@@ -12,7 +12,10 @@
 # Removes any previously installed kit theme before writing.
 
 
-Write-Host "Theme: Sea Glass"
+Write-Host 'SET-THEME-SEAGLASS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Install a sea-green PowerShell theme in your startup profile.'
+Write-Host ''
 Write-Host 'Install Sea Glass Theme'
 Write-Host 'Install a sea-green PowerShell theme in your startup profile.'
 
@@ -200,4 +203,4 @@ Write-Host "${cT3}  Restart your terminal to confirm persistence.${cR}"
 Write-Host "${cT3}  To revert: remove the SEA GLASS THEME block from your profile.${cR}"
 Write-Host "${cT3}. . . . . . . . . . . . . . . . . . . . .${cR}"
 Write-Host ""
-Read-Host 'Press Enter to close session.'
+Read-Host 'Press ENTER to close.'

@@ -15,7 +15,10 @@ Purpose:
 #>
 
 param()
-Write-Host "Audit Mail Flow Rules"
+Write-Host 'GET-TRANSPORT-RULES-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review mail flow rules for settings that need attention.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -57,7 +60,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

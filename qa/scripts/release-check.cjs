@@ -43,6 +43,12 @@ async function verify() {
     assert.equal(c.FIELD_KIT_SOURCE_INTEGRITY[file], hash, file);
     const source = await q.resolveSource({ publishedPath: file });
     assert.deepEqual(Buffer.from(source), fs.readFileSync(path.join(dist, file)), file);
+    const exempt = ['Client-Connectivity-Check.ps1', 'attractor.ps1', 'rain.ps1', 'static.ps1'];
+    const name = path.basename(file);
+    if (file.endsWith('.ps1') && !exempt.includes(name)) {
+      assert.ok(source.includes("Write-Host '" + name + " // "), name + ': terminal title');
+      assert.ok(source.includes("Write-Host 'Objective: "), name + ': terminal objective');
+    }
   }
   for (const file of fs.readdirSync(path.join(dist, 'published-source'), { recursive: true })) {
     if (file.endsWith('.ps1')) assert.ok(sources['published-source/' + file], file);

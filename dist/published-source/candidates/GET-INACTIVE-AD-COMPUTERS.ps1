@@ -20,7 +20,10 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
-Write-Host "Inactive AD Computers"
+Write-Host 'GET-INACTIVE-AD-COMPUTERS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Find AD computer accounts with old or missing replicated logon timestamps for review.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 # Display-only formatter: keeps all selected columns and wraps complete values.

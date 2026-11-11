@@ -27,7 +27,10 @@ param(
     [ValidateRange(1,3650)]
     [int]$Days = 90
 )
-Write-Host "Account and Sign-in Review"
+Write-Host 'GET-STALE-SIGNIN-REVIEW.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Choose stale sign-ins, guest account cleanup, or recent sign-in anomalies.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -82,7 +85,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

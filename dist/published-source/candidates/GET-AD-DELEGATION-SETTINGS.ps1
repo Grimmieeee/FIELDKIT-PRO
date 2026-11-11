@@ -16,7 +16,10 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "AD Delegation Settings"
+Write-Host 'GET-AD-DELEGATION-SETTINGS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review classic Kerberos delegation flags and configured service targets.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 
 # Display-only formatter: keeps all selected columns and wraps complete values.

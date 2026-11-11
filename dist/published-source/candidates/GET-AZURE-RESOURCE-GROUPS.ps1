@@ -16,7 +16,10 @@ Az.Resources with appropriate read permissions. CSV refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$TenantId,[string]$SubscriptionId,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru,[string]$TenantDomain,[string]$SubscriptionName)
-Write-Host "Azure Resource Groups"
+Write-Host 'GET-AZURE-RESOURCE-GROUPS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List visible resource groups in one Azure subscription.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

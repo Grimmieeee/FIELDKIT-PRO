@@ -15,6 +15,10 @@ and in Sources. Export creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$Details,[switch]$NoPause,[switch]$PassThru)
+Write-Host 'GET-WMI-SUBSCRIPTIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show persistent Windows event triggers, what actions they run, and how they are linked. Use this to review automation or investigate persistence.'
+Write-Host ''
 Write-Host "WMI Subscriptions"
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.

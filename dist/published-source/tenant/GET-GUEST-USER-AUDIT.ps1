@@ -18,6 +18,10 @@ param(
     [int]$StaleDays = 90,
     [string]$ExpectedTenantId
 )
+Write-Host 'GET-GUEST-USER-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review guest accounts and activity in Entra.'
+Write-Host ''
 Write-Host "Guest users"
 $ErrorActionPreference = "Stop"
 
@@ -52,7 +56,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

@@ -17,7 +17,10 @@ CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "LAPS Expiration Review"
+Write-Host 'GET-LAPS-EXPIRATION-REVIEW.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review visible Windows and legacy LAPS expiration metadata on AD computers.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 function Get-FkExpiration {
     param($Value,[bool]$SchemaAvailable,[datetime]$NowUtc)

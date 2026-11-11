@@ -29,7 +29,10 @@ param(
     [string]$InputPath,
     [string]$TenantDomain
 )
-Write-Host "Set Per-user MFA"
+Write-Host 'INVOKE-ENFORCE-PER-USER-MFA.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Require per-user MFA for selected accounts after approval.'
+Write-Host ''
 
 $ErrorActionPreference='Stop'
 
@@ -58,7 +61,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Get-InputUPNs {

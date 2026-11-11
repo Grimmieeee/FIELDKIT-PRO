@@ -28,7 +28,10 @@ param(
     [Alias('UPN')]
     [string[]]$InputObject
 )
-Write-Host "Get User Groups"
+Write-Host 'GET-USER-GROUPS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List the selected users'' direct groups in AD and Entra.'
+Write-Host ''
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $ErrorActionPreference = 'Stop'

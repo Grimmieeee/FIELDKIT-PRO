@@ -24,7 +24,10 @@ param(
     [switch]$Details,
     [string]$Message
 )
-Write-Host "GitHub: Manage Repository"
+Write-Host 'git-repo.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Review, pull, or push changes in the selected Git repository.'
+Write-Host ''
 Write-Host 'Manage Git Repository'
 Write-Host 'Review, pull, or push changes in the selected Git repository.'
 

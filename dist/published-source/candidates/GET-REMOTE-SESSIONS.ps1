@@ -18,7 +18,10 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
-Write-Host "User Sessions"
+Write-Host 'GET-REMOTE-SESSIONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show logged-on Windows user sessions on one computer.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 try {

@@ -15,7 +15,10 @@ identity. CSV export is optional and refuses existing files.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "AD AdminCount Flags"
+Write-Host 'GET-AD-ADMINCOUNT-REVIEW.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List AD objects flagged with adminCount=1. The flag can be stale.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

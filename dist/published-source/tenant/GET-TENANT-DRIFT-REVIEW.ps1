@@ -24,7 +24,10 @@ param(
     [string]$BaselinePath,
     [switch]$CaptureBaseline
 )
-Write-Host "Tenant Change Review"
+Write-Host 'GET-TENANT-DRIFT-REVIEW.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Compare tenant settings with a saved baseline. Saving a local baseline requires approval.'
+Write-Host ''
 
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -54,7 +57,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Get-FriendlyGraphError {

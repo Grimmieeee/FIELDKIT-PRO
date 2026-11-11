@@ -20,7 +20,10 @@ param(
     [switch]$NoPause,
     [switch]$PassThru
 )
-Write-Host "Failed Logons"
+Write-Host 'GET-FAILED-LOGONS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review recorded failed Windows logons on this computer within a selected time window.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 
 function Convert-FkLogonEvent {

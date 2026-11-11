@@ -31,7 +31,10 @@ param(
 
     [string]$TenantDomain
 )
-Write-Host "Review Account Cleanup"
+Write-Host 'GET-QUARTERLY-CLEANUP-REVIEW.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review stale accounts, admin roles, ownerless groups, external forwarding, and license seat usage by SKU.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -163,7 +166,7 @@ function Pause-End {
     }
     catch {
         Write-FKReportLine ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

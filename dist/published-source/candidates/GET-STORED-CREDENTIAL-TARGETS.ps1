@@ -11,7 +11,10 @@ different identity and store. No credentials are added, deleted, or exported.
 #>
 [CmdletBinding()]
 param([switch]$NoPause,[switch]$PassThru)
-Write-Host "Stored Credential Targets"
+Write-Host 'GET-STORED-CREDENTIAL-TARGETS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List stored Windows credential targets for the current execution identity.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 $outcome = 'FAILED'
 try {

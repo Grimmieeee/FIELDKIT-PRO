@@ -30,7 +30,10 @@ Compatible with Windows PowerShell 5.1 and PowerShell 7.
 #>
 
 
-Write-Host "Get Group Owners"
+Write-Host 'GET-TENANT-GROUP-OWNERS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List group owners and identify groups without an assigned owner.'
+Write-Host ''
 
 Write-Host 'List group owners and identify groups without an assigned owner.'
 $ErrorActionPreference = "Stop"
@@ -163,7 +166,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-FKReportLine ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Get-ShortError {
@@ -690,7 +693,7 @@ finally {
     try {
         Write-Host ''
         Write-Host 'SESSION COMPLETE'
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
     catch {
         Write-FKReportLine "Closing in 15 seconds..."

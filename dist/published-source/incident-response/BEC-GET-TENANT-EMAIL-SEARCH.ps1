@@ -27,7 +27,10 @@ param(
     [int]$ResultSize = 5000,
     [switch]$ExportCsv
 )
-Write-Host "BEC: Trace Email Delivery"
+Write-Host 'BEC-GET-TENANT-EMAIL-SEARCH.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Find email delivery records by sender, recipient, or IP address.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -67,7 +70,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

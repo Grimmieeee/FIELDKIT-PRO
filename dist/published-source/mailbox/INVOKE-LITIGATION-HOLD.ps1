@@ -27,7 +27,10 @@ param(
     [string]$TicketNumber,
     [string]$HoldOwner
 )
-Write-Host "Set Litigation Hold"
+Write-Host 'INVOKE-LITIGATION-HOLD.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Enable an unlimited litigation hold on approved mailboxes.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -88,7 +91,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

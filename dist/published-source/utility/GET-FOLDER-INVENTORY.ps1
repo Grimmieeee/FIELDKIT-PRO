@@ -25,7 +25,10 @@ param(
     [switch]$NoFileMap,
     [switch]$NoPause
 )
-Write-Host "Review Folder Contents"
+Write-Host 'GET-FOLDER-INVENTORY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review a folder''s files, script signatures, and Git status.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 
@@ -52,7 +55,7 @@ function Pause-End {
         Write-Host ''
         Write-Host 'SESSION COMPLETE'
         Write-Host ''
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

@@ -25,6 +25,10 @@ param(
     [string[]]$ExpectedCountry = @('US'),
     [string]$ExpectedTenantId
 )
+Write-Host 'GET-SIGNIN-ANOMALIES.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review Entra sign-ins for unusual activity.'
+Write-Host ''
 Write-Host "Sign-in anomalies"
 
 $ErrorActionPreference = "Stop"
@@ -67,7 +71,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

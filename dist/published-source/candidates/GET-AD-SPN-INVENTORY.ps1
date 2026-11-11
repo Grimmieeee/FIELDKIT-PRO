@@ -16,7 +16,10 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$Server,[string]$SearchBase,[string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "AD SPN Inventory"
+Write-Host 'GET-AD-SPN-INVENTORY.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List service principal names and their AD objects in one directory scope.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

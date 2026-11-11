@@ -9,7 +9,10 @@ This tool never changes holds or deletes an Entra user. Test-tenant candidate.
 #>
 [CmdletBinding()]
 param([string]$MailboxAddress,[switch]$Purge)
-Write-Host "Purge Soft-Deleted Mailbox"
+Write-Host 'PURGE-SOFT-DELETED-MAILBOX.ps1 // DESTRUCTIVE'
+Write-Host ''
+Write-Host 'Objective: Preview one soft-deleted mailbox. Permanent deletion requires -Purge and typed approval.'
+Write-Host ''
 
 $ErrorActionPreference = 'Stop'
 $attempted = $false

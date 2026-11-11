@@ -30,7 +30,10 @@ param(
     [string]$InputPath,
     [switch]$RevokeSessions
 )
-Write-Host "Disable User Accounts"
+Write-Host 'INVOKE-DISABLE-ACCOUNTS.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Disable selected user accounts in AD or Entra after approval.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -85,7 +88,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

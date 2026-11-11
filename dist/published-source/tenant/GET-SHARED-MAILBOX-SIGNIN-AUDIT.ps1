@@ -19,7 +19,10 @@ param(
     [int]$LookbackHours = 72,
     [string]$ExpectedTenantId
 )
-Write-Host "Audit Shared Mailbox Sign-ins"
+Write-Host 'GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Find sign-in activity associated with shared mailboxes.'
+Write-Host ''
 $ErrorActionPreference = "Stop"
 
 if ($PSVersionTable.PSVersion.Major -lt 7) {
@@ -53,7 +56,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

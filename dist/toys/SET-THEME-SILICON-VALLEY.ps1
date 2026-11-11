@@ -17,7 +17,10 @@
 # =============================================================================
 
 
-Write-Host "Theme: Silicon Valley"
+Write-Host 'SET-THEME-SILICON-VALLEY.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Install a green PowerShell theme in your startup profile.'
+Write-Host ''
 Write-Host 'Install Silicon Valley Theme'
 Write-Host 'Install a green PowerShell theme in your startup profile.'
 $Host.UI.RawUI.BackgroundColor = 'Black'
@@ -203,4 +206,4 @@ Write-Host "  Suck it, Jin Yang. Loads on every new session." -ForegroundColor C
 Write-Host "  To revert: remove the SILICON VALLEY THEME block from $profilePath" -ForegroundColor DarkCyan
 Write-Host '. . . . . . . . . . . . . . . . . . . . .'  -ForegroundColor Cyan
 Write-Host ''
-Read-Host 'Press Enter to close session.'
+Read-Host 'Press ENTER to close.'

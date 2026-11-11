@@ -13,7 +13,10 @@ CSV export is optional and creates a new file only.
 #>
 [CmdletBinding()]
 param([string]$ExportPath,[switch]$NoPause,[switch]$PassThru)
-Write-Host "Windows Profiles"
+Write-Host 'GET-WINDOWS-PROFILES.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: List Windows user profiles registered on this computer.'
+Write-Host ''
 $ErrorActionPreference = 'Stop'
 # Display-only formatter: keeps all selected columns and wraps complete values.
 function Format-FkTable {

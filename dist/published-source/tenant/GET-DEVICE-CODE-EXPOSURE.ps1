@@ -18,6 +18,10 @@ param(
     [int]$LookbackHours = 72,
     [string]$ExpectedTenantId
 )
+Write-Host 'GET-DEVICE-CODE-EXPOSURE.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review Conditional Access coverage for device code authentication.'
+Write-Host ''
 Write-Host "Device Code Exposure"
 
 $ErrorActionPreference = "Stop"
@@ -60,7 +64,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Now {

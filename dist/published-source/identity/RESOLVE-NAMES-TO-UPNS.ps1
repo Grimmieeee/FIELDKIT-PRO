@@ -25,7 +25,10 @@ param(
     [string]$TenantDomain,
     [switch]$Partial
 )
-Write-Host "Find User UPNs"
+Write-Host 'RESOLVE-NAMES-TO-UPNS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Find user sign-in names from names, email addresses, or a list. Use -Partial to review name or UPN prefixes.'
+Write-Host ''
 
 
 $ErrorActionPreference = "Stop"
@@ -56,7 +59,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-Host ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Write-Section($Title) {

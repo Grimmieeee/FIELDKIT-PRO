@@ -25,7 +25,10 @@ param(
     [int]$LookbackHours = 48,
     [string]$ExpectedCountry = "US"
 )
-Write-Host "BEC: Review Token Replay"
+Write-Host 'BEC-GET-TOKEN-REPLAY-CHECK.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Review sign-ins for indicators of token replay or session theft.'
+Write-Host ''
 
 $ErrorActionPreference = "Stop"
 
@@ -136,7 +139,7 @@ function Pause-End {
     Write-Host ''
     Write-Host 'SESSION COMPLETE'
     Write-FKReportLine ""
-    Read-Host 'Press Enter to close session.' | Out-Null
+    Read-Host 'Press ENTER to close.' | Out-Null
 }
 
 function Confirm-Yes {

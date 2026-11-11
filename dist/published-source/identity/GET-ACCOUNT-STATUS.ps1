@@ -29,7 +29,10 @@ param(
     [string]$InputPath,
     [string]$TenantDomain
 )
-Write-Host "Get User Account Status"
+Write-Host 'GET-ACCOUNT-STATUS.ps1 // READ ONLY'
+Write-Host ''
+Write-Host 'Objective: Show whether selected accounts are enabled and when they last signed in.'
+Write-Host ''
 
 $ErrorActionPreference='Stop'
 
@@ -69,7 +72,7 @@ function Pause-End {
     }
     catch {
         Write-Host ""
-        Read-Host 'Press Enter to close session.' | Out-Null
+        Read-Host 'Press ENTER to close.' | Out-Null
     }
 }
 

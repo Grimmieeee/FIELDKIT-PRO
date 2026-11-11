@@ -39,7 +39,10 @@ param(
     [string] $BaselinePath,
     [string[]] $CommandArgs = @()
 )
-Write-Host "GitHub: Security Check"
+Write-Host 'GitHub-Security-Check.ps1 // MAKES CHANGES'
+Write-Host ''
+Write-Host 'Objective: Review a GitHub security-log export. Save a local checkpoint only when requested.'
+Write-Host ''
 Write-Host 'GitHub Security Check'
 Write-Host 'Review a GitHub security-log export for unfamiliar access and activity. Save a local checkpoint only when requested.'
 
