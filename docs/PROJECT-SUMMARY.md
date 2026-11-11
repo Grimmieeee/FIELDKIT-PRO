@@ -1,3 +1,9 @@
+## Current production release
+
+- v163 deployed November 11, 2026 from Sites commit `9c89b0424bbbe5fa787bdc7db51854c97021eff1`. GitHub distribution source is `fea77363b436facdb8c26b7ee7f4c92ae148148d`. v162 is the rollback baseline.
+- Ryan cleared the Windows Exchange/Graph sign-in and BEC password-reset checks for release. The release verification here consisted of strict source-order, bundle, parser and download integrity checks. The prior v162 QA record below is historical.
+- The release includes Exchange-first updates, the BEC package, and interactive CLI wrappers. Terminal-format updates for the other downloadable scripts remain open.
+
 # FIELDKIT-PRO project summary
 
 Read the [Build Standard](tools/field-kit-build-standard.md) before planning work.
