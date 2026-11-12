@@ -1,6 +1,8 @@
 ## Current production release
 
-- v166 is the locked production baseline. It removes repeated preview copy and puts script input beside run instructions. Sites source is `f1516772ea07277055b9616e42613896b89bea8c`. v165 is the immediate rollback. Only catalog HTML changed.
+- v167 is the locked baseline. The desktop dividers match and resizing the results or detail pane automatically scales its content. Sites source is `962c29a3ae5fa7933b0b686da776d0ddb582a779`. v166 is the immediate rollback.
+
+- v166 was the copy-pruning release. It removes repeated preview copy and puts script input beside run instructions. Sites source is `f1516772ea07277055b9616e42613896b89bea8c`. v165 is the immediate rollback. Only catalog HTML changed.
 
 - v165 adds independent preview zoom and arrow-key preview tracking. Sites source is `fd964d1c14dc812551fee5bc0bc6e399da002202`. Only the catalog HTML changed.
 

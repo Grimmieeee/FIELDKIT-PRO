@@ -2927,9 +2927,6 @@ body.orbit-ui .related-link-name{min-width:0}
 #fk-launch .desk-impact-2{color:var(--yellow,#dbc48b)}
 #fk-launch .desk-impact-3{color:var(--red,#f2a5af)}
 #fk-launch .launch-row .desk-name{font-size:1em;overflow-wrap:anywhere}
-#fk-launch .desk-detail-controls{display:flex;align-items:center;justify-content:flex-end;gap:.5rem;margin-bottom:.65rem;font-size:.8rem}
-#fk-launch .desk-detail-controls select{font:inherit;color:inherit;background:var(--desk-surface,Canvas);border:1px solid var(--desk-rule);border-radius:4px;padding:.2rem .35rem}
-#fk-launch .desk-detail-content{zoom:var(--desk-preview-zoom,1)}
 #fk-launch .desk-detail{min-width:0;border-left:1px solid var(--desk-rule);padding-left:clamp(16px,1.5vw,29px);overflow-wrap:anywhere}
 #fk-launch .desk-detail h3{font-size:clamp(25px,2.3vw,44px);line-height:1.12;letter-spacing:-.04em;margin:5px 0 9px}
 #fk-launch .desk-detail p{margin:6px 0;color:var(--launch-muted)}
@@ -3014,7 +3011,10 @@ body.orbit-ui .related-link-name{min-width:0}
  #fk-launch .desk-divider-detail{left:calc(100% - var(--desk-detail-size) - var(--desk-work-gap) / 2)}
  #fk-launch .desk-divider::after{content:"";position:absolute;inset:0 calc(50% - 1px);background:transparent}
  #fk-launch .desk-divider:is(:hover,:focus-visible,[data-dragging])::after{background:var(--launch-muted)}
- #fk-launch .desk-divider-nav:not(:hover,:focus-visible,[data-dragging])::after{background:var(--desk-rule)}
+ #fk-launch .desk-divider:not(:hover,:focus-visible,[data-dragging])::after{background:var(--desk-rule)}
+ #fk-launch .desk-detail{border-left:0}
+ #fk-launch .launch-row{zoom:var(--desk-results-zoom,1)}
+ #fk-launch .desk-detail-content{zoom:var(--desk-detail-zoom,1)}
  #fk-launch[data-resizing]{user-select:none;cursor:col-resize}
 }
 @media(max-width:900px){
@@ -3128,7 +3128,7 @@ body.orbit-ui .drawer :is(#sourceMount,#copyStatus,#workflowStatus,#sourceStatus
           <div class="launch-status" role="status"></div><div class="launch-results"></div>
         </section>
         <div class="desk-divider desk-divider-detail" role="separator" aria-orientation="vertical" aria-label="Tool details width" aria-controls="desk-tool-details" tabindex="0" title="Drag to resize · double-click to reset"></div>
-        <aside id="desk-tool-details" class="desk-detail" aria-label="Tool details"><button type="button" class="list-back" hidden>← Back to results</button><div class="desk-detail-controls"><label for="desk-preview-zoom">Preview zoom</label><select id="desk-preview-zoom"><option value="0.85">85%</option><option value="1" selected>100%</option><option value="1.15">115%</option><option value="1.3">130%</option></select></div><div class="desk-detail-content"></div></aside>
+        <aside id="desk-tool-details" class="desk-detail" aria-label="Tool details"><button type="button" class="list-back" hidden>← Back to results</button><div class="desk-detail-content"></div></aside>
       </div>
     </div>
   </div>
@@ -31049,6 +31049,9 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
         handle.setAttribute('aria-valuemax',paneLimit(setting));
         handle.setAttribute('aria-valuenow',Math.round(paneWidth(setting.pane)));
       }
+      const scale = (width, reference) => Math.max(.85,Math.min(1.18,1+(width/reference-1)*.42));
+      landing.style.setProperty('--desk-results-zoom',scale(paneWidth(resultsPane),560).toFixed(3));
+      landing.style.setProperty('--desk-detail-zoom',scale(paneWidth(detailsPane),350).toFixed(3));
     }
     function savePaneWidths(){
       try { localStorage.setItem(paneStorage,JSON.stringify(paneWidths)); } catch {}
@@ -31097,18 +31100,6 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     window.addEventListener('resize',refreshPaneWidths);
     requestAnimationFrame(refreshPaneWidths);
     const detail=landing.querySelector('.desk-detail-content');
-    const detailZoom=landing.querySelector('#desk-preview-zoom');
-    const detailZoomKey='fieldkit.preview-zoom';
-    function setDetailZoom(value){
-      if(![...detailZoom.options].some(option=>option.value===value))value='1';
-      detailZoom.value=value;
-      detail.style.setProperty('--desk-preview-zoom',value);
-    }
-    try { setDetailZoom(localStorage.getItem(detailZoomKey)); } catch { setDetailZoom('1'); }
-    detailZoom.addEventListener('change',()=>{
-      setDetailZoom(detailZoom.value);
-      try { localStorage.setItem(detailZoomKey,detailZoom.value); } catch {}
-    });
     const backToResults=landing.querySelector('.list-back');
     let phoneReturn=null;
     function leavePhoneDetail(){
