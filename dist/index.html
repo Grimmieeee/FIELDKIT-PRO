@@ -3088,6 +3088,17 @@ body.orbit-ui .drawer .connection-flag{width:auto}
 body.orbit-ui .drawer .connection-flag[open]{flex-basis:100%}
 body.orbit-ui .drawer .connection-flag>summary{box-sizing:border-box;width:max-content;min-height:23px;padding:2px 6px;font:500 12px/1.3 system-ui,sans-serif}
 body.orbit-ui .drawer .connection-flag>summary::after{content:none}
+body.orbit-ui .drawer :is(.scope-flag,.card-impact,.card-type),
+body.orbit-ui .drawer .card-section-flags .scope-flag,
+body.orbit-ui .drawer .connection-flag>summary{
+  box-sizing:border-box;display:inline-flex;align-items:center;min-height:25px;
+  padding:2px 7px;border:1px solid var(--line);border-radius:5px;
+  font:400 13px/1.3 var(--ui);letter-spacing:0;text-transform:none;
+}
+body.orbit-ui .drawer .connection-flag>summary{color:var(--text);background:var(--bg)}
+body.orbit-ui .drawer .connection-flag>summary:is(:hover,:focus-visible){border-color:var(--muted)}
+#fk-launch .desk-row-flags :is(.card-impact,.card-type,.scope-flag){font:400 13px/1.3 var(--ui)}
+
 body.orbit-ui .drawer .card-related .scope-flag{flex:0 1 auto;max-width:50%;overflow-wrap:anywhere;text-align:right}
 body.orbit-ui .drawer .related-link-arrow{margin-left:0;flex:none}
 body.orbit-ui .drawer :is(.inline-code-box,.source-block)>.source-heading{display:flex;align-items:center;justify-content:space-between;min-height:36px;height:auto;padding:0 12px;border-bottom:1px solid var(--line);box-sizing:border-box}
@@ -29628,7 +29639,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       const scopes=profile?.scopes || [];
       const command=explicitGraph[item.file] || graph.find(value=>/-Scopes\b/i.test(value)) ||
         (scopes.length ? 'Connect-MgGraph -Scopes '+scopes.map(scope=>'"'+scope+'"').join(',') : graph[0] || 'Connect-MgGraph');
-      flags.push(flag('Graph','Microsoft Graph PowerShell (MgGraph)',command));
+      flags.push(flag('MgGraph','Microsoft Graph PowerShell (MgGraph)',command));
     }
     if(exo || (modules.includes('ExchangeOnlineManagement') && !commands.some(command=>/^Connect-IPPSSession\b/i.test(command)))){
       flags.unshift(flag('EXO','Exchange Online',exo || 'Connect-ExchangeOnline'));
@@ -30148,6 +30159,8 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   }
 
   const terminalOutputExamples = Object.freeze({
+  "GET-ACCOUNT-STATUS.ps1": "alex@example.com                           Enabled     2 days\n\nRESULTS\nUPNs checked        : 1\nEnabled             : 1\nDisabled            : 0\nNot found           : 0\nQuery failures      : 0\nSign-in unavailable : 0",
+
   "GET-AD-TRUSTS.ps1": "AD TRUSTS // READ ONLY\n\nController: dc01.example.com\nDomain: example.com\nNo trusts returned for this domain.\nDirection is relative to the source domain. Trust health was not tested.",
   "GET-MAILBOX-FORWARDING.ps1": "MAILBOX\nUPN : shared@example.com\nMailbox-level forwarding   : None\n\nINBOX RULE FORWARDING\nNone found\n\nTICKET SUMMARY\nMailboxes requested : 1\nMailboxes checked   : 1\nMailbox failures    : 0\nResult rows         : 1",
   "GET-MAILBOX-PERMISSIONS.ps1": "MAILBOX: shared@example.com\n\nFORWARDING\n  none\n\nFULL ACCESS\n  - delegate@example.com\n\nSEND AS\n  none\n\nSEND ON BEHALF\n  none\n\nINBOX RULES\n[WARN] Hidden-rule visibility is not available in this session.\n  none",
@@ -30359,14 +30372,15 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     else if(/\bTXT\b/i.test(input))labels.push('TXT');
     return labels.length?'<span class="card-section-flags" aria-label="Input formats">'+labels.map(sectionFlag).join('')+'</span>':'';
   }
+  const fallbackOutputSections = Object.freeze({"GET-FAILED-LOGONS.ps1":["FAILED LOGONS // READ ONLY"],"GET-SCHEDULED-TASK-INVENTORY.ps1":["SCHEDULED TASKS // READ ONLY"],"GET-FOLDER-PERMISSIONS.ps1":["FOLDER PERMISSIONS // READ ONLY"],"GET-WINDOWS-PROFILES.ps1":["WINDOWS PROFILES // READ ONLY"],"GET-SMB-SHARE-PERMISSIONS.ps1":["SMB SHARE PERMISSIONS // READ ONLY"],"DISABLE-LOCAL-ACCOUNT.ps1":["DISABLE LOCAL ACCOUNT // MAKES CHANGES"],"GET-INACTIVE-AD-COMPUTERS.ps1":["INACTIVE AD COMPUTERS // READ ONLY"],"GET-LAPS-EXPIRATION-REVIEW.ps1":["LAPS EXPIRATION REVIEW // READ ONLY"],"GET-AD-PASSWORD-EXCEPTIONS.ps1":["AD PASSWORD EXCEPTIONS // READ ONLY"],"GET-POWERSHELL-LOG-ACTIVITY.ps1":["POWERSHELL LOG ACTIVITY // READ ONLY"],"GET-MANAGED-SERVICE-ACCOUNTS.ps1":["MANAGED SERVICE ACCOUNTS // READ ONLY"],"GET-PS-REMOTING-ENDPOINTS.ps1":["POWERSHELL REMOTING ENDPOINTS // READ ONLY"],"GET-SYSTEM-DRIVER-SERVICES.ps1":["SYSTEM DRIVER SERVICES // READ ONLY"],"GET-WMI-SUBSCRIPTIONS.ps1":["WMI SUBSCRIPTIONS // READ ONLY"],"GET-AZURE-RESOURCE-GROUPS.ps1":["AZURE RESOURCE GROUPS // READ ONLY"],"GET-AZURE-OWNER-ASSIGNMENTS.ps1":["AZURE OWNER ASSIGNMENTS // READ ONLY"],"GET-AD-SPN-INVENTORY.ps1":["AD SPN INVENTORY // READ ONLY"],"GET-AD-DELEGATION-SETTINGS.ps1":["AD DELEGATION SETTINGS // READ ONLY"],"GET-INACTIVE-AD-USERS.ps1":["INACTIVE AD USERS // READ ONLY"],"GET-AD-DOMAIN-PERMISSIONS.ps1":["AD DOMAIN PERMISSIONS // READ ONLY"],"GET-ADMINSDHOLDER-PERMISSIONS.ps1":["ADMINSDHOLDER PERMISSIONS // READ ONLY"],"GET-MAILBOX-RULES.ps1":["Exchange Online: Connecting...","Status : Not available","Get Mailbox Rules","Check forwarding, delegated access, and inbox rules, including hidden rules.","TARGET","FORWARDING","None found","FULL ACCESS","SEND AS"],"PURGE-SOFT-DELETED-MAILBOX.ps1":["PURGE SOFT-DELETED MAILBOX","TARGET","PURGE RESULTS"],"GET-AZURE-VPN-CONNECTIONS.ps1":["TARGET","VPN CONNECTIONS"],"GET-MAILBOX-USAGE-STATISTICS.ps1":["GET MAILBOX USAGE STATISTICS","TARGET","USAGE"],"ENABLE-USER-ACCOUNT.ps1":["RE-ENABLE USER ACCOUNT","TARGET"],"GET-MAILBOX-LIT-HOLD-STATUS.ps1":["GET MAILBOX LIT HOLD STATUS","TARGET","LITIGATION HOLD","OTHER MAILBOX RETENTION SETTINGS"],"REMOVE-USER-APP-CONSENT.ps1":["REMOVE USER APP CONSENT","TARGET","USER-SPECIFIC GRANTS"],"REMOVE-MAILBOX-DELEGATE.ps1":["REMOVE MAILBOX DELEGATE","TARGET","DIRECT DELEGATE GRANTS"],"DISABLE-MAILBOX-PROTOCOLS.ps1":["DISABLE MAILBOX PROTOCOLS","TARGET","CURRENT SETTINGS","PLANNED CHANGE"],"GET-DISK-SPACE-USAGE.ps1":["FIND WHAT IS USING DISK SPACE","VOLUMES"],"Client-Connectivity-Check.ps1":["CLIENT CONNECTIVITY CHECK // READ ONLY"],"GET-STALE-SIGNIN-REVIEW.ps1":["F I E L D  //  K I T","RESULTS","STANDARD NOTE"],"INVOKE-DISABLE-ACCOUNTS.ps1":["F I E L D  //  K I T","CHANGES MAY BE MADE.","PREVIEW","DISABLE","VALIDATION","RESULTS","TICKET NOTE"],"INVOKE-DELETE-ACCOUNTS.ps1":["F I E L D  //  K I T","TARGET","VALIDATION","PLAN","DELETION","ENTRA SYNC","RESULTS","EXPORT"],"INVOKE-ASSIGN-LICENSES.ps1":["TENANT LICENSES","PLAN","RESULTS"],"INVOKE-REMOVE-LICENSES.ps1":["PREVIEW","License options:","PLAN","REMOVE","RESULTS"],"GET-ACCOUNT-STATUS.ps1":["RESULTS"],"GET-GROUP-MEMBERS.ps1":["F I E L D  //  K I T","GROUP","TICKET SUMMARY"],"GET-USER-GROUPS.ps1":["F I E L D  //  K I T"],"INVOKE-REMOVE-USER-GROUPS.ps1":["F I E L D  //  K I T","TARGETS","ACTIVE DIRECTORY GROUPS","ENTRA ID GROUPS","BATCH PLAN","REMOVING GROUPS","ENTRA SYNC","RESULTS","TICKET NOTE"],"GET-TENANT-GROUP-OWNERS.ps1":["F I E L D  //  K I T","Closing in 15 seconds..."],"GET-APP-REGISTRATION-AUDIT.ps1":["F I E L D  //  K I T","APP REVIEW"],"INVOKE-ENFORCE-PER-USER-MFA.ps1":["PREVIEW","RESULTS"],"GET-TENANT-LICENSING-AUDIT.ps1":["CONNECT","AUDIT","SKU SUMMARY","FINDINGS"],"GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1":["RESULTS"],"GET-TENANT-DRIFT-REVIEW.ps1":["TENANT","RESULTS"],"INVOKE-RESET-CLOUD-USER-PASSWORD.ps1":["F I E L D  //  K I T","MAKES CHANGES. CLOUD-ONLY USERS ONLY.","PREVIEW","RESET REQUEST ACCEPTED","RESULTS"]});
   function outputPreviewMarkup(item){
     if(isDocument(item))return '';
     const example = workflowPreview(item)?.text || terminalOutputExamples[item.file];
-    const sections = terminalOutputSections[item.file];
+    const sections = terminalOutputSections[item.file] || fallbackOutputSections[item.file];
     const preview=example || (sections?.length?sections.join('\n\n'):'');
     const flags=(item.publishedPath?.endsWith('.ps1') || preview ? sectionFlag('TERMINAL'):'')+
       (csvCapability(item)?sectionFlag('CSV'):'');
-    const label='Preview Output'+(flags?'<span class="card-section-flags" aria-label="Output formats">'+flags+'</span>':'');
+    const label=(preview?'Preview Output':'Output')+(flags?'<span class="card-section-flags" aria-label="Output formats">'+flags+'</span>':'');
     if(!preview)return flags?'<div class="card-output-label">'+label+'</div>':'';
     return '<details class="card-run terminal-output-preview"><summary>'+label+'</summary><pre class="command">'+esc(preview)+'</pre></details>';
   }
