@@ -2556,7 +2556,7 @@ body.orbit-ui .drawer .operator-actions>.action{width:100%;min-width:0;justify-c
 </style>
 <style>
 /* Approved refined layout. Backend data and handlers remain intact. */
-body.orbit-ui .drawer{width:min(680px,calc(100vw - 48px));max-width:none;right:24px;top:24px;bottom:auto;max-height:calc(100svh - 48px);border-radius:11px;display:flex;flex-direction:column}
+body.orbit-ui .drawer{width:var(--fk-desktop-card-width,min(500px,43vw));max-width:none;right:24px;top:24px;bottom:auto;max-height:calc(100svh - 48px);border-radius:11px;display:flex;flex-direction:column}
 body.orbit-ui .drawer-body{padding:22px 28px 26px;overflow-y:auto;min-height:0}
 body.orbit-ui .drawer-head{padding:12px 22px;min-height:58px;gap:12px;flex-wrap:nowrap}
 body.orbit-ui .drawer-label{display:block;order:0;flex:1;margin:0}
@@ -2949,6 +2949,15 @@ body.orbit-ui .related-link-name{min-width:0}
 #fk-launch .desk-view-menu{position:relative;flex-shrink:0}
 #fk-launch .desk-view-menu summary{padding:5px 8px;color:var(--launch-ink);cursor:pointer;list-style:none}
 #fk-launch .desk-view-menu summary::-webkit-details-marker{display:none}
+#fk-launch :is(.desk-visits,.desk-view-menu summary,.desk-options,.desk-row-flags .card-impact,.desk-row-flags .card-type,.desk-row-flags .scope-flag){font:500 12px/1.3 system-ui,sans-serif}
+#fk-launch .desk-view-menu summary{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--desk-rule);border-radius:4px}
+#fk-launch .desk-view-menu summary:is(:hover,:focus-visible),#fk-launch .desk-view-menu[open] summary{background:var(--launch-wash)}
+#fk-launch .launch-row .desk-name{white-space:normal}
+@media(min-width:901px){
+ body.orbit-ui.drawer-open #fk-launch .desk-work{width:calc(100% - min(500px,43vw) / var(--desk-scale,1));grid-template-columns:minmax(0,1fr)}
+ body.orbit-ui.drawer-open #fk-launch :is(.desk-detail,.desk-divider-detail){display:none}
+}
+
 #fk-launch .desk-options{position:absolute;right:0;top:100%;z-index:3;min-width:190px;display:grid;gap:8px;padding:10px;background:var(--launch-header);border:1px solid var(--desk-rule);font-size:.85em}
 #fk-launch .desk-options label{display:flex;align-items:center;justify-content:space-between;gap:8px}
 #fk-launch .desk-options select{font:inherit;color:var(--launch-ink);background:var(--launch-header);border:1px solid var(--desk-rule);padding:4px}
@@ -29934,15 +29943,15 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     }
     const checks=reviewDownloads(item);
     if(checks.length){
-      const buttons=checks.map(({id,label})=>`<button id="${id}" class="action" type="button">Download ${esc(label)}</button>`).join('');
+      const buttons=checks.map(({id,label})=>`<button id="${id}" class="action" type="button">Download .ps1 · ${esc(label)}</button>`).join('');
       const code='<button id="showSource" class="action" type="button" aria-expanded="false">View Code</button>';
       return (codeFirst?code+buttons:buttons+code)+'<span id="sourceStatus" role="status"></span>';
     }
     const ext = /\.md$/i.test(item.file || "") ? ".MD" : ".ps1";
     const preauthPath = 'published-source/candidates/'+AD_PREAUTH_FILE;
     const alternate = item.file===AD_PASSWORD_FILE && Object.hasOwn(window.FIELD_KIT_RELEASE_SOURCES || {},preauthPath)
-      ? '<button id="downloadPreauthSource" class="action" type="button">Download Kerberos preauthentication check</button>' : '';
-    const label = item.file===AD_PASSWORD_FILE ? 'Download password exceptions check' : 'Download '+ext;
+      ? '<button id="downloadPreauthSource" class="action" type="button">Download .ps1 · Kerberos preauthentication check</button>' : '';
+    const label = item.file===AD_PASSWORD_FILE ? 'Download .ps1 · Password exceptions check' : 'Download '+ext;
     const download = `<button id="downloadSource" class="action ${item.workflow ? '' : 'primary'}" type="button">${label}</button>${alternate}`;
     const code = '<button id="showSource" class="action" type="button" aria-expanded="false">View Code</button>';
     const buttons = codeFirst?code+download:download+code;
