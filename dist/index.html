@@ -29522,7 +29522,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       launch='Run this launch command:'+connectorCodeMarkup(command);
     }
     if(launch)steps.push(launch);
-    if(input&&!inline)steps.push(esc(input)+(formats.length && !formats.some(format=>input.includes(format))?' · '+formats.join(' or '):''));
+    if(input && item.file!=='UPDATE-WINDOWS-APPS.ps1' && item.file!=='git-repo.ps1')steps.push(esc(input)+(formats.length && !formats.some(format=>input.includes(format))?' · '+formats.join(' or '):''));
     if(!steps.length)return '';
     const list='<ul class="run-steps">'+steps.map(step=>'<li>'+step+'</li>').join('')+'</ul>';
     return inline?list:'<details class="guided-start operator-steps"><summary>Run instructions</summary>'+list+'</details>';
@@ -30353,7 +30353,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     const rank=actionRank(item),impact=rank===3?'Destruct':rank===2?'Modify':rank===1?'Read only':'';
     const descriptions={'GET-MAILBOX-PERMISSIONS.ps1':'Check mailbox access, forwarding and inbox rules.','GET-APP-CONSENT-AUDIT.ps1':'See which apps have permission to access your organization’s data.','GET-USER-SECURITY-SNAPSHOT.ps1':'Review one user’s account, sign-in methods, access and recent sign-ins.'};
     const scope=minimalScopeLabel(item),purpose=descriptions[item.file] || item.operatorCard?.objective || item.useFor || item.objective || '';
-    const input = requiresOperatorInput(item) ? operatorInputInstruction(item) : item.type==='Quick Command' ? inputInfo(item) : '';
+    const input = item.type==='Quick Command' ? inputInfo(item) : '';
     const checklist = item.file==='UPDATE-WINDOWS-APPS.ps1'
       ? ['Shows available updates and installs selected packages or all eligible updates.', 'Enter one or more numbers, or ALL.', 'Type “UPDATE” to continue.']
       : [...new Set([purpose, /^(Show Entra Group Owners|Show Entra Group Direct Members)$/.test(item.name)
@@ -30364,9 +30364,9 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     const ir=Boolean(window.FIELD_KIT_START?.stages[item.file]);
     const special=/^terminal(?:-admin)?$/.test(item.startMode || '') || ir;
     const nextSteps={
-      'GET-ACCOUNT-STATUS.ps1':'Check the account status first. If it is enabled and sign-in still fails, review recent sign-in events. For a lost MFA device, follow the client’s identity verification procedure before changing methods.',
-      'GET-MAILBOX-RULES.ps1':'Check one mailbox first. Review the exact rule, forwarding address, or delegate against the ticket before making a change. Use the tenant audit when the request covers multiple mailboxes.',
-      'GET-MAILBOX-USAGE-STATISTICS.ps1':'Use last mailbox logon for mailbox troubleshooting. For a person’s sign-in, use Get User Account Status or review Entra sign-in events.',
+      'GET-ACCOUNT-STATUS.ps1':'If the account is enabled and sign-in still fails, review recent sign-in events. For a lost MFA device, follow the client’s identity verification procedure before changing methods.',
+      'GET-MAILBOX-RULES.ps1':'Review the exact rule, forwarding address, or delegate against the ticket before making a change. Use the tenant audit when the request covers multiple mailboxes.',
+      'GET-MAILBOX-USAGE-STATISTICS.ps1':'For a person’s sign-in, use Get User Account Status or review Entra sign-in events.',
       'GET-AZURE-VPN-CONNECTIONS.ps1':'If Azure reports Disconnected, check client-side reachability and hand off to the network owner when tunnel investigation is needed.',
       'GET-DISK-SPACE-USAGE.ps1':'Review the largest locations first. Read errors and skipped paths mean the listed sizes cover only what the current account could measure.',
       'BEC-INVOKE-EMAIL-RECOVERY.ps1':'Use this when the incident response moved messages to another folder. Follow the client’s deleted-item recovery process for messages that were deleted.',
@@ -31566,7 +31566,9 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       comparing=false;
       if(!selected){detail.append(el('p','Select a tool to see what it does and what it needs.'));return}
       const item=selected,key=favoriteKey(item);
-      describe(detail,item);
+      detail.append(el('h3',item.displayName));
+      const input=requiresOperatorInput(item) ? operatorInputInstruction(item) : inputInfo(item);
+      if(input && !norm(summary(item)).includes(norm(input)))detail.append(el('p',input));
       const actions=el('div','','desk-actions');
       actions.append(action(favoriteKeys.has(key)?'Remove from Favorites':'Add to Favorites',()=>{
         toggleFavorite(key);detail.querySelector('.desk-save')?.focus();

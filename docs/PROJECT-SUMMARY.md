@@ -1,5 +1,7 @@
 ## Current production release
 
+- v166 is the locked production baseline. It removes repeated preview copy and puts script input beside run instructions. Sites source is `f1516772ea07277055b9616e42613896b89bea8c`. v165 is the immediate rollback. Only catalog HTML changed.
+
 - v165 adds independent preview zoom and arrow-key preview tracking. Sites source is `fd964d1c14dc812551fee5bc0bc6e399da002202`. Only the catalog HTML changed.
 
 - v164 was the terminal-format release and is the immediate rollback for v165. Sites source is `81dc47e2aebc2e4ee50880cb23e521ff390f5bb3` and GitHub distribution source is `44f52d98d0dc8c79417c000b4ef6b88d2f4c0258`. v163 was its rollback baseline.
