@@ -1,6 +1,8 @@
 ## Current production release
 
-- v164 is the deployed terminal-format release. Sites source is `81dc47e2aebc2e4ee50880cb23e521ff390f5bb3` and GitHub distribution source is `44f52d98d0dc8c79417c000b4ef6b88d2f4c0258`. v163 is the immediate rollback baseline.
+- v165 adds independent preview zoom and arrow-key preview tracking. Sites source is `fd964d1c14dc812551fee5bc0bc6e399da002202`. Only the catalog HTML changed.
+
+- v164 was the terminal-format release and is the immediate rollback for v165. Sites source is `81dc47e2aebc2e4ee50880cb23e521ff390f5bb3` and GitHub distribution source is `44f52d98d0dc8c79417c000b4ef6b88d2f4c0258`. v163 was its rollback baseline.
 - Standardized the terminal header and existing close prompts for 90 additional downloadable scripts. The three BEC scripts already use the format. Client Connectivity Check retains its verified presentation. The three full-screen animations retain their display and exit behavior. The PowerShell diff is limited to host output and prompt text.
 - Source QA passed for all 97 downloads, nine dual-service workflows, 181 CLI wrappers, the BEC ZIP, and 13 download-integrity cases. PowerShell 7.4.19 parsed 101 checked-in scripts and all wrappers. No new tenant or workstation execution was performed for these presentation changes.
 
