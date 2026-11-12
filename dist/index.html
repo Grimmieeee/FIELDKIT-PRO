@@ -2969,7 +2969,15 @@ body.orbit-ui .related-link-name{min-width:0}
 #fk-launch .desk-compare h3{font-size:clamp(16px,1.25vw,24px)}
 #fk-launch .desk-compare p{font-size:.78em}
 #fk-launch footer{display:flex;justify-content:flex-start;align-items:end;min-height:0;padding:0 var(--desk-gutter) 25px;color:var(--launch-muted);font-size:clamp(11px,.9vw,17px);letter-spacing:.18em}
-#fk-launch .desk-credit{color:var(--launch-muted);font:inherit;letter-spacing:inherit}
+#fk-launch .desk-credit{color:var(--launch-ink);font:500 10px/1.3 system-ui,sans-serif;letter-spacing:.15em;white-space:nowrap}
+@media(min-width:901px){
+ #fk-launch footer{display:grid;grid-template-columns:var(--desk-nav-width,clamp(130px,13.4vw,257px)) minmax(0,1fr)}
+ #fk-launch .desk-credit{justify-self:end}
+}
+@media(min-width:901px) and (min-height:700px){
+ #fk-launch .desk-nav{position:relative}
+ #fk-launch .desk-nav::before{content:">_";position:absolute;bottom:calc(100% + 12px);left:0;display:grid;place-items:center;width:36px;height:26px;border:1px solid var(--desk-rule);border-radius:4px;color:var(--launch-muted);font:600 15px/1 ui-monospace,monospace;opacity:.65;pointer-events:none}
+}
 #fk-launch .desk-credit:is(:hover,:focus-visible){color:var(--launch-ink)}
 #fk-launch .desk-visits:not([hidden]){display:inline-flex;align-items:center;gap:5px;align-self:center;margin-inline-end:8px;color:var(--launch-muted);font:400 11px/1.4 ui-monospace,monospace;white-space:nowrap}
 #fk-launch .desk-visits b{border-inline:1px solid var(--desk-rule);padding:2px 5px;color:var(--launch-ink);font-weight:500;font-variant-numeric:tabular-nums}
@@ -3073,6 +3081,9 @@ body.orbit-ui .fk-about{max-width:1000px;display:grid;grid-template-columns:180p
 </style>
 <style>
 body.orbit-ui .drawer .card-connections{display:flex;align-items:flex-start;flex-wrap:wrap;gap:6px;margin:8px 0 0}
+body.orbit-ui .drawer .card-section-flags{display:inline-flex;gap:4px;align-items:center;margin-inline:8px;flex-wrap:wrap}
+body.orbit-ui .drawer .card-section-flags .scope-flag{box-sizing:border-box;min-height:23px;padding:2px 6px;border-radius:4px;font:500 12px/1.3 system-ui,sans-serif}
+body.orbit-ui .drawer .card-output-label{display:flex;align-items:center;gap:4px;padding:10px 0;border-top:1px solid var(--line);font-size:12px}
 body.orbit-ui .drawer .connection-flag{width:auto}
 body.orbit-ui .drawer .connection-flag[open]{flex-basis:100%}
 body.orbit-ui .drawer .connection-flag>summary{box-sizing:border-box;width:max-content;min-height:23px;padding:2px 6px;font:500 12px/1.3 system-ui,sans-serif}
@@ -3141,7 +3152,7 @@ body.orbit-ui .drawer :is(#sourceMount,#copyStatus,#workflowStatus,#sourceStatus
       </div>
     </div>
   </div>
-  <footer><a class="desk-credit" href="#about">B U R N S I D&nbsp;//</a></footer>
+  <footer><a class="desk-credit" href="#about">BURNSID //</a></footer>
 </section>
 
     <header class="topbar">
@@ -29509,32 +29520,29 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
   function startMarkup(item, inline=false){
     if(!item.publishedPath?.endsWith('.ps1') || item.status==='Source pending')return '';
     const workflow=Boolean(window.FIELD_KIT_START?.stages[item.file]);
-    const terminal=workflow || item.file==='INSTALL-M365-MODULES.ps1' || /^terminal(?:-admin)?$/.test(item.startMode || '') || item.startMode==='right-click';
-    const input=requiresOperatorInput(item) ? operatorInputInstruction(item) : '';
-    const rawInput=String(item.operatorCard?.input || item.input || '');
-    const formats=['CSV','TXT'].filter(format=>new RegExp('\\b'+format+'\\b','i').test(rawInput));
-    const steps=[];
-    if(item.file==='GET-AZURE-VPN-CONNECTIONS.ps1')steps.push('If this terminal is not already connected:'+connectorCodeMarkup('Connect-AzAccount'));
-    if(item.file==='RESOLVE-NAMES-TO-UPNS.ps1'){
-      const file=downloadFilename(item);
-      steps.push('Exact lookup:'+connectorCodeMarkup('& ".\\'+file+'" -InputObject "user@example.com"'));
-      steps.push('Name or UPN prefix search:'+connectorCodeMarkup('& ".\\'+file+'" -InputObject "alex" -Partial'));
-    }
     const bundleAvailable=workflowZipAvailable(item);
-    if(workflow&&!bundleAvailable)steps.push('Save all three BEC scripts in one folder with their original filenames, then follow the prompts.');
-    if(bundleAvailable)steps.push('Extract the workflow package into one folder.'+(inline?'':' <button id="downloadIRWorkflow" class="action" type="button">Download .zip</button><span id="workflowStatus" class="source-note" role="status"></span>'));
-    let launch='';
-    if(terminal){
-      let args=item.launchArgs || '';
-      if(item.file==='git-repo.ps1')args=' -Path (Read-Host "Full path to the target Git repository") -Action (Read-Host "Action: Check, Pull, or Push")';
-      const command=window.FIELD_KIT_START.launch(downloadFilename(item))+args;
-      launch='Run this launch command:'+connectorCodeMarkup(command);
+    const input=requiresOperatorInput(item) ? operatorInputInstruction(item) : '';
+    const steps=[];
+    if(workflow){
+      steps.push(bundleAvailable?'Extract the BEC ZIP and follow its checklist.':'Keep the three BEC scripts together and follow the prompts.');
+      if(input)steps.push(esc(input));
+    }else if(item.file!=='UPDATE-WINDOWS-APPS.ps1' && item.file!=='git-repo.ps1' && input && (!inputFlagsMarkup(item) || /^BEC-/.test(item.file) || !/^(?:Mailbox )?UPN(?:\s*[/,]\s*(?:CSV|TXT))*$/i.test(String(item.operatorCard?.input||item.input||'').trim()))){
+      steps.push(esc(input));
     }
-    if(launch)steps.push(launch);
-    if(input && item.file!=='UPDATE-WINDOWS-APPS.ps1' && item.file!=='git-repo.ps1')steps.push(esc(input)+(formats.length && !formats.some(format=>input.includes(format))?' · '+formats.join(' or '):''));
-    if(!steps.length)return '';
-    const list='<ul class="run-steps">'+steps.map(step=>'<li>'+step+'</li>').join('')+'</ul>';
-    return inline?list:'<details class="guided-start operator-steps"><summary>Run instructions</summary>'+list+'</details>';
+
+    let code='';
+    if(item.file==='git-repo.ps1' || item.launchArgs || item.startMode==='terminal-admin'){
+      const args=item.file==='git-repo.ps1'?' -Path (Read-Host "Full path to the target Git repository") -Action (Read-Host "Action: Check, Pull, or Push")':item.launchArgs||'';
+      if(item.startMode==='terminal-admin')steps.unshift('Open PowerShell as administrator.');
+      code=connectorCodeMarkup(window.FIELD_KIT_START.launch(downloadFilename(item))+args);
+    }else if(item.file==='GET-AZURE-VPN-CONNECTIONS.ps1'){
+      steps.unshift('Connect to Azure if this terminal has no Azure session.');
+      code=connectorCodeMarkup('Connect-AzAccount');
+    }
+    const list=steps.length && steps.length<=2?'<ul class="run-steps">'+steps.map(step=>'<li>'+step+'</li>').join('')+'</ul>':'';
+    const download=bundleAvailable&&!inline?'<button id="downloadIRWorkflow" class="action" type="button">Download .zip</button>':'';
+    if(!list&&!code&&!download)return '';
+    return inline?list+code:'<details class="guided-start operator-steps"><summary>Run Instructions</summary>'+list+download+code+'</details>';
   }
   function scopeMarkup(item){
     if(item.operatorCard){
@@ -30337,25 +30345,30 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     "RESULT"
   ]
 });
+  function sectionFlag(label){
+    return '<span class="scope-flag">'+esc(label)+'</span>';
+  }
+  function inputFlagsMarkup(item){
+    const scope=String(item.operatorCard?.scope||minimalScopeLabel(item)||'');
+    if(!/multi|multiple/i.test(scope))return '';
+    const input=String(item.operatorCard?.input||item.input||'');
+    const labels=[];
+    if(/\bUPN\b/i.test(input))labels.push('UPN');
+    if(/\bCSV\b/i.test(input)&&/\bTXT\b/i.test(input))labels.push('CSV/TXT');
+    else if(/\bCSV\b/i.test(input))labels.push('CSV');
+    else if(/\bTXT\b/i.test(input))labels.push('TXT');
+    return labels.length?'<span class="card-section-flags" aria-label="Input formats">'+labels.map(sectionFlag).join('')+'</span>':'';
+  }
   function outputPreviewMarkup(item){
+    if(isDocument(item))return '';
     const example = workflowPreview(item)?.text || terminalOutputExamples[item.file];
     const sections = terminalOutputSections[item.file];
-    const documented = typeof item.output === 'string' ? item.output.trim() : '';
-    const repeated = [item.operatorCard?.objective,item.objective,item.useFor].some(value=>value && norm(value)===norm(documented));
-    const description = repeated ? '' : documented;
-    let body;
-    if(example){
-      body = `<p>Illustrative excerpt using fictional data.</p><pre class="command">${esc(example)}</pre>`;
-    } else if(isDocument(item)){
-      body = `<p>This reference does not produce terminal output.</p>`;
-    } else {
-      body = description ? `<p>${esc(description)}</p>` : '';
-      if(sections?.length){
-        body += `<p>Section headings from the script. Which ones appear depends on the run.</p><pre class="command">${esc(sections.join('\n\n'))}</pre>`;
-      }
-    }
-    if(!body)return '';
-    return `<details class="card-run terminal-output-preview"><summary>Results</summary>${body}</details>`;
+    const preview=example || (sections?.length?sections.join('\n\n'):'');
+    const flags=(item.publishedPath?.endsWith('.ps1') || preview ? sectionFlag('TERMINAL'):'')+
+      (csvCapability(item)?sectionFlag('CSV'):'');
+    const label='Preview Output'+(flags?'<span class="card-section-flags" aria-label="Output formats">'+flags+'</span>':'');
+    if(!preview)return flags?'<div class="card-output-label">'+label+'</div>':'';
+    return '<details class="card-run terminal-output-preview"><summary>'+label+'</summary><pre class="command">'+esc(preview)+'</pre></details>';
   }
 
   function minimalCardMarkup(item){
@@ -30383,6 +30396,7 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     };
     const nextStep=item.name==='Find User By Exact Display Name'?'For one person, use Find User UPNs and enter one name or email address. Use a TXT or CSV list for multiple people.':nextSteps[item.file || 'command:'+item.name];
     const instructions=startMarkup(item,true);
+    const inputFlags=inputFlagsMarkup(item);
     const flags=connectionFlagsMarkup(item);
     const commands=item.type==='Quick Command' ? quickCommandStartMarkup(item,Boolean(flags)) : '';
     const shortcut=item.file==='GET-MAILBOX-RULES.ps1' && mailboxForwardingShortcut
@@ -30391,11 +30405,12 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
     const commandOptions=(groupedCommandOptions.get(item)||[]).map(option=>
       '<details class="card-run"><summary>'+esc(option.displayName)+'</summary>'+
       connectorCodeMarkup(quickCommandText(option))+'</details>').join('');
-    const runInstructions=`${instructions}${commandOptions}${commands}${shortcut}${nextStep?'<p class="source-note">'+esc(nextStep)+'</p>':''}
+    const runOptions=`${nextStep?'<p class="source-note">'+esc(nextStep)+'</p>':''}
+      ${item.name==='Set Local User Password'?'<p class="source-note">The password is entered as command text. Use an approved secure-input method instead when recording or sharing the terminal.</p>':''}
+      ${item.name==='Show BitLocker Recovery Protectors'?'<p class="source-note">Displays the recovery password. Keep it out of tickets, screenshots, and transcripts.</p>':''}
+      ${commandOptions}${commands}${shortcut}
       ${item.file==='GET-MAILBOX-RULES.ps1'?'<details class="card-run"><summary>Suspicious inbox rules only</summary>'+connectorCodeMarkup(window.FIELD_KIT_START.launch(downloadFilename(item))+' -RulesOnly -SuspiciousOnly')+'</details>':''}
       ${item.name==='Flush Resolver Cache'?'<details class="card-run"><summary>Alternate Windows syntax</summary>'+connectorCodeMarkup('ipconfig /flushdns')+'</details>':''}
-      ${item.name==='Show BitLocker Recovery Protectors'?'<p class="source-note">Displays the recovery password. Keep it out of tickets, screenshots, and transcripts.</p>':''}
-      ${item.name==='Set Local User Password'?'<p class="source-note">The password is entered as command text. Use an approved secure-input method instead when recording or sharing the terminal.</p>':''}
       ${item.file==='GET-MAILBOX-RULES.ps1'?'<details class="card-run"><summary>Inbox rules only</summary>'+connectorCodeMarkup(window.FIELD_KIT_START.launch(downloadFilename(item))+' -RulesOnly')+'</details>':''}
       ${item.file==='UPDATE-WINDOWS-APPS.ps1'?'<details class="card-run"><summary>Review updates only</summary>'+connectorCodeMarkup(window.FIELD_KIT_START.launch(downloadFilename(item))+' -ReviewOnly')+'</details>':''}
       ${item.file==='INSTALL-M365-MODULES.ps1'?'<details class="card-run"><summary>Install one module</summary>'+connectorCodeMarkup(['Graph','Exchange'].map(module=>window.FIELD_KIT_START.launch(downloadFilename(item))+' -ModuleSet '+module).join('\n'))+'</details>':''}
@@ -30406,10 +30421,11 @@ for(const row of window.FIELD_KIT_NEW_CARDS){TAXONOMY[row.file]={sha256:row.sour
       ${item.candidateNotice?'<p class="source-note">'+esc(item.candidateNotice)+'</p>':''}${item.status==='Source pending'?'<p class="source-note">Source pending. Download is unavailable.</p>':''}
       ${item.publishedPath?'<div id="sourceStatus" role="status" aria-live="polite"></div>':''}<div id="workflowStatus" class="source-note" role="status"></div><div id="sourceMount"></div><div id="copyStatus" role="status" aria-live="polite"></div>
       ${flags?'<details class="card-run modules-connectors"><summary>Modules &amp; Connectors</summary>'+flags+'</details>':''}
-      ${runInstructions.trim()?'<details class="guided-start operator-steps"><summary>Run Instructions</summary>'+runInstructions+'</details>':''}
+      ${inputFlags?'<div class="card-output-label">Input'+inputFlags+'</div>':''}
+      ${instructions?'<details class="guided-start operator-steps"><summary>Run Instructions</summary>'+instructions+'</details>':''}
       ${outputPreviewMarkup(item)}
       <div class="card-permissions">${apiPermissionsMarkup(item,connectorProfile(item))}
-      <svg class="card-watermark" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><path class="watermark-frost" d="m3 4 9 7-9 7m12 0h9"/><path d="m3 4 9 7-9 7m12 0h9"/></svg></div>${taskRelatedMarkup(item)}`;
+      <svg class="card-watermark" viewBox="0 0 28 22" aria-hidden="true" focusable="false"><path class="watermark-frost" d="m3 4 9 7-9 7m12 0h9"/><path d="m3 4 9 7-9 7m12 0h9"/></svg></div>${taskRelatedMarkup(item)}${runOptions.trim()?'<details class="card-run"><summary>Run options &amp; notes</summary>'+runOptions+'</details>':''}`;
   }
 
   let bindCardCompare;

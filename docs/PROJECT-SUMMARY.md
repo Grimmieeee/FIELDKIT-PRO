@@ -1,6 +1,8 @@
 ## Current production release
 
-- v168 is the locked baseline. It aligns small UI labels, narrows desktop tool cards, and labels the PowerShell downloads on all 89 non-CLI cards. Sites source is `c3b6220e563267685bc5286ce9133f07415ac2bd`. v167 is the immediate rollback.
+- v169 is the locked baseline. It adds section-local format flags, lean preview output and run guidance, and pane-aligned sidebar branding. Sites source is `27a6808b54102da58ec71b1b1d2aa5116e9715f7`. v168 is the immediate rollback.
+
+- v168 was the compact-card baseline. It aligns small UI labels, narrows desktop tool cards, and labels the PowerShell downloads on all 89 non-CLI cards. Sites source is `c3b6220e563267685bc5286ce9133f07415ac2bd`. v167 is the immediate rollback.
 
 - v167 was the automatic pane-scaling baseline. The desktop dividers match and resizing the results or detail pane automatically scales its content. Sites source is `962c29a3ae5fa7933b0b686da776d0ddb582a779`. v166 is the immediate rollback.
 
