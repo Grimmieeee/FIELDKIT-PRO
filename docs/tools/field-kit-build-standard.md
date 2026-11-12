@@ -430,3 +430,9 @@ Theme previews and installers must be distinguished. Preserve explicitly request
 ## Task navigation update — October 13, 2026
 
 Preserve established typography, weights, and risk colors. Browse by subject and task; setup first, then subject/action order with alphabetical ties. Incident workflow order takes priority. Use contextual group-navigation labels and controlled search aliases. Distinguish GUIDE/REFERENCE documents from executable risk labels. Related links must resolve to catalog cards, with only curated, useful relationships. Missing incident sources must remain visibly unavailable; never substitute RMM implementations or invent executable downloads.
+
+## Visual previews
+
+- Show the full browser composition for catalog design reviews. Default to a 1600 × 900 desktop frame, including the header, sidebar, results, tool details, and all affected artwork. Preserve realistic proportions. Include a narrow viewport when the change affects mobile.
+- For multiple concepts, provide a labeled selector that swaps the entire frame at a consistent scale. Make each frame expandable and individually saveable at full resolution for markup. Include a direct image fallback if the inline preview fails.
+- Identify previews as mockups or captured builds. Keep visual approval and production deployment distinct.
