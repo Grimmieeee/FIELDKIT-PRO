@@ -34,3 +34,5 @@ Keep the deployment payload, build scripts, GitHub workflows, and the test input
 Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The existing production checkpoints are catalog v180 and entry v44.
 
 Start changes here. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.
+
+See [QA file disposition](QA-DISPOSITION.md) for retained and archived evidence. The Sites source runbook links back here.
