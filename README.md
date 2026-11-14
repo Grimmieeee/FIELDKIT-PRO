@@ -1,16 +1,15 @@
 # FIELDKIT-PRO
 
 FIELD // KIT PRO PowerShell catalog, source and release evidence.
+See [Project status](docs/PROJECT-SUMMARY.md) for the live release, source boundaries, and verification steps.
 
 Start with the [Build Standard](docs/tools/field-kit-build-standard.md), then read the [Project Summary](docs/PROJECT-SUMMARY.md). Use the checked-in FIELDKIT-PRO copies for new tests. [Repository instructions](AGENTS.md)
 
 Live site: https://fieldkit.pro/
 
-- Current verified test copies: `scripts/`. See the [v162 QA baseline](qa/QA-BASELINE-v162.md).
-- Current v162 catalog and hosted sources: `dist/`. The [v162 QA baseline](qa/QA-BASELINE-v162.md) records the source revision and parity checks.
 - Security guidance: [SECURITY.md](SECURITY.md).
 - Release and verification evidence: `qa/`.
-- Proposed or historical sources under `review-candidates`, `release-baseline` and candidate directories are not automatically active downloads.
+- The release assembly uses `release-baseline`. Superseded review candidates are preserved in FIELDKIT-ARCHIVE.
 
 The site is hosted with Sites, independently of GitHub Pages. This repository is public. Windows validator 1.0.1 was operator-reported at 161 PASS, 0 FAIL, 0 SKIP; verification remains source/version-specific.
 
