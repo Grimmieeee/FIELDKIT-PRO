@@ -24,3 +24,13 @@ The v180 release checks passed the nine ranking checks, eight simulated results 
 ## Maintenance
 
 Keep the deployment payload, build scripts, GitHub workflows, and the test inputs needed by those workflows together. Archive obsolete snapshots only after checking references and confirming the destination contains the original bytes.
+
+## Reference bank
+
+- [Build standard](field-kit-build-standard.md)
+- [Site, catalog and mobile specification](SITE-AND-CATALOG-SPEC.md)
+- [New engineer walkthrough](NEW-ENGINEER-WALKTHROUGH.md)
+
+Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The existing production checkpoints are catalog v180 and entry v44.
+
+Start changes here. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.

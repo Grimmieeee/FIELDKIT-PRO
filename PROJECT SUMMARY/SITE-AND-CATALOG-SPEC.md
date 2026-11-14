@@ -2,7 +2,7 @@
 
 ## Applicability
 
-Production baseline is Sites v180, source cc19d8f455f790d1c8099cc374901e3f8796b578. See [Project Summary](PROJECT-SUMMARY.md) for the homepage hash and rollback. GitHub CI validates its own checkout. Historical QA records apply to their named revisions.
+Production baseline is Sites v180, source cc19d8f455f790d1c8099cc374901e3f8796b578. See [Project Summary](README.md) for the homepage hash and rollback. GitHub CI validates its own checkout. Historical QA records apply to their named revisions.
 
 ## Catalog
 
@@ -18,8 +18,8 @@ Production baseline is Sites v180, source cc19d8f455f790d1c8099cc374901e3f8796b5
 - Dark first, with a light mode toggle. Muted green text marks active categories and scope and impact labels. Category selection uses text color.
 - Desktop can show the list and detail pane side by side at 900 CSS pixels and above. Below that breakpoint, verify selection, detail scrolling and back navigation. At 600 CSS pixels and below, check touch targets, wrapped controls and text clipping.
 - Check search, Scope/Objective/Task filters, clearing a query, card navigation, theme toggling, Favorites, Compare, View Code, Copy, and a download on desktop and iPhone Safari. Verify preserved focus and legible terminal previews. Record actual browser, viewport, revision and failures.
-- Existing Safari acceptance predates the current release. Simulated ranking and rendering checks are available for v180. Exact-v180 browser acceptance is open.
+- Ryan accepted both the production catalog and the separate entry site on November 14, 2026. This records operator acceptance. Simulated ranking and rendering checks are separately recorded for v180.
 
 ## Release checks
 
-Use the [Build Standard](tools/field-kit-build-standard.md) and [walkthrough](../qa/NEW-ENGINEER-WALKTHROUGH.md). Keep script bytes, embedded payloads, metadata and checksums aligned. Preserve deployment identity and audience. Record the published version and rollback.
+Use the [Build Standard](field-kit-build-standard.md) and [walkthrough](NEW-ENGINEER-WALKTHROUGH.md). Keep script bytes, embedded payloads, metadata and checksums aligned. Preserve deployment identity and audience. Record the published version and rollback.

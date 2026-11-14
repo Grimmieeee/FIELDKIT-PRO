@@ -1,10 +1,10 @@
 # FIELDKIT-PRO
 
 FIELD // KIT PRO PowerShell catalog, source and release evidence.
-See [Project status](docs/PROJECT-SUMMARY.md) for the live release, source boundaries, and verification steps.
-See [Site, catalog and mobile reference](docs/SITE-AND-CATALOG-SPEC.md) for the production UI contract and acceptance checklist.
+See [Project status](<PROJECT SUMMARY/README.md>) for the live release, source boundaries, and verification steps.
+See [Site, catalog and mobile reference](<PROJECT SUMMARY/SITE-AND-CATALOG-SPEC.md>) for the production UI contract and acceptance checklist.
 
-Start with the [Build Standard](docs/tools/field-kit-build-standard.md), then read the [Project Summary](docs/PROJECT-SUMMARY.md). Use the checked-in FIELDKIT-PRO copies for new tests. [Repository instructions](AGENTS.md)
+Start with the [Build Standard](<PROJECT SUMMARY/field-kit-build-standard.md>), then read the [Project Summary](<PROJECT SUMMARY/README.md>). Use the checked-in FIELDKIT-PRO copies for new tests. [Repository instructions](AGENTS.md)
 
 Live site: https://fieldkit.pro/
 

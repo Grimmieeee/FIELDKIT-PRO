@@ -1,6 +1,6 @@
 # FIELD // KIT build standard
 
-Use the [current site, catalog and mobile reference](../SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history.
+Use the [current site, catalog and mobile reference](SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history.
 
 ## Connection order and verification
 
@@ -20,7 +20,7 @@ Use the [current site, catalog and mobile reference](../SITE-AND-CATALOG-SPEC.md
 
 ## Hybrid Windows execution baseline
 
-- Start with [Project Summary](../PROJECT-SUMMARY.md) and test the exact checked-in FIELDKIT-PRO revision. Use FIELDKIT-ARCHIVE for historical comparison only.
+- Start with [Project Summary](README.md) and test the exact checked-in FIELDKIT-PRO revision. Use FIELDKIT-ARCHIVE for historical comparison only.
 - Validate from a domain-connected Windows host running PowerShell 5.1. Record PowerShell 7 runtime results separately.
 - For BEC User Risk Assessment, establish Exchange Online before Graph. Validate both tenants and match the mailbox external directory object ID to the Graph user ID before mailbox work. Reuse only a compatible, validated connection. Keep Graph-only and Exchange-only workflows independent.
 - Keep the three BEC stages in the same PowerShell session with canonical companion filenames. Preserve stage-specific authentication and target checks when a stage is launched independently. Keep containment and recovery behind explicit operator confirmation.
