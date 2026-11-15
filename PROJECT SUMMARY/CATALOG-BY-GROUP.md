@@ -1,0 +1,297 @@
+# FIELD // KIT PRO catalog by group
+
+270 entries. Each entry appears in one group. Quick commands are marked inline.
+
+## Users (54)
+
+- Add User to AD Group (quick command)
+- Add User to Entra Group (quick command)
+- Assign User Licenses
+- Block Entra User Sign-in (quick command)
+- Check AD–Entra Account Match
+- Check Entra User AD Sync (quick command)
+- Check User Before Deletion
+- Create Dynamic Group
+- Delete AD User (quick command)
+- Delete Entra User (quick command)
+- Delete User Accounts
+- Disable AD User (quick command)
+- Disable User Accounts
+- Enable AD User (quick command)
+- Find Entra Group by Name (quick command)
+- Find User By Exact Display Name (quick command)
+- Find User UPNs
+- Force Password Change Next Logon (quick command)
+- Get AD User Details (quick command)
+- Get Group Members
+- Get Group Owners
+- Get User Account Status
+- Get User Details by UPN (quick command)
+- Get User Groups
+- Re-enable Entra User Account (quick command)
+- Re-Enable User Account
+- Remove Specific Authenticator Method (quick command)
+- Remove Specific Delegated Grant (quick command)
+- Remove Specific Phone Method (quick command)
+- Remove User App Consent
+- Remove User from AD Group (quick command)
+- Remove User from Entra Group (quick command)
+- Remove User Groups
+- Remove User Licenses
+- Reset AD User Password (quick command)
+- Reset Cloud User Password
+- Set Per-user MFA
+- Show AD Group Members (quick command)
+- Show AD User Group Memberships (quick command)
+- Show Assigned Licenses (quick command)
+- Show Delegated Grants For One User (quick command)
+- Show Distinguished Name (quick command)
+- Show Domain Account Details (quick command)
+- Show Entra Group Direct Members (quick command)
+- Show Entra Group Owners (quick command)
+- Show Entra User Group Memberships (quick command)
+- Show Entra User’s Manager (quick command)
+- Show MFA Methods (quick command)
+- Show Microsoft Authenticator Methods (quick command)
+- Show Password Expiry (quick command)
+- Show Password Last Set (quick command)
+- Show Phone Methods (quick command)
+- Show Registration Status For One User (quick command)
+- Unlock AD User (quick command)
+
+## Mail (29)
+
+- Add Calendar Permission (quick command)
+- Add Contacts Permission (quick command)
+- Add Distribution Group Member (quick command)
+- Audit Mail Flow Rules
+- Audit Shared Mailbox Sign-ins
+- Audit Tenant Mailbox Access
+- Disable Mailbox Protocols
+- Get Mailbox Lit Hold Status
+- Get Mailbox Rules
+- Get Mailbox Usage Statistics
+- Purge Soft-Deleted Mailbox
+- Remove All Inbox Rules (quick command)
+- Remove Calendar Permission (quick command)
+- Remove Disabled User Mailbox Access
+- Remove Distribution Group Member (quick command)
+- Remove Mailbox Delegate
+- Remove Mailbox Forwarding (quick command)
+- Remove Specific Inbox Rule (quick command)
+- Set Litigation Hold
+- Show Calendar Permissions (quick command)
+- Show Contacts Permissions (quick command)
+- Show Distribution Group Members (quick command)
+- Show Distribution Group Owners (quick command)
+- Show Mailbox Full Access Delegates (quick command)
+- Show Mailbox Send As Delegates (quick command)
+- Show Mailbox Send on Behalf Delegates (quick command)
+- Show Mailbox Summary (quick command)
+- Show Send-To Restrictions / authOrig (quick command)
+- Show Specific Transport Rule (quick command)
+
+## Incident Response (16)
+
+- BEC: Build Incident Timeline
+- BEC: Check IP Reputation
+- BEC: Contain and Eradicate
+- BEC: Decode Token
+- BEC: Restore and Validate
+- BEC: Restore Email
+- BEC: Review File Activity
+- BEC: Review Token Replay
+- BEC: Revoke Sessions (quick command)
+- BEC: Trace Email Delivery
+- BEC: Trace IP Activity
+- BEC: User Risk Assessment
+- Create Phishing Search By Subject (quick command)
+- Hard-Delete Search Results (quick command)
+- Show Compliance Search Status (quick command)
+- Start Compliance Search (quick command)
+
+## Logs and Audit (14)
+
+- Audit Inbox Rule Changes (quick command)
+- Failed Logons
+- Mail Delete And Move Audit (quick command)
+- Mail Items Accessed Audit (quick command)
+- Parse Mail Audit Subject, Ip, And Destination Folder (quick command)
+- PowerShell Log Activity
+- Recent Application Errors (quick command)
+- Recent System Errors (quick command)
+- Search Query Audit (quick command)
+- Show Entra Sign-ins - Last 48 Hours (quick command)
+- Show Failed Sign-Ins (quick command)
+- Show Last 10 Entra Sign-Ins (quick command)
+- Show Legacy / Other-client Sign-ins (quick command)
+- Show Successful Sign-Ins (quick command)
+
+## Directory and Tenant (29)
+
+- Account and Sign-in Review
+- AD AdminCount Flags
+- AD Delegation Settings
+- AD Domain Permissions
+- AD SPN Inventory
+- AD Trusts
+- AdminSDHolder Permissions
+- App Registration Details
+- Audit AD Account Exceptions
+- Audit Tenant Admin Accounts
+- Audit Tenant License Totals
+- Azure Owner Assignments
+- Azure Resource Groups
+- Check Azure VPN Connections
+- Domain Trust Check (quick command)
+- Find Exchange Service Principal By Appid (quick command)
+- Force Group Policy Update (quick command)
+- GDAP Relationships
+- GPO Report
+- Inactive AD Computers
+- Inactive AD Users
+- LAPS Expiration Review
+- Managed Service Accounts
+- Review Account Cleanup
+- Show Default Domain Password Policy (quick command)
+- Show Group Policy Result (quick command)
+- Tenant Change Review
+- Tenant Security Review
+- Test Azure Resource Group Access
+
+## Device (94)
+
+- Add User To Administrators (quick command)
+- Check and Sync Windows Time (quick command)
+- Check Common Pending Reboot Flags (quick command)
+- Check Sensitive Data
+- Chkdsk Online Scan (quick command)
+- Clear Cached Kerberos Tickets (quick command)
+- Clear Delivery Optimization Cache (quick command)
+- Continuous Ping (quick command)
+- Create Local User (quick command)
+- Defragment Volume (quick command)
+- Delete Local User (quick command)
+- Delete Wi-Fi Profile (quick command)
+- Disable Hibernation (quick command)
+- Disable Local Account
+- Disable Network Adapter (quick command)
+- DISM Analyze Component Store (quick command)
+- DISM Component Store Cleanup (quick command)
+- Dism Component Store Scan (quick command)
+- Dism Restore Health (quick command)
+- Enable Local Account (quick command)
+- Entra Join Status (quick command)
+- Find Files Modified In Last 24 Hours (quick command)
+- Find What’s Using Disk Space
+- Flush Resolver Cache (quick command)
+- Folder Permissions
+- Isolate Device - Disable Enabled Adapters (quick command)
+- Launch Disk Cleanup (quick command)
+- Local Account Details (quick command)
+- Mapped Drives (quick command)
+- Network Profile (quick command)
+- Open Local Users and Groups (quick command)
+- Open Storage Settings (quick command)
+- Open Windows Update (quick command)
+- Path Ping (quick command)
+- Ping Host (quick command)
+- Port 443 Connections (quick command)
+- PowerShell Remoting Endpoints
+- Print Jobs (quick command)
+- Printer Check (quick command)
+- Reboot Computer (quick command)
+- Release And Renew Dhcp (quick command)
+- Remove User From Administrators (quick command)
+- Reset Tcp/Ip Stack (quick command)
+- Reset Winsock (quick command)
+- Resolve DNS Name (quick command)
+- Restart Network Adapter (quick command)
+- Restart Service (quick command)
+- Review Folder Contents
+- Scheduled Task Inventory
+- Set Local User Password (quick command)
+- Set Windows Service Startup Type (quick command)
+- Show Active Adapters (quick command)
+- Show Arp Neighbor Cache (quick command)
+- Show Cached Kerberos Tickets (quick command)
+- Show Computer Model And Serial Number (quick command)
+- Show Configured Dns Servers (quick command)
+- Show Configured Windows Vpn Connections (quick command)
+- Show Current Windows Identity and Privileges (quick command)
+- Show Established Tcp Connections (quick command)
+- Show Hostname And Current User (quick command)
+- Show Installed Hotfixes (quick command)
+- Show Ip Configuration (quick command)
+- Show Last Boot And Uptime (quick command)
+- Show Listening Tcp Ports (quick command)
+- Show Local Administrators (quick command)
+- Show Local Drive Free Space (quick command)
+- Show Local Users (quick command)
+- Show Os And Build (quick command)
+- Show Physical Disk Health (quick command)
+- Show Problem Devices (quick command)
+- Show Recent Windows Update History (quick command)
+- Show Routing Table (quick command)
+- Show Saved Wi-Fi Profiles (quick command)
+- Show Service Status (quick command)
+- Show SMB Sessions (quick command)
+- Show SMB Shares (quick command)
+- Show Top Cpu Consumers (quick command)
+- Show Top Memory Consumers (quick command)
+- Show Whether Remote Desktop Is Enabled (quick command)
+- Show Wi-Fi Connection (quick command)
+- Show Windows Firewall Profiles (quick command)
+- Show Windows Firewall Rules by Name (quick command)
+- SMB Share Permissions
+- Stop Process By Name (quick command)
+- Stored Credential Targets
+- System Driver Services
+- System File Checker (quick command)
+- Test Tcp Port (quick command)
+- Trace Route (quick command)
+- User Sessions
+- Windows Management Instrumentation (WMI) Event Subscriptions
+- Windows Profiles
+- WinGet
+- WinHTTP Proxy (quick command)
+
+## Encryption and Certificates (13)
+
+- Calculate Sha256 Hash (quick command)
+- Create Self-Signed App-Auth Certificate (quick command)
+- Export Certificate as PFX (quick command)
+- Export Public Certificate as CER (quick command)
+- Find Certificate by Thumbprint (quick command)
+- Resume BitLocker Protection (quick command)
+- Show BitLocker Recovery Protectors (quick command)
+- Show BitLocker Status (quick command)
+- Show Code-Signing Certificates (quick command)
+- Show Expiring Certificates (quick command)
+- Sign Script (quick command)
+- Suspend BitLocker for One Reboot (quick command)
+- Verify Script Signature (quick command)
+
+## Session and Setup (21)
+
+- Connect Exchange Online (quick command)
+- Connect Microsoft Graph (quick command)
+- Disconnect Exchange Online (quick command)
+- Disconnect Microsoft Graph (quick command)
+- Get M365 Modules
+- GitHub: Manage Repository
+- GitHub: Save Project Handoff
+- GitHub: Security Check
+- Screensaver: Attractor
+- Screensaver: Rain
+- Screensaver: Static
+- Set Current User Execution Policy - RemoteSigned (quick command)
+- Show Exchange Connection (quick command)
+- Show Execution Policies (quick command)
+- Show Graph Context (quick command)
+- Show Installed ExchangeOnlineManagement Version (quick command)
+- Show Installed Microsoft Graph Module Version (quick command)
+- Show PowerShell Version (quick command)
+- Theme: Cobalt
+- Theme: Sea Glass
+- Theme: Silicon Valley
