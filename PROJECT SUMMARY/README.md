@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro), Sites v180, from Sites source commit `cc19d8f455f790d1c8099cc374901e3f8796b578`. The homepage SHA-256 is `3c636caa08272d9018da5b1edc78385683d1480e7d5702efe2ba105083a6e796`. Roll back through Sites to v179 if needed. The entry site publishes separately.
+Production is [fieldkit.pro](https://fieldkit.pro), Sites v181, from Sites source commit `37dd2ae06a4e640a6d5cea2927eebb99c4a8ebd7`. The homepage SHA-256 is `67137854406eaf134a20404d890efd56e032e91a2544b0da6d97055f7eb22ba4`. Roll back through Sites to v180 (`cc19d8f455f790d1c8099cc374901e3f8796b578`) if needed. The entry site publishes separately.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
 
@@ -31,8 +31,12 @@ Keep the deployment payload, build scripts, GitHub workflows, and the test input
 - [Site, catalog and mobile specification](SITE-AND-CATALOG-SPEC.md)
 - [New engineer walkthrough](NEW-ENGINEER-WALKTHROUGH.md)
 
-Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The existing production checkpoints are catalog v180 and entry v44.
+Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The existing production checkpoints are catalog v181 and entry v44.
 
 Start changes here. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.
 
 See [QA file disposition](QA-DISPOSITION.md) for retained and archived evidence. The Sites source runbook links back here.
+
+## v181 verification
+
+Ryan verified desktop and iPhone browser acceptance. Twelve ranking checks, eight simulated result-list scenarios, and 97 packaged checksums passed. All 102 public files matched the pinned release byte for byte over HTTPS. The three intake card updates changed catalog presentation and search; PowerShell payloads were unchanged.
