@@ -2,7 +2,9 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro), Sites v181, from Sites source commit `37dd2ae06a4e640a6d5cea2927eebb99c4a8ebd7`. The homepage SHA-256 is `67137854406eaf134a20404d890efd56e032e91a2544b0da6d97055f7eb22ba4`. Roll back through Sites to v180 (`cc19d8f455f790d1c8099cc374901e3f8796b578`) if needed. The entry site publishes separately.
+Production is [fieldkit.pro](https://fieldkit.pro), Sites v204, from Sites source commit `71d66bae8eabb4ddf3ee71011c87bcbd4f08fcdc`. The homepage SHA-256 is `6c1f5e02111779f611d80e359ec9d1e534795a0a775dc1b2aba3e2ca5f4a835d`. Roll back through Sites to v203 (`6f7aee0e7a789fd66a6dfa359ccf0de22e2706ee`) if needed. The entry site publishes separately.
+
+The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight, and the tagline is **For everyday IT**. BEC workflow order, group membership, card toggling, and download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
 
