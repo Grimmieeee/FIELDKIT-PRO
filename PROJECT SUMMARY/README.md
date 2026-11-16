@@ -2,11 +2,15 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v233, from Sites source commit `2c2c9e4e95f425e62b635fc47c1122086effdacf`. The homepage SHA-256 is `1b70ae0d323c95a5c0b59fb329fd8c4ef349ee1ff2346f9f1570d5e5ab273d18`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v232 (`04c6b26ca44ef4df9689b677d099178c967cb809`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v67 deployment (`308ac96495b2e9916e570623638329357883124f`, rollback v66). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v234, from Sites source commit `62f17d3af677e7838f77997cf7194a524b288024`. The homepage SHA-256 is `97ed10fa07436e48e9447986e5ae7a2d70cead35dc1f6a213a4887c48f8304a7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v233 (`2c2c9e4e95f425e62b635fc47c1122086effdacf`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v68 deployment (`53c7841b6d4e9d3f7d5a4b58362d9871ef0319f2`, rollback v67). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across eight navigation groups and search-only Extras. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
+
+## Module installer naming and search
+
+Sites v234 displays Install PowerShell Modules with download filename INSTALL-POWERSHELL-MODULES.ps1. Module and modules searches rank it first, followed by the Exchange and Graph connect/disconnect tools. Search tests and checksums passed. All three URLs served matching catalog and download bytes.
 
 ## Combined admin module installer
 
