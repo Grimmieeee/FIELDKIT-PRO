@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v211, from Sites source commit `acaca9e38fc8a7efc2bdff2459d984ff29481028`. The homepage SHA-256 is `073a6ce87b4f9e99da18c755c1d873fa0e5813fcbdc27466a7d406d3acecd4d7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v210 (`25994b027b531440101ead370a329f8c0133db25`) if needed. The entry site publishes separately.
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v211, from Sites source commit `acaca9e38fc8a7efc2bdff2459d984ff29481028`. The homepage SHA-256 is `073a6ce87b4f9e99da18c755c1d873fa0e5813fcbdc27466a7d406d3acecd4d7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v210 (`25994b027b531440101ead370a329f8c0133db25`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v45 deployment (`98e1e9dbb10852f86e63868e3c84a73f74ddeb4b`). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. Download checksums passed on v211. Scope and impact labels retain Tenant and Delete where they apply.
 
