@@ -66,6 +66,10 @@ The catalog supports ticket-language search, eight category filters, and ranked 
 
 In the core BEC workflow, start with User Risk Assessment, continue with approved containment, then Restore and Validate. The final step offers a consolidated TXT summary and marks unavailable stages explicitly. A partial report does not establish incident closure. Keep evidence and follow-up in the incident ticket.
 
+## v226 release acceptance
+
+Ryan confirmed the final iPhone Safari check for the search sort dropdown and updated category labels. Main v226 and entry v60 are the accepted live baseline.
+
 ## Clean rebuild and script intake\n\nRecover the deployed release from the pinned Sites source revision for each deployment. From a clean checkout, run `node scripts/build-counter-worker.mjs`. The worker is built from the tracked `dist/` payload and uses the existing Sites hosting manifest. This is a rebuild of the pinned source, not a reconstruction from GitHub alone. Run `node qa/search-relevance.cjs` from the main Sites checkout and `sha256sum -c --quiet SHA256SUMS.txt` from each checkout's `dist/`.\n\nClean exports of main v226 and entry v60 both rebuilt successfully. The generated worker, hosting manifest, and homepage, FAQ, and feedback HTML matched their respective release builds byte for byte. Search and packaged download checks passed.\n\nUse the [script intake checklist](SCRIPT-INTAKE.md) for incoming tools. The original dry run is historical source-review evidence.\n\n## Validation and release
 
 1. Pin the source commit and record the affected file paths and hashes.
