@@ -1,6 +1,8 @@
 # FIELD // KIT PRO catalog by group
 
-270 entries. Each entry appears in one group. Quick commands are marked inline.
+271 entries in the pinned fieldkit.pro v237 catalog. Eight browse groups plus search-only Extras. Each entry appears in one group. Quick commands are marked inline. See the [Project Summary](README.md) for production pins and verification scope.
+
+Entry v69 also has 271 entries. It retains Azure Resource Groups and Check Azure VPN Connections where the main site displays Get Azure Resources and Get Azure VPN Connect Status. Both sites download the same GET-AZURE-RESOURCE-GROUPS.ps1 and GET-AZ-VPN-STATUS.ps1 bytes. The prior 270-entry reference is retained in Git history.
 
 ## Users (54)
 
@@ -141,12 +143,12 @@
 - Audit Tenant Admin Accounts
 - Audit Tenant License Totals
 - Azure Owner Assignments
-- Azure Resource Groups
-- Check Azure VPN Connections
 - Domain Trust Check (quick command)
 - Find Exchange Service Principal By Appid (quick command)
 - Force Group Policy Update (quick command)
 - GDAP Relationships
+- Get Azure Resources
+- Get Azure VPN Connect Status
 - GPO Report
 - Inactive AD Computers
 - Inactive AD Users
@@ -272,13 +274,14 @@
 - Suspend BitLocker for One Reboot (quick command)
 - Verify Script Signature (quick command)
 
-## Session and Setup (12)
+## Session and Setup (13)
 
 - Connect Exchange Online (quick command)
 - Connect Microsoft Graph (quick command)
 - Disconnect Exchange Online (quick command)
 - Disconnect Microsoft Graph (quick command)
-- Get M365 Modules
+- Install Active Directory Module (RSAT) (quick command)
+- Install PowerShell Modules
 - Set Current User Execution Policy - RemoteSigned (quick command)
 - Show Exchange Connection (quick command)
 - Show Execution Policies (quick command)

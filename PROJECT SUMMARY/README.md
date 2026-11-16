@@ -1,8 +1,81 @@
 # FIELD // KIT project status
 
-## Production and source
+## Current production baseline — November 16, 2026 Pacific
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v234, from Sites source commit `62f17d3af677e7838f77997cf7194a524b288024`. The homepage SHA-256 is `97ed10fa07436e48e9447986e5ae7a2d70cead35dc1f6a213a4887c48f8304a7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v233 (`2c2c9e4e95f425e62b635fc47c1122086effdacf`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v68 deployment (`53c7841b6d4e9d3f7d5a4b58362d9871ef0319f2`, rollback v67). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+This documentation closeout records **fieldkit.pro v237** and **FIELD // KIT entry v69**. Sites release records and fresh HTTPS byte comparisons were checked on November 16. This change updates documentation only; neither site is rebuilt or republished.
+
+| Site | Sites version | Published Sites source commit | Immediate rollback |
+|---|---|---|---|
+| [fieldkit.pro](https://fieldkit.pro/) | v237 | `32ca1aac9b85c2f49ef6cd447cf13c99f5796057` | v236, `ccb16db37b224865be541a3ebdcc21e4d1e9bb98` |
+| [FIELD // KIT entry](https://field-kit-entry.delbert-hifield.chatgpt.site/) | v69 | `a0455d5bc5b6351d1dd009f8c61c6fc5944bdb91` | v68, `53c7841b6d4e9d3f7d5a4b58362d9871ef0319f2` |
+
+The [catalog origin](https://field-kit-mobile-preview.delbert-hifield.chatgpt.site/) serves the v237 homepage. Its bytes match fieldkit.pro. The entry homepage has its own hash and retains its existing Azure card display names; do not claim the two sites' whole homepages are identical.
+
+| Release checksum | SHA-256 |
+|---|---|
+| v237 homepage | `46310109f5e1806c64c3ab6e58b0235b0bde332a1871712c78e8376cb5745d6d` |
+| v69 entry homepage | `0b5cad27ab4c4747fdcf9e773c9bcd4c2fd046db0001efba6b4f55c03a7a5bb1` |
+| v237 archive content hash, as returned by Sites | `4cee13374b3da7f868f9284dcd6395b3e3e05b6beae612b504737221b0d180ff` |
+| v69 archive content hash, as returned by Sites | `fa555a46bde22ea9cf62c33bbfbfe852c242b6ab2c6657a6546fed43f4f8005f` |
+
+GitHub and Sites have independent histories. This documentation was prepared from GitHub `0ae50d1b122a9a5bc38113a665ef1d35a7f1152d`; its checked-in release suite passed 270 cards and 97 sources. The production catalogs have 271 cards. GitHub's older `dist/` and historical QA locks are not a mirror or test copy of v237/v69. Recover the pinned Sites source before testing or rebuilding production. Do not transfer older GitHub or operator verification to changed source bytes.
+
+## Approved VPN release and module guidance
+
+Both sites publish `GET-AZ-VPN-STATUS.ps1`, based on Ryan's approved uploaded VPN baseline. It installs missing Az.Accounts, Az.Resources and Az.Network modules for CurrentUser, prompts for a tenant domain or tenant ID, signs in with process scope, validates the returned tenant and subscription, and discovers gateway connections in that subscription. A numbered prompt can select one resource group; Enter keeps all visible groups. ExpressRoute is excluded. Failed or empty status reads display **Unable to verify**. The script reads Azure-reported status; it does not test tunnel traffic or change Azure resources.
+
+The Windows **Run with PowerShell** error path displays the failed stage and original message before the close prompt. TLS cleanup and unavailable prompting cannot replace the original failure. The original ErrorRecord is rethrown after cleanup and the interactive pause. `-NoPause` suppresses the close prompt for automated callers. Parse and parameter-binding failures occur before the body; use an existing terminal to inspect those errors. Module-setup errors direct the operator to check PSGallery/PowerShellGet and retry in a fresh window.
+
+Card disclosures now say **Required Modules**. The VPN module list contains Az.Accounts, Az.Resources and Az.Network, followed immediately by **Install PowerShell Modules** as plain text. Script Preview describes the published prompts and example failure output. View Code and Download decode the same embedded bytes as the direct source endpoints.
+
+The resource-group attachment is now distributed as `GET-AZURE-RESOURCE-GROUPS.ps1` on both sites. It matched the prior entry bytes; the prior pro source differed only in its printed filename banner. `INSTALL-POWERSHELL-MODULES.ps1` matched both earlier catalogs byte for byte and is unchanged. Its Azure option installs Az.Accounts and Az.Resources; the VPN script handles Az.Network itself. This release does not establish runtime verification of every installer option.
+
+## Verified download parity
+
+Fresh HTTPS responses from fieldkit.pro, the catalog origin, and the entry site matched the pinned release files byte for byte for the homepage and the following three sources. Embedded catalog source, View Code decoding, download decoding, direct-source files and source checksums were also checked during release preparation. This is HTTP/source parity and rendering-function evidence, not a browser Save As test.
+
+| Published file | SHA-256 (identical on both sites) |
+|---|---|
+| [GET-AZ-VPN-STATUS.ps1](https://fieldkit.pro/published-source/candidates/GET-AZ-VPN-STATUS.ps1) | `77d5eb2c9e8d84f5991a0c2c916adec0a735a9103710d048c57e904fcc93d0cd` |
+| [GET-AZURE-RESOURCE-GROUPS.ps1](https://fieldkit.pro/published-source/candidates/GET-AZURE-RESOURCE-GROUPS.ps1) | `4fcca73be4079024736122ccf2ab7093e011f06f9320e16891809202ace7e440` |
+| [INSTALL-POWERSHELL-MODULES.ps1](https://fieldkit.pro/published-source/utility/INSTALL-POWERSHELL-MODULES.ps1) | `654d2d8a362bb6cb8947dd29a2feb070c8620565665c3c49fb53173f6bdc2cda` |
+
+The corresponding entry downloads use the same paths under the [entry origin](https://field-kit-entry.delbert-hifield.chatgpt.site/). These checks cover the named files; they are not a new audit of every live endpoint.
+
+## Operator confirmation and remaining QA
+
+**Operator-confirmed completed:** Ryan states that he completed the post-release Windows/Azure smoke test using the published VPN script. This confirmation is recorded on November 16, 2026 against the published filename and release hash above. It supersedes the earlier blanket statement that no Windows/Azure smoke test had been performed. No transcript, local downloaded-file hash, exact PowerShell version, launch mechanism, tenant details or per-step results were supplied with the confirmation. Do not infer particular connection statuses, successful module installation/update, optional group-selection coverage, or Windows failure-injection outcomes.
+
+| Evidence path | Recorded scope |
+|---|---|
+| Ryan's Windows/Azure smoke test | **Operator-confirmed completed** with the published VPN script; specific outcomes unspecified |
+| PowerShell parser | All distributed sources parsed in Linux PowerShell 7.4.13 during release preparation; not a Windows 5.1 parser result |
+| Error handling | Five actual AST-extracted catch/finally/outcome tests passed on Linux PowerShell 7.4.13: redirected input, NoPause, TLS cleanup failure, interactive pause, unavailable prompting. Operational body never loaded |
+| Catalog and Worker checks | JavaScript syntax, actual card rendering functions, plain module-note placement, Script Preview, source mappings, checksums and built Worker endpoints passed |
+| Desktop/mobile browser QA for v237/v69 | **UNEXECUTED**; managed `cua_repl.js` unavailable. Older browser/iPhone acceptance remains historical |
+| Other runtime paths | **UNVERIFIED** where not specifically evidenced, including native Windows launch-error injection, exact Windows 5.1 coverage, unattended Azure runs and installer option coverage |
+
+The documentation closeout does not request another broad audit, change badges, or rerun the operator's completed smoke test. Future work should target an actual failure or a specific unverified path.
+
+## Current handoff and evidence
+
+- [Build standard](field-kit-build-standard.md)
+- [Site, catalog and mobile specification](SITE-AND-CATALOG-SPEC.md)
+- [New engineer walkthrough and remaining browser checks](NEW-ENGINEER-WALKTHROUGH.md)
+- [Current catalog by group](CATALOG-BY-GROUP.md)
+- [Script intake checklist](SCRIPT-INTAKE.md)
+- [Current QA state and release record identifiers](../qa/PROJECT-STATE.md)
+- [QA file disposition and historical evidence boundaries](QA-DISPOSITION.md)
+
+The pinned Sites source checkouts retain `docs/APPROVED-VPN-RELEASE.md`, `qa/approved-vpn-release.json`, `qa/catalog-checks.json` and `qa/error-path-checks.json`. Their pre-closeout Windows/Azure status describes what the release environment had executed at that time; the operator confirmation above is the subsequent evidence. The handoff links were opened/read through GitHub and checked against the saved documentation. This is link/content verification, not browser interaction QA.
+
+## Historical release records
+
+The records below retain their original versions, checks and acceptance scope. Their references to a then-current baseline or pending gate are historical; the current handoff above takes precedence.
+
+## Historical production and source — v234 / entry v68
+
+At that checkpoint, production was [fieldkit.pro](https://fieldkit.pro/), Sites v234, from Sites source commit `62f17d3af677e7838f77997cf7194a524b288024`. The homepage SHA-256 is `97ed10fa07436e48e9447986e5ae7a2d70cead35dc1f6a213a4887c48f8304a7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v233 (`2c2c9e4e95f425e62b635fc47c1122086effdacf`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v68 deployment (`53c7841b6d4e9d3f7d5a4b58362d9871ef0319f2`, rollback v67). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across eight navigation groups and search-only Extras. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
@@ -98,11 +171,19 @@ The catalog supports ticket-language search, eight category filters, and ranked 
 
 In the core BEC workflow, start with User Risk Assessment, continue with approved containment, then Restore and Validate. The final step offers a consolidated TXT summary and marks unavailable stages explicitly. A partial report does not establish incident closure. Keep evidence and follow-up in the incident ticket.
 
-## v226 release acceptance
+## Historical v226 release acceptance
 
-Ryan confirmed the final iPhone Safari check for the search sort dropdown and updated category labels. Main v226 and entry v60 are the accepted live baseline.
+Ryan confirmed the final iPhone Safari check for the search sort dropdown and updated category labels. Main v226 and entry v60 were the accepted live baseline at that checkpoint.
 
-## Clean rebuild and script intake\n\nRecover the deployed release from the pinned Sites source revision for each deployment. From a clean checkout, run `node scripts/build-counter-worker.mjs`. The worker is built from the tracked `dist/` payload and uses the existing Sites hosting manifest. This is a rebuild of the pinned source, not a reconstruction from GitHub alone. Run `node qa/search-relevance.cjs` from the main Sites checkout and `sha256sum -c --quiet SHA256SUMS.txt` from each checkout's `dist/`.\n\nClean exports of main v226 and entry v60 both rebuilt successfully. The generated worker, hosting manifest, and homepage, FAQ, and feedback HTML matched their respective release builds byte for byte. Search and packaged download checks passed.\n\nUse the [script intake checklist](SCRIPT-INTAKE.md) for incoming tools. The original dry run is historical source-review evidence.\n\n## Validation and release
+## Clean rebuild and script intake
+
+Recover the deployed release from the pinned Sites source revision for each deployment. From a clean checkout, run `node scripts/build-counter-worker.mjs`. The worker is built from the tracked `dist/` payload and uses the existing Sites hosting manifest. This is a rebuild of the pinned source, not a reconstruction from GitHub alone. Run `node qa/search-relevance.cjs` from the main Sites checkout and `sha256sum -c --quiet SHA256SUMS.txt` from each checkout's `dist/`.
+
+Clean exports of main v226 and entry v60 both rebuilt successfully. The generated worker, hosting manifest, and homepage, FAQ, and feedback HTML matched their respective release builds byte for byte. Search and packaged download checks passed.
+
+Use the [script intake checklist](SCRIPT-INTAKE.md) for incoming tools. The original dry run is historical source-review evidence.
+
+## Validation and release
 
 1. Pin the source commit and record the affected file paths and hashes.
 2. Run the GitHub site checks for the GitHub tree. In the Sites checkout, run node qa/search-relevance.cjs and verify dist/SHA256SUMS.txt from inside dist.
