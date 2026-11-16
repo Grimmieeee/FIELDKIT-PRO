@@ -127,7 +127,7 @@
 - Show Legacy / Other-client Sign-ins (quick command)
 - Show Successful Sign-Ins (quick command)
 
-## Directory and Tenant (29)
+## Directory & Tenant (29)
 
 - Account and Sign-in Review
 - AD AdminCount Flags
@@ -159,7 +159,7 @@
 - Tenant Security Review
 - Test Azure Resource Group Access
 
-## Device (94)
+## Devices (94)
 
 - Add User To Administrators (quick command)
 - Check and Sync Windows Time (quick command)
@@ -256,7 +256,7 @@
 - WinGet
 - WinHTTP Proxy (quick command)
 
-## Encryption and Certificates (13)
+## Encryption & Certs (13)
 
 - Calculate Sha256 Hash (quick command)
 - Create Self-Signed App-Auth Certificate (quick command)
