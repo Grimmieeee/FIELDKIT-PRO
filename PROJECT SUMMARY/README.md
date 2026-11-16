@@ -2,9 +2,9 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro), Sites v204, from Sites source commit `71d66bae8eabb4ddf3ee71011c87bcbd4f08fcdc`. The homepage SHA-256 is `6c1f5e02111779f611d80e359ec9d1e534795a0a775dc1b2aba3e2ca5f4a835d`. Roll back through Sites to v203 (`6f7aee0e7a789fd66a6dfa359ccf0de22e2706ee`) if needed. The entry site publishes separately.
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v211, from Sites source commit `acaca9e38fc8a7efc2bdff2459d984ff29481028`. The homepage SHA-256 is `073a6ce87b4f9e99da18c755c1d873fa0e5813fcbdc27466a7d406d3acecd4d7`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v210 (`25994b027b531440101ead370a329f8c0133db25`) if needed. The entry site publishes separately.
 
-The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight, and the tagline is **For everyday IT**. BEC workflow order, group membership, card toggling, and download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
+The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. Download checksums passed on v211. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
 
@@ -33,7 +33,7 @@ Keep the deployment payload, build scripts, GitHub workflows, and the test input
 - [Site, catalog and mobile specification](SITE-AND-CATALOG-SPEC.md)
 - [New engineer walkthrough](NEW-ENGINEER-WALKTHROUGH.md)
 
-Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The existing production checkpoints are catalog v181 and entry v44.
+Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The acceptance checkpoints were catalog v181 and entry v44.
 
 Start changes here. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.
 
