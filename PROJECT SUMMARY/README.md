@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v219, from Sites source commit `5b8e4b3613ec8e6107b569d65473d1b682d664a7`. The homepage SHA-256 is `f21194ddd799d7e5de7cfcf7c123e0f0e4e25cd60dfbf72bcafb2fc8dedf0405`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v218 (`8b1e4ecac1f142702962caa4469d7ced7c063144`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v53 deployment (`246b49351420fc035593e6fdbdbe19df4a093d79`, rollback v52). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v220, from Sites source commit `6078aeae913921a3f0f31dee746270cb8d9f5da4`. The homepage SHA-256 is `55354e3d32b65c6493c407bf51de91758e9f9a9a1e4d75109a77ecf01665f799`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v219 (`5b8e4b3613ec8e6107b569d65473d1b682d664a7`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v54 deployment (`6c11bb5dc4195ab0dc4b09344e057744f97320ee`, rollback v53). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
@@ -10,11 +10,15 @@ GitHub and Sites have independent source histories. The GitHub baseline reviewed
 
 ## FAQ and feedback
 
-The toolbar starts with the icon-only FAQ and Submit an idea links. The FAQ is published at `/faq.html` and covers the jump-box workflow and troubleshooting. The toolbar and FAQ link to `/feedback.html`, which submits to Formspree. Live page bytes were verified across all three URLs. Inbox delivery has not been tested. Homepage and FAQ bytes matched across all three live URLs.
+The toolbar starts with the icon-only FAQ and Submit an idea links. The FAQ is published at `/faq.html` and covers the jump-box workflow and troubleshooting. The toolbar and FAQ link to `/feedback.html`, which submits to Formspree. Live page bytes were verified across all three URLs. Ryan confirmed the Formspree test reached Gmail and verified the search recovery, result ordering, and FAQ/feedback walkthrough items against v219. Homepage and FAQ bytes matched across all three live URLs.
 
 ## Sign-in and command search
 
 Sites v216 adds sign-in symptom and error-code mappings and the Get-InboxRule and gpresult shortcuts. Four new simulated searches and download checksums passed. All three live homepages matched the release.
+
+## Five-batch search verification
+
+Sites v220 adds 12 ticket mappings after testing 25 fresh queries across identity, mail, endpoint, tenant, and incident response. The full simulated suite and packaged checksums passed. All three live homepages matched the release. Running-service inventory and forwarding change attribution remain catalog gaps.
 
 ## Search intent and scope
 
