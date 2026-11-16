@@ -272,19 +272,13 @@
 - Suspend BitLocker for One Reboot (quick command)
 - Verify Script Signature (quick command)
 
-## Session and Setup (21)
+## Session and Setup (12)
 
 - Connect Exchange Online (quick command)
 - Connect Microsoft Graph (quick command)
 - Disconnect Exchange Online (quick command)
 - Disconnect Microsoft Graph (quick command)
 - Get M365 Modules
-- GitHub: Manage Repository
-- GitHub: Save Project Handoff
-- GitHub: Security Check
-- Screensaver: Attractor
-- Screensaver: Rain
-- Screensaver: Static
 - Set Current User Execution Policy - RemoteSigned (quick command)
 - Show Exchange Connection (quick command)
 - Show Execution Policies (quick command)
@@ -292,6 +286,17 @@
 - Show Installed ExchangeOnlineManagement Version (quick command)
 - Show Installed Microsoft Graph Module Version (quick command)
 - Show PowerShell Version (quick command)
+
+## Extras (9)
+
+Search with extras, github, screen, screensaver, or theme. Saved Extras are also available in Favorites.
+
+- GitHub: Manage Repository
+- GitHub: Save Project Handoff
+- GitHub: Security Check
+- Screensaver: Attractor
+- Screensaver: Rain
+- Screensaver: Static
 - Theme: Cobalt
 - Theme: Sea Glass
 - Theme: Silicon Valley
