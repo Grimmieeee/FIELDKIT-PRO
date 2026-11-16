@@ -2,11 +2,15 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v223, from Sites source commit `da299fe565ca59a9c36a27f6d4077f4088cabb1b`. The homepage SHA-256 is `80a8f2c0536ccccb511326f7f4529485032d744f3c1c0c9ba9dad7986488efeb`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v222 (`1699a69687b1d1e906876c127c461204315dc6d4`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v57 deployment (`22bf15622dc1e920b758b5837183658ea7d310fc`, rollback v56). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v224, from Sites source commit `cce85c81c623b53ed8eae210d3ee8b6f1589e2fe`. The homepage SHA-256 is `5b74929fde4c46fc5c5479802a47fddac6e77dd22570a70a9364553428a51170`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v223 (`da299fe565ca59a9c36a27f6d4077f4088cabb1b`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v58 deployment (`227b88cec14e974df3b0cfd421c61bf473cb182f`, rollback v57). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across eight navigation groups and search-only Extras. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
+
+## Search result sorting
+
+Sites v224 defaults searches to relevance, including curated follow-up and BEC order. An explicit column sort orders the full matching set. Sort by relevance restores the default. Both directions for all three columns and relevance restoration passed simulated checks. All three live homepages matched.
 
 ## Sort column alignment
 
