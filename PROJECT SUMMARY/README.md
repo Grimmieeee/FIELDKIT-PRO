@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v214, from Sites source commit `69b73a4d71ce409a89b8db5b3fa7766e445febab`. The homepage SHA-256 is `fc634a176fb5feab8c7a1f8a5576b209f934e30cf7ea7696f389bc7fffbef23d`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v213 (`ba086dfacc9d1e4a9c61bc335d8d6a7b4819a59c`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v48 deployment (`44530fde1cc75dd9e3ece0af745ccded32aa9d7d`, rollback v47). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v215, from Sites source commit `8b3b684279395482c50946b1b9768589df11ca72`. The homepage SHA-256 is `52a8a1ae958263735d1ad6ec2b8404b4835dbe064441b8f940ccf28b86d0888e`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v214 (`69b73a4d71ce409a89b8db5b3fa7766e445febab`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v49 deployment (`dd5d4d6e7f50d0a40f56b3d3cc8d3a1605ebec2c`, rollback v48). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
@@ -11,6 +11,10 @@ GitHub and Sites have independent source histories. The GitHub baseline reviewed
 ## FAQ and feedback
 
 The toolbar starts with the icon-only FAQ and Submit an idea links. The FAQ is published at `/faq.html` and covers the jump-box workflow and troubleshooting. Feedback links to GitHub Issues. Homepage and FAQ bytes matched across all three live URLs.
+
+## Search follow-up
+
+Sites v215 adds ticket mappings for DNS, certificate expiration, Group Policy, disk free space, AD and Entra group members, and failed logins. Eight additional simulated ticket cases and download checksums passed. All three live homepage responses matched the release bytes.
 
 ## Search audit update
 
