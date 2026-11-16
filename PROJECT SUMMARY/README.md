@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v217, from Sites source commit `efa0171b371bd665cd3b0dbc01f334584f2e08df`. The homepage SHA-256 is `1ae54324b2ae8a6783a7560f56b1fc9195f5b965f4c25b626d2b340b9be6f6f0`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v216 (`4d10ecde7f0438232147b582bf214172809a811e`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v51 deployment (`ee8b87c511d1d4f725859d7e65379858adfd49ac`, rollback v50). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v218, from Sites source commit `8b1e4ecac1f142702962caa4469d7ced7c063144`. The homepage SHA-256 is `36fa50873413e10a934de4b0651df79f9850381c1b59a16ae28dc6c76493593d`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v217 (`efa0171b371bd665cd3b0dbc01f334584f2e08df`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v52 deployment (`8996a50c247c0a49f2ff90f23cfbe9d8fd4941b6`, rollback v51). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
@@ -15,6 +15,10 @@ The toolbar starts with the icon-only FAQ and Submit an idea links. The FAQ is p
 ## Sign-in and command search
 
 Sites v216 adds sign-in symptom and error-code mappings and the Get-InboxRule and gpresult shortcuts. Four new simulated searches and download checksums passed. All three live homepages matched the release.
+
+## Ticket search audit batch
+
+Sites v218 updates 39 mappings across identity, mail, endpoints, tenant, and incident response. The simulated suite passed all 39 mappings and two mailbox protocol intent checks, plus the existing suite. Download checksums passed and all three live homepages matched.
 
 ## Search follow-up
 
