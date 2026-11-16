@@ -2,7 +2,7 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v219, from Sites source commit `5b8e4b3613ec8e6107b569d65473d1b682d664a7`. The homepage SHA-256 is `f21194ddd799d7e5de7cfcf7c123e0f0e4e25cd60dfbf72bcafb2fc8dedf0405`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v218 (`8b1e4ecac1f142702962caa4469d7ced7c063144`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v53 deployment (`246b49351420fc035593e6fdbdbe19df4a093d79`, rollback v52). The original entry v44 is the rollback point and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v219, from Sites source commit `5b8e4b3613ec8e6107b569d65473d1b682d664a7`. The homepage SHA-256 is `f21194ddd799d7e5de7cfcf7c123e0f0e4e25cd60dfbf72bcafb2fc8dedf0405`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v218 (`8b1e4ecac1f142702962caa4469d7ced7c063144`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v53 deployment (`246b49351420fc035593e6fdbdbe19df4a093d79`, rollback v52). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across the eight navigation groups. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
@@ -18,7 +18,7 @@ Sites v216 adds sign-in symptom and error-code mappings and the Get-InboxRule an
 
 ## Search intent and scope
 
-Sites v219 recognizes common diagnostic wording variations and scope terms. Existing aliases and exact tool names take precedence. Fifteen new simulated cases and the existing suite passed. Download checksums passed and all three live homepages matched.
+Sites v219 recognizes common diagnostic wording variations and scope terms. Existing aliases and exact tool names take precedence. Fifteen new simulated cases and the existing suite passed. The baseline verification reran search and packaged download checksums. Homepage, FAQ, feedback page, and checksum manifest matched the pinned payload across all three live URLs. Current browser acceptance remains separate.
 
 ## Ticket search audit batch
 
@@ -34,7 +34,7 @@ Generic account-compromise queries start with assessment. Exact BEC containment 
 
 ## Catalog and operator workflow
 
-The catalog supports ticket-language search, task sections, Reports, Scope and Objective filters, and ranked follow-up checks. User and Users distinguish individual and batch work. Tenant represents organization-wide coverage. Check each card against its source for supported input and export formats.
+The catalog supports ticket-language search, eight category filters, and ranked follow-up checks. Empty category searches can expand to All without clearing the query. User and Users distinguish individual and batch work. Tenant represents organization-wide coverage. Check each card against its source for supported input and export formats.
 
 In the core BEC workflow, start with User Risk Assessment, continue with approved containment, then Restore and Validate. The final step offers a consolidated TXT summary and marks unavailable stages explicitly. A partial report does not establish incident closure. Keep evidence and follow-up in the incident ticket.
 
@@ -59,7 +59,7 @@ Keep the deployment payload, build scripts, GitHub workflows, and the test input
 
 Ryan accepted both the production catalog and the separate entry site on November 14, 2026. The acceptance checkpoints were catalog v181 and entry v44.
 
-Start changes here. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.
+Start changes here. Earlier Sites release notes preserve their historical checkpoints. Update the affected reference in the same change as the implementation. Update this index when the deployed version, source hash, rollback point or acceptance evidence changes. Preserve historical evidence against its original revision. If a Sites runbook needs a current reference, link this bank and use the release-specific record for deployment evidence.
 
 See [QA file disposition](QA-DISPOSITION.md) for retained and archived evidence. The Sites source runbook links back here.
 
