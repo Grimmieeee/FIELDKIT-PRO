@@ -2,11 +2,15 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v221, from Sites source commit `d45c2cfd7de487cdcc12c502751643e8bb638ef7`. The homepage SHA-256 is `0365c70954a8db787ecccb42110a33c027aeccd4edf29c45d0ca3ac1183df0af`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v220 (`6078aeae913921a3f0f31dee746270cb8d9f5da4`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v55 deployment (`afd49bc40f94f72283032f87fa7bef86de9b873a`, rollback v54). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v222, from Sites source commit `1699a69687b1d1e906876c127c461204315dc6d4`. The homepage SHA-256 is `0365c70954a8db787ecccb42110a33c027aeccd4edf29c45d0ca3ac1183df0af`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v221 (`d45c2cfd7de487cdcc12c502751643e8bb638ef7`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v56 deployment (`4dbc324c3fad9f9a8b7e9c953fc37555b9c3e848`, rollback v55). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across eight navigation groups and search-only Extras. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
+
+## Approved FAQ refresh
+
+Sites v222 publishes the approved Draft 2 FAQ, option 04 title gradient, two-tone intro, card-sized close link back to the catalog, and bottom-right signature. FAQ SHA-256: `2dc72f16ae73375eb799eb3f73030dc9863d969bf447c5b275ee945a0da46491`. The FAQ and catalog HTML matched the release across all three URLs. Search and packaged download checks passed.
 
 ## FAQ and feedback
 
