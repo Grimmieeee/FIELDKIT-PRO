@@ -2,11 +2,15 @@
 
 ## Production and source
 
-Production is [fieldkit.pro](https://fieldkit.pro/), Sites v231, from Sites source commit `60722c438dc79dbf187338c9429591d4bbdab8b0`. The homepage SHA-256 is `009d5ba576b26a9d331e4a40cfaf1343cf4f219c571435f69940ef59ad3cb320`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v230 (`e2e04b0b4a3bda77382fc73fb1bf1635a94ee87b`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v65 deployment (`346c161aaede75aace9463d5aa3b53f60adc96e1`, rollback v64). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
+Production is [fieldkit.pro](https://fieldkit.pro/), Sites v232, from Sites source commit `04c6b26ca44ef4df9689b677d099178c967cb809`. The homepage SHA-256 is `471f3f2ef2ef854890cee366b2c681c962542fb24a04079f2e6dcfe31d8e3eec`. The Sites catalog origin serves identical homepage bytes. Roll back through Sites to v231 (`60722c438dc79dbf187338c9429591d4bbdab8b0`) if needed. The [entry URL](https://field-kit-entry.delbert-hifield.chatgpt.site/) serves the same catalog homepage in its own Sites v66 deployment (`d2aaffbdf1f3cefab834d8f4da8194c554b7859b`, rollback v65). The original entry v44 is the historical pre-cutover snapshot and its source is [archived](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/tree/7397f97f48804c72af2b530ebff5f14b70deb838/sites/field-kit-entry-v44).
 
 The [catalog by group](CATALOG-BY-GROUP.md) lists all 270 entries across eight navigation groups and search-only Extras. Search and category results are flat, filenames use regular weight. The homepage has no tagline or About popup. The approved title and navigation margins are 32px and 20px. On v212, lockout searches surface Get AD User Details immediately after Unlock AD User. The search suite passed 12 ranking checks and eight simulated result-list scenarios, including the approved BEC order. Download checksums passed. Scope and impact labels retain Tenant and Delete where they apply.
 
 GitHub and Sites have independent source histories. The GitHub baseline reviewed for this update is `f77f25f6cde0a2055f20a157d10674edb756a14e`. Treat its dist tree and operator test copies as revision-specific evidence. Establish byte parity with Sites before using a GitHub test to make a claim about production.
+
+## Active Directory module setup
+
+Sites v232 adds Install Active Directory Module (RSAT) under Session and Setup, with links from cards that declare the module. The quick command selects the Windows client or server feature and checks Get-ADUser. Search QA passed and all three live homepages matched. Windows installation was not executed.
 
 ## Sort header typography
 
