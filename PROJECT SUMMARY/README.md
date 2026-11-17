@@ -1,6 +1,23 @@
 # FIELD // KIT project status
 
-## Current production baseline — November 16, 2026 Pacific
+## Current production baseline — November 17, 2026 Pacific
+
+Both sites use the page title `FIELD // KIT PRO` and the green `//` favicon at `/fieldkit-slashes.png`. Ryan confirmed the favicon in his browser.
+
+| Site | Sites release | Source commit | Deployment | Immediate rollback |
+|---|---|---|---|---|
+| [fieldkit.pro](https://fieldkit.pro/) | v240 | `10a6f71314a59702779a4e51bb1c6a4030467d83` | `appgdep_6afc7f86e12881919a58efda43e8486e` | v239 |
+| [FIELD // KIT entry](https://field-kit-entry.delbert-hifield.chatgpt.site/) | v72 | `d76a8a1197f4769515be9aa5bb8eaf898dd08297` | `appgdep_6afc7f8ef1f88191b775611421bc5cfd` | v71 |
+
+Both Sites deploys succeeded. Checkout comparison against v237/v69 shows changes only to the homepage title and icon reference, the icon file, and the checksum list. The earlier VPN release and its QA evidence are recorded below. Independent live HTTP verification on November 17 returned 403 from this workspace; the hashes below describe the published source checkouts.
+
+| Source asset | SHA-256 |
+|---|---|
+| v240 homepage | `40e72fdad5b9330d6d4d62c95c2c7b1f9b513c34a4c3327d8170e904ed8161a2` |
+| v72 homepage | `309f387eb62f5f9661b0d144a43c5e23cb3c66407b13fef6e6d6401b5fdcd1d8` |
+| Green favicon, both sites | `d6dd71fe973bc963994f317f3d8d9d28801b14ed03742887d53e94cb8bfb69b9` |
+
+## VPN release baseline — November 16, 2026 Pacific
 
 This documentation closeout records **fieldkit.pro v237** and **FIELD // KIT entry v69**. Sites release records and fresh HTTPS byte comparisons were checked on November 16. This change updates documentation only; neither site is rebuilt or republished.
 
