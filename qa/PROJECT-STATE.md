@@ -1,4 +1,8 @@
-# Current QA state — v237 / entry v69
+# Current QA handoff
+
+Current production is **v240 / entry v72**. See the [current production baseline](<../PROJECT SUMMARY/README.md>) for source pins, rollback targets and bookmark title/favicon verification. Ryan confirmed the green favicon in his browser. The evidence below remains tied to the VPN release.
+
+## VPN release QA — v237 / entry v69
 
 The [Project Summary](<../PROJECT SUMMARY/README.md>) is the current production and verification handoff. Documentation closeout: November 16, 2026 Pacific. No site build or publication accompanies this correction.
 
