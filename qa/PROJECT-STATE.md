@@ -1,6 +1,6 @@
 # Current QA handoff
 
-Current production is **v240 / entry v72**. See the [current production baseline](<../PROJECT SUMMARY/README.md>) for source pins, rollback targets and bookmark title/favicon verification. Ryan confirmed the green favicon in his browser. The evidence below remains tied to the VPN release.
+Current production is **v241 / entry v73**. All section orders and 12 targeted search scenarios passed per site in a renderer harness. JavaScript syntax, catalog source preservation, and download checksums passed. Interactive browser QA was not run. The v240/v72 bookmark release preceded this catalog update. See the [current production baseline](<../PROJECT SUMMARY/README.md>) for source pins, rollback targets and bookmark title/favicon verification. Ryan confirmed the green favicon in his browser. The evidence below remains tied to the VPN release.
 
 ## VPN release QA — v237 / entry v69
 
