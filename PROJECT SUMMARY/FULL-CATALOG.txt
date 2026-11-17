@@ -1,0 +1,293 @@
+FIELD // KIT PRO — FULL CATALOG
+fieldkit.pro v240 | 271 entries | Sites source 10a6f713
+Sorted by category and name. No priority ranking.
+
+Device (94)
+Add User To Administrators | Makes changes | Local
+Check and Sync Windows Time | Makes changes | Local
+Check Common Pending Reboot Flags | Read-only | Local
+Check Sensitive Data | Read-only | Local
+Chkdsk Online Scan | Read-only | Local
+Clear Cached Kerberos Tickets | Makes changes | Current Windows user
+Clear Delivery Optimization Cache | Makes changes | Local
+Continuous Ping | Read-only | Single network target
+Create Local User | Makes changes | Local
+Defragment Volume | Makes changes | Local
+Delete Local User | Destructive | Local
+Delete Wi-Fi Profile | Makes changes | Local
+Disable Hibernation | Makes changes | Local
+Disable Local Account | Makes changes | Local
+Disable Network Adapter | Makes changes | Local
+DISM Analyze Component Store | Read-only | Local
+DISM Component Store Cleanup | Makes changes | Local
+Dism Component Store Scan | Read-only | Local
+Dism Restore Health | Makes changes | Local
+Enable Local Account | Makes changes | Local
+Entra Join Status | Read-only | Local
+Find Files Modified In Last 24 Hours | Read-only | Local
+Find What’s Using Disk Space | Read-only | Local
+Flush Resolver Cache | Makes changes | Local
+Folder Permissions | Read-only | Local
+Isolate Device - Disable Enabled Adapters | Makes changes | Local
+Launch Disk Cleanup | Makes changes | Local
+Local Account Details | Read-only | Local
+Mapped Drives | Read-only | Local
+Network Profile | Read-only | Local
+Open Local Users and Groups | Read-only | Local
+Open Storage Settings | Read-only | Local
+Open Windows Update | Read-only | Local
+Path Ping | Read-only | Single network target
+Ping Host | Read-only | Single network target
+Port 443 Connections | Read-only | Local
+PowerShell Remoting Endpoints | Read-only | Local
+Print Jobs | Read-only | Local
+Printer Check | Read-only | Local
+Reboot Computer | Makes changes | Local
+Release And Renew Dhcp | Makes changes | Local
+Remove User From Administrators | Makes changes | Local
+Reset Tcp/Ip Stack | Makes changes | Local
+Reset Winsock | Makes changes | Local
+Resolve DNS Name | Read-only | Single network target
+Restart Network Adapter | Makes changes | Local
+Restart Service | Makes changes | Local
+Review Folder Contents | Read-only | Local
+Scheduled Task Inventory | Read-only | Local
+Set Local User Password | Makes changes | Local
+Set Windows Service Startup Type | Makes changes | Local
+Show Active Adapters | Read-only | Local
+Show Arp Neighbor Cache | Read-only | Local
+Show Cached Kerberos Tickets | Read-only | Current Windows user
+Show Computer Model And Serial Number | Read-only | Local
+Show Configured Dns Servers | Read-only | Local
+Show Configured Windows Vpn Connections | Read-only | Local
+Show Current Windows Identity and Privileges | Read-only | Local
+Show Established Tcp Connections | Read-only | Local
+Show Hostname And Current User | Read-only | Local
+Show Installed Hotfixes | Read-only | Local
+Show Ip Configuration | Read-only | Local
+Show Last Boot And Uptime | Read-only | Local
+Show Listening Tcp Ports | Read-only | Local
+Show Local Administrators | Read-only | Local
+Show Local Drive Free Space | Read-only | Local
+Show Local Users | Read-only | Local
+Show Os And Build | Read-only | Local
+Show Physical Disk Health | Read-only | Local
+Show Problem Devices | Read-only | Local
+Show Recent Windows Update History | Read-only | Local
+Show Routing Table | Read-only | Local
+Show Saved Wi-Fi Profiles | Read-only | Local
+Show Service Status | Read-only | Local
+Show SMB Sessions | Read-only | Local
+Show SMB Shares | Read-only | Local
+Show Top Cpu Consumers | Read-only | Local
+Show Top Memory Consumers | Read-only | Local
+Show Whether Remote Desktop Is Enabled | Read-only | Local
+Show Wi-Fi Connection | Read-only | Local
+Show Windows Firewall Profiles | Read-only | Local
+Show Windows Firewall Rules by Name | Read-only | Local
+SMB Share Permissions | Read-only | Local
+Stop Process By Name | Makes changes | Local
+Stored Credential Targets | Read-only | Current Windows user
+System Driver Services | Read-only | Local
+System File Checker | Makes changes | Local
+Test Tcp Port | Read-only | Single network target
+Trace Route | Read-only | Single network target
+User Sessions | Read-only | Single computer
+Windows Management Instrumentation (WMI) Event Subscriptions | Read-only | Local
+Windows Profiles | Read-only | Local
+WinGet | Makes changes | Local
+WinHTTP Proxy | Read-only | Local
+
+Directory and Tenant (29)
+Account and Sign-in Review | Read-only | Tenant
+AD AdminCount Flags | Read-only | AD domain
+AD Delegation Settings | Read-only | AD domain
+AD Domain Permissions | Read-only | AD domain
+AD SPN Inventory | Read-only | AD domain
+AD Trusts | Read-only | AD domain
+AdminSDHolder Permissions | Read-only | AD domain
+App Registration Details | Read-only | Tenant
+Audit AD Account Exceptions | Read-only | AD domain
+Audit Tenant Admin Accounts | Read-only | Tenant
+Audit Tenant License Totals | Read-only | Tenant
+Azure Owner Assignments | Read-only | Azure subscription
+Domain Trust Check | Read-only | Local
+Find Exchange Service Principal By Appid | Read-only | Single app
+Force Group Policy Update | Makes changes | Local
+GDAP Relationships | Read-only | Tenant
+Get Azure Resources | Read-only | Azure subscription
+Get Azure VPN Connect Status | Read-only | Azure subscription
+GPO Report | Read-only | Single GPO
+Inactive AD Computers | Read-only | AD domain
+Inactive AD Users | Read-only | AD domain
+LAPS Expiration Review | Read-only | AD domain
+Managed Service Accounts | Read-only | AD domain
+Review Account Cleanup | Read-only | Tenant
+Show Default Domain Password Policy | Read-only | AD domain
+Show Group Policy Result | Read-only | Local
+Tenant Change Review | Makes changes | Tenant
+Tenant Security Review | Read-only | Tenant
+Test Azure Resource Group Access | Read-only | Resource group
+
+Encryption and Certificates (13)
+Calculate Sha256 Hash | Read-only | Local
+Create Self-Signed App-Auth Certificate | Makes changes | Local
+Export Certificate as PFX | Makes changes | Local
+Export Public Certificate as CER | Makes changes | Local
+Find Certificate by Thumbprint | Read-only | Local
+Resume BitLocker Protection | Makes changes | Local
+Show BitLocker Recovery Protectors | Read-only | Local
+Show BitLocker Status | Read-only | Local
+Show Code-Signing Certificates | Read-only | Current Windows user
+Show Expiring Certificates | Read-only | Local
+Sign Script | Makes changes | Local
+Suspend BitLocker for One Reboot | Makes changes | Local
+Verify Script Signature | Read-only | Local
+
+Incident Response (16)
+BEC: Build Incident Timeline | Read-only | Local
+BEC: Check IP Reputation | Read-only | Public IP lookup
+BEC: Contain and Eradicate | Destructive | Single user
+BEC: Decode Token | Read-only | Local
+BEC: Restore and Validate | Makes changes | Single user
+BEC: Restore Email | Makes changes | Single mailbox
+BEC: Review File Activity | Read-only | Single user
+BEC: Review Token Replay | Read-only | Single user
+BEC: Revoke Sessions | Makes changes | Single user
+BEC: Trace Email Delivery | Read-only | Tenant message trace
+BEC: Trace IP Activity | Read-only | Tenant audit log
+BEC: User Risk Assessment | Read-only | Single user
+Create Phishing Search By Subject | Makes changes | Tenant
+Hard-Delete Search Results | Destructive | Named compliance search
+Show Compliance Search Status | Read-only | Named compliance search
+Start Compliance Search | Makes changes | Named compliance search
+
+Logs and Audit (14)
+Audit Inbox Rule Changes | Read-only | Single user
+Failed Logons | Read-only | Local
+Mail Delete And Move Audit | Read-only | Single user
+Mail Items Accessed Audit | Read-only | Single user
+Parse Mail Audit Subject, Ip, And Destination Folder | Read-only | Single user
+PowerShell Log Activity | Read-only | Local
+Recent Application Errors | Read-only | Local
+Recent System Errors | Read-only | Local
+Search Query Audit | Read-only | Single user
+Show Entra Sign-ins - Last 48 Hours | Read-only | Single user
+Show Failed Sign-Ins | Read-only | Single user
+Show Last 10 Entra Sign-Ins | Read-only | Single user
+Show Legacy / Other-client Sign-ins | Read-only | Single user
+Show Successful Sign-Ins | Read-only | Single user
+
+Mail (29)
+Add Calendar Permission | Makes changes | Single mailbox
+Add Contacts Permission | Makes changes | Single mailbox
+Add Distribution Group Member | Makes changes | Single group
+Audit Mail Flow Rules | Read-only | Tenant
+Audit Shared Mailbox Sign-ins | Read-only | Tenant
+Audit Tenant Mailbox Access | Read-only | Tenant
+Disable Mailbox Protocols | Makes changes | Single user
+Get Mailbox Lit Hold Status | Read-only | Single user
+Get Mailbox Rules | Read-only | Single user, Multi-user, Tenant
+Get Mailbox Usage Statistics | Read-only | Single user
+Purge Soft-Deleted Mailbox | Destructive | Single user
+Remove All Inbox Rules | Destructive | Single mailbox
+Remove Calendar Permission | Makes changes | Single mailbox
+Remove Disabled User Mailbox Access | Makes changes | Single user
+Remove Distribution Group Member | Makes changes | Single group
+Remove Mailbox Delegate | Makes changes | Single user
+Remove Mailbox Forwarding | Makes changes | Single mailbox
+Remove Specific Inbox Rule | Makes changes | Single mailbox
+Set Litigation Hold | Makes changes | Single user, Multi-user
+Show Calendar Permissions | Read-only | Single mailbox
+Show Contacts Permissions | Read-only | Single mailbox
+Show Distribution Group Members | Read-only | Single group
+Show Distribution Group Owners | Read-only | Single group
+Show Mailbox Full Access Delegates | Read-only | Single mailbox
+Show Mailbox Send As Delegates | Read-only | Single mailbox
+Show Mailbox Send on Behalf Delegates | Read-only | Single mailbox
+Show Mailbox Summary | Read-only | Single mailbox
+Show Send-To Restrictions / authOrig | Read-only | Single group
+Show Specific Transport Rule | Read-only | Single mail flow rule
+
+Session and Setup (13)
+Connect Exchange Online | Read-only | Current session
+Connect Microsoft Graph | Read-only | Current session
+Disconnect Exchange Online | Makes changes | Current session
+Disconnect Microsoft Graph | Makes changes | Current session
+Install Active Directory Module (RSAT) | Modifying | Local
+Install PowerShell Modules | Makes changes | Local
+Set Current User Execution Policy - RemoteSigned | Makes changes | Current Windows user
+Show Exchange Connection | Read-only | Current session
+Show Execution Policies | Read-only | Local
+Show Graph Context | Read-only | Current session
+Show Installed ExchangeOnlineManagement Version | Read-only | Local
+Show Installed Microsoft Graph Module Version | Read-only | Local
+Show PowerShell Version | Read-only | Local
+
+Users (54)
+Add User to AD Group | Makes changes | Single group
+Add User to Entra Group | Makes changes | Single group
+Assign User Licenses | Makes changes | Single user, Multi-user
+Block Entra User Sign-in | Makes changes | Single user
+Check AD–Entra Account Match | Read-only | Single user
+Check Entra User AD Sync | Read-only | Single user
+Check User Before Deletion | Read-only | Single user
+Create Dynamic Group | Makes changes | Single group
+Delete AD User | Destructive | Single user
+Delete Entra User | Destructive | Single user
+Delete User Accounts | Destructive | Single user, Multi-user
+Disable AD User | Makes changes | Single user
+Disable User Accounts | Makes changes | Single user, Multi-user
+Enable AD User | Makes changes | Single user
+Find Entra Group by Name | Read-only | Group name lookup
+Find User By Exact Display Name | Read-only | User name lookup
+Find User UPNs | Read-only | Single user, Multi-user
+Force Password Change Next Logon | Makes changes | Single user
+Get AD User Details | Read-only | Single user
+Get Group Members | Read-only | Single group, Multiple groups
+Get Group Owners | Read-only | Tenant
+Get User Account Status | Read-only | Single user, Multi-user
+Get User Details by UPN | Read-only | Single user
+Get User Groups | Read-only | Single user, Multi-user
+Re-enable Entra User Account | Makes changes | Single user
+Re-Enable User Account | Makes changes | Single user
+Remove Specific Authenticator Method | Makes changes | Single user
+Remove Specific Delegated Grant | Makes changes | Single OAuth grant
+Remove Specific Phone Method | Makes changes | Single user
+Remove User App Consent | Makes changes | Single user
+Remove User from AD Group | Makes changes | Single group
+Remove User from Entra Group | Makes changes | Single group
+Remove User Groups | Makes changes | Single user, Multi-user
+Remove User Licenses | Makes changes | Single user, Multi-user
+Reset AD User Password | Makes changes | Single user
+Reset Cloud User Password | Makes changes | Single user, Multi-user
+Set Per-user MFA | Makes changes | Single user, Multi-user
+Show AD Group Members | Read-only | Single group
+Show AD User Group Memberships | Read-only | Single user
+Show Assigned Licenses | Read-only | Single user
+Show Delegated Grants For One User | Read-only | Single user
+Show Distinguished Name | Read-only | Single user
+Show Domain Account Details | Read-only | Single user
+Show Entra Group Direct Members | Read-only | Single group
+Show Entra Group Owners | Read-only | Single group
+Show Entra User Group Memberships | Read-only | Single user
+Show Entra User’s Manager | Read-only | Single user
+Show MFA Methods | Read-only | Single user
+Show Microsoft Authenticator Methods | Read-only | Single user
+Show Password Expiry | Read-only | Single user
+Show Password Last Set | Read-only | Single user
+Show Phone Methods | Read-only | Single user
+Show Registration Status For One User | Read-only | Single user
+Unlock AD User | Makes changes | Single user
+
+Extras (9)
+GitHub: Manage Repository | Makes changes | Single repository
+GitHub: Save Project Handoff | Makes changes | Single repository
+GitHub: Security Check | Makes changes | Single repository
+Screensaver: Attractor | Read-only | Local
+Screensaver: Rain | Read-only | Local
+Screensaver: Static | Read-only | Local
+Theme: Cobalt | Makes changes | Local
+Theme: Sea Glass | Makes changes | Local
+Theme: Silicon Valley | Makes changes | Local
+
