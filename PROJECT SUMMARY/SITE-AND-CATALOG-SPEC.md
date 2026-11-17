@@ -6,7 +6,7 @@ The [Project Summary](README.md) pins the current Sites production revision. See
 
 ## Catalog
 
-- Browse the eight catalog groups or search across All. Search and category results use a flat list. Quick Commands remain directly accessible.
+- Browse the ten catalog sections, which default to A–Z, or search across All by relevance. Extras remain search-only. Search and category results use a flat list. Quick Commands remain directly accessible.
 - Search accepts exact tool names, mapped commands, and ticket wording. Exact names and curated mappings take precedence over diagnostic wording rules. Unmatched category searches offer Search all categories. Generic account-compromise searches lead with assessment, followed by containment and recovery. Exact containment and recovery tool names lead with the named tool.
 - The selected category filters results. Scope precedes Impact on the card. Use User for one account, Users for multi-user work, Tenant for organization-wide tasks, Device for endpoint work and Self for operator session or workspace tools. Preserve specific boundaries where these labels would misrepresent the target.
 - Use Delete for user-account deletion. Other irreversible actions can be Modify with a Destructive flag. Disclose local writes and sensitive output where they change operator decisions.
