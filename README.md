@@ -7,6 +7,7 @@
 | I want to… | Go here |
 | --- | --- |
 | Find or download a PowerShell tool | [Live catalog](https://fieldkit.pro/) |
+| Audit the full inventory | [Full catalog (plain text)](<PROJECT SUMMARY/FULL-CATALOG.txt>) |
 | See what’s live or how to roll back | [Project status](<PROJECT SUMMARY/README.md>) |
 | See what was tested | [QA handoff](qa/PROJECT-STATE.md) |
 | Build or add a script | [Build standard](<PROJECT SUMMARY/field-kit-build-standard.md>) · [Script intake](<PROJECT SUMMARY/SCRIPT-INTAKE.md>) |
