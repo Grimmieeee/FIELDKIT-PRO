@@ -2,6 +2,17 @@
 
 ## Current production baseline — November 17, 2026 Pacific
 
+| Site | Release | Sites source | Rollback |
+|---|---|---|---|
+| fieldkit.pro | v241 | `d0ede8f6e334e5314ab0acbb4349c5bd27269c6d` | v240 |
+| Entry | v73 | `26fba17a4079361b058d3d9be87cf3909f16ce25` | v72 |
+
+Both deployments succeeded. The catalog has ten browse sections and search-only Extras, with 271 tools and one home per tool. Section lists default to A–Z. Search retains relevance and cross-section mappings. [Catalog by group](CATALOG-BY-GROUP.md) · [Plain-text inventory](FULL-CATALOG.txt)
+
+All section orders and 12 targeted search scenarios passed per site in the result renderer harness. JavaScript syntax, source payload preservation, and download checksums passed. Interactive browser QA was not run.
+
+## Bookmark and favicon release — v240 / entry v72
+
 Both sites use the page title `FIELD // KIT PRO` and the green `//` favicon at `/fieldkit-slashes.png`. Ryan confirmed the favicon in his browser.
 
 | Site | Sites release | Source commit | Deployment | Immediate rollback |
