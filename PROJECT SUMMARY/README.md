@@ -1,6 +1,10 @@
 # FIELD // KIT project status
 
-## Current baseline — alphabetical category menu
+## Current baseline — card location and breadcrumb
+
+November 18, 2026 Pacific. Native deployments succeeded: catalog **v265**, source `a6bf63d928d7492cba9d203acd62fee25f466d4c`; entry **v97**, source `e16f090135ff391cbf090d587d00db5588c91814`. Rollback v264 / entry v96. Fixed literal breadcrumb source text and preserved the last-viewed row gradient after closing a card. [Behavior and evidence](CARD-LOCATION.md). Catalog and script payloads unchanged. Local Chrome responsive and renderer checks passed; no new iOS Safari validation or independent live-byte parity claim. Deployments: `appgdep_6afe336d5d6081918534a7a381f7a307`, `appgdep_6afe3365eea0819187c4d2daf99c715a`.
+
+## Previous baseline — alphabetical category menu
 
 November 18, 2026 Pacific. Both deployments succeeded: fieldkit.pro **v264**, source `9edff69bbbcc3885b709c3ef018c2b2ade9e298c`; entry **v96**, source `40274fb5708e4eae0cf3daefeaa27df1c67187b1`. Rollback: v263 / entry v95. All stays first; the eleven category names follow A–Z, including AD, Entra, Local, M365 Licensing within Identity & Access. Catalog membership, tool ordering, search ranking, scripts and tap-target CSS are unchanged. Actual menu-renderer order and existing search checks passed on both Sites sources. Prior operator iOS acceptance remains tied to v263/v95; no new device test was run for this order-only update. [Category ordering rule](CATEGORY-ORDER.md).
 
