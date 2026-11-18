@@ -2,7 +2,9 @@
 
 Use the published revision named in the test record. Browse and search only. Execute scripts separately in the approved environment.
 
-Before closing iOS acceptance for the tap-target release, use an actual iPhone Safari session. Tap near the edges of each enabled header control, scroll/select category and sort options, open result and Related Items rows, and repeat in both themes and landscape. Record the exact Sites version, device, iOS version and outcomes. This has NOT been performed in the release environment.
+**Operator-confirmed iOS acceptance — November 18, 2026 Pacific:** Ryan replied “verified” after the v263 / entry v95 tap-target release. The requested iOS check is operator-confirmed complete for that release. No per-step transcript, exact device/iOS/browser version, theme/landscape coverage or device-side pixel measurements were supplied. The release environment itself did not run iOS Safari; its Chrome measurements remain separate evidence.
+
+For future releases that change tap targets, use an actual iPhone browser session. Check enabled header controls near their edges, menu scrolling/selection, result/card opening, both themes and landscape, and record exact source/device/browser versions. Do not reopen the accepted v263/v95 check as pending.
 
 1. Search `user locked out`, `hidden inbox rules`, and `tenant license report`. Confirm the first result fits the task and the relevant scope is visible.
 2. Search `bec`. Confirm User Risk Assessment, Contain and Eradicate, and Restore and Validate appear in that order.

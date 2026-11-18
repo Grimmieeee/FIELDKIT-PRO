@@ -19,7 +19,7 @@ Use [NAMING-STANDARD.md](NAMING-STANDARD.md), [NAMING-MAP.json](NAMING-MAP.json)
 
 ## Tap targets
 
-Header icon controls are at least 44 by 44 CSS pixels. Tappable catalog, category, sort and Related Items rows are at least 44px tall. Use actual layout boxes without overlapping hit overlays. Preserve 18px icon glyphs and existing type/color styling. At widths at or below 414px, wrap header controls below the wordmark with a 96px header and matching content-height adjustment. iOS Safari acceptance remains outstanding for this release; see TAP-TARGETS.md.
+Header icon controls are at least 44 by 44 CSS pixels. Tappable catalog, category, sort and Related Items rows are at least 44px tall. Use actual layout boxes without overlapping hit overlays. Preserve 18px icon glyphs and existing type/color styling. At widths at or below 414px, wrap header controls below the wordmark with a 96px header and matching content-height adjustment. Ryan operator-confirmed the requested iOS check complete for v263 / entry v95 on November 18, 2026. Device/browser versions and per-step results were not supplied; see TAP-TARGETS.md.
 
 ## Desktop and mobile
 

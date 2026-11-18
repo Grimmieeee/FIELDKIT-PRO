@@ -12,7 +12,7 @@ Observed Chrome DOM geometry at 320, 375, 390, 414, 430, 480, 768 and 1280px, ea
 
 Raw geometry and the initial rounded-corner probe limitation: qa/tap-targets/chrome-measurements.json. Screenshot: qa/tap-targets/375px-header.jpg. Screenshot is Chrome responsive layout evidence, not an iOS capture.
 
-**iOS Safari verification: NOT RUN.** This environment exposes Linux/Chrome only; no Apple device, iOS simulator or Safari session is available. Do not mark iOS accepted from responsive Chromium measurements. A remaining device check should cover header taps, menu scrolling/selection, result/card opening, dark/light mode and landscape.
+**Operator-confirmed iOS acceptance — November 18, 2026 Pacific:** Ryan replied “verified” after the v263 / entry v95 tap-target release. The requested iOS check is operator-confirmed complete for that release. No per-step transcript, exact device/iOS/browser version, theme/landscape coverage or device-side pixel measurements were supplied. The release environment itself did not run iOS Safari; its Chrome measurements remain separate evidence.
 
 Both catalogs, embedded scripts and application JavaScript remain byte-identical to the prior release. The change is CSS only, plus documentation/evidence and the rebuilt serving bundle. Existing search checks and bundle syntax checks are run on each release source.
 

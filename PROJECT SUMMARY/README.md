@@ -1,6 +1,6 @@
 # FIELD // KIT project status
 
-## Current release — tap targets, November 18, 2026 Pacific
+## Current accepted baseline — tap targets, November 18, 2026 Pacific
 
 | Site | Release | Sites source | Rollback |
 |---|---|---|---|
@@ -11,7 +11,9 @@ Both native deployments succeeded. Header icons use real 44 by 44 CSS-pixel cont
 
 Chrome responsive geometry and interactions passed at 320, 375, 390, 414, 430, 480, 768 and 1280px in both themes. Header/logo boxes do not overlap. Effective edge-midpoint hits resolve to their controls. Category/sort/Related Items row heights were checked at 375, 430 and 1280px in both themes. Existing search tests and bundle syntax passed in each Sites checkout.
 
-**iOS Safari verification is NOT RUN.** No Apple device, iOS simulator or Safari session is available here. Responsive Chromium checks do not satisfy native iOS acceptance. Remaining device check: header taps, menu scrolling/selection, result/card opening, both themes and landscape. This is a published implementation with iOS acceptance still outstanding, not a claim of completed iOS QA.
+**Operator-confirmed iOS acceptance — November 18, 2026 Pacific:** Ryan replied “verified” after the v263 / entry v95 tap-target release. The requested iOS check is operator-confirmed complete for that release. No per-step transcript, exact device/iOS/browser version, theme/landscape coverage or device-side pixel measurements were supplied. The release environment itself did not run iOS Safari; its Chrome measurements remain separate evidence.
+
+Documentation closeout only: production remains v263 / entry v95, with existing homepage hashes, source pins and rollback targets unchanged. Sites documentation follow-up commits: catalog `025311f3bf9b9a22c7dd353c26185a85c73aee28`; entry `19b88a436522a7bb2b556e72bae1256a8141faa8`. No version was saved or deployed for this acceptance update.
 
 [Change and evidence](TAP-TARGETS.md) · [Chrome measurements](tap-targets/chrome-measurements.json). The screenshot is retained in each pinned Sites source at qa/tap-targets/375px-header.jpg. The preview needed a preview-only closing-body tag to prevent live-server injection inside inline SVG; production markup/script bytes were not changed for that workaround.
 

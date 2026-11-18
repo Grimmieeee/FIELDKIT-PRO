@@ -1,6 +1,6 @@
 # Current QA handoff
 
-Production is **v263 / entry v95**. Both deployments succeeded. CSS-only 44px target update. Chrome responsive sizes/overlap/interaction checks passed at eight widths in both themes; source/search and bundle syntax checks passed. **iOS Safari verification NOT RUN: no device/simulator/Safari available.** Do not mark this release iOS accepted. See [tap-target evidence](<../PROJECT SUMMARY/TAP-TARGETS.md>) and [current source pins](<../PROJECT SUMMARY/README.md>).
+Production is **v263 / entry v95**. Both deployments succeeded. CSS-only 44px target update. Chrome responsive sizes/overlap/interaction checks passed at eight widths in both themes; source/search and bundle syntax checks passed. **Operator-confirmed iOS acceptance — November 18, 2026 Pacific:** Ryan replied “verified” after the v263 / entry v95 tap-target release. The requested iOS check is operator-confirmed complete for that release. No per-step transcript, exact device/iOS/browser version, theme/landscape coverage or device-side pixel measurements were supplied. The release environment itself did not run iOS Safari; its Chrome measurements remain separate evidence. Documentation closeout only; production versions and application bytes unchanged. See [tap-target evidence](<../PROJECT SUMMARY/TAP-TARGETS.md>) and [current source pins](<../PROJECT SUMMARY/README.md>).
 
 ## Earlier Related Items evidence
 
