@@ -1,6 +1,6 @@
 # FIELD // KIT build standard
 
-Use the [current site, catalog and mobile reference](SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history.
+Use the [current site, catalog and mobile reference](SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history. Use the [naming standard](NAMING-STANDARD.md) and [rename map](NAMING-MAP.json) for current display names; executable filenames and native headers remain stable. Recover the pinned Sites source for production tests. GitHub's release suite validates its own older application tree.
 
 ## Connection order and verification
 

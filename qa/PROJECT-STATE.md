@@ -1,6 +1,10 @@
 # Current QA handoff
 
-Current production is **v241 / entry v73**. All section orders and 12 targeted search scenarios passed per site in a renderer harness. JavaScript syntax, catalog source preservation, and download checksums passed. Interactive browser QA was not run. The v240/v72 bookmark release preceded this catalog update. See the [current production baseline](<../PROJECT SUMMARY/README.md>) for source pins, rollback targets and bookmark title/favicon verification. Ryan confirmed the green favicon in his browser. The evidence below remains tied to the VPN release.
+Current production: **v261 / entry v93**, deployed successfully November 18, 2026 Pacific. The [Project Summary](<../PROJECT SUMMARY/README.md>) pins sources, hashes, deployment IDs and rollback targets. 272 tools retained; 136 names and nine placements updated. Search/render checks, exact current/legacy title checks, category ordering, link targets, source preservation and bundled syntax checks passed on both Sites sources. No interactive browser or PowerShell execution for this revision. GitHub dist and its historical QA locks are not a copy of the current Sites deployment.
+
+The post-naming source audit screened all payloads and compared 27 overlap families. No retirement justified. See [findings](<../PROJECT SUMMARY/naming-audit/REDUNDANCY-AUDIT.md>) and [comparisons](<../PROJECT SUMMARY/naming-audit/OVERLAP-COMPARISON.md>). Runtime equivalence remains unproven; no customer systems contacted.
+
+## Historical evidence
 
 ## VPN release QA — v237 / entry v69
 

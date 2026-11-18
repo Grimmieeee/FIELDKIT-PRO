@@ -1,0 +1,12 @@
+{
+  "changed_quick_commands": [
+    "cli:Show Entra Group Direct Members",
+    "cli:Show Entra Group Owners",
+    "cli:Add User to Entra Group",
+    "cli:Remove User from Entra Group",
+    "cli:Show Mailbox Send As Delegates"
+  ],
+  "workflows_changed": 0,
+  "files_changed": 0,
+  "homepage_sha256": "6fc24234d68a6acc4657ce1c000a509c3f833b0a48350a8361d0d1c6ecbe6046"
+}

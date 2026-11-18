@@ -1,0 +1,731 @@
+{
+  "renames": [
+    {
+      "file": "GET-REMOTE-SESSIONS.ps1",
+      "old": "User Sessions",
+      "new": "Show Windows User Sessions"
+    },
+    {
+      "file": "GET-FAILED-LOGONS.ps1",
+      "old": "Failed Logons",
+      "new": "Show Failed Windows Logons"
+    },
+    {
+      "file": "GET-SCHEDULED-TASK-INVENTORY.ps1",
+      "old": "Scheduled Task Inventory",
+      "new": "Show Scheduled Tasks"
+    },
+    {
+      "file": "GET-FOLDER-PERMISSIONS.ps1",
+      "old": "Folder Permissions",
+      "new": "Show Folder Permissions"
+    },
+    {
+      "file": "GET-STORED-CREDENTIAL-TARGETS.ps1",
+      "old": "Stored Credential Targets",
+      "new": "Show Stored Windows Credential Targets"
+    },
+    {
+      "file": "GET-WINDOWS-PROFILES.ps1",
+      "old": "Windows Profiles",
+      "new": "Show Windows User Profiles"
+    },
+    {
+      "file": "GET-SMB-SHARE-PERMISSIONS.ps1",
+      "old": "SMB Share Permissions",
+      "new": "Show SMB Share Permissions"
+    },
+    {
+      "file": "DISABLE-LOCAL-ACCOUNT.ps1",
+      "old": "Disable Local Account",
+      "new": "Disable Local User"
+    },
+    {
+      "file": "GET-INACTIVE-AD-COMPUTERS.ps1",
+      "old": "Inactive AD Computers",
+      "new": "Find Inactive AD Computers"
+    },
+    {
+      "file": "GET-LAPS-EXPIRATION-REVIEW.ps1",
+      "old": "LAPS Expiration Review",
+      "new": "Review AD LAPS Expiration"
+    },
+    {
+      "file": "GET-POWERSHELL-LOG-ACTIVITY.ps1",
+      "old": "PowerShell Log Activity",
+      "new": "Show PowerShell Script Block Events"
+    },
+    {
+      "file": "GET-MANAGED-SERVICE-ACCOUNTS.ps1",
+      "old": "Managed Service Accounts",
+      "new": "Show AD Managed Service Accounts"
+    },
+    {
+      "file": "GET-PS-REMOTING-ENDPOINTS.ps1",
+      "old": "PowerShell Remoting Endpoints",
+      "new": "Show PowerShell Remoting Endpoints"
+    },
+    {
+      "file": "GET-SYSTEM-DRIVER-SERVICES.ps1",
+      "old": "System Driver Services",
+      "new": "Show Windows Driver Services"
+    },
+    {
+      "file": "GET-WMI-SUBSCRIPTIONS.ps1",
+      "old": "Windows Management Instrumentation (WMI) Event Subscriptions",
+      "new": "Show WMI Event Subscriptions"
+    },
+    {
+      "file": "GET-AZURE-RESOURCE-GROUPS.ps1",
+      "old": "Get Azure Resources",
+      "new": "Show Azure Resource Groups"
+    },
+    {
+      "file": "GET-AZURE-OWNER-ASSIGNMENTS.ps1",
+      "old": "Azure Owner Assignments",
+      "new": "Show Azure Owner Assignments"
+    },
+    {
+      "file": "GET-AD-TRUSTS.ps1",
+      "old": "AD Trusts",
+      "new": "Show AD Trusts"
+    },
+    {
+      "file": "GET-AD-SPN-INVENTORY.ps1",
+      "old": "AD SPN Inventory",
+      "new": "Show AD Service Principal Names"
+    },
+    {
+      "file": "GET-AD-DELEGATION-SETTINGS.ps1",
+      "old": "AD Delegation Settings",
+      "new": "Show AD Kerberos Delegation"
+    },
+    {
+      "file": "GET-AD-ADMINCOUNT-REVIEW.ps1",
+      "old": "AD AdminCount Flags",
+      "new": "Show AD adminCount Flags"
+    },
+    {
+      "file": "GET-INACTIVE-AD-USERS.ps1",
+      "old": "Inactive AD Users",
+      "new": "Find Inactive AD Users"
+    },
+    {
+      "file": "GET-GPO-REPORT.ps1",
+      "old": "GPO Report",
+      "new": "Export Group Policy Object Report"
+    },
+    {
+      "file": "GET-GDAP-RELATIONSHIPS.ps1",
+      "old": "GDAP Relationships",
+      "new": "Show GDAP Relationships"
+    },
+    {
+      "file": "GET-AD-DOMAIN-PERMISSIONS.ps1",
+      "old": "AD Domain Permissions",
+      "new": "Show AD Domain Permissions"
+    },
+    {
+      "file": "GET-ADMINSDHOLDER-PERMISSIONS.ps1",
+      "old": "AdminSDHolder Permissions",
+      "new": "Show AD AdminSDHolder Permissions"
+    },
+    {
+      "file": "GET-MAILBOX-RULES.ps1",
+      "old": "Get Mailbox Rules",
+      "new": "Review Mailbox Rules and Access"
+    },
+    {
+      "file": "GET-AZ-VPN-STATUS.ps1",
+      "old": "Get Azure VPN Connect Status",
+      "new": "Show Azure VPN Connection Status"
+    },
+    {
+      "file": "GET-MAILBOX-USAGE-STATISTICS.ps1",
+      "old": "Get Mailbox Usage Statistics",
+      "new": "Show Mailbox Usage"
+    },
+    {
+      "file": "ENABLE-USER-ACCOUNT.ps1",
+      "old": "Re-Enable User Account",
+      "new": "Enable User Account"
+    },
+    {
+      "file": "GET-MAILBOX-LIT-HOLD-STATUS.ps1",
+      "old": "Get Mailbox Lit Hold Status",
+      "new": "Show Mailbox Hold Settings"
+    },
+    {
+      "file": "GET-STALE-SIGNIN-REVIEW.ps1",
+      "old": "Account and Sign-in Review",
+      "new": "Review Accounts and Sign-ins"
+    },
+    {
+      "file": "GET-ACCOUNT-STATUS.ps1",
+      "old": "Get User Account Status",
+      "new": "Show User Account Status"
+    },
+    {
+      "file": "GET-GROUP-MEMBERS.ps1",
+      "old": "Get Group Members",
+      "new": "Show Group Members"
+    },
+    {
+      "file": "GET-USER-GROUPS.ps1",
+      "old": "Get User Groups",
+      "new": "Show User Group Memberships"
+    },
+    {
+      "file": "INVOKE-REMOVE-USER-GROUPS.ps1",
+      "old": "Remove User Groups",
+      "new": "Remove User Group Memberships"
+    },
+    {
+      "file": "INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "old": "Create Dynamic Group",
+      "new": "Create Dynamic Group for Licensed Users"
+    },
+    {
+      "file": "GET-TENANT-GROUP-OWNERS.ps1",
+      "old": "Get Group Owners",
+      "new": "Review Tenant Group Ownership"
+    },
+    {
+      "file": "INVOKE-LITIGATION-HOLD.ps1",
+      "old": "Set Litigation Hold",
+      "new": "Enable Mailbox Litigation Hold"
+    },
+    {
+      "file": "GET-APP-REGISTRATION-AUDIT.ps1",
+      "old": "App Registration Details",
+      "new": "Review App Registrations"
+    },
+    {
+      "file": "TEST-SENSITIVE-DATA.ps1",
+      "old": "Check Sensitive Data",
+      "new": "Scan Files for Sensitive Data"
+    },
+    {
+      "file": "UPDATE-WINDOWS-APPS.ps1",
+      "old": "WinGet",
+      "new": "Update Windows Apps with WinGet"
+    },
+    {
+      "file": "INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "old": "Set Per-user MFA",
+      "new": "Enforce Per-user MFA"
+    },
+    {
+      "file": "GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "old": "Tenant Security Review",
+      "new": "Review Tenant Security"
+    },
+    {
+      "file": "GET-TENANT-DRIFT-REVIEW.ps1",
+      "old": "Tenant Change Review",
+      "new": "Review Tenant Changes"
+    },
+    {
+      "file": "INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "old": "Reset Cloud User Password",
+      "new": "Reset Entra Cloud User Password"
+    },
+    {
+      "file": "cli:Get User",
+      "old": "Get AD User Details",
+      "new": "Show AD User Details"
+    },
+    {
+      "file": "cli:Show Password Expiry",
+      "old": "Show Password Expiry",
+      "new": "Show AD User Password Expiry"
+    },
+    {
+      "file": "cli:Force Password Change Next Logon",
+      "old": "Force Password Change Next Logon",
+      "new": "Require AD Password Change at Next Sign-in"
+    },
+    {
+      "file": "cli:Find User By Exact Display Name",
+      "old": "Find User By Exact Display Name",
+      "new": "Find Entra Users by Exact Display Name"
+    },
+    {
+      "file": "cli:Get User By Upn",
+      "old": "Get User Details by UPN",
+      "new": "Show Entra User Details"
+    },
+    {
+      "file": "cli:Show Assigned Licenses",
+      "old": "Show Assigned Licenses",
+      "new": "Show User Licenses"
+    },
+    {
+      "file": "cli:Show Manager",
+      "old": "Show Entra User’s Manager",
+      "new": "Show Entra User Manager"
+    },
+    {
+      "file": "cli:Show Sync Source",
+      "old": "Check Entra User AD Sync",
+      "new": "Show Entra User AD Sync Status"
+    },
+    {
+      "file": "cli:Enable Sign-In",
+      "old": "Re-enable Entra User Account",
+      "new": "Enable Entra User Sign-in"
+    },
+    {
+      "file": "cli:Add User To Administrators",
+      "old": "Add User To Administrators",
+      "new": "Add User to Local Administrators"
+    },
+    {
+      "file": "cli:Remove User From Administrators",
+      "old": "Remove User From Administrators",
+      "new": "Remove User from Local Administrators"
+    },
+    {
+      "file": "cli:Show All Authentication Methods For One User",
+      "old": "Show MFA Methods",
+      "new": "Show User Authentication Methods"
+    },
+    {
+      "file": "cli:Show Registration Status For One User",
+      "old": "Show Registration Status For One User",
+      "new": "Show User MFA Registration Status"
+    },
+    {
+      "file": "cli:Remove Specific Authenticator Method",
+      "old": "Remove Specific Authenticator Method",
+      "new": "Remove Microsoft Authenticator Method"
+    },
+    {
+      "file": "cli:Remove Specific Phone Method",
+      "old": "Remove Specific Phone Method",
+      "new": "Remove Phone Authentication Method"
+    },
+    {
+      "file": "cli:Show Delegated Grants For One User",
+      "old": "Show Delegated Grants For One User",
+      "new": "Show User Delegated App Grants"
+    },
+    {
+      "file": "cli:Remove Specific Delegated Grant",
+      "old": "Remove Specific Delegated Grant",
+      "new": "Remove Delegated App Grant by ID"
+    },
+    {
+      "file": "cli:Show Entra User Group Memberships",
+      "old": "Show Entra User Group Memberships",
+      "new": "Show Entra User Directory Memberships"
+    },
+    {
+      "file": "cli:Show Mailbox Full Access Delegates",
+      "old": "Show Mailbox Full Access Delegates",
+      "new": "Show Mailbox Permissions"
+    },
+    {
+      "file": "cli:Show Specific Transport Rule",
+      "old": "Show Specific Transport Rule",
+      "new": "Show Mail Flow Rule"
+    },
+    {
+      "file": "cli:Remove Specific Inbox Rule",
+      "old": "Remove Specific Inbox Rule",
+      "new": "Remove Inbox Rule"
+    },
+    {
+      "file": "cli:Show Expiring Certificates",
+      "old": "Show Expiring Certificates",
+      "new": "Show Expired and Expiring Certificates"
+    },
+    {
+      "file": "cli:Find Exchange Service Principal By Appid",
+      "old": "Find Exchange Service Principal By Appid",
+      "new": "Find Exchange Service Principal by App ID"
+    },
+    {
+      "file": "cli:Calculate Sha256 Hash",
+      "old": "Calculate Sha256 Hash",
+      "new": "Calculate File SHA-256 Hash"
+    },
+    {
+      "file": "cli:Create Phishing Search By Subject",
+      "old": "Create Phishing Search By Subject",
+      "new": "Create Compliance Search by Subject"
+    },
+    {
+      "file": "cli:Hard-Delete Search Results",
+      "old": "Hard-Delete Search Results",
+      "new": "Hard-Delete Compliance Search Results"
+    },
+    {
+      "file": "cli:Mail Delete And Move Audit",
+      "old": "Mail Delete And Move Audit",
+      "new": "Audit Mail Deletions and Moves"
+    },
+    {
+      "file": "cli:Mailitemsaccessed Audit",
+      "old": "Mail Items Accessed Audit",
+      "new": "Audit Mail Access"
+    },
+    {
+      "file": "cli:Parse Mail Audit Subject, Ip, And Destination Folder",
+      "old": "Parse Mail Audit Subject, Ip, And Destination Folder",
+      "new": "Show Mail Audit Details"
+    },
+    {
+      "file": "cli:Search Query Audit",
+      "old": "Search Query Audit",
+      "new": "Audit User Search Queries"
+    },
+    {
+      "file": "cli:Show Failed Sign-Ins",
+      "old": "Show Failed Sign-Ins",
+      "new": "Show Entra Sign-ins: Failed"
+    },
+    {
+      "file": "cli:Show Last 10 Entra Sign-Ins",
+      "old": "Show Last 10 Entra Sign-Ins",
+      "new": "Show Entra Sign-ins: Latest 10"
+    },
+    {
+      "file": "cli:Show Entra Sign-ins - Last 48 Hours",
+      "old": "Show Entra Sign-ins - Last 48 Hours",
+      "new": "Show Entra Sign-ins: Last 48 Hours"
+    },
+    {
+      "file": "cli:Show Legacy / Other-client Sign-ins",
+      "old": "Show Legacy / Other-client Sign-ins",
+      "new": "Show Entra Sign-ins: Other Clients"
+    },
+    {
+      "file": "cli:Show Successful Sign-Ins",
+      "old": "Show Successful Sign-Ins",
+      "new": "Show Entra Sign-ins: Successful"
+    },
+    {
+      "file": "cli:Recent Application Errors",
+      "old": "Recent Application Errors",
+      "new": "Show Recent Application Errors"
+    },
+    {
+      "file": "cli:Recent System Errors",
+      "old": "Recent System Errors",
+      "new": "Show Recent System Errors"
+    },
+    {
+      "file": "cli:Show Configured Dns Servers",
+      "old": "Show Configured Dns Servers",
+      "new": "Show Configured IPv4 DNS Servers"
+    },
+    {
+      "file": "cli:Flush Resolver Cache",
+      "old": "Flush Resolver Cache",
+      "new": "Clear DNS Resolver Cache"
+    },
+    {
+      "file": "cli:Show Active Adapters",
+      "old": "Show Active Adapters",
+      "new": "Show Active Network Adapters"
+    },
+    {
+      "file": "cli:Show Arp Neighbor Cache",
+      "old": "Show Arp Neighbor Cache",
+      "new": "Show ARP Neighbor Cache"
+    },
+    {
+      "file": "cli:Show Established Tcp Connections",
+      "old": "Show Established Tcp Connections",
+      "new": "Show Established TCP Connections"
+    },
+    {
+      "file": "cli:Show Ip Configuration",
+      "old": "Show Ip Configuration",
+      "new": "Show IP Configuration"
+    },
+    {
+      "file": "cli:Show Listening Tcp Ports",
+      "old": "Show Listening Tcp Ports",
+      "new": "Show Listening TCP Ports"
+    },
+    {
+      "file": "cli:Test Tcp Port",
+      "old": "Test Tcp Port",
+      "new": "Test TCP Port"
+    },
+    {
+      "file": "cli:Release And Renew Dhcp",
+      "old": "Release And Renew Dhcp",
+      "new": "Release and Renew DHCP Addresses"
+    },
+    {
+      "file": "cli:Reset Tcp/Ip Stack",
+      "old": "Reset Tcp/Ip Stack",
+      "new": "Reset TCP/IP Stack"
+    },
+    {
+      "file": "cli:Show Configured Windows Vpn Connections",
+      "old": "Show Configured Windows Vpn Connections",
+      "new": "Show Windows VPN Connections"
+    },
+    {
+      "file": "cli:Find Files Modified In Last 24 Hours",
+      "old": "Find Files Modified In Last 24 Hours",
+      "new": "Find Files Modified in Last 24 Hours"
+    },
+    {
+      "file": "cli:Show Computer Model And Serial Number",
+      "old": "Show Computer Model And Serial Number",
+      "new": "Show Computer Model and Serial Number"
+    },
+    {
+      "file": "cli:Show Hostname And Current User",
+      "old": "Show Hostname And Current User",
+      "new": "Show Computer Name and Current User"
+    },
+    {
+      "file": "cli:Show Last Boot And Uptime",
+      "old": "Show Last Boot And Uptime",
+      "new": "Show Last Boot and Uptime"
+    },
+    {
+      "file": "cli:Show Os And Build",
+      "old": "Show Os And Build",
+      "new": "Show Windows Version and Build"
+    },
+    {
+      "file": "cli:Show Top Cpu Consumers",
+      "old": "Show Top Cpu Consumers",
+      "new": "Show Processes by Total CPU Time"
+    },
+    {
+      "file": "cli:Show Top Memory Consumers",
+      "old": "Show Top Memory Consumers",
+      "new": "Show Processes by Memory Usage"
+    },
+    {
+      "file": "cli:Stop Process By Name",
+      "old": "Stop Process By Name",
+      "new": "Stop Processes by Name"
+    },
+    {
+      "file": "cli:Show Whether Remote Desktop Is Enabled",
+      "old": "Show Whether Remote Desktop Is Enabled",
+      "new": "Show Remote Desktop Setting"
+    },
+    {
+      "file": "cli:Chkdsk Online Scan",
+      "old": "Chkdsk Online Scan",
+      "new": "Scan File System with CHKDSK"
+    },
+    {
+      "file": "cli:Dism Component Store Scan",
+      "old": "Dism Component Store Scan",
+      "new": "DISM: Scan Component Store"
+    },
+    {
+      "file": "cli:Dism Restore Health",
+      "old": "Dism Restore Health",
+      "new": "DISM: Repair Component Store"
+    },
+    {
+      "file": "cli:System File Checker",
+      "old": "System File Checker",
+      "new": "Repair Windows System Files with SFC"
+    },
+    {
+      "file": "cli:Reboot Computer",
+      "old": "Reboot Computer",
+      "new": "Restart Computer Immediately"
+    },
+    {
+      "file": "cli:Show Service Status",
+      "old": "Show Service Status",
+      "new": "Show Windows Service Status"
+    },
+    {
+      "file": "cli:Restart Service",
+      "old": "Restart Service",
+      "new": "Restart Windows Service"
+    },
+    {
+      "file": "cli:Show Send-To Restrictions / authOrig",
+      "old": "Show Send-To Restrictions / authOrig",
+      "new": "Show AD Group Sender Restrictions"
+    },
+    {
+      "file": "cli:Show Password Last Set",
+      "old": "Show Password Last Set",
+      "new": "Show AD User Password Last Set"
+    },
+    {
+      "file": "cli:Show Distinguished Name",
+      "old": "Show Distinguished Name",
+      "new": "Show AD User Distinguished Name"
+    },
+    {
+      "file": "cli:Show Group Policy Result",
+      "old": "Show Group Policy Result",
+      "new": "Show Group Policy Results"
+    },
+    {
+      "file": "cli:Show Domain Account Details",
+      "old": "Show Domain Account Details",
+      "new": "Show AD User Details with net user"
+    },
+    {
+      "file": "cli:Enable Local Account",
+      "old": "Enable Local Account",
+      "new": "Enable Local User"
+    },
+    {
+      "file": "cli:Isolate Device - Disable Enabled Adapters",
+      "old": "Isolate Device - Disable Enabled Adapters",
+      "new": "Disable All Active Network Adapters"
+    },
+    {
+      "file": "cli:DISM Analyze Component Store",
+      "old": "DISM Analyze Component Store",
+      "new": "DISM: Analyze Component Store"
+    },
+    {
+      "file": "cli:DISM Component Store Cleanup",
+      "old": "DISM Component Store Cleanup",
+      "new": "DISM: Clean Component Store"
+    },
+    {
+      "file": "cli:Launch Disk Cleanup",
+      "old": "Launch Disk Cleanup",
+      "new": "Open Disk Cleanup"
+    },
+    {
+      "file": "cli:Set Current User Execution Policy - RemoteSigned",
+      "old": "Set Current User Execution Policy - RemoteSigned",
+      "new": "Set Current User Execution Policy to RemoteSigned"
+    },
+    {
+      "file": "cli:Show Installed Microsoft Graph Module Version",
+      "old": "Show Installed Microsoft Graph Module Version",
+      "new": "Show Microsoft Graph Authentication Module Version"
+    },
+    {
+      "file": "cli:Show Installed ExchangeOnlineManagement Version",
+      "old": "Show Installed ExchangeOnlineManagement Version",
+      "new": "Show Exchange Online Module Version"
+    },
+    {
+      "file": "cli:Show Graph Context",
+      "old": "Show Graph Context",
+      "new": "Show Microsoft Graph Connection"
+    },
+    {
+      "file": "cli:Show Exchange Connection",
+      "old": "Show Exchange Connection",
+      "new": "Show Exchange Online Connections"
+    },
+    {
+      "file": "cli:Continuous Ping",
+      "old": "Continuous Ping",
+      "new": "Ping Host Continuously"
+    },
+    {
+      "file": "cli:Path Ping",
+      "old": "Path Ping",
+      "new": "Test Route Packet Loss with PathPing"
+    },
+    {
+      "file": "cli:Local Account Details",
+      "old": "Local Account Details",
+      "new": "Show Local User Details"
+    },
+    {
+      "file": "cli:WinHTTP Proxy",
+      "old": "WinHTTP Proxy",
+      "new": "Show WinHTTP Proxy"
+    },
+    {
+      "file": "cli:Domain Trust Check",
+      "old": "Domain Trust Check",
+      "new": "Test AD Domain Secure Channel"
+    },
+    {
+      "file": "cli:Printer Check",
+      "old": "Printer Check",
+      "new": "Show Printers"
+    },
+    {
+      "file": "cli:Entra Join Status",
+      "old": "Entra Join Status",
+      "new": "Show Device Domain and Entra Join Status"
+    },
+    {
+      "file": "cli:Mapped Drives",
+      "old": "Mapped Drives",
+      "new": "Show Mapped Network Drives"
+    },
+    {
+      "file": "cli:Network Profile",
+      "old": "Network Profile",
+      "new": "Show Network Profiles"
+    },
+    {
+      "file": "cli:Print Jobs",
+      "old": "Print Jobs",
+      "new": "Show Print Jobs"
+    },
+    {
+      "file": "SET-ONEDRIVE-SITE-ADMIN.ps1",
+      "old": "Set OneDrive Site Admin",
+      "new": "Manage OneDrive Site Admin Access"
+    }
+  ],
+  "moves": [
+    {
+      "name": "Review Account Cleanup",
+      "from": "Identity & Access (AD)",
+      "to": "Directory & Tenant Services"
+    },
+    {
+      "name": "Find User UPNs",
+      "from": "Identity & Access (AD)",
+      "to": "Identity & Access (Entra)"
+    },
+    {
+      "name": "Show User Account Status",
+      "from": "Identity & Access (AD)",
+      "to": "Identity & Access (Entra)"
+    },
+    {
+      "name": "Show Group Members",
+      "from": "Identity & Access (AD)",
+      "to": "Directory & Tenant Services"
+    },
+    {
+      "name": "Review Tenant Group Ownership",
+      "from": "Identity & Access (Entra)",
+      "to": "Directory & Tenant Services"
+    },
+    {
+      "name": "Review Folder Contents",
+      "from": "Identity & Access (Local)",
+      "to": "Directory & Tenant Services"
+    },
+    {
+      "name": "Find Entra Users by Exact Display Name",
+      "from": "Identity & Access (AD)",
+      "to": "Identity & Access (Entra)"
+    },
+    {
+      "name": "Show Entra User Details",
+      "from": "Identity & Access (AD)",
+      "to": "Identity & Access (Entra)"
+    },
+    {
+      "name": "Show AD Group Sender Restrictions",
+      "from": "Mail & Exchange",
+      "to": "Identity & Access (AD)"
+    }
+  ]
+}

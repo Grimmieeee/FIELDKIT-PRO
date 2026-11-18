@@ -1,297 +1,1250 @@
-FIELD // KIT PRO — FULL CATALOG
-fieldkit.pro v241 | 271 entries | Section order matches the catalog. Entries within sections are A–Z.
+FIELD // KIT PRO — CURRENT CATALOG
+272 tools. Display names and prerequisites, November 18, 2026.
 
-Identity & Access (Local) (14)
-Add User To Administrators | Makes changes | Local
-Create Local User | Makes changes | Local
-Delete Local User | Destructive | Local
-Disable Local Account | Makes changes | Local
-Enable Local Account | Makes changes | Local
-Failed Logons | Read-only | Local
-Local Account Details | Read-only | Local
-Open Local Users and Groups | Read-only | Local
-Remove User From Administrators | Makes changes | Local
-Review Folder Contents | Read-only | Local
-Set Local User Password | Makes changes | Local
-Show Local Administrators | Read-only | Local
-Show Local Users | Read-only | Local
-User Sessions | Read-only | Single computer
+Identity & Access (Local)
 
-Identity & Access (AD) (29)
-Add User to AD Group | Makes changes | Single group
-Audit AD Account Exceptions | Read-only | AD domain
-Check AD–Entra Account Match | Read-only | Single user
-Check User Before Deletion | Read-only | Single user
-Delete AD User | Destructive | Single user
-Delete User Accounts | Destructive | Single user, Multi-user
-Disable AD User | Makes changes | Single user
-Disable User Accounts | Makes changes | Single user, Multi-user
-Enable AD User | Makes changes | Single user
-Find User By Exact Display Name | Read-only | User name lookup
-Find User UPNs | Read-only | Single user, Multi-user
-Force Password Change Next Logon | Makes changes | Single user
-Get AD User Details | Read-only | Single user
-Get Group Members | Read-only | Single group, Multiple groups
-Get User Account Status | Read-only | Single user, Multi-user
-Get User Details by UPN | Read-only | Single user
-Get User Groups | Read-only | Single user, Multi-user
-Re-Enable User Account | Makes changes | Single user
-Remove User from AD Group | Makes changes | Single group
-Remove User Groups | Makes changes | Single user, Multi-user
-Reset AD User Password | Makes changes | Single user
-Review Account Cleanup | Read-only | Tenant
-Show AD Group Members | Read-only | Single group
-Show AD User Group Memberships | Read-only | Single user
-Show Distinguished Name | Read-only | Single user
-Show Domain Account Details | Read-only | Single user
-Show Password Expiry | Read-only | Single user
-Show Password Last Set | Read-only | Single user
-Unlock AD User | Makes changes | Single user
+Add User to Local Administrators
+Add the selected account to this computer’s Administrators group.
+Source: cli:Add User To Administrators
 
-Identity & Access (Entra) (31)
-Add User to Entra Group | Makes changes | Single group
-Audit Tenant Admin Accounts | Read-only | Tenant
-Block Entra User Sign-in | Makes changes | Single user
-Check Entra User AD Sync | Read-only | Single user
-Create Dynamic Group | Makes changes | Single group
-Delete Entra User | Destructive | Single user
-Find Entra Group by Name | Read-only | Group name lookup
-Get Group Owners | Read-only | Tenant
-Re-enable Entra User Account | Makes changes | Single user
-Remove Specific Authenticator Method | Makes changes | Single user
-Remove Specific Delegated Grant | Makes changes | Single OAuth grant
-Remove Specific Phone Method | Makes changes | Single user
-Remove User App Consent | Makes changes | Single user
-Remove User from Entra Group | Makes changes | Single group
-Reset Cloud User Password | Makes changes | Single user, Multi-user
-Set Per-user MFA | Makes changes | Single user, Multi-user
-Show Delegated Grants For One User | Read-only | Single user
-Show Entra Group Direct Members | Read-only | Single group
-Show Entra Group Owners | Read-only | Single group
-Show Entra Sign-ins - Last 48 Hours | Read-only | Single user
-Show Entra User Group Memberships | Read-only | Single user
-Show Entra User’s Manager | Read-only | Single user
-Show Failed Sign-Ins | Read-only | Single user
-Show Last 10 Entra Sign-Ins | Read-only | Single user
-Show Legacy / Other-client Sign-ins | Read-only | Single user
-Show MFA Methods | Read-only | Single user
-Show Microsoft Authenticator Methods | Read-only | Single user
-Show Phone Methods | Read-only | Single user
-Show Registration Status For One User | Read-only | Single user
-Show Successful Sign-Ins | Read-only | Single user
-Tenant Change Review | Makes changes | Tenant
+Create Local User
+Create a local Windows account with the selected name.
+Source: cli:Create Local User
 
-Identity & Access (M365 Licensing) (4)
-Assign User Licenses | Makes changes | Single user, Multi-user
-Audit Tenant License Totals | Read-only | Tenant
-Remove User Licenses | Makes changes | Single user, Multi-user
-Show Assigned Licenses | Read-only | Single user
+Delete Local User
+Delete the selected local Windows account.
+Source: cli:Delete Local User
 
-Security & Compliance (37)
-Account and Sign-in Review | Read-only | Tenant
-BEC: Build Incident Timeline | Read-only | Local
-BEC: Check IP Reputation | Read-only | Public IP lookup
-BEC: Contain and Eradicate | Destructive | Single user
-BEC: Decode Token | Read-only | Local
-BEC: Restore and Validate | Makes changes | Single user
-BEC: Restore Email | Makes changes | Single mailbox
-BEC: Review File Activity | Read-only | Single user
-BEC: Review Token Replay | Read-only | Single user
-BEC: Revoke Sessions | Makes changes | Single user
-BEC: Trace Email Delivery | Read-only | Tenant message trace
-BEC: Trace IP Activity | Read-only | Tenant audit log
-BEC: User Risk Assessment | Read-only | Single user
-Calculate Sha256 Hash | Read-only | Local
-Check Sensitive Data | Read-only | Local
-Create Phishing Search By Subject | Makes changes | Tenant
-Create Self-Signed App-Auth Certificate | Makes changes | Local
-Export Certificate as PFX | Makes changes | Local
-Export Public Certificate as CER | Makes changes | Local
-Find Certificate by Thumbprint | Read-only | Local
-Find Files Modified In Last 24 Hours | Read-only | Local
-Hard-Delete Search Results | Destructive | Named compliance search
-PowerShell Log Activity | Read-only | Local
-Resume BitLocker Protection | Makes changes | Local
-Search Query Audit | Read-only | Single user
-Show BitLocker Recovery Protectors | Read-only | Local
-Show BitLocker Status | Read-only | Local
-Show Code-Signing Certificates | Read-only | Current Windows user
-Show Compliance Search Status | Read-only | Named compliance search
-Show Current Windows Identity and Privileges | Read-only | Local
-Show Expiring Certificates | Read-only | Local
-Sign Script | Makes changes | Local
-Start Compliance Search | Makes changes | Named compliance search
-Stored Credential Targets | Read-only | Current Windows user
-Suspend BitLocker for One Reboot | Makes changes | Local
-Tenant Security Review | Read-only | Tenant
-Verify Script Signature | Read-only | Local
+Disable Local User
+Disable one explicitly confirmed non-administrator local account on this computer.
+Source: DISABLE-LOCAL-ACCOUNT.ps1
+Modules: Microsoft.PowerShell.LocalAccounts
 
-Network & Connectivity (29)
-Continuous Ping | Read-only | Single network target
-Delete Wi-Fi Profile | Makes changes | Local
-Disable Network Adapter | Makes changes | Local
-Flush Resolver Cache | Makes changes | Local
-Mapped Drives | Read-only | Local
-Network Profile | Read-only | Local
-Path Ping | Read-only | Single network target
-Ping Host | Read-only | Single network target
-Release And Renew Dhcp | Makes changes | Local
-Reset Tcp/Ip Stack | Makes changes | Local
-Resolve DNS Name | Read-only | Single network target
-Restart Network Adapter | Makes changes | Local
-Show Active Adapters | Read-only | Local
-Show Arp Neighbor Cache | Read-only | Local
-Show Configured Dns Servers | Read-only | Local
-Show Configured Windows Vpn Connections | Read-only | Local
-Show Established Tcp Connections | Read-only | Local
-Show Ip Configuration | Read-only | Local
-Show Listening Tcp Ports | Read-only | Local
-Show Port 443 Connections | Read-only | Local
-Show Routing Table | Read-only | Local
-Show Saved Wi-Fi Profiles | Read-only | Local
-Show SMB Sessions | Read-only | Local
-Show SMB Shares | Read-only | Local
-Show Wi-Fi Connection | Read-only | Local
-SMB Share Permissions | Read-only | Local
-Test Tcp Port | Read-only | Single network target
-Trace Route | Read-only | Single network target
-WinHTTP Proxy | Read-only | Local
+Enable Local User
+Enable the selected local Windows account.
+Source: cli:Enable Local Account
 
-Windows OS (21)
-Check and Sync Windows Time | Makes changes | Local
-Open Windows Update | Read-only | Local
-PowerShell Remoting Endpoints | Read-only | Local
-Recent Application Errors | Read-only | Local
-Recent System Errors | Read-only | Local
-Reset Winsock | Makes changes | Local
-Restart Service | Makes changes | Local
-Scheduled Task Inventory | Read-only | Local
-Set Windows Service Startup Type | Makes changes | Local
-Show Installed Hotfixes | Read-only | Local
-Show Os And Build | Read-only | Local
-Show Recent Windows Update History | Read-only | Local
-Show Service Status | Read-only | Local
-Show Whether Remote Desktop Is Enabled | Read-only | Local
-Show Windows Firewall Profiles | Read-only | Local
-Show Windows Firewall Rules by Name | Read-only | Local
-Stop Process By Name | Makes changes | Local
-System File Checker | Makes changes | Local
-Windows Management Instrumentation (WMI) Event Subscriptions | Read-only | Local
-Windows Profiles | Read-only | Local
-WinGet | Makes changes | Local
+Open Local Users and Groups
+Open the Local Users and Groups management console.
+Source: cli:Open Local Users and Groups
 
-Mail & Exchange (38)
-Add Calendar Permission | Makes changes | Single mailbox
-Add Contacts Permission | Makes changes | Single mailbox
-Add Distribution Group Member | Makes changes | Single group
-Audit Inbox Rule Changes | Read-only | Single user
-Audit Mail Flow Rules | Read-only | Tenant
-Audit Shared Mailbox Sign-ins | Read-only | Tenant
-Audit Tenant Mailbox Access | Read-only | Tenant
-Connect Exchange Online | Read-only | Current session
-Disable Mailbox Protocols | Makes changes | Single user
-Disconnect Exchange Online | Makes changes | Current session
-Find Exchange Service Principal By Appid | Read-only | Single app
-Get Mailbox Lit Hold Status | Read-only | Single user
-Get Mailbox Rules | Read-only | Single user, Multi-user, Tenant
-Get Mailbox Usage Statistics | Read-only | Single user
-Mail Delete And Move Audit | Read-only | Single user
-Mail Items Accessed Audit | Read-only | Single user
-Parse Mail Audit Subject, Ip, And Destination Folder | Read-only | Single user
-Purge Soft-Deleted Mailbox | Destructive | Single user
-Remove All Inbox Rules | Destructive | Single mailbox
-Remove Calendar Permission | Makes changes | Single mailbox
-Remove Disabled User Mailbox Access | Makes changes | Single user
-Remove Distribution Group Member | Makes changes | Single group
-Remove Mailbox Delegate | Makes changes | Single user
-Remove Mailbox Forwarding | Makes changes | Single mailbox
-Remove Specific Inbox Rule | Makes changes | Single mailbox
-Set Litigation Hold | Makes changes | Single user, Multi-user
-Show Calendar Permissions | Read-only | Single mailbox
-Show Contacts Permissions | Read-only | Single mailbox
-Show Distribution Group Members | Read-only | Single group
-Show Distribution Group Owners | Read-only | Single group
-Show Exchange Connection | Read-only | Current session
-Show Installed ExchangeOnlineManagement Version | Read-only | Local
-Show Mailbox Full Access Delegates | Read-only | Single mailbox
-Show Mailbox Send As Delegates | Read-only | Single mailbox
-Show Mailbox Send on Behalf Delegates | Read-only | Single mailbox
-Show Mailbox Summary | Read-only | Single mailbox
-Show Send-To Restrictions / authOrig | Read-only | Single group
-Show Specific Transport Rule | Read-only | Single mail flow rule
+Remove User from Local Administrators
+Remove the selected account from this computer’s Administrators group.
+Source: cli:Remove User From Administrators
 
-Terminal Setup (9)
-Connect Microsoft Graph | Read-only | Current session
-Disconnect Microsoft Graph | Makes changes | Current session
-Install Active Directory Module (RSAT) | Modifying | Local
-Install PowerShell Modules | Makes changes | Local
-Set Current User Execution Policy - RemoteSigned | Makes changes | Current Windows user
-Show Execution Policies | Read-only | Local
-Show Graph Context | Read-only | Current session
-Show Installed Microsoft Graph Module Version | Read-only | Local
-Show PowerShell Version | Read-only | Local
+Set Local User Password
+Set the selected local account’s password using a command-line value.
+Source: cli:Set Local User Password
 
-Directory & Tenant Services (25)
-AD AdminCount Flags | Read-only | AD domain
-AD Delegation Settings | Read-only | AD domain
-AD Domain Permissions | Read-only | AD domain
-AD SPN Inventory | Read-only | AD domain
-AD Trusts | Read-only | AD domain
-AdminSDHolder Permissions | Read-only | AD domain
-App Registration Details | Read-only | Tenant
-Azure Owner Assignments | Read-only | Azure subscription
-Clear Cached Kerberos Tickets | Makes changes | Current Windows user
-Domain Trust Check | Read-only | Local
-Entra Join Status | Read-only | Local
-Folder Permissions | Read-only | Local
-Force Group Policy Update | Makes changes | Local
-GDAP Relationships | Read-only | Tenant
-Get Azure Resources | Read-only | Azure subscription
-Get Azure VPN Connect Status | Read-only | Azure subscription
-GPO Report | Read-only | Single GPO
-Inactive AD Computers | Read-only | AD domain
-Inactive AD Users | Read-only | AD domain
-LAPS Expiration Review | Read-only | AD domain
-Managed Service Accounts | Read-only | AD domain
-Show Cached Kerberos Tickets | Read-only | Current Windows user
-Show Default Domain Password Policy | Read-only | AD domain
-Show Group Policy Result | Read-only | Local
-Test Azure Resource Group Access | Read-only | Resource group
+Show Failed Windows Logons
+Review recorded failed Windows logons on this computer within a selected time window.
+Source: GET-FAILED-LOGONS.ps1
 
-Endpoints & Hardware (25)
-Check Common Pending Reboot Flags | Read-only | Local
-Chkdsk Online Scan | Read-only | Local
-Clear Delivery Optimization Cache | Makes changes | Local
-Defragment Volume | Makes changes | Local
-Disable Hibernation | Makes changes | Local
-DISM Analyze Component Store | Read-only | Local
-DISM Component Store Cleanup | Makes changes | Local
-Dism Component Store Scan | Read-only | Local
-Dism Restore Health | Makes changes | Local
-Find What’s Using Disk Space | Read-only | Local
-Isolate Device - Disable Enabled Adapters | Makes changes | Local
-Launch Disk Cleanup | Makes changes | Local
-Open Storage Settings | Read-only | Local
-Print Jobs | Read-only | Local
-Printer Check | Read-only | Local
-Reboot Computer | Makes changes | Local
-Show Computer Model And Serial Number | Read-only | Local
-Show Hostname And Current User | Read-only | Local
-Show Last Boot And Uptime | Read-only | Local
-Show Local Drive Free Space | Read-only | Local
-Show Physical Disk Health | Read-only | Local
-Show Problem Devices | Read-only | Local
-Show Top Cpu Consumers | Read-only | Local
-Show Top Memory Consumers | Read-only | Local
-System Driver Services | Read-only | Local
+Show Local Administrators
+List members of this computer’s Administrators group.
+Source: cli:Show Local Administrators
 
-Extras (9)
-GitHub: Manage Repository | Makes changes | Single repository
-GitHub: Save Project Handoff | Makes changes | Single repository
-GitHub: Security Check | Makes changes | Single repository
-Screensaver: Attractor | Read-only | Local
-Screensaver: Rain | Read-only | Local
-Screensaver: Static | Read-only | Local
-Theme: Cobalt | Makes changes | Local
-Theme: Sea Glass | Makes changes | Local
-Theme: Silicon Valley | Makes changes | Local
+Show Local User Details
+Show details for the selected local Windows account.
+Source: cli:Local Account Details
+
+Show Local Users
+List local Windows users and their account settings.
+Source: cli:Show Local Users
+
+Show Windows User Sessions
+Show logged-on Windows user sessions on one computer.
+Source: GET-REMOTE-SESSIONS.ps1
+
+Identity & Access (AD)
+
+Add User to AD Group
+Add the user to the selected Active Directory group.
+Source: cli:Add User to AD Group
+Preparation: Import-Module ActiveDirectory
+
+Audit AD Account Exceptions
+Check password exception flags or run a separate Kerberos preauthentication check in the selected AD scope.
+Source: GET-AD-PASSWORD-EXCEPTIONS.ps1
+Modules: ActiveDirectory
+
+Check AD–Entra Account Match
+Verify that one on-premises AD user and its synced Entra account share the same SID.
+Source: Client-Connectivity-Check.ps1
+Modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users, ActiveDirectory
+
+Check User Before Deletion
+Review a user's mailbox, memberships, and access before deletion.
+Source: GET-USER-PREDELETE-CHECK.ps1
+Modules: ActiveDirectory, ExchangeOnlineManagement, Microsoft.Graph.Authentication
+
+Delete AD User
+Delete one on-premises AD user by account name.
+Source: cli:Delete User
+Preparation: Import-Module ActiveDirectory
+
+Delete User Accounts
+Delete approved user accounts from their authoritative directory.
+Source: INVOKE-DELETE-ACCOUNTS.ps1
+Modules: ActiveDirectory, Microsoft.Graph.Authentication, Microsoft.Graph.Users, Microsoft.Graph.Identity.DirectoryManagement
+
+Disable AD User
+Disable one on-premises AD account.
+Source: cli:Disable User
+Preparation: Import-Module ActiveDirectory
+
+Disable User Accounts
+Disable selected user accounts in AD or Entra after approval.
+Source: INVOKE-DISABLE-ACCOUNTS.ps1
+Modules: Microsoft.Graph.Authentication
+
+Enable AD User
+Enable one on-premises AD account.
+Source: cli:Enable User
+Preparation: Import-Module ActiveDirectory
+
+Enable User Account
+Re-enable one member account in AD or Entra after approval.
+Source: ENABLE-USER-ACCOUNT.ps1
+Modules: Microsoft.Graph.Authentication, ActiveDirectory
+
+Remove User from AD Group
+Remove the user from the selected Active Directory group.
+Source: cli:Remove User from AD Group
+Preparation: Import-Module ActiveDirectory
+
+Remove User Group Memberships
+Remove selected users from eligible AD and Entra groups.
+Source: INVOKE-REMOVE-USER-GROUPS.ps1
+Modules: ActiveDirectory, Microsoft.Graph.Authentication
+
+Require AD Password Change at Next Sign-in
+Require the user to change their password at next sign-in.
+Source: cli:Force Password Change Next Logon
+Preparation: Import-Module ActiveDirectory
+
+Reset AD User Password
+Set a new password for the selected Active Directory account.
+Source: cli:Reset Password
+Preparation: Import-Module ActiveDirectory
+
+Show AD Group Members
+List direct members of the selected Active Directory group.
+Source: cli:Show AD Group Members
+Preparation: Import-Module ActiveDirectory
+
+Show AD Group Sender Restrictions
+Show the group’s authOrig sender-restriction values.
+Source: cli:Show Send-To Restrictions / authOrig
+Preparation: Import-Module ActiveDirectory
+
+Show AD User Details
+Show account status, lockout, and password settings for one AD user.
+Source: cli:Get User
+Preparation: Import-Module ActiveDirectory
+
+Show AD User Details with net user
+Show details for a domain account using net user.
+Source: cli:Show Domain Account Details
+
+Show AD User Distinguished Name
+Show the user’s full Active Directory object path (distinguished name).
+Source: cli:Show Distinguished Name
+Preparation: Import-Module ActiveDirectory
+
+Show AD User Group Memberships
+List the Active Directory groups reported for this user.
+Source: cli:Show AD User Group Memberships
+Preparation: Import-Module ActiveDirectory
+
+Show AD User Password Expiry
+Show the password expiry date reported by Active Directory.
+Source: cli:Show Password Expiry
+Preparation: Import-Module ActiveDirectory
+
+Show AD User Password Last Set
+Show when the Active Directory password was last set.
+Source: cli:Show Password Last Set
+Preparation: Import-Module ActiveDirectory
+
+Show User Group Memberships
+List the selected users' direct groups in AD and Entra.
+Source: GET-USER-GROUPS.ps1
+Modules: ActiveDirectory, Microsoft.Graph.Authentication
+
+Unlock AD User
+Clear the lockout on one on-premises AD account.
+Source: cli:Unlock User
+Preparation: Import-Module ActiveDirectory
+
+Identity & Access (Entra)
+
+Add User to Entra Group
+Add the user to the selected Entra group.
+Source: cli:Add User to Entra Group
+Preparation: Connect-MgGraph -Scopes "User.ReadBasic.All","GroupMember.ReadWrite.All" -ContextScope Process
+
+Audit Tenant Admin Accounts
+Review active Entra directory role assignments and user status where available.
+Source: GET-ADMIN-ROLE-AUDIT.ps1
+Modules: Microsoft.Graph.Authentication
+
+Block Entra User Sign-in
+Disable sign-in for one Entra user by UPN.
+Source: cli:Disable Sign-In
+Preparation: Connect-MgGraph -Scopes "User.EnableDisableAccount.All","User.Read.All" -ContextScope Process
+
+Create Dynamic Group for Licensed Users
+Create a dynamic security group for enabled users with at least one enabled license service plan.
+Source: INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1
+Modules: Microsoft.Graph.Authentication
+
+Delete Entra User
+Delete the selected Entra user after approval.
+Source: cli:Delete Cloud User
+Preparation: Connect-MgGraph -Scopes "User.ReadWrite.All" -ContextScope Process
+
+Enable Entra User Sign-in
+Re-enable one Entra user account by UPN.
+Source: cli:Enable Sign-In
+Preparation: Connect-MgGraph -Scopes "User.EnableDisableAccount.All","User.Read.All" -ContextScope Process
+
+Enforce Per-user MFA
+Require per-user MFA for selected accounts after approval.
+Source: INVOKE-ENFORCE-PER-USER-MFA.ps1
+Modules: Microsoft.Graph.Authentication
+
+Find Entra Group by Name
+Enter the exact display name to get matching group IDs, email addresses, and group types.
+Source: cli:Find Exact Group
+Preparation: Connect-MgGraph -Scopes "GroupMember.Read.All"
+
+Find Entra Users by Exact Display Name
+Get the UPN and account status for each Entra account with the display name you enter.
+Source: cli:Find User By Exact Display Name
+Preparation: Connect-MgGraph -Scopes "User.Read.All"
+
+Find User UPNs
+Find user sign-in names from names, email addresses, or a list. Use -Partial to review name or UPN prefixes.
+Source: RESOLVE-NAMES-TO-UPNS.ps1
+Modules: Microsoft.Graph.Authentication
+
+Remove Delegated App Grant by ID
+Remove one selected app permission grant.
+Source: cli:Remove Specific Delegated Grant
+Preparation: Connect-MgGraph -Scopes "DelegatedPermissionGrant.ReadWrite.All" -ContextScope Process
+
+Remove Microsoft Authenticator Method
+Remove one selected Microsoft Authenticator method from the user.
+Source: cli:Remove Specific Authenticator Method
+Preparation: Connect-MgGraph -Scopes "UserAuthenticationMethod.ReadWrite.All" -ContextScope Process
+
+Remove Phone Authentication Method
+Remove one selected phone authentication method from the user.
+Source: cli:Remove Specific Phone Method
+Preparation: Connect-MgGraph -Scopes "UserAuthenticationMethod.ReadWrite.All" -ContextScope Process
+
+Remove User App Consent
+Remove one selected user-specific delegated app grant after approval.
+Source: REMOVE-USER-APP-CONSENT.ps1
+Modules: Microsoft.Graph.Authentication
+
+Remove User from Entra Group
+Remove the user’s direct membership from the selected Entra group.
+Source: cli:Remove User from Entra Group
+Preparation: Connect-MgGraph -Scopes "User.ReadBasic.All","GroupMember.ReadWrite.All" -ContextScope Process
+
+Reset Entra Cloud User Password
+Reset passwords for selected cloud-only users after approval.
+Source: INVOKE-RESET-CLOUD-USER-PASSWORD.ps1
+Modules: Microsoft.Graph.Authentication
+
+Review Tenant Changes
+Compare tenant settings with a saved baseline. Saving a local baseline requires approval.
+Source: GET-TENANT-DRIFT-REVIEW.ps1
+Modules: Microsoft.Graph.Authentication
+
+Show Entra Group Direct Members
+List direct members of an Entra group by exact display name.
+Source: cli:Show Entra Group Direct Members
+Preparation: Connect-MgGraph -Scopes "GroupMember.Read.All","User.ReadBasic.All"
+
+Show Entra Group Owners
+List owners of an Entra group by exact display name.
+Source: cli:Show Entra Group Owners
+Preparation: Connect-MgGraph -Scopes "GroupMember.Read.All","User.ReadBasic.All"
+
+Show Entra Sign-ins: Failed
+Show failed sign-ins for one user over 48 hours.
+Source: cli:Show Failed Sign-Ins
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All"
+
+Show Entra Sign-ins: Last 48 Hours
+Show the user’s Entra sign-ins over 48 hours.
+Source: cli:Show Entra Sign-ins - Last 48 Hours
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All" -ContextScope Process
+
+Show Entra Sign-ins: Latest 10
+Show the user’s 10 most recent Entra sign-ins.
+Source: cli:Show Last 10 Entra Sign-Ins
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All"
+
+Show Entra Sign-ins: Other Clients
+Show sign-ins classified as Other clients over seven days; this is not proof of legacy authentication.
+Source: cli:Show Legacy / Other-client Sign-ins
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All" -ContextScope Process
+
+Show Entra Sign-ins: Successful
+Show successful sign-ins for one user over 48 hours.
+Source: cli:Show Successful Sign-Ins
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All" -ContextScope Process
+
+Show Entra User AD Sync Status
+Show whether a user syncs from AD and report the last sync time and source domain.
+Source: cli:Show Sync Source
+Preparation: Connect-MgGraph -Scopes "User.Read.All" -ContextScope Process
+
+Show Entra User Details
+Show email addresses, account creation date, and status for a known Entra UPN.
+Source: cli:Get User By Upn
+Preparation: Connect-MgGraph -Scopes "User.Read.All"
+
+Show Entra User Directory Memberships
+List the Entra directory objects this user belongs to.
+Source: cli:Show Entra User Group Memberships
+Preparation: Connect-MgGraph -Scopes "User.Read.All","GroupMember.Read.All"
+
+Show Entra User Manager
+Look up the manager assigned to one Entra user.
+Source: cli:Show Manager
+Preparation: Connect-MgGraph -Scopes "User.Read.All"
+
+Show Microsoft Authenticator Methods
+List the user’s registered Microsoft Authenticator methods.
+Source: cli:Show Microsoft Authenticator Methods
+Preparation: Connect-MgGraph -Scopes "UserAuthMethod-MicrosoftAuthApp.Read.All"
+
+Show Phone Methods
+List the user’s registered phone authentication methods.
+Source: cli:Show Phone Methods
+Preparation: Connect-MgGraph -Scopes "UserAuthMethod-Phone.Read.All"
+
+Show User Account Status
+Show whether selected accounts are enabled and when they last signed in.
+Source: GET-ACCOUNT-STATUS.ps1
+Modules: Microsoft.Graph.Authentication
+
+Show User Authentication Methods
+List the user’s registered authentication methods and IDs.
+Source: cli:Show All Authentication Methods For One User
+Preparation: Connect-MgGraph -Scopes "UserAuthenticationMethod.Read.All"
+
+Show User Delegated App Grants
+List app permissions approved on behalf of this user.
+Source: cli:Show Delegated Grants For One User
+Preparation: Connect-MgGraph -Scopes "Directory.Read.All"
+
+Show User MFA Registration Status
+Show the user’s MFA registration report.
+Source: cli:Show Registration Status For One User
+Preparation: Connect-MgGraph -Scopes "AuditLog.Read.All"
+
+Identity & Access (M365 Licensing)
+
+Assign User Licenses
+Assign a selected Microsoft 365 license to approved users.
+Source: INVOKE-ASSIGN-LICENSES.ps1
+Modules: Microsoft.Graph.Authentication
+
+Audit Tenant License Totals
+Review license totals, usage, and available seats.
+Source: GET-TENANT-LICENSING-AUDIT.ps1
+Modules: Microsoft.Graph.Authentication
+
+Remove User Licenses
+Remove selected Microsoft 365 licenses from approved users.
+Source: INVOKE-REMOVE-LICENSES.ps1
+Modules: Microsoft.Graph.Authentication
+
+Show User Licenses
+Show the user’s assigned license codes and IDs.
+Source: cli:Show Assigned Licenses
+Preparation: Connect-MgGraph -Scopes "LicenseAssignment.Read.All"
+
+Security & Compliance
+
+Audit User Search Queries
+Show recorded search-query audit events for one user.
+Source: cli:Search Query Audit
+Preparation: Connect-ExchangeOnline
+
+BEC: Build Incident Timeline
+Combine supplied incident evidence into a timeline.
+Source: BEC-GET-TIMELINE-BUILDER.ps1
+
+BEC: Check IP Reputation
+Check selected public IP addresses against external reputation services.
+Source: BEC-GET-THREAT-INTEL-ACTIVITY.ps1
+
+BEC: Contain and Eradicate
+Contain and eradicate one compromised account after approval.
+Source: BEC-CONTAIN-ERADICATE.ps1
+Modules: Microsoft.Graph.Authentication, ExchangeOnlineManagement
+
+BEC: Decode Token
+Read a token's contents locally without sending it online.
+Source: BEC-GET-TOKEN-DECODE.ps1
+
+BEC: Restore and Validate
+Check recovery readiness and restore approved account access.
+Source: BEC-RECOVER-VALIDATE.ps1
+Modules: Microsoft.Graph.Authentication, ExchangeOnlineManagement
+
+BEC: Restore Email
+Restore previously moved email to the selected mailbox.
+Source: BEC-INVOKE-EMAIL-RECOVERY.ps1
+Modules: Microsoft.Graph.Authentication
+
+BEC: Review File Activity
+Review a user's file activity for possible data exposure.
+Source: BEC-GET-DATA-EXFIL-ACTIVITY.ps1
+Modules: ExchangeOnlineManagement
+
+BEC: Review Token Replay
+Review sign-ins for indicators of token replay or session theft.
+Source: BEC-GET-TOKEN-REPLAY-CHECK.ps1
+Modules: Microsoft.Graph.Authentication
+
+BEC: Revoke Sessions
+Revoke the user’s sign-in sessions; existing access may not end immediately.
+Source: cli:Revoke Active Sessions
+Modules: Microsoft.Graph.Authentication, Microsoft.Graph.Users.Actions
+Preparation: Connect-MgGraph -Scopes "User.RevokeSessions.All" -ContextScope Process
+
+BEC: Trace Email Delivery
+Find email delivery records by sender, recipient, or IP address.
+Source: BEC-GET-TENANT-EMAIL-SEARCH.ps1
+Modules: ExchangeOnlineManagement
+
+BEC: Trace IP Activity
+Find tenant audit activity associated with a selected IP address.
+Source: BEC-GET-IP-TRACE.ps1
+Modules: ExchangeOnlineManagement
+
+BEC: User Risk Assessment
+Review one user's account and mailbox before choosing a response.
+Source: BEC-RISK-ASSESSMENT.ps1
+Modules: Microsoft.Graph.Authentication, ExchangeOnlineManagement
+
+Calculate File SHA-256 Hash
+Calculate a file’s SHA-256 hash for comparison with a trusted value.
+Source: cli:Calculate Sha256 Hash
+
+Create Compliance Search by Subject
+Create a tenant-wide email search for a subject; this does not start the search.
+Source: cli:Create Phishing Search By Subject
+Preparation: Connect-IPPSSession
+
+Create Self-Signed App-Auth Certificate
+Create a self-signed certificate for app authentication in the current-user store.
+Source: cli:Create Self-Signed App-Auth Certificate
+
+Export Certificate as PFX
+Export the selected certificate and its private key to a password-protected PFX.
+Source: cli:Export Pfx
+
+Export Public Certificate as CER
+Export the selected public certificate to a CER file.
+Source: cli:Export Public Cer
+
+Find Certificate by Thumbprint
+Search the personal certificate stores for a matching thumbprint.
+Source: cli:Find By Thumbprint
+
+Find Files Modified in Last 24 Hours
+Find files changed in the last 24 hours within the selected folder and its subfolders.
+Source: cli:Find Files Modified In Last 24 Hours
+
+Hard-Delete Compliance Search Results
+Request hard deletion of the selected completed search’s results.
+Source: cli:Hard-Delete Search Results
+Preparation: Connect-IPPSSession
+
+Resume BitLocker Protection
+Resume BitLocker protection on the selected drive.
+Source: cli:Resume Protection
+
+Review Accounts and Sign-ins
+Choose stale sign-ins, guest account cleanup, or recent sign-in anomalies.
+Source: GET-STALE-SIGNIN-REVIEW.ps1
+Modules: Microsoft.Graph.Authentication
+
+Review Tenant Security
+Start with a tenant overview or choose MFA, Conditional Access, device code, or Secure Score.
+Source: GET-TENANT-SECURITY-SNAPSHOT.ps1
+Modules: Microsoft.Graph.Authentication
+
+Scan Files for Sensitive Data
+Scan selected files for potentially sensitive information before sharing.
+Source: TEST-SENSITIVE-DATA.ps1
+
+Show BitLocker Recovery Protectors
+Display BitLocker key protectors and recovery passwords for C:.
+Source: cli:Show BitLocker Recovery Protectors
+
+Show BitLocker Status
+Show BitLocker protection and encryption status.
+Source: cli:Show BitLocker Status
+
+Show Code-Signing Certificates
+List code-signing certificates installed for the current Windows user.
+Source: cli:Show Code-Signing Certificates
+
+Show Compliance Search Status
+Show the selected Purview search’s status and result count.
+Source: cli:Show Compliance Search Status
+Preparation: Connect-IPPSSession
+
+Show Current Windows Identity and Privileges
+Show the current Windows user, group memberships, and privileges.
+Source: cli:Identity and Privileges
+
+Show Expired and Expiring Certificates
+List computer certificates that expire within 30 days, including already expired ones.
+Source: cli:Show Expiring Certificates
+
+Show PowerShell Script Block Events
+Review local PowerShell script-block event metadata within a selected time window.
+Source: GET-POWERSHELL-LOG-ACTIVITY.ps1
+
+Show Stored Windows Credential Targets
+List stored Windows credential targets for the current execution identity.
+Source: GET-STORED-CREDENTIAL-TARGETS.ps1
+
+Sign Script
+Sign the selected script using the chosen certificate and timestamp service.
+Source: cli:Sign Script
+
+Start Compliance Search
+Start the selected Purview compliance search.
+Source: cli:Start Compliance Search
+Preparation: Connect-IPPSSession
+
+Suspend BitLocker for One Reboot
+Suspend BitLocker protection on C: for one reboot.
+Source: cli:Suspend BitLocker for One Reboot
+
+Verify Script Signature
+Show a script’s signature status and signing certificate.
+Source: cli:Verify Script Signature
+
+Network & Connectivity
+
+Clear DNS Resolver Cache
+Clear this computer’s DNS resolver cache.
+Source: cli:Flush Resolver Cache
+
+Delete Wi-Fi Profile
+Delete the selected saved Wi-Fi profile.
+Source: cli:Delete Wi-Fi Profile
+
+Disable Network Adapter
+Disable the selected network adapter.
+Source: cli:Disable Network Adapter
+
+Ping Host
+Send four ping tests to a host.
+Source: cli:Ping Host
+
+Ping Host Continuously
+Ping a host continuously; press Ctrl+C to stop.
+Source: cli:Continuous Ping
+
+Release and Renew DHCP Addresses
+Release and renew DHCP addresses on this computer.
+Source: cli:Release And Renew Dhcp
+
+Reset TCP/IP Stack
+Reset the local TCP/IP configuration.
+Source: cli:Reset Tcp/Ip Stack
+
+Resolve DNS Name
+Look up DNS records for the specified name.
+Source: cli:Resolve Name
+
+Restart Network Adapter
+Restart the selected network adapter.
+Source: cli:Restart Network Adapter
+
+Show Active Network Adapters
+List network adapters whose status is Up.
+Source: cli:Show Active Adapters
+
+Show ARP Neighbor Cache
+Show cached IPv4 neighbors and their hardware addresses.
+Source: cli:Show Arp Neighbor Cache
+
+Show Configured IPv4 DNS Servers
+Show configured IPv4 DNS servers for each network adapter.
+Source: cli:Show Configured Dns Servers
+
+Show Established TCP Connections
+List established TCP connections and their owning process IDs.
+Source: cli:Show Established Tcp Connections
+
+Show IP Configuration
+Show local IP addresses, gateways, and DNS servers.
+Source: cli:Show Ip Configuration
+
+Show Listening TCP Ports
+List listening TCP ports and their owning process IDs.
+Source: cli:Show Listening Tcp Ports
+
+Show Mapped Network Drives
+List network drive connections for the current user.
+Source: cli:Mapped Drives
+
+Show Network Profiles
+Show Windows network connection profiles.
+Source: cli:Network Profile
+
+Show Port 443 Connections
+Show netstat lines containing :443; matches can be local or remote ports.
+Source: cli:Port 443 Connections
+
+Show Routing Table
+Show IPv4 routes sorted by route metric.
+Source: cli:Show Routing Table
+
+Show Saved Wi-Fi Profiles
+List saved Wi-Fi profile names.
+Source: cli:Show Saved Wi-Fi Profiles
+
+Show SMB Sessions
+List active SMB file-sharing sessions.
+Source: cli:Show SMB Sessions
+
+Show SMB Share Permissions
+Review visible local SMB shares and their share-level access rules.
+Source: GET-SMB-SHARE-PERMISSIONS.ps1
+Modules: SmbShare
+
+Show SMB Shares
+List local SMB shares and their paths.
+Source: cli:Show SMB Shares
+
+Show Wi-Fi Connection
+Show the current Wi-Fi connection details.
+Source: cli:Show Wi-Fi Connection
+
+Show Windows VPN Connections
+Show VPN connections configured for all users.
+Source: cli:Show Configured Windows Vpn Connections
+
+Show WinHTTP Proxy
+Show the WinHTTP proxy setting.
+Source: cli:WinHTTP Proxy
+
+Test Route Packet Loss with PathPing
+Check the network route and packet loss to a host.
+Source: cli:Path Ping
+
+Test TCP Port
+Test a host’s TCP port; the example uses port 443.
+Source: cli:Test Tcp Port
+
+Trace Route
+Trace the network path to a host.
+Source: cli:Trace Route
+
+Windows OS
+
+Check and Sync Windows Time
+Show the Windows Time source and sync status, then optionally request a sync.
+Source: cli:Check and Sync Windows Time
+
+Open Windows Update
+Open Windows Update settings.
+Source: cli:Open Windows Update
+
+Repair Windows System Files with SFC
+Scan and repair protected Windows system files.
+Source: cli:System File Checker
+
+Reset Winsock
+Reset the local Winsock catalog.
+Source: cli:Reset Winsock
+
+Restart Windows Service
+Force-restart the selected Windows service.
+Source: cli:Restart Service
+
+Set Windows Service Startup Type
+Change how the selected Windows service starts.
+Source: cli:Set Startup Type
+
+Show Installed Hotfixes
+List installed hotfixes, newest first.
+Source: cli:Show Installed Hotfixes
+
+Show PowerShell Remoting Endpoints
+List registered local WSMan PowerShell session configurations.
+Source: GET-PS-REMOTING-ENDPOINTS.ps1
+
+Show Recent Application Errors
+Show application error events from the last 24 hours.
+Source: cli:Recent Application Errors
+
+Show Recent System Errors
+Show system error events from the last 24 hours.
+Source: cli:Recent System Errors
+
+Show Recent Windows Update History
+Show Windows Update events recorded over 30 days.
+Source: cli:Show Recent Windows Update History
+
+Show Remote Desktop Setting
+Show whether the Remote Desktop registry setting allows connections.
+Source: cli:Show Whether Remote Desktop Is Enabled
+
+Show Scheduled Tasks
+Inventory visible scheduled tasks and their last-run information on this computer.
+Source: GET-SCHEDULED-TASK-INVENTORY.ps1
+
+Show Windows Firewall Profiles
+Show Windows Firewall profile status and default actions.
+Source: cli:Show Windows Firewall Profiles
+
+Show Windows Firewall Rules by Name
+Find firewall rules whose display names match the supplied filter.
+Source: cli:Show Windows Firewall Rules by Name
+
+Show Windows Service Status
+Show the selected service’s status and startup type.
+Source: cli:Show Service Status
+
+Show Windows User Profiles
+List Windows user profiles registered on this computer.
+Source: GET-WINDOWS-PROFILES.ps1
+
+Show Windows Version and Build
+Show the Windows version, build, and architecture.
+Source: cli:Show Os And Build
+
+Show WMI Event Subscriptions
+Show persistent Windows event triggers, what actions they run, and how they are linked. Use this to review automation or investigate persistence.
+Source: GET-WMI-SUBSCRIPTIONS.ps1
+
+Stop Processes by Name
+Force-stop all processes with the selected name.
+Source: cli:Stop Process By Name
+
+Update Windows Apps with WinGet
+Review and update installed applications using WinGet.
+Source: UPDATE-WINDOWS-APPS.ps1
+
+Mail & Exchange
+
+Add Calendar Permission
+Grant the selected user Reviewer or Editor access to a mailbox calendar.
+Source: cli:Add Calendar Permission
+Preparation: Connect-ExchangeOnline
+
+Add Contacts Permission
+Grant the selected user Reviewer or Editor access to mailbox contacts.
+Source: cli:Add Contacts Permission
+Preparation: Connect-ExchangeOnline
+
+Add Distribution Group Member
+Add one user to the selected distribution group.
+Source: cli:Add Distribution Group Member
+Preparation: Connect-ExchangeOnline
+
+Audit Inbox Rule Changes
+Find inbox-rule creation and change events for one user over 14 days.
+Source: cli:Audit Inbox Rule Changes
+Preparation: Connect-ExchangeOnline
+
+Audit Mail Access
+Find recorded MailItemsAccessed events for one user over 10 days.
+Source: cli:Mailitemsaccessed Audit
+Preparation: Connect-ExchangeOnline
+
+Audit Mail Deletions and Moves
+Find recorded email deletion, move, and update events for one user over 14 days.
+Source: cli:Mail Delete And Move Audit
+Preparation: Connect-ExchangeOnline
+
+Audit Mail Flow Rules
+Review mail flow rules for settings that need attention.
+Source: GET-TRANSPORT-RULES-AUDIT.ps1
+Modules: ExchangeOnlineManagement
+
+Audit Shared Mailbox Sign-ins
+Find sign-in activity associated with shared mailboxes.
+Source: GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1
+Modules: ExchangeOnlineManagement, Microsoft.Graph.Authentication
+
+Audit Tenant Mailbox Access
+Review mailbox forwarding and delegated access across the tenant.
+Source: GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1
+Modules: ExchangeOnlineManagement
+
+Connect Exchange Online
+Sign in to Exchange Online PowerShell.
+Source: cli:Connect Exchange Online
+
+Disable Mailbox Protocols
+Disable selected mailbox-level POP, IMAP, or SMTP AUTH settings after approval.
+Source: DISABLE-MAILBOX-PROTOCOLS.ps1
+Modules: ExchangeOnlineManagement
+
+Disconnect Exchange Online
+Disconnect Exchange Online in this PowerShell session.
+Source: cli:Disconnect Exchange Online
+
+Enable Mailbox Litigation Hold
+Enable an unlimited litigation hold on approved mailboxes.
+Source: INVOKE-LITIGATION-HOLD.ps1
+Modules: ExchangeOnlineManagement
+
+Find Exchange Service Principal by App ID
+Find an Exchange service principal by its application ID.
+Source: cli:Find Exchange Service Principal By Appid
+Preparation: Connect-ExchangeOnline
+
+Purge Soft-Deleted Mailbox
+Preview one soft-deleted mailbox. Permanent deletion requires -Purge and typed approval.
+Source: PURGE-SOFT-DELETED-MAILBOX.ps1
+Modules: ExchangeOnlineManagement
+
+Remove All Inbox Rules
+Delete all visible and hidden inbox rules from one explicitly approved mailbox.
+Source: cli:Remove All Inbox Rules
+Preparation: Connect-ExchangeOnline
+
+Remove Calendar Permission
+Remove the selected user’s permission from a mailbox calendar.
+Source: cli:Remove Calendar Permission
+Preparation: Connect-ExchangeOnline
+
+Remove Disabled User Mailbox Access
+Remove approved mailbox access held by one disabled user.
+Source: CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1
+Modules: ExchangeOnlineManagement, Microsoft.Graph.Authentication
+
+Remove Distribution Group Member
+Remove one user from the selected distribution group.
+Source: cli:Remove Distribution Group Member
+Preparation: Connect-ExchangeOnline
+
+Remove Inbox Rule
+Delete one selected inbox rule.
+Source: cli:Remove Specific Inbox Rule
+Preparation: Connect-ExchangeOnline
+
+Remove Mailbox Delegate
+Remove one direct Full Access, Send As, or Send on Behalf grant after approval.
+Source: REMOVE-MAILBOX-DELEGATE.ps1
+Modules: ExchangeOnlineManagement
+
+Remove Mailbox Forwarding
+Clear mailbox-level forwarding; inbox rules are unchanged.
+Source: cli:Remove Mailbox Forwarding
+Preparation: Connect-ExchangeOnline
+
+Review Mailbox Rules and Access
+Check forwarding, delegated access, and inbox rules, including hidden rules, for one mailbox, a list, or the full tenant.
+Source: GET-MAILBOX-RULES.ps1
+Modules: ExchangeOnlineManagement
+
+Show Calendar Permissions
+Show permissions on the selected mailbox’s Calendar folder.
+Source: cli:Show Calendar Permissions
+Preparation: Connect-ExchangeOnline
+
+Show Contacts Permissions
+Show permissions on the selected mailbox’s Contacts folder.
+Source: cli:Show Contacts Permissions
+Preparation: Connect-ExchangeOnline
+
+Show Distribution Group Members
+List direct members of an Exchange distribution group.
+Source: cli:Show Distribution Group Members
+Preparation: Connect-ExchangeOnline
+
+Show Distribution Group Owners
+Show the recorded owners of an Exchange distribution group.
+Source: cli:Show Distribution Group Owners
+Preparation: Connect-ExchangeOnline
+
+Show Exchange Online Connections
+Show existing Exchange Online PowerShell connections.
+Source: cli:Show Exchange Connection
+
+Show Exchange Online Module Version
+Show the newest installed Exchange Online module version.
+Source: cli:Show Installed ExchangeOnlineManagement Version
+
+Show Mail Audit Details
+Extract available subject, IP address, and folder fields from mail audit events.
+Source: cli:Parse Mail Audit Subject, Ip, And Destination Folder
+Preparation: Connect-ExchangeOnline
+
+Show Mail Flow Rule
+Show all settings for the selected mail-flow rule.
+Source: cli:Show Specific Transport Rule
+Preparation: Connect-ExchangeOnline
+
+Show Mailbox Hold Settings
+Show litigation hold status and other mailbox retention settings.
+Source: GET-MAILBOX-LIT-HOLD-STATUS.ps1
+Modules: ExchangeOnlineManagement
+
+Show Mailbox Permissions
+Show explicit mailbox permission entries, including access rights and deny flags; excludes inherited entries and SELF.
+Source: cli:Show Mailbox Full Access Delegates
+Preparation: Connect-ExchangeOnline
+
+Show Mailbox Send As Delegates
+List Send As permissions, excluding SELF.
+Source: cli:Show Mailbox Send As Delegates
+Preparation: Connect-ExchangeOnline
+
+Show Mailbox Send on Behalf Delegates
+Show who can send on behalf of the mailbox.
+Source: cli:Show Mailbox Send on Behalf Delegates
+Preparation: Connect-ExchangeOnline
+
+Show Mailbox Summary
+Show the mailbox type, primary address, and forwarding settings.
+Source: cli:Show Mailbox Summary
+Preparation: Connect-ExchangeOnline
+
+Show Mailbox Usage
+Show mailbox size, item count, last mailbox logon, and archive status.
+Source: GET-MAILBOX-USAGE-STATISTICS.ps1
+Modules: ExchangeOnlineManagement
+
+Terminal Setup
+
+Connect Microsoft Graph
+Sign in to Microsoft Graph with permissions chosen for your task.
+Source: cli:Connect Microsoft Graph
+
+Disconnect Microsoft Graph
+Disconnect Microsoft Graph in this PowerShell session.
+Source: cli:Disconnect Microsoft Graph
+
+Install Active Directory Module (RSAT)
+Install the Windows RSAT Active Directory PowerShell module and verify Get-ADUser.
+Source: cli:Install Active Directory Module (RSAT)
+Modules: ActiveDirectory
+
+Install PowerShell Modules
+Install or update Microsoft Graph, Exchange Online, Azure, Active Directory, and SharePoint Online PowerShell modules.
+Source: INSTALL-POWERSHELL-MODULES.ps1
+
+Set Current User Execution Policy to RemoteSigned
+Set RemoteSigned execution policy for the current Windows user.
+Source: cli:Set Current User Execution Policy - RemoteSigned
+
+Show Execution Policies
+Show execution policy at every scope.
+Source: cli:Show Execution Policies
+
+Show Microsoft Graph Authentication Module Version
+Show the newest installed Microsoft Graph Authentication module version.
+Source: cli:Show Installed Microsoft Graph Module Version
+
+Show Microsoft Graph Connection
+Show the current Microsoft Graph connection and granted permissions.
+Source: cli:Show Graph Context
+
+Show PowerShell Version
+Show the current PowerShell version.
+Source: cli:Show PowerShell Version
+
+Directory & Tenant Services
+
+Clear Cached Kerberos Tickets
+Clear cached Kerberos tickets for the current Windows session.
+Source: cli:Purge Cached Tickets
+
+Export Group Policy Object Report
+Save an HTML settings report for one Group Policy Object.
+Source: GET-GPO-REPORT.ps1
+Modules: GroupPolicy
+
+Find Inactive AD Computers
+Find AD computer accounts with old or missing replicated logon timestamps for review.
+Source: GET-INACTIVE-AD-COMPUTERS.ps1
+Modules: ActiveDirectory
+
+Find Inactive AD Users
+Find AD user accounts with old or missing replicated logon timestamps for review.
+Source: GET-INACTIVE-AD-USERS.ps1
+Modules: ActiveDirectory
+
+Force Group Policy Update
+Refresh Group Policy on this computer.
+Source: cli:Force Group Policy Update
+
+Manage OneDrive Site Admin Access
+Grant or revoke site collection administrator access on one OneDrive.
+Source: SET-ONEDRIVE-SITE-ADMIN.ps1
+Modules: Microsoft.Online.SharePoint.PowerShell
+
+Review Account Cleanup
+Review stale accounts, admin roles, ownerless groups, external forwarding, and license seat usage by SKU.
+Source: GET-QUARTERLY-CLEANUP-REVIEW.ps1
+Modules: ExchangeOnlineManagement, Microsoft.Graph.Authentication
+
+Review AD LAPS Expiration
+Review visible Windows and legacy LAPS expiration metadata on AD computers.
+Source: GET-LAPS-EXPIRATION-REVIEW.ps1
+Modules: ActiveDirectory
+
+Review App Registrations
+Review app owners, credential expiry, and requested permissions.
+Source: GET-APP-REGISTRATION-AUDIT.ps1
+Modules: Microsoft.Graph.Authentication
+
+Review Folder Contents
+Review a folder's files, script signatures, and Git status.
+Source: GET-FOLDER-INVENTORY.ps1
+
+Review Tenant Group Ownership
+List group owners and identify groups without an assigned owner.
+Source: GET-TENANT-GROUP-OWNERS.ps1
+Modules: ExchangeOnlineManagement, Microsoft.Graph.Authentication, Microsoft.Graph.Groups
+
+Show AD adminCount Flags
+List AD objects flagged with adminCount=1. The flag can be stale.
+Source: GET-AD-ADMINCOUNT-REVIEW.ps1
+Modules: ActiveDirectory
+
+Show AD AdminSDHolder Permissions
+Show the owner and access rules on the AdminSDHolder object in one AD domain.
+Source: GET-ADMINSDHOLDER-PERMISSIONS.ps1
+Modules: ActiveDirectory
+
+Show AD Domain Permissions
+Show the owner and access rules on one AD domain root.
+Source: GET-AD-DOMAIN-PERMISSIONS.ps1
+Modules: ActiveDirectory
+
+Show AD Kerberos Delegation
+Review classic Kerberos delegation flags and configured service targets.
+Source: GET-AD-DELEGATION-SETTINGS.ps1
+Modules: ActiveDirectory
+
+Show AD Managed Service Accounts
+List managed service accounts and their visible password-retrieval principals.
+Source: GET-MANAGED-SERVICE-ACCOUNTS.ps1
+Modules: ActiveDirectory
+
+Show AD Service Principal Names
+List service principal names and their AD objects in one directory scope.
+Source: GET-AD-SPN-INVENTORY.ps1
+Modules: ActiveDirectory
+
+Show AD Trusts
+Show trust relationships recorded in one AD domain.
+Source: GET-AD-TRUSTS.ps1
+Modules: ActiveDirectory
+
+Show Azure Owner Assignments
+List visible built-in Owner assignments within one Azure subscription.
+Source: GET-AZURE-OWNER-ASSIGNMENTS.ps1
+Modules: Az.Accounts, Az.Resources
+
+Show Azure Resource Groups
+List visible resource groups in one Azure subscription.
+Source: GET-AZURE-RESOURCE-GROUPS.ps1
+Modules: Az.Accounts, Az.Resources
+
+Show Azure VPN Connection Status
+Show Azure-reported VPN gateway connection status in the signed-in subscription.
+Source: GET-AZ-VPN-STATUS.ps1
+Modules: Az.Accounts, Az.Resources, Az.Network
+
+Show Cached Kerberos Tickets
+List Kerberos tickets cached for the current Windows session.
+Source: cli:Show Cached Tickets
+
+Show Default Domain Password Policy
+Show the domain’s default password policy; user-specific policies may differ.
+Source: cli:Show Default Domain Password Policy
+Preparation: Import-Module ActiveDirectory
+
+Show Device Domain and Entra Join Status
+Show this device’s domain and Entra join status.
+Source: cli:Entra Join Status
+
+Show Folder Permissions
+Show the owner and access rules on one Windows folder.
+Source: GET-FOLDER-PERMISSIONS.ps1
+
+Show GDAP Relationships
+Review Granular Delegated Admin Privileges (GDAP) relationships and recorded end dates from the partner tenant.
+Source: GET-GDAP-RELATIONSHIPS.ps1
+Modules: Microsoft.Graph.Authentication, Microsoft.Graph.Identity.Partner
+
+Show Group Members
+List direct members of selected groups.
+Source: GET-GROUP-MEMBERS.ps1
+Modules: ExchangeOnlineManagement, Microsoft.Graph.Authentication, Microsoft.Graph.Groups
+
+Show Group Policy Results
+Show Group Policy results for the current context.
+Source: cli:Show Group Policy Result
+
+Test AD Domain Secure Channel
+Check this computer’s secure channel to its Active Directory domain.
+Source: cli:Domain Trust Check
+
+Test Azure Resource Group Access
+Verify read access and list visible resources in one Azure resource group.
+Source: TEST-AZURE-RESOURCE-GROUP-ACCESS.ps1
+Modules: Az.Accounts, Az.Resources
+
+Endpoints & Hardware
+
+Check Common Pending Reboot Flags
+Check two common registry flags for a pending Windows reboot.
+Source: cli:Check Common Pending Reboot Flags
+
+Clear Delivery Optimization Cache
+Delete cached Delivery Optimization downloads.
+Source: cli:Clear Delivery Optimization Cache
+
+Defragment Volume
+Defragment the selected volume; the example uses C:.
+Source: cli:Defragment Volume
+
+Disable All Active Network Adapters
+Disable every network adapter whose status is Up.
+Source: cli:Isolate Device - Disable Enabled Adapters
+
+Disable Hibernation
+Disable Windows hibernation on this computer.
+Source: cli:Disable Hibernation
+
+DISM: Analyze Component Store
+Analyze Windows component-store space use.
+Source: cli:DISM Analyze Component Store
+
+DISM: Clean Component Store
+Run Windows component-store cleanup.
+Source: cli:DISM Component Store Cleanup
+
+DISM: Repair Component Store
+Repair the Windows component store.
+Source: cli:Dism Restore Health
+
+DISM: Scan Component Store
+Check the Windows component store for corruption.
+Source: cli:Dism Component Store Scan
+
+Find What’s Using Disk Space
+Show free space on local drives and rank the largest readable locations on one selected drive.
+Source: GET-DISK-SPACE-USAGE.ps1
+
+Open Disk Cleanup
+Open Disk Cleanup so you can choose what to remove.
+Source: cli:Launch Disk Cleanup
+
+Open Storage Settings
+Open Windows storage settings.
+Source: cli:Open Storage Settings
+
+Restart Computer Immediately
+Force an immediate restart of this computer.
+Source: cli:Reboot Computer
+
+Scan File System with CHKDSK
+Run an online file-system scan of C:.
+Source: cli:Chkdsk Online Scan
+
+Show Computer Model and Serial Number
+Show this computer’s manufacturer, model, and serial number.
+Source: cli:Show Computer Model And Serial Number
+
+Show Computer Name and Current User
+Show the computer name and current Windows account.
+Source: cli:Show Hostname And Current User
+
+Show Last Boot and Uptime
+Show the last Windows boot time and calculated uptime.
+Source: cli:Show Last Boot And Uptime
+
+Show Local Drive Free Space
+List capacity and free space for local fixed drives.
+Source: cli:Show Free Space
+
+Show Physical Disk Health
+Show physical disk health and operating status.
+Source: cli:Show Physical Disk Health
+
+Show Print Jobs
+List print jobs from installed printers; inaccessible queues are skipped.
+Source: cli:Print Jobs
+
+Show Printers
+List installed printers and their reported status.
+Source: cli:Printer Check
+
+Show Problem Devices
+Show connected devices whose reported status is not OK.
+Source: cli:Show Problem Devices
+
+Show Processes by Memory Usage
+List 15 processes using the most working-set memory.
+Source: cli:Show Top Memory Consumers
+
+Show Processes by Total CPU Time
+List 15 processes with the most accumulated CPU time; this is not current CPU percentage.
+Source: cli:Show Top Cpu Consumers
+
+Show Windows Driver Services
+List registered Windows system driver services and their reported state.
+Source: GET-SYSTEM-DRIVER-SERVICES.ps1
+
+Extras
+
+GitHub: Manage Repository
+Review, pull, or push changes in the selected Git repository.
+Source: git-repo.ps1
+
+GitHub: Save Project Handoff
+Save a screened snapshot of the current Git project for handoff.
+Source: git-handoff.ps1
+
+GitHub: Security Check
+Review a GitHub security-log export. Save a local checkpoint only when requested.
+Source: GitHub-Security-Check.ps1
+
+Screensaver: Attractor
+Run a floating fractal animation with a clock.
+Source: attractor.ps1
+
+Screensaver: Rain
+Run animated terminal rain with a floating label and clock.
+Source: rain.ps1
+
+Screensaver: Static
+Run animated terminal static with a floating label and clock.
+Source: static.ps1
+
+Theme: Cobalt
+Apply the Cobalt palette in the current terminal session.
+Source: SET-THEME-COBALT.ps1
+
+Theme: Sea Glass
+Install a sea-green PowerShell theme in your startup profile.
+Source: SET-THEME-SEAGLASS.ps1
+
+Theme: Silicon Valley
+Install a green PowerShell theme in your startup profile.
+Source: SET-THEME-SILICON-VALLEY.ps1

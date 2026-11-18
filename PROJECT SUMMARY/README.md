@@ -1,5 +1,52 @@
 # FIELD // KIT project status
 
+## Current locked baseline — November 18, 2026 Pacific
+
+| Site | Release | Sites source | Rollback |
+|---|---|---|---|
+| [fieldkit.pro](https://fieldkit.pro/) | v261 | `1311acda495e8995ade8cd0dd1e6ad339cf9ab25` | v260 |
+| [Entry](https://field-kit-entry.delbert-hifield.chatgpt.site/) | v93 | `de067d2fd5e4d11d7728049673cdc0c2f6c86cae` | v92 |
+
+Both deployments succeeded. 272 tools: 90 workflows and 182 Quick Commands, across 11 browse sections and search-only Extras. 136 display titles renamed; nine category moves. No tools removed. Browse defaults A–Z; search retains intent ranking and BEC workflow order. Former titles remain aliases. Exact current/legacy titles are not displaced by RSAT setup suggestions. Fresh visits default to dark mode; saved theme choice persists.
+
+[Current catalog](CATALOG-BY-GROUP.md) · [Full inventory](FULL-CATALOG.txt) · [Naming standard](NAMING-STANDARD.md) · [Exact renames and moves](NAMING-MAP.json) · [Redundancy findings](naming-audit/REDUNDANCY-AUDIT.md) · [Overlap comparisons](naming-audit/OVERLAP-COMPARISON.md)
+
+### Scope and evidence
+
+Prerequisites lists module names without versions, with a quiet link to Install PowerShell Modules where applicable. Existing connection commands and conditional requirements remain; no new elevation reminders. Empty sections are omitted. Earlier UI changes retain the accepted wordmark, homepage-linked logo, category typography, thin dropdown scrollbars, no breadcrumb underline and borderless selected rows. Browser extensions can alter rendering; do not infer native theme failure from Dark Reader output.
+
+All 90 workflow payloads remain byte-identical to the preceding baseline and match distributed source files. Filenames and favorite IDs remain stable. Five Quick Command payloads changed: one adds the explicit Send As filter and four update a disambiguation message to Show Group Members. The former Full Access reader is named Show Mailbox Permissions and retains its broader ACL output. A blank purge-mailbox module entry is corrected to ExchangeOnlineManagement.
+
+Both Sites checkouts passed JavaScript syntax, the actual search/render harness, all 136 former titles, exact current titles outside search-only Extras, every category A–Z check, all alias and Related Items targets, Send As source contract, bundled build and source integrity checks. No interactive browser, PowerShell, Windows or tenant execution was performed for this revision. No claim of runtime permission sufficiency is made.
+
+### Post-naming redundancy audit
+
+All 272 payloads were decoded and fingerprinted; 27 overlap families were compared using source. No byte-identical or comment/whitespace-identical pairs found. No behavioral-equivalence or retirement conclusion follows from that test alone. All tools are retained. Sign-in columns/ranges, raw versus extracted mail-audit data, direct LDAP versus Graph/Exchange, quick commands versus guided workflows and mutation safeguards preserve meaningful differences. See the linked report for limitations and possible future consolidation design.
+
+### Source pins
+
+| Asset | SHA-256 |
+|---|---|
+| Catalog homepage | `6fc24234d68a6acc4657ce1c000a509c3f833b0a48350a8361d0d1c6ecbe6046` |
+| Entry homepage | `e35722da42556c93152021f2e03a5ae790c7bbceb03363200599a55ab5fff638` |
+
+Catalog deployment: `appgdep_6afe26cf0ee0819186a956d7cd9d8e2b`. Entry deployment: `appgdep_6afe26c732b88191be82fdc0f1ef1a54`. Native deployment success is recorded; no fresh browser interaction evidence is implied.
+
+GitHub and Sites retain independent source histories. This commit synchronizes documentation, not GitHub dist. Recover each pinned Sites source before testing/rebuilding production; do not use old GitHub CI as production evidence. Sites sources include the full 272-record source inventory, per-item dispositions, baseline hashes and this release's search suite under docs/naming-audit and qa/search-relevance.cjs. Rebuild with node scripts/build-counter-worker.mjs. Run node qa/search-relevance.cjs from each Sites checkout and verify dist/SHA256SUMS.txt from dist.
+
+## Current references
+
+- [Build standard](field-kit-build-standard.md)
+- [Site and catalog specification](SITE-AND-CATALOG-SPEC.md)
+- [New engineer walkthrough](NEW-ENGINEER-WALKTHROUGH.md)
+- [QA state](../qa/PROJECT-STATE.md)
+
+## Historical release records
+
+The following records retain their original evidence and names. The current locked baseline above takes precedence.
+
+# FIELD // KIT project status
+
 ## Current production baseline — November 17, 2026 Pacific
 
 | Site | Release | Sites source | Rollback |
