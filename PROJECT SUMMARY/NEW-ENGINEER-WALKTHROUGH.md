@@ -2,6 +2,8 @@
 
 Use the published revision named in the test record. Browse and search only. Execute scripts separately in the approved environment.
 
+Before closing iOS acceptance for the tap-target release, use an actual iPhone Safari session. Tap near the edges of each enabled header control, scroll/select category and sort options, open result and Related Items rows, and repeat in both themes and landscape. Record the exact Sites version, device, iOS version and outcomes. This has NOT been performed in the release environment.
+
 1. Search `user locked out`, `hidden inbox rules`, and `tenant license report`. Confirm the first result fits the task and the relevant scope is visible.
 2. Search `bec`. Confirm User Risk Assessment, Contain and Eradicate, and Restore and Validate appear in that order.
 3. Select Identity & Access (Local) and search `message trace`. Choose Search all categories and verify the query stays put and BEC: Trace Email Delivery appears. Clear the query.

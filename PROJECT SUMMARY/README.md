@@ -1,6 +1,25 @@
 # FIELD // KIT project status
 
-## Current locked baseline — Related Items, November 18, 2026 Pacific
+## Current release — tap targets, November 18, 2026 Pacific
+
+| Site | Release | Sites source | Rollback |
+|---|---|---|---|
+| [fieldkit.pro](https://fieldkit.pro/) | v263 | `5b7385d45f8eda9c637589c4f5bb2ea72e508149` | v262 |
+| [Entry](https://field-kit-entry.delbert-hifield.chatgpt.site/) | v95 | `a5762913e3503549a5a6e9314f9370f1ac810d54` | v94 |
+
+Both native deployments succeeded. Header icons use real 44 by 44 CSS-pixel controls; catalog, category, sort and Related Items rows have 44px minimum heights. Glyphs remain 18px. At widths at or below 414px, the controls wrap below the full wordmark; this is the necessary visible layout change to keep non-overlapping targets. Wider screens retain the single-line header. No catalog, script or application JavaScript changes.
+
+Chrome responsive geometry and interactions passed at 320, 375, 390, 414, 430, 480, 768 and 1280px in both themes. Header/logo boxes do not overlap. Effective edge-midpoint hits resolve to their controls. Category/sort/Related Items row heights were checked at 375, 430 and 1280px in both themes. Existing search tests and bundle syntax passed in each Sites checkout.
+
+**iOS Safari verification is NOT RUN.** No Apple device, iOS simulator or Safari session is available here. Responsive Chromium checks do not satisfy native iOS acceptance. Remaining device check: header taps, menu scrolling/selection, result/card opening, both themes and landscape. This is a published implementation with iOS acceptance still outstanding, not a claim of completed iOS QA.
+
+[Change and evidence](TAP-TARGETS.md) · [Chrome measurements](tap-targets/chrome-measurements.json). The screenshot is retained in each pinned Sites source at qa/tap-targets/375px-header.jpg. The preview needed a preview-only closing-body tag to prevent live-server injection inside inline SVG; production markup/script bytes were not changed for that workaround.
+
+Homepage SHA-256: catalog `4b0a2de647f0d0e444fbf80fd7eeec4d4cfff145c1383fffee6f83f1e5f330f1`; entry `0f6b5ce359ce44449cf6a726ad8d6c4d4007e219e09737cc962d4915feee1a24`.
+
+Deployments: catalog `appgdep_6afe2baa8f588191a208fcc498e9195b`; entry `appgdep_6afe2ba224d88191ab69e818266f6fea`. The earlier HTTP 403 independent-verification limit remains unchanged. Recover the pinned Sites source for production work; GitHub dist remains separate. Dark default, naming and Related Items choices are preserved.
+
+## Previous Related Items baseline, November 18, 2026 Pacific
 
 | Site | Release | Sites source | Rollback |
 |---|---|---|---|

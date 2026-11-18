@@ -17,6 +17,10 @@ Use [NAMING-STANDARD.md](NAMING-STANDARD.md), [NAMING-MAP.json](NAMING-MAP.json)
 - Source-review inputs per scope and name real export formats. Reporting and baseline saves are distinct. Ordinary on-screen tools need no generic ticket footer.
 - Card details include source-backed inputs, outputs, **Prerequisites**, API scopes, Script Preview and populated Related Items. Quick Commands expose their command through View Code. List module names without version suffixes. When modules are listed, add a quiet setup link that opens Install PowerShell Modules. Keep source-required connection commands and conditional notes; omit empty sections and new elevation boilerplate. View Code and Download use the same embedded source bytes as the direct source endpoint.
 
+## Tap targets
+
+Header icon controls are at least 44 by 44 CSS pixels. Tappable catalog, category, sort and Related Items rows are at least 44px tall. Use actual layout boxes without overlapping hit overlays. Preserve 18px icon glyphs and existing type/color styling. At widths at or below 414px, wrap header controls below the wordmark with a 96px header and matching content-height adjustment. iOS Safari acceptance remains outstanding for this release; see TAP-TARGETS.md.
+
 ## Desktop and mobile
 
 - Dark first, with a light mode toggle. Muted green text marks active categories and scope and impact labels. Category selection uses text color.

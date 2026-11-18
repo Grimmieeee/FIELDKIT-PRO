@@ -1,0 +1,1540 @@
+{
+  "engine": "Chrome responsive iframe viewports; not iOS Safari",
+  "sizes": [
+    {
+      "width": 320,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 320,
+        "w": 320,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 59.59375,
+          "w": 44,
+          "x": 15.59375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 120.78125,
+          "w": 44,
+          "x": 76.78125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 181.984375,
+          "w": 44,
+          "x": 137.984375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 243.1875,
+          "w": 44,
+          "x": 199.1875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 304.390625,
+          "w": 44,
+          "x": 260.390625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 320,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 320,
+        "w": 320,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 59.59375,
+          "w": 44,
+          "x": 15.59375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 120.78125,
+          "w": 44,
+          "x": 76.78125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 181.984375,
+          "w": 44,
+          "x": 137.984375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 243.1875,
+          "w": 44,
+          "x": 199.1875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 304.390625,
+          "w": 44,
+          "x": 260.390625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 375,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 375,
+        "w": 375,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 65.09375,
+          "w": 44,
+          "x": 21.09375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 137.28125,
+          "w": 44,
+          "x": 93.28125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 209.484375,
+          "w": 44,
+          "x": 165.484375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 281.6875,
+          "w": 44,
+          "x": 237.6875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 353.890625,
+          "w": 44,
+          "x": 309.890625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 375,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 375,
+        "w": 375,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 65.09375,
+          "w": 44,
+          "x": 21.09375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 137.28125,
+          "w": 44,
+          "x": 93.28125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 209.484375,
+          "w": 44,
+          "x": 165.484375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 281.6875,
+          "w": 44,
+          "x": 237.6875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 353.890625,
+          "w": 44,
+          "x": 309.890625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 390,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 390,
+        "w": 390,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 66.59375,
+          "w": 44,
+          "x": 22.59375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 141.78125,
+          "w": 44,
+          "x": 97.78125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 216.984375,
+          "w": 44,
+          "x": 172.984375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 292.1875,
+          "w": 44,
+          "x": 248.1875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 367.390625,
+          "w": 44,
+          "x": 323.390625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 390,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 390,
+        "w": 390,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 66.59375,
+          "w": 44,
+          "x": 22.59375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 141.78125,
+          "w": 44,
+          "x": 97.78125,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 216.984375,
+          "w": 44,
+          "x": 172.984375,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 292.1875,
+          "w": 44,
+          "x": 248.1875,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 367.390625,
+          "w": 44,
+          "x": 323.390625,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 414,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 414,
+        "w": 414,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 69,
+          "w": 44,
+          "x": 25,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 149,
+          "w": 44,
+          "x": 105,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 229,
+          "w": 44,
+          "x": 185,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 309,
+          "w": 44,
+          "x": 265,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 389,
+          "w": 44,
+          "x": 345,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 414,
+      "header": {
+        "bottom": 96,
+        "h": 96,
+        "right": 414,
+        "w": 414,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 69,
+          "w": 44,
+          "x": 25,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 149,
+          "w": 44,
+          "x": 105,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 229,
+          "w": 44,
+          "x": 185,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 309,
+          "w": 44,
+          "x": 265,
+          "y": 48
+        },
+        {
+          "bottom": 92,
+          "h": 44,
+          "right": 389,
+          "w": 44,
+          "x": 345,
+          "y": 48
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 430,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 430,
+        "w": 430,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 238,
+          "w": 44,
+          "x": 194,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 284,
+          "w": 44,
+          "x": 240,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 330,
+          "w": 44,
+          "x": 286,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 376,
+          "w": 44,
+          "x": 332,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 422,
+          "w": 44,
+          "x": 378,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 430,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 430,
+        "w": 430,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 238,
+          "w": 44,
+          "x": 194,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 284,
+          "w": 44,
+          "x": 240,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 330,
+          "w": 44,
+          "x": 286,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 376,
+          "w": 44,
+          "x": 332,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 422,
+          "w": 44,
+          "x": 378,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 480,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 480,
+        "w": 480,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 288,
+          "w": 44,
+          "x": 244,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 334,
+          "w": 44,
+          "x": 290,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 380,
+          "w": 44,
+          "x": 336,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 426,
+          "w": 44,
+          "x": 382,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 472,
+          "w": 44,
+          "x": 428,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 480,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 480,
+        "w": 480,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 288,
+          "w": 44,
+          "x": 244,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 334,
+          "w": 44,
+          "x": 290,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 380,
+          "w": 44,
+          "x": 336,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 426,
+          "w": 44,
+          "x": 382,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 472,
+          "w": 44,
+          "x": 428,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 768,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 768,
+        "w": 768,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 541.28125,
+          "w": 44,
+          "x": 497.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 590.28125,
+          "w": 44,
+          "x": 546.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 639.28125,
+          "w": 44,
+          "x": 595.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 688.28125,
+          "w": 44,
+          "x": 644.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 737.28125,
+          "w": 44,
+          "x": 693.28125,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 768,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 768,
+        "w": 768,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 541.28125,
+          "w": 44,
+          "x": 497.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 590.28125,
+          "w": 44,
+          "x": 546.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 639.28125,
+          "w": 44,
+          "x": 595.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 688.28125,
+          "w": 44,
+          "x": 644.28125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 737.28125,
+          "w": 44,
+          "x": 693.28125,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    },
+    {
+      "width": 1280,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 1280,
+        "w": 1280,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1004.8125,
+          "w": 44,
+          "x": 960.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1060.8125,
+          "w": 44,
+          "x": 1016.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1116.8125,
+          "w": 44,
+          "x": 1072.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1172.8125,
+          "w": 44,
+          "x": 1128.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1228.8125,
+          "w": 44,
+          "x": 1184.8125,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "dark"
+    },
+    {
+      "width": 1280,
+      "header": {
+        "bottom": 60,
+        "h": 60,
+        "right": 1280,
+        "w": 1280,
+        "x": 0,
+        "y": 0
+      },
+      "iconGlyphs": [
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          18,
+          18
+        ]
+      ],
+      "icons": [
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1004.8125,
+          "w": 44,
+          "x": 960.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1060.8125,
+          "w": 44,
+          "x": 1016.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1116.8125,
+          "w": 44,
+          "x": 1072.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1172.8125,
+          "w": 44,
+          "x": 1128.8125,
+          "y": 7.5
+        },
+        {
+          "bottom": 51.5,
+          "h": 44,
+          "right": 1228.8125,
+          "w": 44,
+          "x": 1184.8125,
+          "y": 7.5
+        }
+      ],
+      "overlaps": [],
+      "rowMinimum": 44,
+      "theme": "light"
+    }
+  ],
+  "details": [
+    {
+      "width": 375,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    },
+    {
+      "width": 375,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    },
+    {
+      "width": 430,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    },
+    {
+      "width": 430,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    },
+    {
+      "width": 1280,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    },
+    {
+      "width": 1280,
+      "menus": {
+        "count": 12,
+        "minimum": 44
+      },
+      "sort": 44,
+      "related": {
+        "count": 2,
+        "minimum": 44
+      },
+      "edgeHits": false
+    }
+  ],
+  "edges": [
+    {
+      "width": 320,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 375,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 414,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 430,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 480,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "hits": [
+        {
+          "edgeMidpoints": true,
+          "label": "FAQ"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Submit an idea"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Compare scripts, 0 of 3 selected"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Favorites"
+        },
+        {
+          "edgeMidpoints": true,
+          "label": "Switch to dark mode"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Chrome rendering at responsive iframe widths; not Safari or an iOS simulator/device.",
+    "Initial corner probes returned false at rounded border corners; those coordinates fall outside the rounded shape. Mid-edge probes and centers hit their intended controls. Corner results are retained in details; edges contains the corrected effective-hit check.",
+    "Preview-only closing body tag added so live-server does not inject its reload script into an inline SVG string. Production HTML/JavaScript was not changed for that workaround."
+  ]
+}
