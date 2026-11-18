@@ -1,0 +1,1583 @@
+{
+  "relationships": [
+    {
+      "file": "GET-REMOTE-SESSIONS.ps1",
+      "name": "Show Windows User Sessions",
+      "before": [
+        "Show Failed Windows Logons",
+        "Show Windows User Profiles",
+        "Show Stored Windows Credential Targets",
+        "Disable Local User",
+        "Show PowerShell Script Block Events"
+      ],
+      "after": [
+        "Show Local User Details",
+        "Show Failed Windows Logons"
+      ]
+    },
+    {
+      "file": "GET-FAILED-LOGONS.ps1",
+      "name": "Show Failed Windows Logons",
+      "before": [
+        "Show Windows User Sessions",
+        "Show Windows User Profiles",
+        "Show Stored Windows Credential Targets",
+        "Disable Local User",
+        "Show PowerShell Script Block Events"
+      ],
+      "after": [
+        "Show Local User Details",
+        "Show Windows User Sessions"
+      ]
+    },
+    {
+      "file": "GET-SCHEDULED-TASK-INVENTORY.ps1",
+      "name": "Show Scheduled Tasks",
+      "before": [
+        "Show Windows Driver Services",
+        "Show WMI Event Subscriptions",
+        "Show PowerShell Remoting Endpoints",
+        "Show PowerShell Script Block Events",
+        "Show Windows User Sessions"
+      ],
+      "after": [
+        "Show WMI Event Subscriptions",
+        "Show Windows Driver Services"
+      ]
+    },
+    {
+      "file": "GET-FOLDER-PERMISSIONS.ps1",
+      "name": "Show Folder Permissions",
+      "before": [
+        "Review Folder Contents",
+        "Find What’s Using Disk Space",
+        "Scan Files for Sensitive Data",
+        "Show SMB Share Permissions",
+        "Show AD Domain Permissions"
+      ],
+      "after": [
+        "Show SMB Share Permissions",
+        "Review Folder Contents"
+      ]
+    },
+    {
+      "file": "GET-STORED-CREDENTIAL-TARGETS.ps1",
+      "name": "Show Stored Windows Credential Targets",
+      "before": [
+        "Show Windows User Sessions",
+        "Show Failed Windows Logons",
+        "Show Windows User Profiles",
+        "Disable Local User",
+        "Show PowerShell Script Block Events"
+      ],
+      "after": [
+        "Show Current Windows Identity and Privileges"
+      ]
+    },
+    {
+      "file": "GET-WINDOWS-PROFILES.ps1",
+      "name": "Show Windows User Profiles",
+      "before": [
+        "Show Windows User Sessions",
+        "Show Failed Windows Logons",
+        "Show Stored Windows Credential Targets",
+        "Disable Local User",
+        "Show PowerShell Script Block Events"
+      ],
+      "after": [
+        "Show Local Users",
+        "Show Windows User Sessions"
+      ]
+    },
+    {
+      "file": "GET-SMB-SHARE-PERMISSIONS.ps1",
+      "name": "Show SMB Share Permissions",
+      "before": [
+        "Show Folder Permissions",
+        "Review Folder Contents",
+        "Find What’s Using Disk Space",
+        "Scan Files for Sensitive Data",
+        "Show AD Domain Permissions"
+      ],
+      "after": [
+        "Show SMB Shares",
+        "Show Folder Permissions"
+      ]
+    },
+    {
+      "file": "DISABLE-LOCAL-ACCOUNT.ps1",
+      "name": "Disable Local User",
+      "before": [
+        "Show Windows User Sessions",
+        "Show Failed Windows Logons",
+        "Show Windows User Profiles",
+        "Show Stored Windows Credential Targets",
+        "Show PowerShell Script Block Events"
+      ],
+      "after": [
+        "Show Local User Details",
+        "Show Windows User Sessions",
+        "Enable Local User"
+      ]
+    },
+    {
+      "file": "GET-INACTIVE-AD-COMPUTERS.ps1",
+      "name": "Find Inactive AD Computers",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts",
+        "Show AD Service Principal Names"
+      ],
+      "after": [
+        "Show Device Domain and Entra Join Status",
+        "Review AD LAPS Expiration"
+      ]
+    },
+    {
+      "file": "GET-LAPS-EXPIRATION-REVIEW.ps1",
+      "name": "Review AD LAPS Expiration",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts",
+        "Show AD Service Principal Names"
+      ],
+      "after": [
+        "Find Inactive AD Computers"
+      ]
+    },
+    {
+      "file": "GET-AD-PASSWORD-EXCEPTIONS.ps1",
+      "name": "Audit AD Account Exceptions",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts",
+        "Show AD Service Principal Names"
+      ],
+      "after": [
+        "Show Default Domain Password Policy",
+        "Show AD User Password Expiry"
+      ]
+    },
+    {
+      "file": "GET-POWERSHELL-LOG-ACTIVITY.ps1",
+      "name": "Show PowerShell Script Block Events",
+      "before": [
+        "Show Windows User Sessions",
+        "Show Failed Windows Logons",
+        "Show Windows User Profiles",
+        "Show Stored Windows Credential Targets",
+        "Disable Local User"
+      ],
+      "after": [
+        "Show Scheduled Tasks",
+        "Show WMI Event Subscriptions"
+      ]
+    },
+    {
+      "file": "GET-MANAGED-SERVICE-ACCOUNTS.ps1",
+      "name": "Show AD Managed Service Accounts",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Trusts",
+        "Show AD Service Principal Names"
+      ],
+      "after": [
+        "Show AD Service Principal Names",
+        "Show AD Kerberos Delegation"
+      ]
+    },
+    {
+      "file": "GET-PS-REMOTING-ENDPOINTS.ps1",
+      "name": "Show PowerShell Remoting Endpoints",
+      "before": [
+        "Show Scheduled Tasks",
+        "Show Windows Driver Services",
+        "Show WMI Event Subscriptions",
+        "Show PowerShell Script Block Events",
+        "Show Windows User Sessions"
+      ],
+      "after": [
+        "Show Windows Firewall Rules by Name",
+        "Test TCP Port"
+      ]
+    },
+    {
+      "file": "GET-SYSTEM-DRIVER-SERVICES.ps1",
+      "name": "Show Windows Driver Services",
+      "before": [
+        "Show Scheduled Tasks",
+        "Show WMI Event Subscriptions",
+        "Show PowerShell Remoting Endpoints",
+        "Show PowerShell Script Block Events",
+        "Show Windows User Sessions"
+      ],
+      "after": [
+        "Show Problem Devices",
+        "Show Recent System Errors"
+      ]
+    },
+    {
+      "file": "GET-WMI-SUBSCRIPTIONS.ps1",
+      "name": "Show WMI Event Subscriptions",
+      "before": [
+        "Show Scheduled Tasks",
+        "Show Windows Driver Services",
+        "Show PowerShell Remoting Endpoints",
+        "Show PowerShell Script Block Events",
+        "Show Windows User Sessions"
+      ],
+      "after": [
+        "Show Scheduled Tasks",
+        "Show PowerShell Script Block Events"
+      ]
+    },
+    {
+      "file": "GET-AZURE-RESOURCE-GROUPS.ps1",
+      "name": "Show Azure Resource Groups",
+      "before": [
+        "Install PowerShell Modules",
+        "Test Azure Resource Group Access",
+        "Show Azure VPN Connection Status",
+        "Show Azure Owner Assignments",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration"
+      ],
+      "after": [
+        "Test Azure Resource Group Access",
+        "Show Azure Owner Assignments"
+      ]
+    },
+    {
+      "file": "GET-AZURE-OWNER-ASSIGNMENTS.ps1",
+      "name": "Show Azure Owner Assignments",
+      "before": [
+        "Install PowerShell Modules",
+        "Show Azure Resource Groups",
+        "Test Azure Resource Group Access",
+        "Show Azure VPN Connection Status",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration"
+      ],
+      "after": [
+        "Show Azure Resource Groups",
+        "Test Azure Resource Group Access"
+      ]
+    },
+    {
+      "file": "GET-AD-TRUSTS.ps1",
+      "name": "Show AD Trusts",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Service Principal Names"
+      ],
+      "after": [
+        "Test AD Domain Secure Channel",
+        "Show AD Kerberos Delegation"
+      ]
+    },
+    {
+      "file": "GET-AD-SPN-INVENTORY.ps1",
+      "name": "Show AD Service Principal Names",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD Managed Service Accounts",
+        "Show AD Kerberos Delegation"
+      ]
+    },
+    {
+      "file": "GET-AD-DELEGATION-SETTINGS.ps1",
+      "name": "Show AD Kerberos Delegation",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD Service Principal Names",
+        "Show AD Managed Service Accounts"
+      ]
+    },
+    {
+      "file": "GET-AD-ADMINCOUNT-REVIEW.ps1",
+      "name": "Show AD adminCount Flags",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD AdminSDHolder Permissions",
+        "Show AD User Details"
+      ]
+    },
+    {
+      "file": "GET-INACTIVE-AD-USERS.ps1",
+      "name": "Find Inactive AD Users",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Review Account Cleanup"
+      ]
+    },
+    {
+      "file": "GET-GPO-REPORT.ps1",
+      "name": "Export Group Policy Object Report",
+      "before": [
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show Group Policy Results",
+        "Show Default Domain Password Policy"
+      ]
+    },
+    {
+      "file": "GET-GDAP-RELATIONSHIPS.ps1",
+      "name": "Show GDAP Relationships",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Review Tenant Changes",
+        "Review App Registrations"
+      ],
+      "after": [
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Changes"
+      ]
+    },
+    {
+      "file": "GET-AD-DOMAIN-PERMISSIONS.ps1",
+      "name": "Show AD Domain Permissions",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Show Folder Permissions",
+        "Review Folder Contents",
+        "Find What’s Using Disk Space",
+        "Scan Files for Sensitive Data",
+        "Show SMB Share Permissions"
+      ],
+      "after": [
+        "Show AD AdminSDHolder Permissions",
+        "Show AD adminCount Flags"
+      ]
+    },
+    {
+      "file": "GET-ADMINSDHOLDER-PERMISSIONS.ps1",
+      "name": "Show AD AdminSDHolder Permissions",
+      "before": [
+        "Install Active Directory Module (RSAT)",
+        "Show AD Domain Permissions",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD adminCount Flags",
+        "Show AD Domain Permissions"
+      ]
+    },
+    {
+      "file": "GET-MAILBOX-RULES.ps1",
+      "name": "Review Mailbox Rules and Access",
+      "before": [
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate",
+        "Disable Mailbox Protocols"
+      ],
+      "after": [
+        "Audit Inbox Rule Changes",
+        "Show Mailbox Summary",
+        "Audit Tenant Mailbox Access"
+      ]
+    },
+    {
+      "file": "TEST-AZURE-RESOURCE-GROUP-ACCESS.ps1",
+      "name": "Test Azure Resource Group Access",
+      "before": [
+        "Show Azure Resource Groups",
+        "Show Azure VPN Connection Status",
+        "Show Azure Owner Assignments",
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration"
+      ],
+      "after": [
+        "Show Azure Resource Groups",
+        "Show Azure Owner Assignments"
+      ]
+    },
+    {
+      "file": "PURGE-SOFT-DELETED-MAILBOX.ps1",
+      "name": "Purge Soft-Deleted Mailbox",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show Mailbox Hold Settings",
+        "Check User Before Deletion"
+      ]
+    },
+    {
+      "file": "GET-AZ-VPN-STATUS.ps1",
+      "name": "Show Azure VPN Connection Status",
+      "before": [
+        "Show Azure Resource Groups",
+        "Test Azure Resource Group Access",
+        "Show Azure Owner Assignments",
+        "Show Mailbox Hold Settings",
+        "Remove User App Consent"
+      ],
+      "after": [
+        "Test Azure Resource Group Access",
+        "Show Azure Resource Groups"
+      ]
+    },
+    {
+      "file": "GET-MAILBOX-USAGE-STATISTICS.ps1",
+      "name": "Show Mailbox Usage",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate",
+        "Disable Mailbox Protocols"
+      ],
+      "after": [
+        "Show Mailbox Summary",
+        "Show Mailbox Hold Settings"
+      ]
+    },
+    {
+      "file": "ENABLE-USER-ACCOUNT.ps1",
+      "name": "Enable User Account",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Check AD–Entra Account Match"
+      ]
+    },
+    {
+      "file": "GET-MAILBOX-LIT-HOLD-STATUS.ps1",
+      "name": "Show Mailbox Hold Settings",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Remove Mailbox Delegate",
+        "Disable Mailbox Protocols"
+      ],
+      "after": [
+        "Enable Mailbox Litigation Hold",
+        "Check User Before Deletion"
+      ]
+    },
+    {
+      "file": "REMOVE-USER-APP-CONSENT.ps1",
+      "name": "Remove User App Consent",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Review Tenant Changes",
+        "Review App Registrations"
+      ],
+      "after": [
+        "Show User Delegated App Grants",
+        "Review App Registrations"
+      ]
+    },
+    {
+      "file": "REMOVE-MAILBOX-DELEGATE.ps1",
+      "name": "Remove Mailbox Delegate",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Disable Mailbox Protocols"
+      ],
+      "after": [
+        "Show Mailbox Permissions",
+        "Show Mailbox Send As Delegates",
+        "Show Mailbox Send on Behalf Delegates"
+      ]
+    },
+    {
+      "file": "DISABLE-MAILBOX-PROTOCOLS.ps1",
+      "name": "Disable Mailbox Protocols",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show Mailbox Summary",
+        "BEC: User Risk Assessment"
+      ]
+    },
+    {
+      "file": "GET-DISK-SPACE-USAGE.ps1",
+      "name": "Find What’s Using Disk Space",
+      "before": [
+        "Show Folder Permissions",
+        "Review Folder Contents",
+        "Scan Files for Sensitive Data",
+        "Show SMB Share Permissions",
+        "Show AD Domain Permissions"
+      ],
+      "after": [
+        "Show Local Drive Free Space",
+        "Open Disk Cleanup",
+        "Open Storage Settings"
+      ]
+    },
+    {
+      "file": "Client-Connectivity-Check.ps1",
+      "name": "Check AD–Entra Account Match",
+      "before": [
+        "Find Inactive AD Computers",
+        "Review AD LAPS Expiration",
+        "Audit AD Account Exceptions",
+        "Show AD Managed Service Accounts",
+        "Show AD Trusts"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Show Entra User AD Sync Status",
+        "Show Entra User Details"
+      ]
+    },
+    {
+      "file": "GET-QUARTERLY-CLEANUP-REVIEW.ps1",
+      "name": "Review Account Cleanup",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Disable User Accounts",
+        "Delete User Accounts"
+      ],
+      "after": [
+        "Find Inactive AD Users",
+        "Audit Tenant License Totals",
+        "Review Tenant Group Ownership"
+      ]
+    },
+    {
+      "file": "GET-STALE-SIGNIN-REVIEW.ps1",
+      "name": "Review Accounts and Sign-ins",
+      "before": [
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Review Tenant Changes",
+        "Review App Registrations",
+        "Audit Shared Mailbox Sign-ins"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Show Entra Sign-ins: Failed",
+        "Review Tenant Security"
+      ]
+    },
+    {
+      "file": "INVOKE-DISABLE-ACCOUNTS.ps1",
+      "name": "Disable User Accounts",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Delete User Accounts"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Enable User Account"
+      ]
+    },
+    {
+      "file": "INVOKE-DELETE-ACCOUNTS.ps1",
+      "name": "Delete User Accounts",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Check User Before Deletion",
+        "Show User Account Status"
+      ]
+    },
+    {
+      "file": "INVOKE-ASSIGN-LICENSES.ps1",
+      "name": "Assign User Licenses",
+      "before": [
+        "Remove User Licenses",
+        "Audit Tenant License Totals",
+        "Show User Account Status",
+        "Disable Local User",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User Licenses",
+        "Audit Tenant License Totals"
+      ]
+    },
+    {
+      "file": "INVOKE-REMOVE-LICENSES.ps1",
+      "name": "Remove User Licenses",
+      "before": [
+        "Assign User Licenses",
+        "Audit Tenant License Totals",
+        "Show User Account Status",
+        "Disable Local User",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User Licenses",
+        "Audit Tenant License Totals"
+      ]
+    },
+    {
+      "file": "RESOLVE-NAMES-TO-UPNS.ps1",
+      "name": "Find User UPNs",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Review Account Cleanup",
+        "Disable User Accounts",
+        "Delete User Accounts"
+      ],
+      "after": [
+        "Show Entra User Details",
+        "Show User Account Status"
+      ]
+    },
+    {
+      "file": "GET-ACCOUNT-STATUS.ps1",
+      "name": "Show User Account Status",
+      "before": [
+        "Check User Before Deletion",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts",
+        "Delete User Accounts"
+      ],
+      "after": [
+        "Show Entra User Details",
+        "Show Entra Sign-ins: Failed",
+        "Show Entra User AD Sync Status"
+      ]
+    },
+    {
+      "file": "GET-GROUP-MEMBERS.ps1",
+      "name": "Show Group Members",
+      "before": [
+        "Show User Group Memberships",
+        "Remove User Group Memberships",
+        "Create Dynamic Group for Licensed Users",
+        "Review Tenant Group Ownership",
+        "Find Inactive AD Computers"
+      ],
+      "after": [
+        "Show User Group Memberships",
+        "Review Tenant Group Ownership"
+      ]
+    },
+    {
+      "file": "GET-USER-GROUPS.ps1",
+      "name": "Show User Group Memberships",
+      "before": [
+        "Show Group Members",
+        "Remove User Group Memberships",
+        "Create Dynamic Group for Licensed Users",
+        "Review Tenant Group Ownership",
+        "Find Inactive AD Computers"
+      ],
+      "after": [
+        "Show Group Members",
+        "Show Entra User Directory Memberships",
+        "Remove User Group Memberships"
+      ]
+    },
+    {
+      "file": "INVOKE-REMOVE-USER-GROUPS.ps1",
+      "name": "Remove User Group Memberships",
+      "before": [
+        "Show Group Members",
+        "Show User Group Memberships",
+        "Create Dynamic Group for Licensed Users",
+        "Review Tenant Group Ownership",
+        "Find Inactive AD Computers"
+      ],
+      "after": [
+        "Show User Group Memberships",
+        "Show Group Members"
+      ]
+    },
+    {
+      "file": "INVOKE-CREATE-DYNAMIC-LICENSE-GROUP.ps1",
+      "name": "Create Dynamic Group for Licensed Users",
+      "before": [
+        "Show Group Members",
+        "Show User Group Memberships",
+        "Remove User Group Memberships",
+        "Review Tenant Group Ownership",
+        "Find Inactive AD Computers"
+      ],
+      "after": [
+        "Show Group Members",
+        "Show User Licenses",
+        "Audit Tenant License Totals"
+      ]
+    },
+    {
+      "file": "GET-TENANT-GROUP-OWNERS.ps1",
+      "name": "Review Tenant Group Ownership",
+      "before": [
+        "Show Group Members",
+        "Show User Group Memberships",
+        "Remove User Group Memberships",
+        "Create Dynamic Group for Licensed Users",
+        "Find Inactive AD Computers"
+      ],
+      "after": [
+        "Show Group Members",
+        "Show Entra Group Owners",
+        "Show Distribution Group Owners"
+      ]
+    },
+    {
+      "file": "INVOKE-LITIGATION-HOLD.ps1",
+      "name": "Enable Mailbox Litigation Hold",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show Mailbox Hold Settings"
+      ]
+    },
+    {
+      "file": "BEC-INVOKE-EMAIL-RECOVERY.ps1",
+      "name": "BEC: Restore Email",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "BEC: Restore and Validate",
+        "BEC: Trace Email Delivery",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-RISK-ASSESSMENT.ps1",
+      "name": "BEC: User Risk Assessment",
+      "before": [
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Revoke Sessions",
+        "BEC: Build Incident Timeline",
+        "BEC: Review File Activity"
+      ],
+      "after": [
+        "BEC: Contain and Eradicate",
+        "BEC: Revoke Sessions",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-CONTAIN-ERADICATE.ps1",
+      "name": "BEC: Contain and Eradicate",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline",
+        "BEC: Review File Activity"
+      ],
+      "after": [
+        "BEC: Restore and Validate",
+        "BEC: User Risk Assessment",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-GET-DATA-EXFIL-ACTIVITY.ps1",
+      "name": "BEC: Review File Activity",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "BEC: User Risk Assessment",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-GET-IP-TRACE.ps1",
+      "name": "BEC: Trace IP Activity",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "BEC: Check IP Reputation",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-GET-TENANT-EMAIL-SEARCH.ps1",
+      "name": "BEC: Trace Email Delivery",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "Review Mailbox Rules and Access",
+        "Audit Mail Flow Rules",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "BEC-GET-THREAT-INTEL-ACTIVITY.ps1",
+      "name": "BEC: Check IP Reputation",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "BEC: Trace IP Activity",
+        "BEC: Review Token Replay"
+      ]
+    },
+    {
+      "file": "BEC-GET-TIMELINE-BUILDER.ps1",
+      "name": "BEC: Build Incident Timeline",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Review File Activity"
+      ],
+      "after": [
+        "BEC: Trace IP Activity",
+        "BEC: Trace Email Delivery",
+        "BEC: Review File Activity"
+      ]
+    },
+    {
+      "file": "BEC-GET-TOKEN-DECODE.ps1",
+      "name": "BEC: Decode Token",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline"
+      ],
+      "after": [
+        "BEC: Review Token Replay",
+        "Review App Registrations"
+      ]
+    },
+    {
+      "file": "BEC-GET-TOKEN-REPLAY-CHECK.ps1",
+      "name": "BEC: Review Token Replay",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Restore and Validate",
+        "BEC: Build Incident Timeline",
+        "BEC: Review File Activity"
+      ],
+      "after": [
+        "BEC: Decode Token",
+        "BEC: Trace IP Activity",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "GET-SHARED-MAILBOX-SIGNIN-AUDIT.ps1",
+      "name": "Audit Shared Mailbox Sign-ins",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show Mailbox Summary",
+        "Audit Tenant Mailbox Access",
+        "Show Entra Sign-ins: Failed"
+      ]
+    },
+    {
+      "file": "GET-APP-REGISTRATION-AUDIT.ps1",
+      "name": "Review App Registrations",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Review Tenant Changes",
+        "Audit Shared Mailbox Sign-ins"
+      ],
+      "after": [
+        "Show User Delegated App Grants",
+        "Audit Tenant Admin Accounts"
+      ]
+    },
+    {
+      "file": "GET-TRANSPORT-RULES-AUDIT.ps1",
+      "name": "Audit Mail Flow Rules",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show Mail Flow Rule",
+        "BEC: Trace Email Delivery"
+      ]
+    },
+    {
+      "file": "GET-FOLDER-INVENTORY.ps1",
+      "name": "Review Folder Contents",
+      "before": [
+        "Show Folder Permissions",
+        "Find What’s Using Disk Space",
+        "Scan Files for Sensitive Data",
+        "Show SMB Share Permissions",
+        "Show AD Domain Permissions"
+      ],
+      "after": [
+        "Show Folder Permissions",
+        "Scan Files for Sensitive Data"
+      ]
+    },
+    {
+      "file": "INSTALL-POWERSHELL-MODULES.ps1",
+      "name": "Install PowerShell Modules",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Review Tenant Security",
+        "Update Windows Apps with WinGet",
+        "GitHub: Manage Repository",
+        "GitHub: Save Project Handoff"
+      ],
+      "after": [
+        "Show Microsoft Graph Authentication Module Version",
+        "Show Exchange Online Module Version",
+        "Show PowerShell Version"
+      ]
+    },
+    {
+      "file": "TEST-SENSITIVE-DATA.ps1",
+      "name": "Scan Files for Sensitive Data",
+      "before": [
+        "Show Folder Permissions",
+        "Review Folder Contents",
+        "Find What’s Using Disk Space",
+        "Show SMB Share Permissions",
+        "Show AD Domain Permissions"
+      ],
+      "after": [
+        "Review Folder Contents",
+        "Calculate File SHA-256 Hash"
+      ]
+    },
+    {
+      "file": "UPDATE-WINDOWS-APPS.ps1",
+      "name": "Update Windows Apps with WinGet",
+      "before": [
+        "Install PowerShell Modules",
+        "Review Accounts and Sign-ins",
+        "Review Tenant Security",
+        "Show Windows User Sessions",
+        "Show Failed Windows Logons"
+      ],
+      "after": [
+        "Open Windows Update",
+        "Check Common Pending Reboot Flags"
+      ]
+    },
+    {
+      "file": "GET-USER-PREDELETE-CHECK.ps1",
+      "name": "Check User Before Deletion",
+      "before": [
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts",
+        "Delete User Accounts"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Show User Group Memberships",
+        "Show Mailbox Hold Settings"
+      ]
+    },
+    {
+      "file": "INVOKE-ENFORCE-PER-USER-MFA.ps1",
+      "name": "Enforce Per-user MFA",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User MFA Registration Status",
+        "Show User Authentication Methods"
+      ]
+    },
+    {
+      "file": "GET-ADMIN-ROLE-AUDIT.ps1",
+      "name": "Audit Tenant Admin Accounts",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Review Tenant Security",
+        "Review Tenant Changes",
+        "Review App Registrations",
+        "Audit Shared Mailbox Sign-ins"
+      ],
+      "after": [
+        "Review Tenant Group Ownership",
+        "Review Tenant Security",
+        "Review Tenant Changes"
+      ]
+    },
+    {
+      "file": "GET-TENANT-LICENSING-AUDIT.ps1",
+      "name": "Audit Tenant License Totals",
+      "before": [
+        "Assign User Licenses",
+        "Remove User Licenses",
+        "Show User Account Status",
+        "Disable Local User",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User Licenses",
+        "Assign User Licenses",
+        "Remove User Licenses"
+      ]
+    },
+    {
+      "file": "GET-TENANT-SECURITY-SNAPSHOT.ps1",
+      "name": "Review Tenant Security",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Changes",
+        "Review App Registrations",
+        "Audit Shared Mailbox Sign-ins"
+      ],
+      "after": [
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Changes",
+        "Review App Registrations"
+      ]
+    },
+    {
+      "file": "GET-TENANT-MAILBOX-ACCESS-AUDIT.ps1",
+      "name": "Audit Tenant Mailbox Access",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Review Mailbox Rules and Access",
+        "Show Mailbox Permissions",
+        "Show Mailbox Send As Delegates"
+      ]
+    },
+    {
+      "file": "CLEANUP-DISABLED-USER-MAILBOX-ACCESS.ps1",
+      "name": "Remove Disabled User Mailbox Access",
+      "before": [
+        "Review Mailbox Rules and Access",
+        "BEC: Trace Email Delivery",
+        "Show Mailbox Usage",
+        "Show Mailbox Hold Settings",
+        "Remove Mailbox Delegate"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Audit Tenant Mailbox Access",
+        "Show Mailbox Permissions"
+      ]
+    },
+    {
+      "file": "GET-TENANT-DRIFT-REVIEW.ps1",
+      "name": "Review Tenant Changes",
+      "before": [
+        "Review Accounts and Sign-ins",
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Review App Registrations",
+        "Audit Shared Mailbox Sign-ins"
+      ],
+      "after": [
+        "Review Tenant Security",
+        "Audit Tenant Admin Accounts",
+        "Review App Registrations"
+      ]
+    },
+    {
+      "file": "INVOKE-RESET-CLOUD-USER-PASSWORD.ps1",
+      "name": "Reset Entra Cloud User Password",
+      "before": [
+        "Check User Before Deletion",
+        "Show User Account Status",
+        "Find User UPNs",
+        "Review Account Cleanup",
+        "Disable User Accounts"
+      ],
+      "after": [
+        "Show User Account Status",
+        "Show Entra User AD Sync Status"
+      ]
+    },
+    {
+      "file": "BEC-RECOVER-VALIDATE.ps1",
+      "name": "BEC: Restore and Validate",
+      "before": [
+        "BEC: User Risk Assessment",
+        "BEC: Contain and Eradicate",
+        "BEC: Review Token Replay",
+        "BEC: Build Incident Timeline",
+        "BEC: Review File Activity"
+      ],
+      "after": [
+        "BEC: User Risk Assessment",
+        "BEC: Build Incident Timeline"
+      ]
+    },
+    {
+      "file": "git-repo.ps1",
+      "name": "GitHub: Manage Repository",
+      "before": [
+        "GitHub: Save Project Handoff",
+        "GitHub: Security Check",
+        "Install PowerShell Modules",
+        "Screensaver: Attractor",
+        "Screensaver: Rain"
+      ],
+      "after": [
+        "GitHub: Security Check",
+        "GitHub: Save Project Handoff"
+      ]
+    },
+    {
+      "file": "git-handoff.ps1",
+      "name": "GitHub: Save Project Handoff",
+      "before": [
+        "GitHub: Manage Repository",
+        "GitHub: Security Check",
+        "Install PowerShell Modules",
+        "Screensaver: Attractor",
+        "Screensaver: Rain"
+      ],
+      "after": [
+        "GitHub: Manage Repository",
+        "GitHub: Security Check"
+      ]
+    },
+    {
+      "file": "attractor.ps1",
+      "name": "Screensaver: Attractor",
+      "before": [
+        "Screensaver: Rain",
+        "Screensaver: Static",
+        "Theme: Cobalt",
+        "Theme: Sea Glass",
+        "Theme: Silicon Valley"
+      ],
+      "after": [
+        "Screensaver: Rain",
+        "Screensaver: Static"
+      ]
+    },
+    {
+      "file": "rain.ps1",
+      "name": "Screensaver: Rain",
+      "before": [
+        "Screensaver: Attractor",
+        "Screensaver: Static",
+        "Theme: Cobalt",
+        "Theme: Sea Glass",
+        "Theme: Silicon Valley"
+      ],
+      "after": [
+        "Screensaver: Attractor",
+        "Screensaver: Static"
+      ]
+    },
+    {
+      "file": "static.ps1",
+      "name": "Screensaver: Static",
+      "before": [
+        "Screensaver: Attractor",
+        "Screensaver: Rain",
+        "Theme: Cobalt",
+        "Theme: Sea Glass",
+        "Theme: Silicon Valley"
+      ],
+      "after": [
+        "Screensaver: Attractor",
+        "Screensaver: Rain"
+      ]
+    },
+    {
+      "file": "SET-THEME-COBALT.ps1",
+      "name": "Theme: Cobalt",
+      "before": [
+        "Screensaver: Attractor",
+        "Screensaver: Rain",
+        "Screensaver: Static",
+        "Theme: Sea Glass",
+        "Theme: Silicon Valley"
+      ],
+      "after": [
+        "Theme: Sea Glass",
+        "Theme: Silicon Valley"
+      ]
+    },
+    {
+      "file": "SET-THEME-SEAGLASS.ps1",
+      "name": "Theme: Sea Glass",
+      "before": [
+        "Screensaver: Attractor",
+        "Screensaver: Rain",
+        "Screensaver: Static",
+        "Theme: Cobalt",
+        "Theme: Silicon Valley"
+      ],
+      "after": [
+        "Theme: Cobalt",
+        "Theme: Silicon Valley"
+      ]
+    },
+    {
+      "file": "SET-THEME-SILICON-VALLEY.ps1",
+      "name": "Theme: Silicon Valley",
+      "before": [
+        "Screensaver: Attractor",
+        "Screensaver: Rain",
+        "Screensaver: Static",
+        "Theme: Cobalt",
+        "Theme: Sea Glass"
+      ],
+      "after": [
+        "Theme: Cobalt",
+        "Theme: Sea Glass"
+      ]
+    },
+    {
+      "file": "GitHub-Security-Check.ps1",
+      "name": "GitHub: Security Check",
+      "before": [
+        "GitHub: Manage Repository",
+        "GitHub: Save Project Handoff",
+        "Install PowerShell Modules",
+        "Screensaver: Attractor",
+        "Screensaver: Rain"
+      ],
+      "after": [
+        "GitHub: Manage Repository",
+        "GitHub: Save Project Handoff"
+      ]
+    },
+    {
+      "file": "cli:Get User",
+      "name": "Show AD User Details",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Password Expiry",
+        "Show AD User Group Memberships",
+        "Show Entra User AD Sync Status"
+      ]
+    },
+    {
+      "file": "cli:Show Password Expiry",
+      "name": "Show AD User Password Expiry",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Password Last Set",
+        "Show Default Domain Password Policy"
+      ]
+    },
+    {
+      "file": "cli:Delete User",
+      "name": "Delete AD User",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Check User Before Deletion",
+        "Show AD User Details"
+      ]
+    },
+    {
+      "file": "cli:Disable User",
+      "name": "Disable AD User",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Enable AD User"
+      ]
+    },
+    {
+      "file": "cli:Enable User",
+      "name": "Enable AD User",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Unlock AD User"
+      ]
+    },
+    {
+      "file": "cli:Force Password Change Next Logon",
+      "name": "Require AD Password Change at Next Sign-in",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Show AD User Password Last Set"
+      ]
+    },
+    {
+      "file": "cli:Reset Password",
+      "name": "Reset AD User Password",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Require AD Password Change at Next Sign-in"
+      ]
+    },
+    {
+      "file": "cli:Unlock User",
+      "name": "Unlock AD User",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Show AD User Password Expiry"
+      ]
+    },
+    {
+      "file": "cli:Show AD Group Members",
+      "name": "Show AD Group Members",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Group Memberships",
+        "Show Group Members"
+      ]
+    },
+    {
+      "file": "cli:Show AD User Group Memberships",
+      "name": "Show AD User Group Memberships",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD Group Members",
+        "Show User Group Memberships"
+      ]
+    },
+    {
+      "file": "cli:Add User to AD Group",
+      "name": "Add User to AD Group",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD Group Members",
+        "Show AD User Group Memberships"
+      ]
+    },
+    {
+      "file": "cli:Remove User from AD Group",
+      "name": "Remove User from AD Group",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD Group Members",
+        "Show AD User Group Memberships"
+      ]
+    },
+    {
+      "file": "cli:Show Send-To Restrictions / authOrig",
+      "name": "Show AD Group Sender Restrictions",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD Group Members",
+        "Show Distribution Group Members"
+      ]
+    },
+    {
+      "file": "cli:Show Password Last Set",
+      "name": "Show AD User Password Last Set",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Password Expiry",
+        "Show AD User Details"
+      ]
+    },
+    {
+      "file": "cli:Show Distinguished Name",
+      "name": "Show AD User Distinguished Name",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Details",
+        "Show AD User Group Memberships"
+      ]
+    },
+    {
+      "file": "cli:Show Default Domain Password Policy",
+      "name": "Show Default Domain Password Policy",
+      "before": [
+        "Install Active Directory Module (RSAT)"
+      ],
+      "after": [
+        "Show AD User Password Expiry",
+        "Audit AD Account Exceptions"
+      ]
+    },
+    {
+      "file": "SET-ONEDRIVE-SITE-ADMIN.ps1",
+      "name": "Manage OneDrive Site Admin Access",
+      "before": [
+        "Audit Tenant Admin Accounts",
+        "Review Tenant Security",
+        "Set Current User Execution Policy to RemoteSigned"
+      ],
+      "after": [
+        "Show Entra User Details"
+      ]
+    }
+  ],
+  "prerequisite_repairs": [
+    "Show AD User Details",
+    "Show AD User Password Expiry",
+    "Delete AD User",
+    "Disable AD User",
+    "Enable AD User",
+    "Require AD Password Change at Next Sign-in",
+    "Reset AD User Password",
+    "Unlock AD User",
+    "Show AD Group Members",
+    "Show AD User Group Memberships",
+    "Add User to AD Group",
+    "Remove User from AD Group",
+    "Show AD Group Sender Restrictions",
+    "Show AD User Password Last Set",
+    "Show AD User Distinguished Name",
+    "Show Default Domain Password Policy"
+  ]
+}

@@ -1,6 +1,25 @@
 # FIELD // KIT project status
 
-## Current locked baseline — November 18, 2026 Pacific
+## Current locked baseline — Related Items, November 18, 2026 Pacific
+
+| Site | Release | Sites source | Rollback |
+|---|---|---|---|
+| [fieldkit.pro](https://fieldkit.pro/) | v262 | `ffaf500758c018c6e2e83cd64596370de63119af` | v261 |
+| [Entry](https://field-kit-entry.delbert-hifield.chatgpt.site/) | v94 | `e4f9dfd60284314ca4419f40f334e2372b4bc92b` | v93 |
+
+Both native deployments succeeded. 272 tools retained. All 106 populated Related Items lists were recurated, reducing 477 links to 236. The 166 empty lists remain empty. Use zero to three useful checks, alternatives or next steps; no fixed quota and no unrelated category neighbors. Azure stays within Azure, licensing no longer suggests local-account disabling, and GitHub no longer suggests screensavers. BEC stage relationships remain explicit. Related Items is navigation, not authorization to remediate.
+
+Sixteen AD Quick Commands now declare ActiveDirectory from their existing Import-Module preparation command. This preserves the installer link under Prerequisites after removing repeated RSAT links from Related Items. No executable payloads, filenames, scope, impact or search logic changed in this release. Naming and redundancy findings from v261/v93 remain applicable to unchanged executable source; their original homepage hashes stay historical.
+
+[Review and limits](RELATED-ITEMS-REVIEW.md) · [Every relationship change](RELATED-ITEMS-REVIEW.json) · [Updated full inventory](FULL-CATALOG.txt)
+
+Both Sites sources passed the existing search suite, current/legacy titles, category order, related target/duplicate/self-link/count checks, actual related-link renderer navigation, AD prerequisite setup-link rendering and JavaScript/bundle syntax. Source comparison confirms unchanged executable bytes. Desktop/mobile browser and PowerShell execution were not performed. The prior independent HTTPS requests returned 403; they were not repeated without an environment change. Native deployment success is distinct from independent live-byte verification.
+
+Homepage SHA-256: catalog `d468ef469eb53819cba529231313541e9138c7411488f92d7b872e5b37954357`; entry `4d8e345825e262cb9641206c59124d3148a155f01de12c63c89c56c0cc127132`.
+
+Deployments: catalog `appgdep_6afe28c79a488191911f5b95da8f08bc`; entry `appgdep_6afe28bfefa481919a2600d3a1d99786`. Preserve the audience and dark default. Recover the pinned Sites source for production changes. GitHub dist remains a separate older application tree; this is documentation synchronization only.
+
+## Previous naming baseline — November 18, 2026 Pacific
 
 | Site | Release | Sites source | Rollback |
 |---|---|---|---|

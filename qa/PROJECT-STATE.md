@@ -1,5 +1,11 @@
 # Current QA handoff
 
+Production is **v262 / entry v94**. Both deployments succeeded. The [Project Summary](<../PROJECT SUMMARY/README.md>) pins sources, hashes, deployment IDs and rollback. Related Items review: 106 lists, 477 to 236 links, 272 cards retained. Sixteen AD module declarations preserve prerequisite setup links. All executable bytes unchanged. Search and actual renderer/link checks passed on both source trees. No browser/PowerShell execution or new live HTTP parity evidence. See [review](<../PROJECT SUMMARY/RELATED-ITEMS-REVIEW.md>).
+
+## Previous naming baseline evidence
+
+# Current QA handoff
+
 Current production: **v261 / entry v93**, deployed successfully November 18, 2026 Pacific. The [Project Summary](<../PROJECT SUMMARY/README.md>) pins sources, hashes, deployment IDs and rollback targets. 272 tools retained; 136 names and nine placements updated. Search/render checks, exact current/legacy title checks, category ordering, link targets, source preservation and bundled syntax checks passed on both Sites sources. No interactive browser or PowerShell execution for this revision. GitHub dist and its historical QA locks are not a copy of the current Sites deployment.
 
 The post-naming source audit screened all payloads and compared 27 overlap families. No retirement justified. See [findings](<../PROJECT SUMMARY/naming-audit/REDUNDANCY-AUDIT.md>) and [comparisons](<../PROJECT SUMMARY/naming-audit/OVERLAP-COMPARISON.md>). Runtime equivalence remains unproven; no customer systems contacted.

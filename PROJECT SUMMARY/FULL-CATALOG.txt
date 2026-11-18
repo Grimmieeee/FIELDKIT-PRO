@@ -61,6 +61,7 @@ Identity & Access (AD)
 Add User to AD Group
 Add the user to the selected Active Directory group.
 Source: cli:Add User to AD Group
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Audit AD Account Exceptions
@@ -81,6 +82,7 @@ Modules: ActiveDirectory, ExchangeOnlineManagement, Microsoft.Graph.Authenticati
 Delete AD User
 Delete one on-premises AD user by account name.
 Source: cli:Delete User
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Delete User Accounts
@@ -91,6 +93,7 @@ Modules: ActiveDirectory, Microsoft.Graph.Authentication, Microsoft.Graph.Users,
 Disable AD User
 Disable one on-premises AD account.
 Source: cli:Disable User
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Disable User Accounts
@@ -101,6 +104,7 @@ Modules: Microsoft.Graph.Authentication
 Enable AD User
 Enable one on-premises AD account.
 Source: cli:Enable User
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Enable User Account
@@ -111,6 +115,7 @@ Modules: Microsoft.Graph.Authentication, ActiveDirectory
 Remove User from AD Group
 Remove the user from the selected Active Directory group.
 Source: cli:Remove User from AD Group
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Remove User Group Memberships
@@ -121,26 +126,31 @@ Modules: ActiveDirectory, Microsoft.Graph.Authentication
 Require AD Password Change at Next Sign-in
 Require the user to change their password at next sign-in.
 Source: cli:Force Password Change Next Logon
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Reset AD User Password
 Set a new password for the selected Active Directory account.
 Source: cli:Reset Password
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD Group Members
 List direct members of the selected Active Directory group.
 Source: cli:Show AD Group Members
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD Group Sender Restrictions
 Show the group’s authOrig sender-restriction values.
 Source: cli:Show Send-To Restrictions / authOrig
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD User Details
 Show account status, lockout, and password settings for one AD user.
 Source: cli:Get User
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD User Details with net user
@@ -150,21 +160,25 @@ Source: cli:Show Domain Account Details
 Show AD User Distinguished Name
 Show the user’s full Active Directory object path (distinguished name).
 Source: cli:Show Distinguished Name
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD User Group Memberships
 List the Active Directory groups reported for this user.
 Source: cli:Show AD User Group Memberships
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD User Password Expiry
 Show the password expiry date reported by Active Directory.
 Source: cli:Show Password Expiry
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show AD User Password Last Set
 Show when the Active Directory password was last set.
 Source: cli:Show Password Last Set
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show User Group Memberships
@@ -175,6 +189,7 @@ Modules: ActiveDirectory, Microsoft.Graph.Authentication
 Unlock AD User
 Clear the lockout on one on-premises AD account.
 Source: cli:Unlock User
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Identity & Access (Entra)
@@ -1076,6 +1091,7 @@ Source: cli:Show Cached Tickets
 Show Default Domain Password Policy
 Show the domain’s default password policy; user-specific policies may differ.
 Source: cli:Show Default Domain Password Policy
+Modules: ActiveDirectory
 Preparation: Import-Module ActiveDirectory
 
 Show Device Domain and Entra Join Status
