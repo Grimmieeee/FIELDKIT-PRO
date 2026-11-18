@@ -30,7 +30,7 @@ All 272 payloads were decoded and fingerprinted; 27 overlap families were compar
 | Catalog homepage | `6fc24234d68a6acc4657ce1c000a509c3f833b0a48350a8361d0d1c6ecbe6046` |
 | Entry homepage | `e35722da42556c93152021f2e03a5ae790c7bbceb03363200599a55ab5fff638` |
 
-Catalog deployment: `appgdep_6afe26cf0ee0819186a956d7cd9d8e2b`. Entry deployment: `appgdep_6afe26c732b88191be82fdc0f1ef1a54`. Native deployment success is recorded; no fresh browser interaction evidence is implied.
+Catalog deployment: `appgdep_6afe26cf0ee0819186a956d7cd9d8e2b`. Entry deployment: `appgdep_6afe26c732b88191be82fdc0f1ef1a54`. Native deployment success is recorded; no fresh browser interaction evidence is implied. Final independent HTTPS byte requests to fieldkit.pro and both Sites origins returned HTTP 403 from this workspace. Live byte parity therefore remains UNVERIFIED; these failures do not negate the native successful deployment records.
 
 GitHub and Sites retain independent source histories. This commit synchronizes documentation, not GitHub dist. Recover each pinned Sites source before testing/rebuilding production; do not use old GitHub CI as production evidence. Sites sources include the full 272-record source inventory, per-item dispositions, baseline hashes and this release's search suite under docs/naming-audit and qa/search-relevance.cjs. Rebuild with node scripts/build-counter-worker.mjs. Run node qa/search-relevance.cjs from each Sites checkout and verify dist/SHA256SUMS.txt from dist.
 
