@@ -1,6 +1,10 @@
 # FIELD // KIT project status
 
-## Current accepted baseline — tap targets, November 18, 2026 Pacific
+## Current baseline — alphabetical category menu
+
+November 18, 2026 Pacific. Both deployments succeeded: fieldkit.pro **v264**, source `9edff69bbbcc3885b709c3ef018c2b2ade9e298c`; entry **v96**, source `40274fb5708e4eae0cf3daefeaa27df1c67187b1`. Rollback: v263 / entry v95. All stays first; the eleven category names follow A–Z, including AD, Entra, Local, M365 Licensing within Identity & Access. Catalog membership, tool ordering, search ranking, scripts and tap-target CSS are unchanged. Actual menu-renderer order and existing search checks passed on both Sites sources. Prior operator iOS acceptance remains tied to v263/v95; no new device test was run for this order-only update. [Category ordering rule](CATEGORY-ORDER.md).
+
+## Previous accepted tap-target baseline, November 18, 2026 Pacific
 
 | Site | Release | Sites source | Rollback |
 |---|---|---|---|

@@ -1,5 +1,11 @@
 # Current QA handoff
 
+Production: **v264 / entry v96**. Category dropdown: All first, then eleven categories A–Z. Actual menu-renderer and search tests passed on both release source trees. No script, membership, CSS or search-ranking changes. Prior iOS acceptance remains recorded for v263/v95; no new device verification for this order-only change. See [Project Summary](<../PROJECT SUMMARY/README.md>) for source and rollback pins.
+
+## Prior release evidence
+
+# Current QA handoff
+
 Production is **v263 / entry v95**. Both deployments succeeded. CSS-only 44px target update. Chrome responsive sizes/overlap/interaction checks passed at eight widths in both themes; source/search and bundle syntax checks passed. **Operator-confirmed iOS acceptance — November 18, 2026 Pacific:** Ryan replied “verified” after the v263 / entry v95 tap-target release. The requested iOS check is operator-confirmed complete for that release. No per-step transcript, exact device/iOS/browser version, theme/landscape coverage or device-side pixel measurements were supplied. The release environment itself did not run iOS Safari; its Chrome measurements remain separate evidence. Documentation closeout only; production versions and application bytes unchanged. See [tap-target evidence](<../PROJECT SUMMARY/TAP-TARGETS.md>) and [current source pins](<../PROJECT SUMMARY/README.md>).
 
 ## Earlier Related Items evidence

@@ -1,0 +1,1 @@
+Category dropdown order: All first, followed by the eleven category names A–Z. Identity & Access children sort AD, Entra, Local, M365 Licensing. Membership, tool ordering, search ranking and executable source are unchanged. Approved November 18, 2026.
