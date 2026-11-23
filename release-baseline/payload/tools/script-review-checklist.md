@@ -21,7 +21,7 @@ Use this before approving a new script or publishing an updated one.
 - [ ] Interactive downloaded scripts do not depend on the repository working directory.
 - [ ] Related local files resolve from $PSScriptRoot when applicable.
 - [ ] File Explorer > Run with PowerShell is tested when that launch model is intended.
-- [ ] Operational scripts do not silently install modules/capabilities unless setup is their explicit job.
+- [ ] Required missing tools/modules are detected before installation; existing tooling is not reinstalled or upgraded merely for alignment. Installation failures and applicable privilege requirements are explicit.
 - [ ] No normal execution path changes PowerShell execution policy.
 
 ## Authentication

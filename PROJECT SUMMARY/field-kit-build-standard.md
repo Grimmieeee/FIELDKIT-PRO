@@ -2,6 +2,23 @@
 
 Use the [current site, catalog and mobile reference](SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history. Use the [naming standard](NAMING-STANDARD.md) and [rename map](NAMING-MAP.json) for current display names; executable filenames and native headers remain stable. Recover the pinned Sites source for production tests. GitHub's release suite validates its own older application tree.
 
+## Approved interpretation — November 23, 2026
+
+These explicit decisions supersede conflicting older checklist guidance. Preserve verified workflow behavior; this documentation update does not approve candidate scripts or change production.
+
+- Preserve existing MFA enforcement in account creation. Do not remove it or replace it with a different policy model during alignment. Keep its API, permissions and runtime limitations explicit. BEC password reset and user password change remain separate steps; this does not add forced first-sign-in password change to BEC.
+- Keep installation of required missing tools/modules when not detected. Check first; do not reinstall or upgrade present tooling merely for alignment. Report installation failures clearly. Preserve required platform/elevation boundaries and unattended behavior. This permission does not authorize execution-policy changes.
+- Keep reusing compatible Graph sessions. Validate required scopes, expected tenant, connection context and target before use; reconnect only when needed. Reuse is not permission to trust an unrelated existing session.
+- Replace employer branding such as CHR/CHR Support in active operator copy and templates with the exact signature `b u r n s i d //`. Remove client-specific `.itglue.com` references; use a neutral instruction when the link served a useful purpose. Do not substitute the signature into a URL or alter historical evidence or functional identifiers through blind replacement.
+- Offboarding shows the target and reviewed plan, then accepts the single token `OFFBOARD`. Do not require appending the UPN. Documentation and previews must match.
+- Account deletion must perform deletion in the authoritative directory, not only disable access, revoke sessions or remove licenses. Verify absence in that same source; failed reads are not proof of absence. Distinguish deletion from permanent purge. Do not silently expand deletion into a purge. Synced identities are deleted in AD; the resulting Entra removal is separately verified after sync.
+- Align operator wording, impact labels, prompts and close behavior while preserving functionality. Use the established AD Groups output as the model: who was checked, what was found or changed, and what still needs action. Keep connection diagnostics outside ticket blocks. Ordinary on-screen tools need no generic ticket footer.
+- Print one local start timestamp per run with the UTC offset. Use the same time basis for events; timestamp material actions when a timeline matters. Avoid redundant completion banners and timestamps without a task-specific reason.
+
+## Preserve the working workflow
+
+Start from the exact verified script version. Preserve prompts, approvals, connection behavior, results and executable filenames unless the authorized change touches them. Catalog names and search aliases may evolve separately. Show the target and plan before mutations; verify resulting state where reliable readback exists and distinguish completed, skipped, failed and unverified work. Recheck target and authority after approval for destructive identity work. Keep incomplete evidence visible.
+
 ## Connection order and verification
 
 - Any workflow that needs both Exchange Online and Microsoft Graph establishes or validates Exchange first, then establishes or validates Graph. Apply this to standalone entry, same-session continuation, retries and fallbacks. Single-service workflows connect only to the service they need.

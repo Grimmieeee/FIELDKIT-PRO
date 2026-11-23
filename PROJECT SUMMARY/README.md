@@ -1,5 +1,9 @@
 # FIELD // KIT project status
 
+## Standards clarification — November 23, 2026
+
+Ryan approved retaining account-creation MFA enforcement, installation of missing tools and compatible Graph session reuse; offboarding uses OFFBOARD alone. Active employer branding becomes `b u r n s i d //`; client-specific .itglue.com references are removed or replaced with neutral instructions. Deletion remains actual authoritative-directory deletion, with purge treated separately. See [Build Standard](field-kit-build-standard.md). Documentation-only clarification; no candidate scripts changed, tested or released. Production pins below remain historical until reconciled with the later Sites source.
+
 ## Current baseline — card location and breadcrumb
 
 November 18, 2026 Pacific. Native deployments succeeded: catalog **v265**, source `a6bf63d928d7492cba9d203acd62fee25f466d4c`; entry **v97**, source `e16f090135ff391cbf090d587d00db5588c91814`. Rollback v264 / entry v96. Fixed literal breadcrumb source text and preserved the last-viewed row gradient after closing a card. [Behavior and evidence](CARD-LOCATION.md). Catalog and script payloads unchanged. Local Chrome responsive and renderer checks passed; no new iOS Safari validation or independent live-byte parity claim. Deployments: `appgdep_6afe336d5d6081918534a7a381f7a307`, `appgdep_6afe3365eea0819187c4d2daf99c715a`.
