@@ -13,7 +13,7 @@ These explicit decisions supersede conflicting older checklist guidance. Preserv
 - Offboarding shows the target and reviewed plan, then accepts the single token `OFFBOARD`. Do not require appending the UPN. Documentation and previews must match.
 - Account deletion must perform deletion in the authoritative directory, not only disable access, revoke sessions or remove licenses. Verify absence in that same source; failed reads are not proof of absence. Distinguish deletion from permanent purge. Do not silently expand deletion into a purge. Synced identities are deleted in AD; the resulting Entra removal is separately verified after sync.
 - Align operator wording, impact labels, prompts and close behavior while preserving functionality. Use the established AD Groups output as the model: who was checked, what was found or changed, and what still needs action. Keep connection diagnostics outside ticket blocks. Ordinary on-screen tools need no generic ticket footer.
-- Print one local start timestamp per run with the UTC offset. Use the same time basis for events; timestamp material actions when a timeline matters. Avoid redundant completion banners and timestamps without a task-specific reason.
+- Use the locked terminal layout below. Print the local completion timestamp at the end, not a start timestamp at the top. Use the same local time basis for event times; retain material action timestamps when a timeline matters.
 
 ## Preserve the working workflow
 
@@ -26,12 +26,54 @@ Start from the exact verified script version. Preserve prompts, approvals, conne
 - On every change, run `node qa/scripts/release-check.cjs`. The connection-order check detects unreviewed dual-service sources, changed reviewed bytes, and stale review entries. Review the reachable call paths for new or changed sources and update the evidence only after checking those paths.
 - Before releasing connection-order changes, run `node qa/scripts/release-check.cjs --require-aligned`. The strict check blocks any unresolved path. Exercise standalone and same-session starts as applicable in the supported Windows hosts. Record connection order, tenant and target matching, and the exact revision tested. Earlier operator verification remains the baseline for the tested bytes.
 
+## Locked terminal presentation — November 23, 2026
+
+This layout supersedes older filename-first, impact-in-title, start-timestamp and close-prompt wording. It changes presentation, not operational behavior or script filenames.
+
+```text
+User Account Termination
+
+Impact: Makes Changes
+
+Objective: Disable the user account, reset the password,
+revoke sessions, and review group memberships and licenses
+for removal. Identify mailbox and OneDrive follow-up.
+
+[Task-specific input and connection status]
+
+CONFIRM:
+
+[Target and planned changes]
+
+Type OFFBOARD to proceed (q to quit): OFFBOARD
+
+RESULTS:
+
+[Actual outcomes, including requested, verified and failed actions]
+
+TICKET NOTE:
+
+[Concise results and actionable follow-up]
+
+[XX] Incomplete:
+
+[Only unresolved work; omit this section when none remains]
+
+11.23.2026 : 14:35 PST
+
+b u r n s i d //
+
+Press Enter to close.
+```
+
+Use the tool's own site display name and actual impact. Timestamp format is `MM.dd.yyyy : HH:mm zzz-label`, where the final label is the actual local timezone abbreviation (PST in the example, PDT when applicable), not a hard-coded year-round PST. The timestamp is completion time, including incomplete or failed runs. Ordinary read-only tools do not duplicate results into an unnecessary ticket note or show mutation confirmation. Preserve required task-specific prompts and applicable BEC handoffs. Preview placeholders above describe placement and are not printed literally. No implementation or runtime verification is implied by locking this presentation.
+
 ## Interactive terminal output
 
-- Start with the canonical filename or CLI entry title, followed by ` // ` and the actual impact flag. Use a blank line, one short `Objective:` sentence, and a blank line before the first prompt or result.
+- Start with the exact site display name, then a blank line, `Impact: Read-only`, `Impact: Makes Changes` or `Impact: Destructive`, then a blank line and a concise, specific `Objective:`. Executable filenames stay unchanged.
 - Use plain labels such as `UPN:`, blank lines between sections, and concise prompts for the current stage. Retain input validation, target checks and required approvals. Keep unattended and composable entry points noninteractive.
 - Reserve red for operational failures. Use warnings for incomplete data and review findings. Use the same local timezone for displayed run and event timestamps, including the offset when time matters.
-- End interactive tools with `Press ENTER to close.` or the applicable BEC handoff. Add a blank line before it when needed. Keep native CLI results, error behavior and required safeguards intact.
+- End interactive tools with `Press Enter to close.` or the applicable BEC handoff. Add a blank line before it when needed. Keep native CLI results, error behavior and required safeguards intact.
 - BEC password reset and user password change are separate operator steps. Do not add a forced first-sign-in password change to this workflow. Keep the operator checklist brief and preserve the canonical three companion filenames.
 - Keep client-specific data, obsolete paths, and unrelated workflow prompts out of examples and CLI output. Rebind exact-source verification only after the changed behavior has evidence.
 

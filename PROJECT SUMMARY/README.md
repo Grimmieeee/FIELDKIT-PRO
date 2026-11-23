@@ -1,5 +1,10 @@
 # FIELD // KIT project status
 
+## Locked terminal presentation — November 23, 2026
+
+Approved: site display name, separate Impact and Objective, task-specific prompts/results and concise ticket notes where useful. Closing order: local completion timestamp formatted `11.23.2026 : 14:35 PST`, blank line, `b u r n s i d //`, blank line, `Press Enter to close.` Use the actual timezone label. This supersedes the former filename-first/start-timestamp presentation. [Authoritative layout](field-kit-build-standard.md). Documentation only; script implementation, candidate reconciliation and runtime evidence remain pending.
+
+
 ## Standards clarification — November 23, 2026
 
 Ryan approved retaining account-creation MFA enforcement, installation of missing tools and compatible Graph session reuse; offboarding uses OFFBOARD alone. Active employer branding becomes `b u r n s i d //`; client-specific .itglue.com references are removed or replaced with neutral instructions. Deletion remains actual authoritative-directory deletion, with purge treated separately. See [Build Standard](field-kit-build-standard.md). Documentation-only clarification; no candidate scripts changed, tested or released. Production pins below remain historical until reconciled with the later Sites source.
