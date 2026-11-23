@@ -1,5 +1,11 @@
 # FIELD // KIT build standard
 
+## Authority for on-screen output
+
+The Build Standard, including its locked terminal presentation, is the single source of truth for all FIELD KIT script and Quick Command terminal output: headings, impact, objectives, prompts, connection status, confirmations, findings, action results, ticket notes, errors, incomplete work, timestamps, signature and closing behavior. Older previews, examples, checklist wording and chat drafts are superseded where they conflict. Apply the layout according to the task; do not add mutation confirmations or duplicate ticket summaries to ordinary read-only tools. Preserve useful data, supported inputs, workflow behavior and safeguards. Requested, verified, skipped, failed and unavailable outcomes remain distinct. Do not change operational behavior merely to fit a preview. Site display names govern headings; executable filenames remain stable. Web layout is governed by SITE-AND-CATALOG-SPEC.md; its terminal previews must match the approved script output. Future deviations require an explicit decision recorded in the Build Standard, not an inferred exception.
+
+Documentation authority is locked; implementation and exact-source validation remain separate, pending work. This does not claim all existing scripts already conform.
+
 Use the [current site, catalog and mobile reference](SITE-AND-CATALOG-SPEC.md) for UI and taxonomy requirements. Historical standards remain in Git history. Use the [naming standard](NAMING-STANDARD.md) and [rename map](NAMING-MAP.json) for current display names; executable filenames and native headers remain stable. Recover the pinned Sites source for production tests. GitHub's release suite validates its own older application tree.
 
 ## Approved interpretation — November 23, 2026

@@ -1,5 +1,9 @@
 # FIELD // KIT project status
 
+## Terminal output source of truth
+
+Apply the [Build Standard](field-kit-build-standard.md) to all script and Quick Command terminal output. Its locked layout supersedes conflicting older previews and examples. Preserve task-specific data and workflow safeguards. Implementation and runtime verification remain pending; documentation lock is not release evidence.
+
 ## Locked terminal presentation — November 23, 2026
 
 Approved: site display name, separate Impact and Objective, task-specific prompts/results and concise ticket notes where useful. Closing order: local completion timestamp formatted `11.23.2026 : 14:35 PST`, blank line, `b u r n s i d //`, blank line, `Press Enter to close.` Use the actual timezone label. This supersedes the former filename-first/start-timestamp presentation. [Authoritative layout](field-kit-build-standard.md). Documentation only; script implementation, candidate reconciliation and runtime evidence remain pending.

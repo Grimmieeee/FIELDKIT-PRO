@@ -1,5 +1,7 @@
 # Script intake review
 
+Terminal output must follow the authoritative [Build Standard](field-kit-build-standard.md). Its locked presentation supersedes conflicting older examples and checklist wording. Preserve task-specific information, safeguards and actual outcome distinctions.
+
 The [Build Standard](field-kit-build-standard.md), including its November 23 approved interpretation, controls workflow preservation, missing-tool installation, MFA enforcement, Graph reuse, branding, approvals and deletion semantics.
 
 Use this checklist for each submitted script before proposing a catalog entry. A source review can support card copy. Runtime verification is a separate result.

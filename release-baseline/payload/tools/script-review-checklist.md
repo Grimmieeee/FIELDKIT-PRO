@@ -1,5 +1,7 @@
 # Script Review Checklist
 
+Terminal output must follow the authoritative [Build Standard](../../../PROJECT%20SUMMARY/field-kit-build-standard.md). Its locked presentation supersedes conflicting older examples and checklist wording. Preserve task-specific information, safeguards and actual outcome distinctions.
+
 Use this before approving a new script or publishing an updated one.
 
 ## Syntax
