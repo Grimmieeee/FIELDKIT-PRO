@@ -2,9 +2,14 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
+const relocated = require('../relocated-test-source-paths.json');
 
 function checkConnectionOrder(root, requireAligned = false) {
-  const reviewed = JSON.parse(fs.readFileSync(path.join(root, 'qa/connection-order-review.json'), 'utf8'));
+  const evidence = JSON.parse(fs.readFileSync(path.join(root, 'tests/connection-order-review.json'), 'utf8'));
+  const reviewed = Object.fromEntries(Object.entries(evidence).map(([original, record]) => [
+    relocated[original] ?? original,
+    record,
+  ]));
   const found = new Set();
   const exceptions = new Set();
 

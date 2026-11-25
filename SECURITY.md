@@ -27,8 +27,8 @@ Do not submit credentials or private incident evidence through public GitHub iss
 From the repository root:
 
 ```text
-node qa/scripts/release-check.cjs
-node qa/scripts/download-integrity-check.cjs
+node tests/release/release-check.cjs
+node tests/release/download-integrity-check.cjs
 ```
 
 Keep release source, manifests and deployment artifacts aligned. Confirm the intended host serves the current release and test relevant browser actions. Parser/static checks, successful deployment and Windows/tenant validation remain separate results. These checks are not a comprehensive vulnerability scanner.

@@ -1,0 +1,6 @@
+{
+  "scripts/BEC-CONTAIN-ERADICATE.ps1": "scripts/incident-response/BEC-CONTAIN-ERADICATE.ps1",
+  "scripts/BEC-RECOVER-VALIDATE.ps1": "scripts/incident-response/BEC-RECOVER-VALIDATE.ps1",
+  "scripts/BEC-RISK-ASSESSMENT.ps1": "scripts/incident-response/BEC-RISK-ASSESSMENT.ps1",
+  "scripts/Client-Connectivity-Check.ps1": "scripts/connectivity/Client-Connectivity-Check.ps1"
+}

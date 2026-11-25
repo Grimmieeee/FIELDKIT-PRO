@@ -19,9 +19,9 @@ jobs:
           persist-credentials: false
       - name: Check runtime JavaScript and download regressions
         run: |
-          node --check worker/router.mjs
-          node qa/scripts/release-check.cjs
-          node qa/scripts/download-integrity-check.cjs
+          node --check build/router.mjs
+          node tests/release/release-check.cjs
+          node tests/release/download-integrity-check.cjs
       - name: Parse PowerShell scripts and CLI wrappers without execution
         shell: pwsh
-        run: ./qa/scripts/check-powershell-syntax.ps1
+        run: ./tests/release/check-powershell-syntax.ps1
