@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const { q, c } = require('./release-loader.cjs');
+const relocated = require('../relocated-test-source-paths.json');
 
 const dist = path.resolve(__dirname, '../../dist');
 const sources = c.FIELD_KIT_RELEASE_SOURCES;
@@ -30,12 +31,12 @@ async function verify() {
   const manifest = Object.entries(sources).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0)
     .map(([file, hash]) => hash + '  ' + file).join('\n') + '\n';
   assert.equal(fs.readFileSync(path.join(root, 'dist/SHA256SUMS.txt'), 'utf8'), manifest);
-  const verified = JSON.parse(fs.readFileSync(path.join(root, 'qa/operator-verified-2026-11-11.json'), 'utf8'));
+  const verified = JSON.parse(fs.readFileSync(path.join(root, 'tests/operator-verified-2026-11-11.json'), 'utf8'));
   for (const [file, record] of Object.entries(verified.scripts)) {
     const item = q.ITEMS.find(candidate => candidate.file === file);
     assert.ok(item, file);
     assert.equal(q.isVerifiedRelease(item), sources[record.sitePath] === record.sha256, file);
-    assert.deepEqual(fs.readFileSync(path.join(root, record.path)), fs.readFileSync(path.join(dist, record.sitePath)), file);
+    assert.deepEqual(fs.readFileSync(path.join(root, relocated[record.path] ?? record.path)), fs.readFileSync(path.join(dist, record.sitePath)), file);
   }
   for (const item of q.ITEMS) assert.ok(q.catalogDomain(item), item.displayName);
 

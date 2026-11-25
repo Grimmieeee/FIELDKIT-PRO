@@ -1,5 +1,7 @@
 # FIELD // KIT project status
 
+This is the current status record for FIELD KIT. See the [repository layout and relocation record](REPOSITORY-LAYOUT.md) for GitHub paths and compatibility. Historical QA reports retain their original source paths and revisions.
+
 ## Terminal output source of truth
 
 Apply the [Build Standard](field-kit-build-standard.md) to all script and Quick Command terminal output. Its locked layout supersedes conflicting older previews and examples. Preserve task-specific data and workflow safeguards. Implementation and runtime verification remain pending; documentation lock is not release evidence.
@@ -100,13 +102,15 @@ GitHub and Sites retain independent source histories. This commit synchronizes d
 - [Build standard](field-kit-build-standard.md)
 - [Site and catalog specification](SITE-AND-CATALOG-SPEC.md)
 - [New engineer walkthrough](NEW-ENGINEER-WALKTHROUGH.md)
-- [QA state](../qa/PROJECT-STATE.md)
+- [QA handoff snapshot at the reorganization baseline](https://github.com/Grimmieeee/FIELDKIT-PRO/blob/9b313d3dc382e66517fe39fbf8078bb5b5f97759/qa/PROJECT-STATE.md)
 
 ## Historical release records
 
 The following records retain their original evidence and names. The current locked baseline above takes precedence.
 
 # FIELD // KIT project status
+
+This is the current status record for FIELD KIT. See the [repository layout and relocation record](REPOSITORY-LAYOUT.md) for GitHub paths and compatibility. Historical QA reports retain their original source paths and revisions.
 
 ## Current production baseline — November 17, 2026 Pacific
 
@@ -200,7 +204,7 @@ The documentation closeout does not request another broad audit, change badges, 
 - [New engineer walkthrough and remaining browser checks](NEW-ENGINEER-WALKTHROUGH.md)
 - [Current catalog by group](CATALOG-BY-GROUP.md)
 - [Script intake checklist](SCRIPT-INTAKE.md)
-- [Current QA state and release record identifiers](../qa/PROJECT-STATE.md)
+- [QA handoff snapshot and release record identifiers](https://github.com/Grimmieeee/FIELDKIT-PRO/blob/9b313d3dc382e66517fe39fbf8078bb5b5f97759/qa/PROJECT-STATE.md)
 - [QA file disposition and historical evidence boundaries](QA-DISPOSITION.md)
 
 The pinned Sites source checkouts retain `docs/APPROVED-VPN-RELEASE.md`, `qa/approved-vpn-release.json`, `qa/catalog-checks.json` and `qa/error-path-checks.json`. Their pre-closeout Windows/Azure status describes what the release environment had executed at that time; the operator confirmation above is the subsequent evidence. The handoff links were opened/read through GitHub and checked against the saved documentation. This is link/content verification, not browser interaction QA.
@@ -313,7 +317,7 @@ Ryan confirmed the final iPhone Safari check for the search sort dropdown and up
 
 ## Clean rebuild and script intake
 
-Recover the deployed release from the pinned Sites source revision for each deployment. From a clean checkout, run `node scripts/build-counter-worker.mjs`. The worker is built from the tracked `dist/` payload and uses the existing Sites hosting manifest. This is a rebuild of the pinned source, not a reconstruction from GitHub alone. Run `node qa/search-relevance.cjs` from the main Sites checkout and `sha256sum -c --quiet SHA256SUMS.txt` from each checkout's `dist/`.
+Recover the deployed release from the pinned Sites source revision for each deployment. In the pinned Sites checkout, use its original `node scripts/build-counter-worker.mjs` command. For this GitHub checkout, use `node build/build-counter-worker.mjs`. The worker is built from the tracked `dist/` payload and uses the existing Sites hosting manifest. This is a rebuild of the pinned source, not a reconstruction from GitHub alone. Run `node qa/search-relevance.cjs` from the main Sites checkout and `sha256sum -c --quiet SHA256SUMS.txt` from each checkout's `dist/`.
 
 Clean exports of main v226 and entry v60 both rebuilt successfully. The generated worker, hosting manifest, and homepage, FAQ, and feedback HTML matched their respective release builds byte for byte. Search and packaged download checks passed.
 

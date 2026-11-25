@@ -1,6 +1,6 @@
 # QA file disposition
 
-Current production is v237 / entry v69; see the [Project Summary](README.md) and [current QA state](../qa/PROJECT-STATE.md). The disposition table below is a historical inventory reviewed at its named GitHub revision. Retaining a v73/v162 lock or older operator report does not make it current production evidence. The pinned Sites release records and subsequent operator-confirmed VPN smoke test establish the current handoff. Current browser QA remains unexecuted.
+This historical inventory refers to v237 / entry v69 and the GitHub review revision below. See the [Project Summary](README.md) for current status and the [repository relocation record](REPOSITORY-LAYOUT.md) for present-day paths. The inventory retains the paths as reviewed.
 
 Reviewed at GitHub 5ade0e3. [Archived files](https://github.com/Grimmieeee/FIELDKIT-ARCHIVE/commit/37439155cfd1d82396c7161192628f24c2ea11b0) preserve original paths and bytes. Retained files support CI, assembly, the standalone validator, or named baseline references.
 

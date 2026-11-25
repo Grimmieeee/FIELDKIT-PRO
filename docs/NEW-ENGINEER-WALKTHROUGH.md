@@ -21,7 +21,7 @@ Use the [Project Summary](README.md) source pins. On both themes, verify Prerequ
 
 ### Prior handoff — v237 / entry v69
 
-Start with the [Project Summary](README.md) and [current QA state](../qa/PROJECT-STATE.md) for the source hashes and evidence boundaries. Ryan's published-VPN Windows/Azure smoke test is **operator-confirmed completed**. Do not re-open it as unexecuted or infer step outcomes without evidence.
+Start with the [Project Summary](README.md) for the source hashes and evidence boundaries. Ryan's published-VPN Windows/Azure smoke test is **operator-confirmed completed**. Do not re-open it as unexecuted or infer step outcomes without evidence.
 
 Browser QA for these revisions remains **UNEXECUTED**. When that path is exercised, check the VPN card's Required Modules label, Az.Accounts/Az.Resources/Az.Network list, and plain-text Install PowerShell Modules note. Open View Code and save Download; compare the saved VPN hash with the published hash in the summary. Check Script Preview's tenant prompt, optional resource-group choice and example error output. Repeat applicable interactions on desktop and iPhone Safari and record the exact version, browser and outcomes. Existing source/render-function and HTTP-byte checks do not establish these browser interactions.
 
